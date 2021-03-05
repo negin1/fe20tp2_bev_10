@@ -1,11 +1,17 @@
 import React from 'react';
+import Covid from '../Covid/Covid'
+
+
 
 import { withAuthorization } from '../Session';
+import { fromRenderProps } from 'recompose';
 
 const HomePage = () => (
   <div>
-    <h1>Home Page</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
+    <h1>COVID-19 Tracker</h1>
+    
+    <Covid/>
+ 
   </div>
 );
 
