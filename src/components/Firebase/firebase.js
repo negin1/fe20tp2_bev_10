@@ -4,6 +4,12 @@ import 'firebase/database';
 
 const config = {
   
+    apiKey: "AIzaSyDOkjTxG4-lWW0eXneGTntxx_0V-EqgkEs",
+    authDomain: "login-9c300.firebaseapp.com",
+    projectId: "login-9c300",
+    storageBucket: "login-9c300.appspot.com",
+    messagingSenderId: "742963488538",
+    appId: "1:742963488538:web:5d59aba90b2e90e5826ea3"
    
 };
 
