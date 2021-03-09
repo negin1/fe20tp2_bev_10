@@ -4,7 +4,7 @@ import { withAuthorization } from '../Session';
 import Cards from '../Covid/Cards';
 import Chart from '../Covid/Chart';
 import Country from '../Covid/Country';
-import fetchCovidData from '../../constants/covidapi';
+import fetchCovidData from '../../api';
 
 class HomePage extends React.Component {
 
