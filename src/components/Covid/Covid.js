@@ -3,6 +3,7 @@ import { fetchData } from './Api'
 
 
 import Cards from './Cards'
+import Chart from './Chart'
 
 class Covid extends React.Component {
 
@@ -21,6 +22,7 @@ class Covid extends React.Component {
       <div>
       
       <Cards data={data} />
+      <Chart />
       </div>
     )
   }

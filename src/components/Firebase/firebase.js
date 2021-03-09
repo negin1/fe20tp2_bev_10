@@ -3,14 +3,13 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const config = {
-  
-    apiKey: "AIzaSyDOkjTxG4-lWW0eXneGTntxx_0V-EqgkEs",
-    authDomain: "login-9c300.firebaseapp.com",
-    projectId: "login-9c300",
-    storageBucket: "login-9c300.appspot.com",
-    messagingSenderId: "742963488538",
-    appId: "1:742963488538:web:5d59aba90b2e90e5826ea3"
-   
+  apiKey: "AIzaSyB5W1l-62WU4s3_YK8dP_I3PLKN_Hv7FOY",
+  authDomain: "react-firebase-authentic-a7d30.firebaseapp.com",
+  projectId: "react-firebase-authentic-a7d30",
+  storageBucket: "react-firebase-authentic-a7d30.appspot.com",
+  messagingSenderId: "555810023158",
+  databaseURL: "https://react-firebase-authentic-a7d30-default-rtdb.europe-west1.firebasedatabase.app",
+  appId: "1:555810023158:web:2027b6397440cca0672ed7"
 };
 
 class Firebase {
