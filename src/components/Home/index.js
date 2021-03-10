@@ -1,5 +1,6 @@
 import React from 'react';
 import Covid from '../Covid/Covid'
+import CovidTracker from '../CovidTracker/Index'
 
 
 
@@ -28,6 +29,7 @@ class HomePage extends React.Component {
       <p>The Home Page is accessible by every signed in user.</p>
       <br></br>
       <Covid />
+      <CovidTracker />
      {/*  <Cards data={data} />
       <Chart />
       <Country /> */}
