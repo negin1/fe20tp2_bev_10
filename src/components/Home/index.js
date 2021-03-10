@@ -1,10 +1,14 @@
 import React from 'react';
+import Covid from '../Covid/Covid'
+import CovidTracker from '../CovidTracker/Index'
+
+
 
 import { withAuthorization } from '../Session';
 import Cards from '../Covid/Cards';
-import Chart from '../Covid/Chart';
-import Country from '../Covid/Country';
-import fetchCovidData from '../../api';
+/* import Chart from '../Covid/Chart';
+import Country from '../Covid/Country';*/
+import fetchCovidData from '../../api'; 
 
 class HomePage extends React.Component {
 
@@ -12,10 +16,10 @@ class HomePage extends React.Component {
     data: {},
   }
 
-  async componentDidMount() {
+  /* async componentDidMount() {
     const fetchedData = await fetchCovidData();
     this.setState({ data: fetchedData });
-  }
+  } */
 
   render() {
     const { data } = this.state;
@@ -24,9 +28,11 @@ class HomePage extends React.Component {
       <h1>Home Page</h1>
       <p>The Home Page is accessible by every signed in user.</p>
       <br></br>
-      <Cards data={data} />
+      <Covid />
+      <CovidTracker />
+     {/*  <Cards data={data} />
       <Chart />
-      <Country />
+      <Country /> */}
 
     </div>
     )
