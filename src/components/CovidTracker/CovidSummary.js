@@ -9,26 +9,34 @@ const StyledDivCard = styled.div`
 `;
 
 const CovidSummary = (props) => {
+
+  const {
+    totalConfirmed,
+    totalRecovered,
+    totalDeaths,
+    country,
+  } = props;
+
   return (
     <div>
       <div>
-        <h1>World wide Corona report</h1>
+        <h1>{country === '' ? 'World wide Corona Report' : country}</h1> {/* look at this later */}
 
         <StyledDivCard>
           <Card>
             <span>Total confirmed</span>
             <br />
-            <span>o</span>
+            <span>{totalConfirmed}</span>
           </Card>
           <Card>
             <span>Total Recovered</span>
             <br />
-            <span>0</span>
+            <span>{totalRecovered}</span>
           </Card>
           <Card>
             <span>Total Deaths</span>
             <br />
-            <span>0</span>
+            <span>{totalDeaths}</span>
           </Card>
         </StyledDivCard>
       </div>
