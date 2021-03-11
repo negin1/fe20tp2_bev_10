@@ -14,7 +14,7 @@ function CovidTracker() {
   const [totalRecovered, setTotalRecovered] = useState(0);
   const [totalDeaths, setTotalDeaths] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [CovidSummary, setCovidSummary] = useState({});
+  const [covidSummary, setCovidSummary] = useState({});
   const [days, setDays] = useState(7);
   const [country, setCountry] = useState('');
 
