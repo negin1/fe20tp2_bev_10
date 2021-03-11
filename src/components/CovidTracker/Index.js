@@ -65,8 +65,8 @@ function CovidTracker() {
 
   const getCoronaReportByDateRange = (countrySlug, from, to) => {
     axios.get(
-        `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to={to}T00:00:00Z`
-      )
+      `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
+    )
       .then((res) => {
         console.log(res)
 
@@ -80,7 +80,7 @@ function CovidTracker() {
   }
 
   if (loading) {
-    return <p> Fetchind gata from api ...</p>
+    return <p> Fetching data from api ...</p>
   }
 
   return (
