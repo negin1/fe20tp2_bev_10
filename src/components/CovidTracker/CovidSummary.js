@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 
 import styled from "styled-components";
+import NumberFormat from 'react-number-format'
 
 const StyledDivCard = styled.div`
   display: flex;
@@ -20,23 +21,43 @@ const CovidSummary = (props) => {
   return (
     <div>
       <div>
-        <h1>{country === '' ? 'World wide Corona Report' : country}</h1> {/* look at this later */}
+        <h1 style={{textTransform: 'capitalize'}}>{country === '' ? 'World wide Corona Report' : country}</h1> {/* look at this later */}
 
         <StyledDivCard>
           <Card>
             <span>Total confirmed</span>
             <br />
-            <span>{totalConfirmed}</span>
+            <span>
+                  {<NumberFormat
+                      value={totalConfirmed}
+                      displayType={'text'}
+                      thousandSeparator={true}
+                  />}
+              </span>
           </Card>
           <Card>
             <span>Total Recovered</span>
             <br />
-            <span>{totalRecovered}</span>
+            <span> 
+              {
+                <NumberFormat
+                      value={totalRecovered}
+                      displayType={'text'}
+                      thousandSeparator={true}
+                  />
+              }
+              </span>
           </Card>
           <Card>
             <span>Total Deaths</span>
             <br />
-            <span>{totalDeaths}</span>
+            <span>{
+                <NumberFormat
+                      value={totalDeaths}
+                      displayType={'text'}
+                      thousandSeparator={true}
+                  />
+              }</span>
           </Card>
         </StyledDivCard>
       </div>

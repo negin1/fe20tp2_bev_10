@@ -13,7 +13,7 @@ const LineGraph = (props) => {
 
       <Line data={{
             
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: props.label.map(l => l.substring(0, 10)),
         datasets: [
           {
             label: 'Covid Tracker ',

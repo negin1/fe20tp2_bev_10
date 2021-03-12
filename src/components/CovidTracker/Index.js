@@ -17,7 +17,7 @@ function CovidTracker() {
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
-
+  const [label, setLabel] = useState([])
   //ComponentDidMount
   useEffect(() => {
     //setLoading(true);
@@ -53,14 +53,20 @@ function CovidTracker() {
     setCountry(e.target.value)
     const d = new Date()
     const to = fromatDate(d)
-    const from = fromatDate(d.setDate(d.getDate() - 7))
+    const from = fromatDate(d.setDate(d.getDate() - days))
 
     //console.log(from, to)
     getCoronaReportByDateRange(e.target.value, from, to)
   }
 
   const daysHandler = (e) => {
-    setDays(e.target.value)
+    setDays(e.target.value);
+     const d = new Date()
+    const to = fromatDate(d)
+    const from = fromatDate(d.setDate(d.getDate() - e.target.value))
+
+    getCoronaReportByDateRange(country, from, to)
+   
   }
 
   const getCoronaReportByDateRange = (countrySlug, from, to) => {
@@ -71,7 +77,14 @@ function CovidTracker() {
         console.log(res)
 
         const yAxisCoronaCount = res.data.map((d) => d.Cases)
+        const xAxisLabel= res.data.map(d => d.Date)
+        const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
+
         setCoronaCountAr(yAxisCoronaCount)
+        setTotalConfirmed(covidDetails.TotalConfirmed);
+        setTotalRecovered(covidDetails.TotalRecovered);
+        setTotalDeaths(covidDetails.TotalDeaths);
+        setLabel(xAxisLabel);
       })
 
       .catch((error) => {
@@ -89,11 +102,13 @@ function CovidTracker() {
         totalConfirmed={totalConfirmed}
         totalRecovered={totalRecovered}
         totalDeaths={totalDeaths}
-        country={''}
+        country={country}
       />
 
       <div>
         <select value={country} onChange={countryHandler}>
+          <option>Select Country</option> 
+
           {covidSummary.Countries &&
             covidSummary.Countries.map((country) => (
               <option key={country.Slug} value={country.Slug}>
@@ -107,7 +122,10 @@ function CovidTracker() {
           <option value='90'>Last 90 days</option>
         </select>
       </div>
-      <LineGraph yAxis={coronaCountAr} />
+      <LineGraph 
+      yAxis={coronaCountAr} 
+      label={label}
+          />
     </StyledDiv>
   )
 }
