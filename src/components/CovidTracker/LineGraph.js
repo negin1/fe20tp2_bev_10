@@ -16,7 +16,8 @@ const LineGraph = (props) => {
         labels: props.label.map(l => l.substring(0, 10)),
         datasets: [
           {
-            label: 'Covid Tracker ',
+           
+            label: 'Infected people ',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -31,6 +32,27 @@ const LineGraph = (props) => {
             pointHoverRadius: 5,
             pointHoverBackgroundColor: 'rgba(75,192,192,1)',
             pointHoverBorderColor: 'rgba(220,220,220,1)',
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: props.yAxis
+          },
+          {
+            label: 'Deaths',
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: 'rgba(250,0,0,0.4)',
+            borderColor: 'rgba(250,0,0,1)',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: 'rgba(250,0,0,1)',
+            pointBackgroundColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: 'rgba(250,0,0,1)',
+            pointHoverBorderColor: 'rgba(250,0,0,1)',
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,

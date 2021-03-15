@@ -1,10 +1,13 @@
+import React from 'react';
 import axios from 'axios';
+import { useState} from 'react'; 
+import WorlPopulation from './WorlPopulation';
 
-const axiosInstance = axios.create({
-    baseURL: `https://api.covid19api.com/`
-})
+function index() {
+  
+/*    
 
-
+  
    
 const options = {
   method: 'GET',
@@ -23,9 +26,15 @@ axios.request(options).then(function (response) {
 .catch(function (error) {
 	console.error(error);
 });
+      return (
+        <div>
+        <h1>select Country</h1>
+        <WorlPopulation />
+        </div>
+      )
+    } */
+
+export default index
+
+
  
-export default axiosInstance;
-
-
-  
-   
