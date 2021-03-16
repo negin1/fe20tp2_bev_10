@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import LineGraph from './LineGraph'
+import LineGraphDeaths from './LineGraphDeaths'
+import LineGraphRecovered from './LineGraphRecovered'
 import CovidSummary from './CovidSummary'
 import axios from './axios'
 
 const StyledDiv = styled.div`
   text-align: center;
-`
+`;
+
+const StyledSelectCountry = styled.select`
+  margin-top: 30px; 
+  padding: 5px; 
+`;
+
+const StyledSelectDays = styled.select`
+  margin-top: 15px; 
+  padding: 5px; 
+`;
 
 function CovidTracker() {
   const [totalConfirmed, setTotalConfirmed] = useState(0)
@@ -17,7 +29,10 @@ function CovidTracker() {
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
+  const [deathCountAr, setDeathCountAr] = useState([])
+  const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
+
   //ComponentDidMount
   useEffect(() => {
     //setLoading(true);
@@ -57,16 +72,19 @@ function CovidTracker() {
 
     //console.log(from, to)
     getCoronaReportByDateRange(e.target.value, from, to)
+    getDeathReportByDateRange(e.target.value, from, to)
+    getRecoveredReportByDateRange(e.target.value, from, to)
   }
 
   const daysHandler = (e) => {
     setDays(e.target.value);
-     const d = new Date()
+    const d = new Date()
     const to = fromatDate(d)
     const from = fromatDate(d.setDate(d.getDate() - e.target.value))
 
     getCoronaReportByDateRange(country, from, to)
-   
+    getDeathReportByDateRange(country, from, to)
+    getRecoveredReportByDateRange(country, from, to)
   }
 
   const getCoronaReportByDateRange = (countrySlug, from, to) => {
@@ -77,12 +95,56 @@ function CovidTracker() {
         console.log(res)
 
         const yAxisCoronaCount = res.data.map((d) => d.Cases)
-        const xAxisLabel= res.data.map(d => d.Date)
+        const xAxisLabel = res.data.map(d => d.Date)
         const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
 
         setCoronaCountAr(yAxisCoronaCount)
         setTotalConfirmed(covidDetails.TotalConfirmed);
         setTotalRecovered(covidDetails.TotalRecovered);
+        setTotalDeaths(covidDetails.TotalDeaths);
+        setLabel(xAxisLabel);
+      })
+
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+  const getDeathReportByDateRange = (countrySlug, from, to) => {
+    axios.get(
+      `/country/${countrySlug}/status/deaths?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
+    )
+      .then((res) => {
+        console.log(res)
+
+        const yAxisDeathCount = res.data.map((d) => d.Cases)
+        const xAxisLabel = res.data.map(d => d.Date)
+        const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
+
+        setDeathCountAr(yAxisDeathCount)
+        setTotalConfirmed(covidDetails.TotalConfirmed);
+        setTotalDeaths(covidDetails.TotalDeaths);
+        setLabel(xAxisLabel);
+      })
+
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+  const getRecoveredReportByDateRange = (countrySlug, from, to) => {
+    axios.get(
+      `/country/${countrySlug}/status/recovered?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
+    )
+      .then((res) => {
+        console.log(res)
+
+        const yAxisRecoveredCount = res.data.map((d) => d.Cases)
+        const xAxisLabel = res.data.map(d => d.Date)
+        const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
+
+        setRecoveredCountAr(yAxisRecoveredCount)
+        setTotalConfirmed(covidDetails.TotalConfirmed);
         setTotalDeaths(covidDetails.TotalDeaths);
         setLabel(xAxisLabel);
       })
@@ -104,10 +166,17 @@ function CovidTracker() {
         totalDeaths={totalDeaths}
         country={country}
       />
-
+      {/*<div>
+        <StyledSelectData>
+          <option>Select Data</option>
+          <option value='Infected'>Total infected</option>
+          <option value='Deaths'>Total Deaths</option>
+          <option value='Recovered'>total Recovered</option>
+        </StyledSelectData>
+      </div>*/}
       <div>
-        <select value={country} onChange={countryHandler}>
-          <option>Select Country</option> 
+        <StyledSelectCountry value={country} onChange={countryHandler}>
+          <option>Select Country</option>
 
           {covidSummary.Countries &&
             covidSummary.Countries.map((country) => (
@@ -115,17 +184,28 @@ function CovidTracker() {
                 {country.Country}
               </option>
             ))}
-        </select>
-        <select value={days} onChange={daysHandler}>
+        </StyledSelectCountry>
+      </div>
+      <div>
+        <StyledSelectDays value={days} onChange={daysHandler}>
           <option value='7'>Last 7 days</option>
           <option value='30'>Last 30 days</option>
           <option value='90'>Last 90 days</option>
-        </select>
+          <option value='365'>Last 365 days</option>
+        </StyledSelectDays>
       </div>
-      <LineGraph 
-      yAxis={coronaCountAr} 
-      label={label}
-          />
+      <LineGraph
+        yAxis={coronaCountAr}
+        label={label}
+      />
+      <LineGraphDeaths
+        yAxisDeath={deathCountAr}
+        label={label}
+      />
+      <LineGraphRecovered
+        yAxisRecovered={recoveredCountAr}
+        label={label}
+      />
     </StyledDiv>
   )
 }

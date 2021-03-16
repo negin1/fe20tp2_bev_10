@@ -2,12 +2,13 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 const LineGraph = (props) => {
+
   return (
     <div
       style={{
         width: '600px',
-        height: '600px',
-        margin: '50px auto',
+        height: 'auto',
+        margin: '40px auto',
       }}
     >
 
@@ -16,7 +17,8 @@ const LineGraph = (props) => {
         labels: props.label.map(l => l.substring(0, 10)),
         datasets: [
           {
-            label: 'Number of infected people',
+
+            label: 'Total infected people per country',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',

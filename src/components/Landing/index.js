@@ -5,7 +5,8 @@ import { FirebaseContext } from '../Firebase';
 const Landing = () => (
   <FirebaseContext.Consumer>
   {firebase => {
-    return <div>I've access to Firebase and render something.</div>;
+    return
+     <div>I've access to Firebase and render something.</div>;
     }}
   </FirebaseContext.Consumer>
 );
