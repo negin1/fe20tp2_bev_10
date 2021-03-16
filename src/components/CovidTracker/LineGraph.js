@@ -1,22 +1,22 @@
 import React from 'react';
-import { Line} from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 const LineGraph = (props) => {
   return (
     <div
-        style={{
-            width: '600px', 
-            height: '600px',
-            margin: '50px auto',
-        }}
-      >
+      style={{
+        width: '600px',
+        height: '600px',
+        margin: '50px auto',
+      }}
+    >
 
       <Line data={{
-            
+
         labels: props.label.map(l => l.substring(0, 10)),
         datasets: [
           {
-            label: 'Covid Tracker ',
+            label: 'Number of infected people',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -37,8 +37,8 @@ const LineGraph = (props) => {
             data: props.yAxis
           }
         ]
-      }}  />
-      
+      }} />
+
     </div>
   )
 }
