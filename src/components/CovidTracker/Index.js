@@ -20,6 +20,24 @@ const StyledSelectDays = styled.select`
   padding: 5px; 
 `;
 
+const countryPresets = {
+  Scandinavia: ['Denmark', 'Sweden', 'Norway'],
+  Americas: ['United States', 'Canada', 'Panama'],
+  Asia: ['China', 'Taiwan']
+}
+
+const userConfig = {
+  dateRange: '7d', // '30d', '365d'
+  countries: ['Denmark', 'Sweden', 'China', 'Taiwan'],
+  infected: true,
+  deaths: false,
+  recovered: false
+}
+// Object.keys(countryPresets) -> ['Scandinavia', 'Americas', 'Asia']
+
+// event.target.value (='Asia')
+
+// countryPresets[event.target.value] --> ['China', 'Taiwan']
 function CovidTracker() {
   const [totalConfirmed, setTotalConfirmed] = useState(0)
   const [totalRecovered, setTotalRecovered] = useState(0)
@@ -93,11 +111,19 @@ function CovidTracker() {
     )
       .then((res) => {
         console.log(res)
+        let data = res.data.filter(item => item.Province === '');
+        data = data.slice(0, data.length - 1);
 
-        const yAxisCoronaCount = res.data.map((d) => d.Cases)
-        const xAxisLabel = res.data.map(d => d.Date)
+        //const yAxisCoronaCount = res.data.map((d) => d.Cases)
+        //const xAxisLabel = res.data.map(d => d.Date)
         const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
+        // begin krilles specialkod
+        console.log(data)
+        const yAxisCoronaCount = data.map((d) => d.Cases)
+        const xAxisLabel = data.map(d => d.Date)
 
+
+        // end
         setCoronaCountAr(yAxisCoronaCount)
         setTotalConfirmed(covidDetails.TotalConfirmed);
         setTotalRecovered(covidDetails.TotalRecovered);
@@ -116,15 +142,16 @@ function CovidTracker() {
     )
       .then((res) => {
         console.log(res)
-
-        const yAxisDeathCount = res.data.map((d) => d.Cases)
-        const xAxisLabel = res.data.map(d => d.Date)
-        const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
+        let data = res.data.filter(item => item.Province === '');
+        data = data.slice(0, data.length - 1);
+        const yAxisDeathCount = data.map((d) => d.Cases)
+        //const xAxisLabel = data.map(d => d.Date)
+        //const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
 
         setDeathCountAr(yAxisDeathCount)
-        setTotalConfirmed(covidDetails.TotalConfirmed);
-        setTotalDeaths(covidDetails.TotalDeaths);
-        setLabel(xAxisLabel);
+        //setTotalConfirmed(covidDetails.TotalConfirmed);
+        //setTotalDeaths(covidDetails.TotalDeaths);
+        //setLabel(xAxisLabel);
       })
 
       .catch((error) => {
@@ -138,15 +165,16 @@ function CovidTracker() {
     )
       .then((res) => {
         console.log(res)
-
-        const yAxisRecoveredCount = res.data.map((d) => d.Cases)
-        const xAxisLabel = res.data.map(d => d.Date)
-        const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
+        let data = res.data.filter(item => item.Province === '');
+        data = data.slice(0, data.length - 1);
+        const yAxisRecoveredCount = data.map((d) => d.Cases)
+        //const xAxisLabel = data.map(d => d.Date)
+        //const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
 
         setRecoveredCountAr(yAxisRecoveredCount)
-        setTotalConfirmed(covidDetails.TotalConfirmed);
-        setTotalDeaths(covidDetails.TotalDeaths);
-        setLabel(xAxisLabel);
+        //setTotalConfirmed(covidDetails.TotalConfirmed);
+        //setTotalDeaths(covidDetails.TotalDeaths);
+        //setLabel(xAxisLabel);
       })
 
       .catch((error) => {

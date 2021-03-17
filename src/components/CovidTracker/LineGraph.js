@@ -1,6 +1,13 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+/*
 
+{dates: ['2021-03-10', '2021-03-11'],
+data: [
+  {'Sweden Infected': [4000, 5000},
+  {'Norway Infected': [300, 400]}
+]}
+*/
 const LineGraph = (props) => {
 
   return (
