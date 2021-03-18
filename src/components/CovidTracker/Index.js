@@ -29,17 +29,15 @@ const userConfig = {
 }
 
 const countryPresets = {
-  Scandinavia: ['denmark', 'sweden', 'norway'],
-  Americas: ['united states', 'canada'],
+  Scandinavia: ['denmark', 'sweden'],
+  Americas: ['united-states', 'canada'],
   Asia: ['china', 'taiwan']
 }
 
 const ArrCountryPresets = Object.keys(countryPresets);
 console.log(ArrCountryPresets);
 
-
 // event.target.value (='Asia')
-
 // countryPresets[event.target.value] --> ['China', 'Taiwan']
 
 function CovidTracker() {
@@ -51,7 +49,6 @@ function CovidTracker() {
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
   const [region, setRegion] = useState('')
-  const [regionCountries, setRegionCountries] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
   const [deathCountAr, setDeathCountAr] = useState([])
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
@@ -88,21 +85,14 @@ function CovidTracker() {
     return `${year}-${month}-${_date}`
   }
 
-  const countryHandler = (e) => {
-    setCountry(e.target.value)
-    const d = new Date()
-    const to = fromatDate(d)
-    const from = fromatDate(d.setDate(d.getDate() - days))
-
-    //console.log(from, to)
-    getCoronaReportByDateRange(e.target.value, from, to)
-    getDeathReportByDateRange(e.target.value, from, to)
-    getRecoveredReportByDateRange(e.target.value, from, to)
+  const regionHandler = (e) => {
+    let arrRegionCountries = countryPresets[e.target.value]
+    setRegion(arrRegionCountries)
+    console.log(arrRegionCountries)
   }
 
-  const regionHandler = (e) => {
-    setRegion(countryPresets[e.target.value])
-    //setRegionCountries(Object.values(region))
+  const countryHandler = (e) => {
+    setCountry(e.target.value)
     const d = new Date()
     const to = fromatDate(d)
     const from = fromatDate(d.setDate(d.getDate() - days))
