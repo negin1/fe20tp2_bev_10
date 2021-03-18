@@ -38,18 +38,21 @@ const userConfig = {
 // event.target.value (='Asia')
 
 // countryPresets[event.target.value] --> ['China', 'Taiwan']
+
 function CovidTracker() {
   const [totalConfirmed, setTotalConfirmed] = useState(0)
   const [totalRecovered, setTotalRecovered] = useState(0)
   const [totalDeaths, setTotalDeaths] = useState(0)
   const [loading, setLoading] = useState(false)
-  const [covidSummary, setCovidSummary] = useState({})
+  const [covidSummary, setCovidSummary]  = useState({})
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
   const [deathCountAr, setDeathCountAr] = useState([])
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
+
+  const [scandinavia, setSvandinavia] = useState({})
 
   //ComponentDidMount
   useEffect(() => {
@@ -214,6 +217,9 @@ function CovidTracker() {
             ))}
         </StyledSelectCountry>
       </div>
+
+    
+
       <div>
         <StyledSelectDays value={days} onChange={daysHandler}>
           <option value='7'>Last 7 days</option>
@@ -221,6 +227,16 @@ function CovidTracker() {
           <option value='90'>Last 90 days</option>
           <option value='365'>Last 365 days</option>
         </StyledSelectDays>
+      </div>
+
+        <div>
+        <select >
+          <option disabled selected hidden>Choose Region</option>
+          <option value={country}>Scandinavia</option>
+
+          <option value='America'>America</option>
+          <option value='Asia'>Asia</option>
+        </select>
       </div>
       <LineGraph
         yAxis={coronaCountAr}
