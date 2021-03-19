@@ -5,7 +5,6 @@ import WorlPopulation from './WorlPopulation';
 
 function index() {
   
-/*    
 
   
    
@@ -32,9 +31,6 @@ axios.request(options).then(function (response) {
         <WorlPopulation />
         </div>
       )
-    } */
-
+    
+} 
 export default index
-
-
- 

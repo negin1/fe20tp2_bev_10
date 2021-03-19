@@ -20,12 +20,6 @@ const StyledSelectDays = styled.select`
   padding: 5px; 
 `;
 
-const countryPresets = {
-  Scandinavia: ['Denmark', 'Sweden', 'Norway'],
-  Americas: ['United States', 'Canada', 'Panama'],
-  Asia: ['China', 'Taiwan']
-}
-
 const userConfig = {
   dateRange: '7d', // '30d', '365d'
   countries: ['Denmark', 'Sweden', 'China', 'Taiwan'],
@@ -33,7 +27,16 @@ const userConfig = {
   deaths: false,
   recovered: false
 }
-// Object.keys(countryPresets) -> ['Scandinavia', 'Americas', 'Asia']
+
+const countryPresets = {
+  Scandinavia: ['denmark', 'sweden', 'norway'],
+  Americas: ['united states', 'canada'],
+  Asia: ['china', 'taiwan']
+}
+
+const ArrCountryPresets = Object.keys(countryPresets);
+console.log(ArrCountryPresets);
+
 
 // event.target.value (='Asia')
 
@@ -44,15 +47,15 @@ function CovidTracker() {
   const [totalRecovered, setTotalRecovered] = useState(0)
   const [totalDeaths, setTotalDeaths] = useState(0)
   const [loading, setLoading] = useState(false)
-  const [covidSummary, setCovidSummary]  = useState({})
+  const [covidSummary, setCovidSummary] = useState({})
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
+  const [region, setRegion] = useState('')
+  const [regionCountries, setRegionCountries] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
   const [deathCountAr, setDeathCountAr] = useState([])
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
-
-  const [scandinavia, setSvandinavia] = useState({})
 
   //ComponentDidMount
   useEffect(() => {
@@ -87,6 +90,19 @@ function CovidTracker() {
 
   const countryHandler = (e) => {
     setCountry(e.target.value)
+    const d = new Date()
+    const to = fromatDate(d)
+    const from = fromatDate(d.setDate(d.getDate() - days))
+
+    //console.log(from, to)
+    getCoronaReportByDateRange(e.target.value, from, to)
+    getDeathReportByDateRange(e.target.value, from, to)
+    getRecoveredReportByDateRange(e.target.value, from, to)
+  }
+
+  const regionHandler = (e) => {
+    setRegion(countryPresets[e.target.value])
+    //setRegionCountries(Object.values(region))
     const d = new Date()
     const to = fromatDate(d)
     const from = fromatDate(d.setDate(d.getDate() - days))
@@ -206,6 +222,16 @@ function CovidTracker() {
         </StyledSelectData>
       </div>*/}
       <div>
+        <StyledSelectCountry value={region} onChange={regionHandler}>
+          <option>Select Region</option>
+          {ArrCountryPresets.map((CountryPreset) => (
+            <option key={CountryPreset} value={CountryPreset}>
+              {CountryPreset}
+            </option>
+          ))}
+        </StyledSelectCountry>
+      </div>
+      <div>
         <StyledSelectCountry value={country} onChange={countryHandler}>
           <option>Select Country</option>
 
@@ -217,9 +243,6 @@ function CovidTracker() {
             ))}
         </StyledSelectCountry>
       </div>
-
-    
-
       <div>
         <StyledSelectDays value={days} onChange={daysHandler}>
           <option value='7'>Last 7 days</option>
@@ -229,15 +252,7 @@ function CovidTracker() {
         </StyledSelectDays>
       </div>
 
-        <div>
-        <select >
-          <option disabled selected hidden>Choose Region</option>
-          <option value={country}>Scandinavia</option>
-
-          <option value='America'>America</option>
-          <option value='Asia'>Asia</option>
-        </select>
-      </div>
+    
       <LineGraph
         yAxis={coronaCountAr}
         label={label}
