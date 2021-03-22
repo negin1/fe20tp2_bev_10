@@ -1,14 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import LineGraph from './LineGraph'
 import LineGraphDeaths from './LineGraphDeaths'
 import LineGraphRecovered from './LineGraphRecovered'
 import CovidSummary from './CovidSummary'
 import axios from './axios'
-
-import { withFirebase } from '../Firebase';
-import { AuthUserContext } from '../Session';
-
 
 const StyledDiv = styled.div`
   text-align: center;
@@ -44,7 +40,7 @@ console.log(ArrCountryPresets);
 // event.target.value (='Asia')
 // countryPresets[event.target.value] --> ['China', 'Taiwan']
 
-function CovidTracker({ firebase, infected = true }) {
+function PresetCovid(props) {
   const [totalConfirmed, setTotalConfirmed] = useState(0)
   const [totalRecovered, setTotalRecovered] = useState(0)
   const [totalDeaths, setTotalDeaths] = useState(0)
@@ -58,47 +54,39 @@ function CovidTracker({ firebase, infected = true }) {
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
 
-  const userID = useContext(AuthUserContext).uid;
-  const countries = useContext(AuthUserContext).countries
-  console.log(countries)
-  //console.log(userID)
-
   //ComponentDidMount
   useEffect(() => {
-    //setLoading(true);
-    axios
-      .get(`/summary`)
-      .then((res) => {
-        //setLoading(false);
+    setTimeout(() => {
+      //setLoading(true);
+      axios
+        .get(`/summary`)
+        .then((res) => {
+          //setLoading(false);
 
-        if (res.status === 200) {
-          setTotalConfirmed(res.data.Global.TotalConfirmed)
-          setTotalRecovered(res.data.Global.TotalRecovered)
-          setTotalDeaths(res.data.Global.TotalDeaths)
-          setCovidSummary(res.data)
-        }
+          if (res.status === 200) {
+            setTotalConfirmed(res.data.Global.TotalConfirmed)
+            setTotalRecovered(res.data.Global.TotalRecovered)
+            setTotalDeaths(res.data.Global.TotalDeaths)
+            setCovidSummary(res.data)
+          }
 
-        console.log(res)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+          console.log(res)
+          setCountry(props.country)
+          const d = new Date()
+          const to = fromatDate(d)
+          const from = fromatDate(d.setDate(d.getDate() - days))
+
+          //console.log(from, to)
+          getCoronaReportByDateRange(props.country, from, to)
+          getDeathReportByDateRange(props.country, from, to)
+          getRecoveredReportByDateRange(props.country, from, to)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+
+    }, props.order * 4000);
   }, [])
-
-  const saveCountries = (countryArr) => {
-    // inpuit: ['sweden', 'norway']
-    // save each of the countries to the user's database
-    let countryObjArr = countryArr.map(item => ({ [item]: true }))
-    // countryObjArr: [{sweden: true}, {norway:true}]
-    let countryObj = Object.assign(...countryObjArr)
-    // desired: {sweden: true, norway: true}
-    firebase.user(userID).child('countries').update(countryObj)
-  }
-
-  const removeCountry = (country) => {
-    let countryObj = { [country]: null };
-    firebase.user(userID).child('countries').update(countryObj)
-  }
 
   const fromatDate = (date) => {
     const d = new Date(date)
@@ -112,14 +100,11 @@ function CovidTracker({ firebase, infected = true }) {
   const regionHandler = (e) => {
     let arrRegionCountries = countryPresets[e.target.value]
     setRegion(arrRegionCountries)
-    saveCountries(arrRegionCountries)
     console.log(arrRegionCountries)
-
   }
 
   const countryHandler = (e) => {
     setCountry(e.target.value)
-    //removeCountry(e.target.value)
     const d = new Date()
     const to = fromatDate(d)
     const from = fromatDate(d.setDate(d.getDate() - days))
@@ -142,6 +127,7 @@ function CovidTracker({ firebase, infected = true }) {
   }
 
   const getCoronaReportByDateRange = (countrySlug, from, to) => {
+    console.log("from: " + from + ", to: " + to)
     axios.get(
       `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
@@ -164,6 +150,7 @@ function CovidTracker({ firebase, infected = true }) {
         setTotalConfirmed(covidDetails.TotalConfirmed);
         setTotalRecovered(covidDetails.TotalRecovered);
         setTotalDeaths(covidDetails.TotalDeaths);
+        console.log(xAxisLabel)
         setLabel(xAxisLabel);
       })
 
@@ -238,28 +225,7 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='Recovered'>total Recovered</option>
         </StyledSelectData>
       </div>*/}
-      <div>
-        <StyledSelectCountry value={region} onChange={regionHandler}>
-          <option>Select Region</option>
-          {ArrCountryPresets.map((CountryPreset) => (
-            <option key={CountryPreset} value={CountryPreset}>
-              {CountryPreset}
-            </option>
-          ))}
-        </StyledSelectCountry>
-      </div>
-      <div>
-        <StyledSelectCountry value={country} onChange={countryHandler}>
-          <option>Select Country</option>
 
-          {covidSummary.Countries &&
-            covidSummary.Countries.map((country) => (
-              <option key={country.Slug} value={country.Slug}>
-                {country.Country}
-              </option>
-            ))}
-        </StyledSelectCountry>
-      </div>
       <div>
         <StyledSelectDays value={days} onChange={daysHandler}>
           <option value='7'>Last 7 days</option>
@@ -269,10 +235,10 @@ function CovidTracker({ firebase, infected = true }) {
         </StyledSelectDays>
       </div>
 
-      {infected && <LineGraph
+      <LineGraph
         yAxis={coronaCountAr}
         label={label}
-      />}
+      />
       <LineGraphDeaths
         yAxisDeath={deathCountAr}
         label={label}
@@ -285,4 +251,4 @@ function CovidTracker({ firebase, infected = true }) {
   )
 }
 
-export default withFirebase(CovidTracker)
+export default PresetCovid
