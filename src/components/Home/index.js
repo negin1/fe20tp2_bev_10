@@ -27,14 +27,17 @@ class HomePage extends React.Component {
 
     this.props.firebase.user(this.props.firebase.auth.currentUser.uid).child('countries').on('value', snapshot => {
       const countryObject = snapshot.val();
-
+  if (countryObject) {
       const countries = Object.keys(countryObject);
 
       this.setState({
         countries,
       });
+    }
     });
+
   }
+
 
   componentWillUnmount() {
     this.props.firebase.user(this.props.firebase.auth.currentUser.uid).child('countries').off();
