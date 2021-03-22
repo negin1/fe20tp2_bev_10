@@ -5,6 +5,7 @@ import LineGraphDeaths from './LineGraphDeaths'
 import LineGraphRecovered from './LineGraphRecovered'
 import CovidSummary from './CovidSummary'
 import axios from './axios'
+import { withStateHandlers } from 'recompose'
 
 const StyledDiv = styled.div`
   text-align: center;
@@ -33,7 +34,22 @@ const userConfig = {
   deaths: false,
   recovered: false
 }
+// TEST HERE
+const Scandinavia = countryPresets.Denmark.Sweden.Norway;
+const Americas = countryPresets.UnitedStates.Canada.Panama;
+const Asia = countryPresets.China.Taiwan;
+
+const Region = countryPresets['countries'];
+const myKey = 'https://api.covid19api.com/countries';
+const myValue = countryPresets[myKey];
+
+const { Scandinavia, Americas, Asia } = countryPresets;
+console.log(Scandinavia);
+
+const [scandinavia, setScandinavia] = useState({})
+
 // Object.keys(countryPresets) -> ['Scandinavia', 'Americas', 'Asia']
+
 
 // event.target.value (='Asia')
 
@@ -44,7 +60,7 @@ function CovidTracker() {
   const [totalRecovered, setTotalRecovered] = useState(0)
   const [totalDeaths, setTotalDeaths] = useState(0)
   const [loading, setLoading] = useState(false)
-  const [covidSummary, setCovidSummary]  = useState({})
+  const [covidSummary, setCovidSummary] = useState({})
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
@@ -52,7 +68,7 @@ function CovidTracker() {
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
 
-  const [scandinavia, setSvandinavia] = useState({})
+  
 
   //ComponentDidMount
   useEffect(() => {
@@ -218,7 +234,7 @@ function CovidTracker() {
         </StyledSelectCountry>
       </div>
 
-    
+
 
       <div>
         <StyledSelectDays value={days} onChange={daysHandler}>
@@ -229,7 +245,7 @@ function CovidTracker() {
         </StyledSelectDays>
       </div>
 
-        <div>
+      <div>
         <select >
           <option disabled selected hidden>Choose Region</option>
           <option value={country}>Scandinavia</option>
