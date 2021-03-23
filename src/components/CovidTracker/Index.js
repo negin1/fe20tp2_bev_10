@@ -237,7 +237,7 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='Deaths'>Total Deaths</option>
           <option value='Recovered'>total Recovered</option>
         </StyledSelectData>
-      </div>*/}
+      </div>
       <div>
         <StyledSelectCountry value={region} onChange={regionHandler}>
           <option>Select Region</option>
@@ -247,7 +247,7 @@ function CovidTracker({ firebase, infected = true }) {
             </option>
           ))}
         </StyledSelectCountry>
-      </div>
+      </div>*/}
       <div>
         <StyledSelectCountry value={country} onChange={countryHandler}>
           <option>Select Country</option>
@@ -273,6 +273,8 @@ function CovidTracker({ firebase, infected = true }) {
         yAxis={coronaCountAr}
         label={label}
       />}
+
+      {/*
       <LineGraphDeaths
         yAxisDeath={deathCountAr}
         label={label}
@@ -280,7 +282,7 @@ function CovidTracker({ firebase, infected = true }) {
       <LineGraphRecovered
         yAxisRecovered={recoveredCountAr}
         label={label}
-      />
+      />*/}
     </StyledDiv>
   )
 }

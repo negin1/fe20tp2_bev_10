@@ -56,6 +56,7 @@ const CovidSummary = (props) => {
                   duration={2.5}
                   separator=','
                 />
+                <p>{new Date().toDateString()}</p>
               </Cards>
             </CardContent>
           </Grid>
@@ -74,6 +75,7 @@ const CovidSummary = (props) => {
                   duration={2.5}
                   separator=','
                 />
+                <p>{new Date().toDateString()}</p>
               </Cards>
             </CardContent>
           </Grid>
