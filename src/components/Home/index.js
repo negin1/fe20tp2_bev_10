@@ -1,7 +1,7 @@
 import React from 'react';
-import Covid from '../Covid/Covid'
 import CovidTracker from '../CovidTracker/Index'
 import styled from 'styled-components'
+import CovidSummary from '../CovidTracker/CovidSummary'
 
 import PresetCovid from '../PresetCovid/Index'
 

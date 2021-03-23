@@ -26,20 +26,20 @@ const StyledSelectDays = styled.select`
 
 const userConfig = {
   dateRange: '7d', // '30d', '365d'
-  countries: ['Denmark', 'Sweden', 'China', 'Taiwan'],
+  country: ['Denmark'],
   infected: true,
-  deaths: false,
-  recovered: false
 }
 
-const countryPresets = {
+{/*const countryPresets = {
   Scandinavia: ['denmark', 'sweden'],
   Americas: ['united-states', 'canada'],
   Asia: ['china', 'taiwan']
 }
 
+
 const ArrCountryPresets = Object.keys(countryPresets);
 console.log(ArrCountryPresets);
+*/}
 
 // event.target.value (='Asia')
 // countryPresets[event.target.value] --> ['China', 'Taiwan']
@@ -59,8 +59,8 @@ function CovidTracker({ firebase, infected = true }) {
   const [label, setLabel] = useState([])
 
   const userID = useContext(AuthUserContext).uid;
-  const countries = useContext(AuthUserContext).countries
-  console.log(countries)
+  const infectedData = useContext(AuthUserContext).infectedData
+  console.log(infectedData)
   //console.log(userID)
 
   //ComponentDidMount
@@ -109,6 +109,7 @@ function CovidTracker({ firebase, infected = true }) {
     return `${year}-${month}-${_date}`
   }
 
+  {/*
   const regionHandler = (e) => {
     let arrRegionCountries = countryPresets[e.target.value]
     setRegion(arrRegionCountries)
@@ -116,6 +117,7 @@ function CovidTracker({ firebase, infected = true }) {
     console.log(arrRegionCountries)
 
   }
+*/}
 
   const countryHandler = (e) => {
     setCountry(e.target.value)
