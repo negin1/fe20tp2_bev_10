@@ -52,6 +52,8 @@ function CovidTracker({ firebase, infected = true }) {
   const [covidSummary, setCovidSummary] = useState({})
   const [days, setDays] = useState(7)
   const [country, setCountry] = useState('')
+  const [country2, setCountry2] = useState('')
+  const [country3, setCountry3] = useState('')
   const [region, setRegion] = useState('')
   const [coronaCountAr, setCoronaCountAr] = useState([])
   const [deathCountAr, setDeathCountAr] = useState([])
@@ -115,7 +117,6 @@ function CovidTracker({ firebase, infected = true }) {
     setRegion(arrRegionCountries)
     saveCountries(arrRegionCountries)
     console.log(arrRegionCountries)
-
   }
 */}
 
@@ -128,8 +129,34 @@ function CovidTracker({ firebase, infected = true }) {
 
     //console.log(from, to)
     getCoronaReportByDateRange(e.target.value, from, to)
-    getDeathReportByDateRange(e.target.value, from, to)
-    getRecoveredReportByDateRange(e.target.value, from, to)
+    {/*getDeathReportByDateRange(e.target.value, from, to)
+    getRecoveredReportByDateRange(e.target.value, from, to)*/}
+  }
+
+  const countryHandler2 = (e) => {
+    setCountry2(e.target.value)
+    //removeCountry(e.target.value)
+    const d = new Date()
+    const to = fromatDate(d)
+    const from = fromatDate(d.setDate(d.getDate() - days))
+
+    //console.log(from, to)
+    getCoronaReportByDateRange(e.target.value, from, to)
+    {/*getDeathReportByDateRange(e.target.value, from, to)
+    getRecoveredReportByDateRange(e.target.value, from, to)*/}
+  }
+
+  const countryHandler3 = (e) => {
+    setCountry3(e.target.value)
+    //removeCountry(e.target.value)
+    const d = new Date()
+    const to = fromatDate(d)
+    const from = fromatDate(d.setDate(d.getDate() - days))
+
+    //console.log(from, to)
+    getCoronaReportByDateRange(e.target.value, from, to)
+    {/*getDeathReportByDateRange(e.target.value, from, to)
+    getRecoveredReportByDateRange(e.target.value, from, to)*/}
   }
 
   const daysHandler = (e) => {
@@ -139,8 +166,8 @@ function CovidTracker({ firebase, infected = true }) {
     const from = fromatDate(d.setDate(d.getDate() - e.target.value))
 
     getCoronaReportByDateRange(country, from, to)
-    getDeathReportByDateRange(country, from, to)
-    getRecoveredReportByDateRange(country, from, to)
+    {/*getDeathReportByDateRange(country, from, to)
+    getRecoveredReportByDateRange(country, from, to)*/}
   }
 
   const getCoronaReportByDateRange = (countrySlug, from, to) => {
@@ -154,18 +181,19 @@ function CovidTracker({ firebase, infected = true }) {
 
         //const yAxisCoronaCount = res.data.map((d) => d.Cases)
         //const xAxisLabel = res.data.map(d => d.Date)
+
+
         const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
         // begin krilles specialkod
         console.log(data)
         const yAxisCoronaCount = data.map((d) => d.Cases)
         const xAxisLabel = data.map(d => d.Date)
 
-
         // end
         setCoronaCountAr(yAxisCoronaCount)
         setTotalConfirmed(covidDetails.TotalConfirmed);
-        setTotalRecovered(covidDetails.TotalRecovered);
-        setTotalDeaths(covidDetails.TotalDeaths);
+        {/*setTotalRecovered(covidDetails.TotalRecovered);
+        setTotalDeaths(covidDetails.TotalDeaths);*/}
         setLabel(xAxisLabel);
       })
 
@@ -174,7 +202,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
   }
 
-  const getDeathReportByDateRange = (countrySlug, from, to) => {
+  {/*const getDeathReportByDateRange = (countrySlug, from, to) => {
     axios.get(
       `/country/${countrySlug}/status/deaths?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
@@ -219,7 +247,7 @@ function CovidTracker({ firebase, infected = true }) {
         console.log(error)
       })
   }
-
+*/}
   if (loading) {
     return <p> Fetching data from api ...</p>
   }
@@ -258,6 +286,30 @@ function CovidTracker({ firebase, infected = true }) {
             covidSummary.Countries.map((country) => (
               <option key={country.Slug} value={country.Slug}>
                 {country.Country}
+              </option>
+            ))}
+        </StyledSelectCountry>
+      </div>
+      <div>
+        <StyledSelectCountry value={country2} onChange={countryHandler2}>
+          <option>Select Country</option>
+
+          {covidSummary.Countries &&
+            covidSummary.Countries.map((country2) => (
+              <option key={country2.Slug} value={country2.Slug}>
+                {country2.Country}
+              </option>
+            ))}
+        </StyledSelectCountry>
+      </div>
+      <div>
+        <StyledSelectCountry value={country3} onChange={countryHandler3}>
+          <option>Select Country</option>
+
+          {covidSummary.Countries &&
+            covidSummary.Countries.map((country3) => (
+              <option key={country3.Slug} value={country3.Slug}>
+                {country3.Country}
               </option>
             ))}
         </StyledSelectCountry>
