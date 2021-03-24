@@ -66,7 +66,7 @@ class HomePage extends React.Component {
       {/*    <GroupGraph /> */}
       <Weather />
 
-    </div>
+    </div >
     )
   }
 };
