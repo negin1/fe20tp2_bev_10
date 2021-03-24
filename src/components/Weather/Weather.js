@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import { withFirebase } from '../Firebase'
 import { AuthUserContext } from '../Session'
@@ -25,9 +25,9 @@ const Weather = () => {
 
   const[error, setError]= useState()
 
-  const userID = useContext(AuthUserContext).uid
+  /* const userID = useContext(AuthUserContext).uid */
 
-  const favouriteCity = useContext(AuthUserContext).favoutriteCity
+  /* const favouriteCity = useContext(AuthUserContext).favoutiteCity */
 
   console.log(city)
 

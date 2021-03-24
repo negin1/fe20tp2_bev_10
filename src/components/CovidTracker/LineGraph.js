@@ -44,7 +44,13 @@ const LineGraph = (props) => {
             pointRadius: 1,
             pointHitRadius: 10,
             data: props.yAxis
-          }
+          },
+
+          
+
+
+         
+
         ]
       }} />
 

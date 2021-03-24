@@ -7,10 +7,10 @@ import PresetCovid from '../PresetCovid/Index'
 
 import { withAuthorization } from '../Session';
 import Cards from '../Covid/Cards';
-/* import Chart from '../Covid/Chart';
-import Country from '../Covid/Country';*/
-import fetchCovidData from '../../api';
-import { AuthUserContext } from '../Session';
+ import Chart from '../Covid/Chart';
+import Country from '../Covid/Country';
+/* import fetchCovidData from '../../api';
+import { AuthUserContext } from '../Session'; */
 
 class HomePage extends React.Component {
 
@@ -51,17 +51,17 @@ class HomePage extends React.Component {
       <h1>Home Page</h1>
 
       <br></br>
-  {/*  <Covid /> */}
+{/*    <Covid />  */}
       {/*this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
       {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />
       <PresetCovid order='3' country='mongolia' /> 
       <MultiCovid order='4' countries={['norway', 'sweden'] */}
-    {/*   <CovidTracker /> */}
-      {/*infected={false}} 
-        {/*  <Cards data={data} />
+     <CovidTracker /> 
+      {/*infected={false}} */}
+       <Cards data={data} />
       <Chart />
-      <Country /> */}
+      <Country /> 
 
       <Weather/>
 
