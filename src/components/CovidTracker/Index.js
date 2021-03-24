@@ -94,7 +94,7 @@ function CovidTracker({ firebase, infected = true }) {
     // countryObjArr: [{sweden: true}, {norway:true}]
     let countryObj = Object.assign(...countryObjArr)
     // desired: {sweden: true, norway: true}
-    firebase.user(userID).child('countries').update(countryObj)
+    firebase.user(userID).child('city').update(countryObj)
   }
 
   const removeCountry = (country) => {

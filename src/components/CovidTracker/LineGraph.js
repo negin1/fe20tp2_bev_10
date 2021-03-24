@@ -45,48 +45,12 @@ const LineGraph = (props) => {
             pointHitRadius: 10,
             data: props.yAxis
           },
-          {
-            label: props.country2 + ' total infected',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: '#b30000',
-            borderColor: '#b30000',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: '#b30000',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: props.yAxis
-          },
-          {
-            label: props.country3 + ' total infected',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: '#6600cc',
-            borderColor: '#6600cc',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: '#6600cc',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: props.yAxis
-          }
+
+
+
+
+
+
         ]
       }} />
 
