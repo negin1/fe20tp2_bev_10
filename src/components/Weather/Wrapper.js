@@ -18,7 +18,6 @@ const Wrapper = (props) => {
   return (
     <StyledDiv>
     {props.children}
-      
     </StyledDiv>
   )
 }

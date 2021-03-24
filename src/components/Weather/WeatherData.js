@@ -1,8 +1,15 @@
 import React, { useContext, useState } from 'react';
 //import { withFirebase } from '../Firebase'
 //import { AuthUserContext } from '../Session'
-
+import styled from 'styled-components'
 import Context from './Context'
+
+const WeatherDataContainer = styled.div`
+   text-align: center;
+  margin-top: 3rem;
+`
+
+
 
 const WeatherData = () => {
 
@@ -12,15 +19,19 @@ const WeatherData = () => {
 
 
 
-  const markFavourite = () => {
+  const markFavourite = (e) => {
+    e.preventDefault()
     {/*firebase.user(userID).child('city').update({city})*/ }
     let cityArr = [];
+
     cityArr.push(city)
     console.log(cityArr)
   }
 
+
+
   return (
-    <div className="weather-data">
+    <WeatherDataContainer>
       <p className="weather__tagline">Weather information for <span className="weather-data__city">{city}</span></p>
 
       <div className="weather-data__box">
@@ -38,9 +49,10 @@ const WeatherData = () => {
         </span>
 
       </div>
-      <button onClick={markFavourite}> Add {city} as favourite city</button>
-    </div>
+      <button onClick={markFavourite}> Add city as favourite</button>
+    </WeatherDataContainer>
   )
 }
 
 export default WeatherData;
+

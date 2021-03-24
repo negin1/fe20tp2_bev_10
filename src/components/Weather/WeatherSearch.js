@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+
 import Context from './Context';
 
 const WeatherSearch = () => {
 
   const { api_call } = useContext(Context)
+
 
   return (
     <div className="weather-search">
