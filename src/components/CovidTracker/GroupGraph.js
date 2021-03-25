@@ -1,5 +1,5 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import React from 'react'
+import { Line } from 'react-chartjs-2'
 
 /*
 (https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext)
@@ -81,17 +81,197 @@ const formatDate = (date) => {
   return `${year}-${month}-${_date}`
 }
 
+let swedenData = [
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 732070,
+    Status: 'confirmed',
+    Date: '2021-03-17T00:00:00Z',
+  },
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 738537,
+    Status: 'confirmed',
+    Date: '2021-03-18T00:00:00Z',
+  },
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 744272,
+    Status: 'confirmed',
+    Date: '2021-03-19T00:00:00Z',
+  },
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 744272,
+    Status: 'confirmed',
+    Date: '2021-03-20T00:00:00Z',
+  },
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 744272,
+    Status: 'confirmed',
+    Date: '2021-03-21T00:00:00Z',
+  },
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 744272,
+    Status: 'confirmed',
+    Date: '2021-03-22T00:00:00Z',
+  },
+  {
+    Country: 'Sweden',
+    CountryCode: 'SE',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.13',
+    Lon: '18.64',
+    Cases: 758335,
+    Status: 'confirmed',
+    Date: '2021-03-23T00:00:00Z',
+  },
+]
 
-let swedenData = [{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":732070,"Status":"confirmed","Date":"2021-03-17T00:00:00Z"},{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":738537,"Status":"confirmed","Date":"2021-03-18T00:00:00Z"},{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":744272,"Status":"confirmed","Date":"2021-03-19T00:00:00Z"},{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":744272,"Status":"confirmed","Date":"2021-03-20T00:00:00Z"},{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":744272,"Status":"confirmed","Date":"2021-03-21T00:00:00Z"},{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":744272,"Status":"confirmed","Date":"2021-03-22T00:00:00Z"},{"Country":"Sweden","CountryCode":"SE","Province":"","City":"","CityCode":"","Lat":"60.13","Lon":"18.64","Cases":758335,"Status":"confirmed","Date":"2021-03-23T00:00:00Z"}]
-
-let norwayData = [{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":83519,"Status":"confirmed","Date":"2021-03-17T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":84553,"Status":"confirmed","Date":"2021-03-18T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":85542,"Status":"confirmed","Date":"2021-03-19T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":86362,"Status":"confirmed","Date":"2021-03-20T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":86939,"Status":"confirmed","Date":"2021-03-21T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":88035,"Status":"confirmed","Date":"2021-03-22T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":89120,"Status":"confirmed","Date":"2021-03-23T00:00:00Z"},{"Country":"Norway","CountryCode":"NO","Province":"","City":"","CityCode":"","Lat":"60.47","Lon":"8.47","Cases":89120,"Status":"confirmed","Date":"2021-03-24T00:00:00Z"}]
+let norwayData = [
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 83519,
+    Status: 'confirmed',
+    Date: '2021-03-17T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 84553,
+    Status: 'confirmed',
+    Date: '2021-03-18T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 85542,
+    Status: 'confirmed',
+    Date: '2021-03-19T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 86362,
+    Status: 'confirmed',
+    Date: '2021-03-20T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 86939,
+    Status: 'confirmed',
+    Date: '2021-03-21T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 88035,
+    Status: 'confirmed',
+    Date: '2021-03-22T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 89120,
+    Status: 'confirmed',
+    Date: '2021-03-23T00:00:00Z',
+  },
+  {
+    Country: 'Norway',
+    CountryCode: 'NO',
+    Province: '',
+    City: '',
+    CityCode: '',
+    Lat: '60.47',
+    Lon: '8.47',
+    Cases: 89120,
+    Status: 'confirmed',
+    Date: '2021-03-24T00:00:00Z',
+  },
+]
 
 const swedenCases = swedenData.map((d) => d.Cases)
 const norwayCases = norwayData.map((d) => d.Cases)
 
-const dates = data.map(d => d.Date)
-
-
+const datesSweden = swedenData.map((d) => d.Date)
+const datesNorway = swedenData.map((d) => d.Date)
 /* 
 // write some functions, look at my code in route-trainer
 const countryArr = [...swedenData, ...norwayData]
@@ -100,23 +280,22 @@ const countryArr = [...swedenData, ...norwayData]
 let anewResult = [];
 for (let i = 0; i < countryArr.length; i++) {
     // "öva på nested destructuring"
-    let country = countryArr[i].data.country;
+   let Country = countryArr[i].data.country;
     let cases = countryArr[i].data.cases;
     let date = countryArr[i].data.date;
     
 
-    anewResult.push({ country: country, cases: cases, date: date});
+    anewResult.push({ country: Country, cases: cases, date: date});
 }
 
 let newResult = countryArr.map(({ data: { country, cases, date } }, index) => ({ country, cases, date, index }))
-console.log(newResult)
+console.log(newResult) */
 // first transformation functions end
 
 // write some functions, look at my code in route-trainer
-// the variables you need are 
- */
-const GroupGraph = (props) => {
+// the variables you need are
 
+const GroupGraph = (props) => {
   return (
     <div
       style={{
@@ -125,36 +304,34 @@ const GroupGraph = (props) => {
         margin: '40px auto',
       }}
     >
-
-      <Line data={{
-
-        labels: props.label.map(l => l.substring(0, 10)),
-        datasets: [
-          {
-            label: 'Total infected people per country',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: props.yAxis
-          },
-
-        ]
-      }} />
-
+      <Line
+        data={{
+          labels: datesSweden,
+          datasets: [
+            {
+              label: 'Infected Sweden',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: 'rgba(75,192,192,0.4)',
+              borderColor: 'rgba(75,192,192,1)',
+              borderCapStyle: 'butt',
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: 'rgba(75,192,192,1)',
+              pointBackgroundColor: '#fff',
+              pointBorderWidth: 1,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+              pointHoverBorderColor: 'rgba(220,220,220,1)',
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: swedenCases,
+            },
+          ],
+        }}
+      />
     </div>
   )
 }
