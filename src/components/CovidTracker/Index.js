@@ -39,7 +39,7 @@ const countryPresets = {
 }
 
 const ArrCountryPresets = Object.keys(countryPresets);
-console.log(ArrCountryPresets);
+//console.log(ArrCountryPresets);
 
 // event.target.value (='Asia')
 // countryPresets[event.target.value] --> ['China', 'Taiwan']
@@ -60,7 +60,7 @@ function CovidTracker({ firebase, infected = true }) {
 
   const userID = useContext(AuthUserContext).uid;
   const countries = useContext(AuthUserContext).countries
-  console.log(countries)
+  //console.log(countries)
   //console.log(userID)
 
   //ComponentDidMount
@@ -78,10 +78,10 @@ function CovidTracker({ firebase, infected = true }) {
           setCovidSummary(res.data)
         }
 
-        console.log(res)
+        //console.log(res)
       })
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }, [])
 
@@ -113,7 +113,7 @@ function CovidTracker({ firebase, infected = true }) {
     let arrRegionCountries = countryPresets[e.target.value]
     setRegion(arrRegionCountries)
     saveCountries(arrRegionCountries)
-    console.log(arrRegionCountries)
+    //console.log(arrRegionCountries)
 
   }
 
@@ -146,7 +146,7 @@ function CovidTracker({ firebase, infected = true }) {
       `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.filter(item => item.Province === '');
         data = data.slice(0, data.length - 1);
 
@@ -154,7 +154,7 @@ function CovidTracker({ firebase, infected = true }) {
         //const xAxisLabel = res.data.map(d => d.Date)
         const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
         // begin krilles specialkod
-        console.log(data)
+        //console.log(data)
         const yAxisCoronaCount = data.map((d) => d.Cases)
         const xAxisLabel = data.map(d => d.Date)
 
@@ -168,7 +168,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
 
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }
 
@@ -177,7 +177,7 @@ function CovidTracker({ firebase, infected = true }) {
       `/country/${countrySlug}/status/deaths?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.filter(item => item.Province === '');
         data = data.slice(0, data.length - 1);
         const yAxisDeathCount = data.map((d) => d.Cases)
@@ -191,7 +191,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
 
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }
 
@@ -200,7 +200,7 @@ function CovidTracker({ firebase, infected = true }) {
       `/country/${countrySlug}/status/recovered?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.filter(item => item.Province === '');
         data = data.slice(0, data.length - 1);
         const yAxisRecoveredCount = data.map((d) => d.Cases)
@@ -214,7 +214,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
 
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }
 

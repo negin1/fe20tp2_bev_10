@@ -29,7 +29,7 @@ const Weather = () => {
 
   /* const favouriteCity = useContext(AuthUserContext).favoutiteCity */
 
-  console.log(city)
+  //console.log(city)
 
   const api_call = async (e) => {
 
@@ -58,7 +58,7 @@ const Weather = () => {
     setError(null)
   }
 
-  console.log(weather)
+  //console.log(weather)
 
 
 
