@@ -2,7 +2,7 @@ import React from 'react';
 import Covid from '../Covid/Covid'
 import CovidTracker from '../CovidTracker/Index'
 import Weather from '../Weather/index'
-/* import GroupGraph from '../CovidTracker/GroupGraph' */
+import GroupGraph from '../CovidTracker/GroupGraph'
 
 import PresetCovid from '../PresetCovid/Index'
 
@@ -63,7 +63,7 @@ class HomePage extends React.Component {
       <Cards data={data} />
       <Chart />
       <Country />
-      {/*    <GroupGraph /> */}
+      <GroupGraph />
       <Weather />
 
     </div >
