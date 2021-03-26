@@ -1,7 +1,7 @@
 import React from 'react';
 import Covid from '../Covid/Covid'
 import CovidTracker from '../CovidTracker/Index'
-import Weather from '../Weather/index'
+
 import GroupGraph from '../CovidTracker/GroupGraph'
 
 import PresetCovid from '../PresetCovid/Index'
@@ -10,6 +10,10 @@ import { withAuthorization } from '../Session';
 import Cards from '../Covid/Cards';
  import Chart from '../Covid/Chart';
 import Country from '../Covid/Country';
+
+import Weather from '../Weather/index';
+
+
 /* import fetchCovidData from '../../api';
 import { AuthUserContext } from '../Session'; */
 
@@ -65,6 +69,7 @@ class HomePage extends React.Component {
       <Country /> 
        <GroupGraph />  
       <Weather/>
+      
 
     </div>
     )

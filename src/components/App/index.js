@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import GlobalStyle from '../Styles/globalStyle'
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -14,8 +15,10 @@ import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
 const App = () => (
+  
   <Router>
     <div>
+    <GlobalStyle/>
       <Navigation />
 
       <hr />
