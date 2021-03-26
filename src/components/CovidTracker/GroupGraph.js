@@ -272,25 +272,26 @@ const norwayCases = norwayData.map((d) => d.Cases)
 
 const datesSweden = swedenData.map((d) => d.Date)
 const datesNorway = swedenData.map((d) => d.Date)
-/* 
+
 // write some functions, look at my code in route-trainer
 const countryArr = [...swedenData, ...norwayData]
-
+/*
 // the variables you need are 
 let anewResult = [];
 for (let i = 0; i < countryArr.length; i++) {
-    // "öva på nested destructuring"
-   let Country = countryArr[i].data.country;
-    let cases = countryArr[i].data.cases;
-    let date = countryArr[i].data.date;
-    
+  // "öva på nested destructuring"
+  let Country = countryArr[i].data.country;
+  let cases = countryArr[i].data.cases;
+  let date = countryArr[i].data.date;
 
-    anewResult.push({ country: Country, cases: cases, date: date});
+
+  anewResult.push({ country: Country, cases: cases, date: date });
 }
 
 let newResult = countryArr.map(({ data: { country, cases, date } }, index) => ({ country, cases, date, index }))
-console.log(newResult) */
+console.log(newResult) * /
 // first transformation functions end
+*/
 
 // write some functions, look at my code in route-trainer
 // the variables you need are
@@ -328,7 +329,7 @@ const GroupGraph = (props) => {
               pointRadius: 1,
               pointHitRadius: 10,
               data: swedenCases,
-            },             {
+            }, {
               label: 'Infected Sweden',
               fill: false,
               lineTension: 0.1,
@@ -348,15 +349,15 @@ const GroupGraph = (props) => {
               pointRadius: 1,
               pointHitRadius: 10,
               data: norwayCases,
-            }, 
-            
-            
-           
+            },
 
 
 
-            
-            
+
+
+
+
+
           ],
         }}
       />

@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     background: #eee;
   }
 
+
 `;
  
-export default GlobalStyle;
+export default GlobalStyle

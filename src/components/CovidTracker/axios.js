@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: `https://api.covid19api.com/`
+  baseURL: `https://api.covid19api.com/`
 })
 
 
-   
-const options = {
+
+{/*const options = {
   method: 'GET',
   url: 'https://world-population.p.rapidapi.com/population',
   params: {country_name: 'Sweden'},
@@ -22,10 +22,10 @@ axios.request(options).then(function (response) {
 
 .catch(function (error) {
 	console.error(error);
-});
- 
+});*/}
+
 export default axiosInstance;
 
 
-  
-   
+
+

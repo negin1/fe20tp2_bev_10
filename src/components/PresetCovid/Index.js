@@ -35,7 +35,7 @@ const countryPresets = {
 }
 
 const ArrCountryPresets = Object.keys(countryPresets);
-console.log(ArrCountryPresets);
+//console.log(ArrCountryPresets);
 
 // event.target.value (='Asia')
 // countryPresets[event.target.value] --> ['China', 'Taiwan']

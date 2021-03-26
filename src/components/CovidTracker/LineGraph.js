@@ -46,10 +46,10 @@ const LineGraph = (props) => {
             data: props.yAxis
           },
 
-          
 
 
-         
+
+
 
         ]
       }} />
