@@ -32,7 +32,7 @@ const Footer = (props) => {
                 <p><a href="https://github.com/negin1/fe20tp2_bev_10">→ View project code @GitHub</a></p>
                 <p><a href="https://trello.com/b/NEYYR2eC/group-ten">→ View agile project process @Trello</a></p>
                 <p>Alexander Alazar</p>
-                <p><a href="http://annap.surge.sh/" >Anna Pettersson</a></p>
+                <p><a href="http://annap.surge.sh/">Anna Pettersson</a></p>
                 <p>Ivan Olowo</p>
                 <p>Negin Jalalian</p>
             </div>
