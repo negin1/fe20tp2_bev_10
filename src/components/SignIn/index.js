@@ -6,14 +6,64 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import styled from 'styled-components'
+
+const StyledContainer= styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  padding-top:130px;
+`
+const StyledH1= styled.h1`
+ padding-bottom:40px;
+  font-family: Montserrat;
+    text-align: center;
+ `;
+
+const StyledH2= styled.h2`
+  font-size:18px;
+  font-family: Montserrat;
+  padding-bottom:18px
+ ` ;
+
+const FormGroup= styled.div`
+  display: block;
+	width: 300px;
+  justify-content: center;
+  padding: 50px 50px;
+  border-radius: 30px;
+  background: white; 
+
+`;
+
+const Input = styled.input`
+  padding: 1em;
+  margin: 1em;
+  border: .5px solid gray;
+  border-radius: 10px;
+`;
+
+const StyledBbutton = styled.button`
+display: block;
+  padding: 0.5em;
+  margin:  0 auto;
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+`;
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
+ 
+  <StyledContainer>
+   
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
-  </div>
+ </StyledContainer>
 );
 
 const INITIAL_STATE = {
@@ -55,27 +105,37 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
+      <> 
+       <FormGroup>
+        <StyledH1>Sign in</StyledH1>
+       <StyledH2>Enter your full name and email </StyledH2>
       <form onSubmit={this.onSubmit}>
-        <input
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Input
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+       
+        
 
         {error && <p>{error.message}</p>}
       </form>
+
+       <StyledBbutton disabled={isInvalid} type="submit">
+          Sign In
+        </StyledBbutton>
+      
+      </FormGroup>
+</>
     );
   }
 }
@@ -86,5 +146,6 @@ const SignInForm = compose(
 )(SignInFormBase);
 
 export default SignInPage;
+
 
 export { SignInForm };
