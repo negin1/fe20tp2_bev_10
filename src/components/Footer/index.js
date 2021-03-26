@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
     }
 
   > div {
-      padding: 11em 4em 0em 4em;  
+      padding: 12em 4em 0em 4em;  
       display: flex; 
       flex-wrap: nowrap;
       justify-content: left; 
