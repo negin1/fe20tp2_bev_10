@@ -17,6 +17,8 @@ const StyledContainer= styled.div`
 `
 const StyledH1= styled.h1`
  padding-bottom:40px;
+  font-family: Montserrat;
+    text-align: center;
  `;
 
 const StyledH2= styled.h2`
@@ -57,7 +59,7 @@ display: block;
 const SignInPage = () => (
  
   <StyledContainer>
-    <StyledH1>Sign in</StyledH1>
+   
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
@@ -105,6 +107,7 @@ class SignInFormBase extends Component {
     return (
       <> 
        <FormGroup>
+        <StyledH1>Sign in</StyledH1>
        <StyledH2>Enter your full name and email </StyledH2>
       <form onSubmit={this.onSubmit}>
         <Input
@@ -121,13 +124,15 @@ class SignInFormBase extends Component {
           type="password"
           placeholder="Password"
         />
-        <StyledBbutton disabled={isInvalid} type="submit">
-          Sign In
-        </StyledBbutton>
+       
         
 
         {error && <p>{error.message}</p>}
       </form>
+
+       <StyledBbutton disabled={isInvalid} type="submit">
+          Sign In
+        </StyledBbutton>
       
       </FormGroup>
 </>

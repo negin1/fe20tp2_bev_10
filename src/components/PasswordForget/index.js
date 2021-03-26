@@ -13,12 +13,16 @@ const StyledContainer= styled.div`
   padding-top:130px
 `
 const StyledH1= styled.h1`
- padding-bottom:40px;
+padding-bottom:15px;
+  font-family: Montserrat;
+  text-align: center;
+
  `;
 const StyledH2= styled.h2`
-  font-size:20px;
-  padding-bottom: 15px;
+  font-size:18px;
   font-family: Montserrat;
+    text-align: center;
+  padding-bottom:18px
 
  `;
 
@@ -31,11 +35,10 @@ const StyledH2= styled.h2`
   border: none;
   border-radius: 20px;
   width: 120px;
-  height: 40px;;
+  height: 40px;
 `;
 
 const FormGroup= styled.div`
-  
 	width: 300px;
   justify-content: center;
   padding: 50px 50px;
@@ -45,29 +48,22 @@ const FormGroup= styled.div`
 
 const Input = styled.input`
   padding: 1em;
-  margin: 1em;
   border: .5px solid gray;
   border-radius: 10px;
 `;
+
 const StyledLink= styled(Link)`
-   color: black;
+  color: black;
   font-weight: bold;
   font-size: 18px;
-  margin-top: 20px /* FUNKAR INTE  */
-  
-  
 
-  
 `;
+
+
 const PasswordForgetPage = () => (
-
-
-    <StyledContainer>
-    <StyledH1>Password Forget</StyledH1>
-   
+    <StyledContainer>   
     <PasswordForgetForm />
   </StyledContainer>
-
 );
 
 const INITIAL_STATE = {
@@ -109,7 +105,8 @@ class PasswordForgetFormBase extends Component {
     return (
          <> 
        <FormGroup>
-       <StyledH2>Enter your email </StyledH2>
+           <StyledH1>Reset your password </StyledH1>
+       <StyledH2> Please enter your email adress bellow and we will send you a new password. </StyledH2>
       <form onSubmit={this.onSubmit}>
         <Input
           name="email"

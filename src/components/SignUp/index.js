@@ -15,9 +15,16 @@ const StyledContainer= styled.div`
   justify-content: center;
   padding-top:130px;
 `
+
+const StyledH1= styled.h1`
+ padding-bottom:15px;
+  font-family: Montserrat;
+  text-align: center;
+ `;
 const StyledH2= styled.h2`
   font-size:18px;
   font-family: Montserrat;
+    text-align: center;
   padding-bottom:18px
  ` ;
 const FormGroup= styled.div`
@@ -39,13 +46,14 @@ const StyledLink= styled(Link)`
 const Input = styled.input`
   padding: 0.5em;
   margin: 1em;
-
   border: .5px solid gray;
   border-radius: 10px;
 `;
 
 const Label = styled.label`
   display:block;
+  margin-top:5px;
+  margin-left: 15px;
 
 `; 
 
@@ -66,7 +74,7 @@ display: block;
 
 const SignUpPage = () => (
    <StyledContainer>
-    <h1>SignUp</h1>
+  
     <SignUpForm />
   </StyledContainer>
 );
@@ -147,7 +155,8 @@ class SignUpFormBase extends Component {
 
     return (
        <FormGroup>
-       <StyledH2>Please enter your details bellow</StyledH2>
+         <StyledH1>SignUp</StyledH1>
+       <StyledH2>Please enter your details bellow.</StyledH2>
       
       <form onSubmit={this.onSubmit}>
         <Input
