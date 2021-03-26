@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import GlobalStyle from '../Styles/globalStyle'
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -17,12 +18,13 @@ import { withAuthentication } from '../Session';
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+{/*const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #eeeeee;
   }
-`
+`;*/}
+
 const StyledDiv = styled.div`
  min-height: 100vh;
  position: relative; 
@@ -39,6 +41,7 @@ const StyledDiv2 = styled.div`
 `;
 
 const App = () => (
+
   <Router>
     <GlobalStyle />
     <StyledDiv>
