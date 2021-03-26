@@ -9,24 +9,38 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
-import styled from 'styled-components'
 import Footer from '../Footer';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
+import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+
+  body {
+    background-color: #eeeeee;
+  }
+`
 const StyledDiv = styled.div`
  min-height: 100vh;
  position: relative; 
 `;
 
 const StyledDiv2 = styled.div`
- padding-bottom: 18rem;
+ padding-bottom: 22rem;
  padding-top: 2rem; 
+
+ @media (max-width: 400px) {
+    padding-bottom: 24rem;
+    padding-top: 2rem;
+    }
 `;
 
 const App = () => (
   <Router>
+    <GlobalStyle />
     <StyledDiv>
       <Navigation />
       <hr />
