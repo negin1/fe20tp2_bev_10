@@ -1,5 +1,7 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
+import styled from 'styled-components'
+import StyledLineGraph from '../Styles/StyledLineGraph';
 
 /*
 (https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext)
@@ -298,13 +300,7 @@ console.log(newResult) * /
 
 const GroupGraph = (props) => {
   return (
-    <div
-      style={{
-        width: '600px',
-        height: 'auto',
-        margin: '40px auto',
-      }}
-    >
+    <StyledLineGraph>
       <Line
         data={{
           labels: datesSweden,
@@ -330,7 +326,7 @@ const GroupGraph = (props) => {
               pointHitRadius: 10,
               data: swedenCases,
             }, {
-              label: 'Infected Sweden',
+              label: 'Infected Norway',
               fill: false,
               lineTension: 0.1,
               backgroundColor: 'rgba(75,192,192,0.4)',
@@ -350,18 +346,10 @@ const GroupGraph = (props) => {
               pointHitRadius: 10,
               data: norwayCases,
             },
-
-
-
-
-
-
-
-
           ],
         }}
       />
-    </div>
+    </StyledLineGraph>
   )
 }
 

@@ -10,6 +10,10 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import Dashboard from '../Dashboard';
+import Settings from '../Settings';
+
+import BottomNav from '../BottomNav';
 import Footer from '../Footer';
 
 import * as ROUTES from '../../constants/routes';
@@ -34,7 +38,12 @@ const StyledDiv2 = styled.div`
  padding-bottom: 22rem;
  padding-top: 2rem; 
 
- @media (max-width: 400px) {
+ @media (max-width: 1000px) {
+        height: 18rem;
+        padding-top: 4rem;
+    }
+
+ @media (max-width: 520px) {
     padding-bottom: 24rem;
     padding-top: 2rem;
     }
@@ -43,7 +52,6 @@ const StyledDiv2 = styled.div`
 const App = () => (
 
   <Router>
-    <GlobalStyle />
     <StyledDiv>
       <Navigation />
       <hr />
@@ -58,6 +66,9 @@ const App = () => (
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+      <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+      <Route exact path={ROUTES.SETTINGS} component={Settings} />
+      <BottomNav />
       <StyledDiv2>
         <Footer />
       </StyledDiv2>

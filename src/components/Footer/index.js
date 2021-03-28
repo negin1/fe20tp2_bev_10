@@ -13,7 +13,11 @@ const StyledDiv = styled.div`
   background-image: url(${bg_img});
   background-size: cover;
   background-repeat: no-repeat;
-   @media (max-width: 400px) {
+
+  @media (max-width: 1000px) {
+        height: 18rem;
+    }
+   @media (max-width: 520px) {
         height: 24rem;
     }
 
