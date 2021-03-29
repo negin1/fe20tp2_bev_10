@@ -62,14 +62,14 @@ function CovidTracker({ firebase, infected = true }) {
   const countries = useContext(AuthUserContext).countries
   //console.log(countries)
   //console.log(userID)
-  
+
   useEffect(() => {
     let dataObj = { coronaCountAr, deathCountAr, recoveredCountAr, label }
     let tempArr = [...groupData];
     tempArr.push(dataObj)
     setGroupData(tempArr)
   }, [label])
-  
+
   //ComponentDidMount
   useEffect(() => {
     //setLoading(true);
@@ -231,12 +231,6 @@ function CovidTracker({ firebase, infected = true }) {
 
   return (
     <StyledDiv>
-      <CovidSummary
-        totalConfirmed={totalConfirmed}
-        totalRecovered={totalRecovered}
-        totalDeaths={totalDeaths}
-        country={country}
-      />
       {/*<div>
         <StyledSelectData>
           <option>Select Data</option>
@@ -244,7 +238,7 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='Deaths'>Total Deaths</option>
           <option value='Recovered'>total Recovered</option>
         </StyledSelectData>
-      </div>*/}
+      </div>
       <div>
         <StyledSelectCountry value={region} onChange={regionHandler}>
           <option>Select Region</option>
@@ -254,7 +248,7 @@ function CovidTracker({ firebase, infected = true }) {
             </option>
           ))}
         </StyledSelectCountry>
-      </div>
+      </div>*/}
       <div>
         <StyledSelectCountry value={country} onChange={countryHandler}>
           <option>Select Country</option>
@@ -275,6 +269,13 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='365'>Last 365 days</option>
         </StyledSelectDays>
       </div>
+
+      <CovidSummary
+        totalConfirmed={totalConfirmed}
+        totalRecovered={totalRecovered}
+        totalDeaths={totalDeaths}
+        country={country}
+      />
 
       {infected && <LineGraph
         yAxis={coronaCountAr}

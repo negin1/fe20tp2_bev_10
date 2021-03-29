@@ -8,10 +8,10 @@ import GroupGraph from '../CovidTracker/GroupGraph'
 import PresetCovid from '../PresetCovid/Index'
 
 import { withAuthorization } from '../Session';
+import { StyledPageIntro } from '../Styles/StyledPageIntro';
 import Cards from '../Covid/Cards';
 import Chart from '../Covid/Chart';
 import Country from '../Covid/Country';
-import Footer from '../Footer';
 
 
 /* import fetchCovidData from '../../api';
@@ -56,7 +56,10 @@ class HomePage extends React.Component {
 
     return (
       <div>
-        <h1>Explore data</h1>
+        <StyledPageIntro>
+          <h2>Discover</h2>
+          <p>Select your graphs and data.</p>
+        </StyledPageIntro>
         {/*this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
         {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />

@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #eeeeee;
     margin: 0;
     padding: 0px;
+    font-family: 'Montserrat', sans-serif;
 
     &:focus {
       outline: none;

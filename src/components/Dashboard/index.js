@@ -1,9 +1,11 @@
+import { StyledPageIntro } from '../Styles/StyledPageIntro';
 
 const Dashboard = () => {
     return (
-        <div>
-            <h1>Dashboard</h1>
-        </div>
+        <StyledPageIntro>
+            <h2>My dashboard</h2>
+            <p>You haven't made any selections yet. Click on "Discover" to explore data and select graphs.</p>
+        </StyledPageIntro>
     )
 }
 

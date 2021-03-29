@@ -1,9 +1,11 @@
+import { StyledPageIntro } from '../Styles/StyledPageIntro';
 
 const Settings = () => {
     return (
-        <div>
-            <h1>Settings</h1>
-        </div>
+        <StyledPageIntro>
+            <h2>My settings</h2>
+            <p>Select a theme of your app.</p>
+        </StyledPageIntro>
     )
 }
 
