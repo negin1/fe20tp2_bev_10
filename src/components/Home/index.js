@@ -1,6 +1,7 @@
 import React from 'react';
 import Covid from '../Covid/Covid'
 import CovidTracker from '../CovidTracker/Index'
+import BottomNav from '../BottomNav';
 
 import GroupGraph from '../CovidTracker/GroupGraph'
 
@@ -55,7 +56,7 @@ class HomePage extends React.Component {
 
     return (
       <div>
-        <h1>Home Page</h1>
+        <h1>Explore data</h1>
         {/*this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
         {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />
@@ -67,6 +68,7 @@ class HomePage extends React.Component {
         <Cards data={data} />
         <Chart />
         <Country />*/}
+        <BottomNav />
         <Footer />
       </div>
     )

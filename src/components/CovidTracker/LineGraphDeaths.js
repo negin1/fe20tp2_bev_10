@@ -1,16 +1,18 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import styled from 'styled-components'
+import StyledLineGraph from '../Styles/StyledLineGraph';
+
+const StyledDiv = styled.div`
+max-width: 600px,
+min-width: 300px; 
+height: auto,
+margin: 40px auto,
+`;
 
 const LineGraphDeaths = (props) => {
     return (
-        <div
-            style={{
-                width: '600px',
-                height: 'auto',
-                margin: '20px auto',
-            }}
-        >
-
+        <StyledLineGraph>
             <Line data={{
 
                 labels: props.label.map(l => l.substring(0, 10)),
@@ -39,8 +41,7 @@ const LineGraphDeaths = (props) => {
                     }
                 ]
             }} />
-
-        </div>
+        </StyledLineGraph>
     )
 }
 
