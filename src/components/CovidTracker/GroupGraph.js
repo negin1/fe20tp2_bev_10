@@ -330,7 +330,7 @@ const GroupGraph = (props) => {
               pointHitRadius: 10,
               data: swedenCases,
             }, {
-              label: 'Infected Sweden',
+              label: 'Infected Norway',
               fill: false,
               lineTension: 0.1,
               backgroundColor: 'rgba(75,192,192,0.4)',

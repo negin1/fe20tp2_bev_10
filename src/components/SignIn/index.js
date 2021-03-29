@@ -125,14 +125,14 @@ class SignInFormBase extends Component {
           placeholder="Password"
         />
        
-        
+       <StyledBbutton disabled={isInvalid} type="submit">
+          Sign In
+        </StyledBbutton>
 
         {error && <p>{error.message}</p>}
       </form>
 
-       <StyledBbutton disabled={isInvalid} type="submit">
-          Sign In
-        </StyledBbutton>
+       
       
       </FormGroup>
 </>

@@ -19,4 +19,4 @@ axios.request(options).then(function (response) {
 });
 
 
-export default fetchCovidData;
+export default fetchCovidData;c
