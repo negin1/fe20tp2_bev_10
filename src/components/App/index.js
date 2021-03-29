@@ -10,6 +10,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import Header from '../Header/'
 import Footer from '../Footer';
 
 import * as ROUTES from '../../constants/routes';
@@ -45,6 +46,7 @@ const App = () => (
   <Router>
     <GlobalStyle />
     <StyledDiv>
+    <Header  />
       <Navigation />
       <hr />
       <Route exact path={ROUTES.LANDING} component={LandingPage} />

@@ -38,7 +38,8 @@ const StyledDiv = styled.div`
     a {
         color: white; 
         text-decoration: none; 
-    } 
+    }
+  } 
   `;
 
 const StyledDiv2 = styled.div`
