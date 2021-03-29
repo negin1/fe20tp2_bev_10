@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledPageIntro = styled.div`
-width: 75%;
+width: 65%;
 padding-top: 2em;
 text-align: center;
 margin-left: auto;
