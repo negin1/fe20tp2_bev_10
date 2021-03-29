@@ -19,7 +19,7 @@ const LineGraphDeaths = (props) => {
                 datasets: [
                     {
 
-                        label: 'Total deaths per country',
+                        label: 'Total deaths',
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',

@@ -21,7 +21,7 @@ const LineGraph = (props) => {
         datasets: [
           {
 
-            label: 'Total infected people per country',
+            label: 'Total infected',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',

@@ -7,8 +7,8 @@ import styled from 'styled-components'
 import NumberFormat from 'react-number-format'
 
 const StyledDiv = styled.div`
-padding-top: 1em; 
-padding-bottom: 3em; 
+padding-top: 2em; 
+padding-bottom: 2em; 
 
 h4 {
   padding-bottom: 1em; 
@@ -69,7 +69,7 @@ const CovidSummary = (props) => {
             <CardContent>
               <Cards>
                 <Typography color='secondary' gutterBottom>
-                  Total recovered
+                  Total deaths
                 </Typography>
                 <Typography varant='h5'></Typography>
 

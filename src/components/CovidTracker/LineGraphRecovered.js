@@ -20,7 +20,7 @@ const LineGraphRecovered = (props) => {
                 datasets: [
                     {
 
-                        label: 'Total recoveries per country',
+                        label: 'Total recoveries',
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',
