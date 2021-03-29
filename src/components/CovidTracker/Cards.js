@@ -5,8 +5,8 @@ const StyledDiv = styled.div`
   background: #fff;
   box-sizing: border-box;
   box-sizing: 0 0 10px 0 #eee;
-  width: 230px;
-  height: 130px;
+  max-width: 140px;
+  height: 80px;
 `
 
 const Cards = (props) => {

@@ -47,8 +47,8 @@ class HomePage extends React.Component {
 
   componentWillUnmount() {
     if (this.props.firebase.auth.currentUser) {
-    this.props.firebase.user(this.props.firebase.auth.currentUser.uid).child('city').off();
-  }
+      this.props.firebase.user(this.props.firebase.auth.currentUser.uid).child('city').off();
+    }
   }
 
   render() {
@@ -68,8 +68,6 @@ class HomePage extends React.Component {
         <Cards data={data} />
         <Chart />
         <Country />*/}
-        <BottomNav />
-        <Footer />
       </div>
     )
   }
