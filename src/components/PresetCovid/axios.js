@@ -1,15 +1,12 @@
-import React from 'react';
 import axios from 'axios';
-import { useState} from 'react'; 
-import WorlPopulation from './WorlPopulation';
 
-function index() {
-  
-/*    
+const axiosInstance = axios.create({
+  baseURL: `https://api.covid19api.com/`
+})
 
-  
-   
-const options = {
+
+
+{/*const options = {
   method: 'GET',
   url: 'https://world-population.p.rapidapi.com/population',
   params: {country_name: 'Spain'},
@@ -25,16 +22,10 @@ axios.request(options).then(function (response) {
 
 .catch(function (error) {
 	console.error(error);
-});
-      return (
-        <div>
-        <h1>select Country</h1>
-        <WorlPopulation />
-        </div>
-      )
-    } */
+}); */}
 
-export default index
+export default axiosInstance;
 
 
- 
+
+

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import StyledLineGraph from '../Styles/StyledLineGraph';
 /*
 
 {dates: ['2021-03-10', '2021-03-11'],
@@ -9,12 +8,17 @@ data: [
   {'Norway Infected': [300, 400]}
 ]}
 */
-
-
 const LineGraph = (props) => {
 
   return (
-    <StyledLineGraph>
+    <div
+      style={{
+        width: '600px',
+        height: 'auto',
+        margin: '40px auto',
+      }}
+    >
+
       <Line data={{
 
         labels: props.label.map(l => l.substring(0, 10)),
@@ -40,11 +44,11 @@ const LineGraph = (props) => {
             pointRadius: 1,
             pointHitRadius: 10,
             data: props.yAxis
-          },
+          }
         ]
       }} />
 
-    </StyledLineGraph>
+    </div>
   )
 }
 

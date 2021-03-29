@@ -4,12 +4,79 @@ import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import styled from 'styled-components'
+//import { Happy } from '../Styles/globalStyle';
+
+
+const StyledContainer= styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  padding-top:130px;
+`
+
+const StyledH1= styled.h1`
+ padding-bottom:15px;
+  font-family: Montserrat;
+  text-align: center;
+ `;
+const StyledH2= styled.h2`
+  font-size:18px;
+  font-family: Montserrat;
+    text-align: center;
+  padding-bottom:18px
+ ` ;
+const FormGroup= styled.div`
+  display: block;
+	width: 300px;
+  justify-content: center;
+  padding: 50px 50px;
+  border-radius: 30px;
+  background: white;
+
+`;
+const StyledLink= styled(Link)`
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+ 
+`;
+
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 1em;
+  border: .5px solid gray;
+  border-radius: 10px;
+`;
+
+const Label = styled.label`
+  display:block;
+  margin-top:5px;
+  margin-left: 15px;
+
+`; 
+
+
+
+
+const StyledBbutton = styled.button`
+display: block;
+  padding: 0.5em;
+  margin:  0 auto;
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+`;
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+   <StyledContainer>
+  
     <SignUpForm />
-  </div>
+  </StyledContainer>
 );
 
 const INITIAL_STATE = {
@@ -87,36 +154,40 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
+       <FormGroup>
+         <StyledH1>SignUp</StyledH1>
+       <StyledH2>Please enter your details bellow.</StyledH2>
+      
       <form onSubmit={this.onSubmit}>
-        <input
+        <Input
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <label>
+        <Label>
           Admin:
           <input
             name="isAdmin"
@@ -124,21 +195,22 @@ class SignUpFormBase extends Component {
             checked={isAdmin}
             onChange={this.onChangeCheckbox}
           />
-        </label>
-        <button disabled={isInvalid} type="submit">
+        </Label>
+    <StyledBbutton disabled={isInvalid} type="submit">
           Sign Up
-        </button>
+        </StyledBbutton> 
 
         {error && <p>{error.message}</p>}
       </form>
+      </FormGroup>
     );
   }
 }
 
 const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
+  
+    <StyledLink to={ROUTES.SIGN_UP}>Create a new account? </StyledLink>
+
 );
 
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));
