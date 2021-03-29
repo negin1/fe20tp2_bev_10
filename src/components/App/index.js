@@ -11,6 +11,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import Dashboard from '../Dashboard';
 import Settings from '../Settings';
+import BottomNav from '../BottomNav';
 
 
 import Header from '../Header/'
@@ -75,6 +76,7 @@ const App = () => (
           <Footer />
         </StyledDiv2>
       </StyledDiv>
+      <BottomNav />
     </Router>
   </>
 );
