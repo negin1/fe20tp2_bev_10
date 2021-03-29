@@ -8,26 +8,26 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import styled from 'styled-components'
 
-const StyledContainer= styled.div`
+const StyledContainer = styled.div`
   display:flex;
   flex-direction:column;
   align-items: center;
   justify-content: center;
   padding-top:130px;
 `
-const StyledH1= styled.h1`
+const StyledH1 = styled.h1`
  padding-bottom:40px;
   font-family: Montserrat;
     text-align: center;
  `;
 
-const StyledH2= styled.h2`
+const StyledH2 = styled.h2`
   font-size:18px;
   font-family: Montserrat;
   padding-bottom:18px
  ` ;
 
-const FormGroup= styled.div`
+const FormGroup = styled.div`
   display: block;
 	width: 300px;
   justify-content: center;
@@ -57,13 +57,13 @@ display: block;
 `;
 
 const SignInPage = () => (
- 
+
   <StyledContainer>
-   
+
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
- </StyledContainer>
+  </StyledContainer>
 );
 
 const INITIAL_STATE = {
@@ -105,37 +105,38 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
-      <> 
-       <FormGroup>
-        <StyledH1>Sign in</StyledH1>
-       <StyledH2>Enter your full name and email </StyledH2>
-      <form onSubmit={this.onSubmit}>
-        <Input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <Input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-       
-        
+      <>
+        <FormGroup>
+          <StyledH1>Sign in</StyledH1>
+          <StyledH2>Enter your full name and email </StyledH2>
+          <form onSubmit={this.onSubmit}>
+            <Input
+              name="email"
+              value={email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email Address"
+            />
+            <Input
+              name="password"
+              value={password}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Password"
+            />
 
-        {error && <p>{error.message}</p>}
-      </form>
 
-       <StyledBbutton disabled={isInvalid} type="submit">
-          Sign In
+
+            {error && <p>{error.message}</p>}
+            <StyledBbutton disabled={isInvalid} type="submit">
+              Sign In
         </StyledBbutton>
-      
-      </FormGroup>
-</>
+          </form>
+
+
+
+        </FormGroup>
+      </>
     );
   }
 }

@@ -12,7 +12,7 @@ import AdminPage from '../Admin';
 import Dashboard from '../Dashboard';
 import Settings from '../Settings';
 
-import BottomNav from '../BottomNav';
+
 import Footer from '../Footer';
 
 import * as ROUTES from '../../constants/routes';
@@ -69,7 +69,7 @@ const App = () => (
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
         <Route exact path={ROUTES.SETTINGS} component={Settings} />
-        <BottomNav />
+
         <StyledDiv2>
           <Footer />
         </StyledDiv2>

@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
       flex-wrap: nowrap;
       justify-content: left; 
 
- @media (max-width: 1400px) {
+        @media (max-width: 1400px) {
         flex-wrap: wrap-reverse;
         padding: 10em 3em 2em 3em;
     }
@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
         padding: 8em 3em 2em 3em;
     }
 
-     @media (max-width: 700px) {
+        @media (max-width: 700px) {
         flex-wrap: wrap-reverse;
         padding: 6em 3em 2em 3em;
     }

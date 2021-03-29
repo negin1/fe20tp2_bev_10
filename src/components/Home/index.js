@@ -1,6 +1,7 @@
 import React from 'react';
 import Covid from '../Covid/Covid'
 import CovidTracker from '../CovidTracker/Index'
+import BottomNav from '../BottomNav';
 
 import GroupGraph from '../CovidTracker/GroupGraph'
 
@@ -65,6 +66,7 @@ class HomePage extends React.Component {
         <Cards data={data} />
         <Chart />
         <Country />*/}
+        <BottomNav />
         <Footer />
       </div>
     )
