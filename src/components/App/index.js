@@ -42,7 +42,7 @@ const StyledDiv2 = styled.div`
 `;
 
 const App = () => (
-
+  <>
   <Router>
     <GlobalStyle />
     <StyledDiv>
@@ -65,6 +65,7 @@ const App = () => (
       </StyledDiv2>
     </StyledDiv>
   </Router>
+  </>
 );
 
 export default withAuthentication(App);
