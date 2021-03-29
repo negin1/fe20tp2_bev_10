@@ -11,7 +11,7 @@ gap: 0 2rem; */
 
 position: absolute;
 width: 100%;
-height: 500px;
+height: 700px; 
 display: flex;
 justify-content: center;
 align-items: center;
@@ -121,3 +121,4 @@ export const LandingBtn = styled(Link)`
   }
   animation: ${animeLandingh1} 0.6s forwards ease-in;
 `;
+

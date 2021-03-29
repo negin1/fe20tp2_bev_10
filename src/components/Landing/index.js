@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
-
+import LandingCovidSummary from '../CovidTracker/CovidSummary'
 /* import { FirebaseContext } from '../Firebase'; */
 
 const Landing = () => {
@@ -22,6 +22,9 @@ const Landing = () => {
             {hover ? <ForwardIcon className="arr-icon" /> : null}
             </LandingBtn>
           </BtnRoute>
+          <LandingCovidSummary>
+            <h1>Global Summary Covid19.</h1>
+          </LandingCovidSummary>
         </LandingContent>
       </LandingContainer>
       <h1></h1>
