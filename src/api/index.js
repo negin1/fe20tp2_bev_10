@@ -2,16 +2,21 @@ import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
 
-export const fetchCovidData = async () => {
-    try {
-        const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(url);
+const options = {
+  method: 'GET',
+  url: 'https://world-population.p.rapidapi.com/population',
+  params: {country_name: 'Mexico'},
+  headers: {
+    'x-rapidapi-key': 'a083fcaa0cmsh3e5b481d0d3c93ep1dd538jsnd7bb888636da',
+    'x-rapidapi-host': 'world-population.p.rapidapi.com'
+  }
+};
 
-        return { confirmed, recovered, deaths, lastUpdate };
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
 
-    } catch (error) {
 
-    }
-}
-
-
-export default fetchCovidData;
+export default fetchCovidData;c

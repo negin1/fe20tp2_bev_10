@@ -21,7 +21,6 @@ padding-bottom:15px;
 const StyledH2= styled.h2`
   font-size:18px;
   font-family: Montserrat;
-    text-align: center;
   padding-bottom:18px
 
  `;

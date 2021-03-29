@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
 
 
 
-{/*const options = {
+const options = {
   method: 'GET',
   url: 'https://world-population.p.rapidapi.com/population',
   params: {country_name: 'Sweden'},
@@ -22,8 +22,7 @@ axios.request(options).then(function (response) {
 
 .catch(function (error) {
 	console.error(error);
-});*/}
-
+});
 export default axiosInstance;
 
 

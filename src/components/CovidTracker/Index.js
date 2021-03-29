@@ -57,12 +57,19 @@ function CovidTracker({ firebase, infected = true }) {
   const [deathCountAr, setDeathCountAr] = useState([])
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
-
+  const [groupData, setGroupData] = useState([])
   const userID = useContext(AuthUserContext).uid;
   const countries = useContext(AuthUserContext).countries
   //console.log(countries)
   //console.log(userID)
-
+  
+  useEffect(() => {
+    let dataObj = { coronaCountAr, deathCountAr, recoveredCountAr, label }
+    let tempArr = [...groupData];
+    tempArr.push(dataObj)
+    setGroupData(tempArr)
+  }, [label])
+  
   //ComponentDidMount
   useEffect(() => {
     //setLoading(true);

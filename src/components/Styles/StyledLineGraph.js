@@ -13,7 +13,6 @@ margin-right: auto;
 @media (max-width: 500px) {
         max-width: 85%;
     }
-
 `;
 
 export default StyledLineGraph;

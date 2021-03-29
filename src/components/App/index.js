@@ -13,6 +13,7 @@ import Dashboard from '../Dashboard';
 import Settings from '../Settings';
 
 
+import Header from '../Header/'
 import Footer from '../Footer';
 
 import * as ROUTES from '../../constants/routes';
@@ -51,9 +52,10 @@ height: 300px;
 
 const App = () => (
   <>
-    <GlobalStyle></GlobalStyle>
+    <GlobalStyle />
     <Router>
       <StyledDiv>
+        <Header />
         <Navigation />
         <hr />
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
@@ -69,7 +71,6 @@ const App = () => (
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
         <Route exact path={ROUTES.SETTINGS} component={Settings} />
-
         <StyledDiv2>
           <Footer />
         </StyledDiv2>
