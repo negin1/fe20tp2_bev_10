@@ -20,14 +20,15 @@ p {
 `;
 
 export const StyledSelectBtn = styled.button`
-padding: 0.5em;
-  margin:  0 auto;
-  color: white;
-  background: black;
-  border: none;
-  border-radius: 20px;
-  width: 90px;
-  height: 30px;
-
+color: white;
+background: black;
+border: none;
+border-radius: 20px;
+width: 90px;
+height: 30px;
+&:hover {
+      cursor: pointer;
+      background: darkgray;
+      }
 `;
 

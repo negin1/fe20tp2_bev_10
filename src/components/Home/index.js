@@ -3,7 +3,7 @@ import CovidTracker from '../CovidTracker/Index'
 import GroupGraph from '../CovidTracker/GroupGraph'
 import { withAuthorization } from '../Session';
 import styled from 'styled-components'
-import { StyledPageIntro } from '../Styles/StyledPageIntro';
+import { StyledPageIntro, StyledSelectBtn } from '../Styles/StyledPageIntro';
 
 import PresetCovid from '../PresetCovid/Index'
 import Cards from '../Covid/Cards';
@@ -13,6 +13,20 @@ import Covid from '../Covid/Covid'
 
 const StyledH4 = styled.h4`
 text-align: center; 
+`;
+
+const StyledDiv = styled.div`
+width: 75%;
+display: flex; 
+justify-content: flex-end; 
+
+@media (max-width: 1000px) {
+        width: 88%;
+    }
+
+@media (max-width: 500px) {
+        width: 93%;
+    }
 `;
 
 /* import fetchCovidData from '../../api';
@@ -67,8 +81,14 @@ class HomePage extends React.Component {
       <PresetCovid order='3' country='mongolia' /> 
       <MultiCovid order='4' countries={['norway', 'sweden'] */}
         <CovidTracker />
+        <StyledDiv>
+          <StyledSelectBtn>Select</StyledSelectBtn>
+        </StyledDiv>
         <StyledH4>Compare countries</StyledH4>
         <GroupGraph />
+        <StyledDiv>
+          <StyledSelectBtn>Select</StyledSelectBtn>
+        </StyledDiv>
         {/*infected={false}}
         <Cards data={data} />
         <Chart />
