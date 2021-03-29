@@ -10,6 +10,7 @@ import * as ROLES from '../../constants/roles';
 
 const Nav = styled.div`
 margin-top: 100px;
+position: fixed;
 `;
 
 

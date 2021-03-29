@@ -5,7 +5,7 @@ const StyledForm = styled.div`
   display:flex;
   flex-direction:column;
   align-items: center;
-  justify-content: center;
+  
   padding-top:130px;
 
   > div{
@@ -35,7 +35,7 @@ const StyledForm = styled.div`
       }
 
       input{
-      justify-items: center;
+        
       padding: 1em;
       margin: 1em ;
       border: .5px solid gray;
@@ -44,11 +44,9 @@ const StyledForm = styled.div`
 
       button{
       display: block;
-      padding: 0.5em;
       margin:  0 auto;
       color: white;
       background: black;
-      border: none;
       border-radius: 20px;
       width: 120px;
       height: 40px;
