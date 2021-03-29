@@ -7,33 +7,33 @@ const StyledDiv = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 22rem;
-  margin-top: 3em; 
   font-family: 'Montserrat', sans-serif;
   background-image: url(${bg_img});
   background-size: cover;
   background-repeat: no-repeat;
 
-  @media (max-width: 1000px) {
-        height: 18rem;
-    }
-   @media (max-width: 520px) {
-        height: 24rem;
-    }
 
   > div {
-      padding: 12em 4em 0em 4em;  
+      padding: 14em 4em 2em 4em;  
       display: flex; 
       flex-wrap: nowrap;
       justify-content: left; 
 
-       @media (max-width: 1000px) {
-        flex-wrap: wrap-reverse; 
+ @media (max-width: 1400px) {
+        flex-wrap: wrap-reverse;
+        padding: 10em 3em 2em 3em;
     }
 
-      @media (max-width: 800px) {
-        padding: 8em 3em 0em 3em;
+       @media (max-width: 1000px) {
+        flex-wrap: wrap-reverse; 
+        padding: 8em 3em 2em 3em;
     }
+
+     @media (max-width: 700px) {
+        flex-wrap: wrap-reverse;
+        padding: 6em 3em 2em 3em;
+    }
+
 
     p {
         line-height: 0.9;

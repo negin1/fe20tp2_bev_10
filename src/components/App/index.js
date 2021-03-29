@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import GlobalStyle from '../Styles/globalStyle'
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -22,58 +21,62 @@ import { withAuthentication } from '../Session';
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components';
 
-{/*const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #eeeeee;
+    margin: 0;
+    padding: 0px;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
   }
-`;*/}
+`
 
 const StyledDiv = styled.div`
- min-height: 100vh;
- position: relative; 
+min-height: 100vh;
+position: relative; 
 `;
 
 const StyledDiv2 = styled.div`
- padding-bottom: 22rem;
- padding-top: 2rem; 
-
- @media (max-width: 1000px) {
-        height: 18rem;
-        padding-top: 4rem;
-    }
-
- @media (max-width: 520px) {
-    padding-bottom: 24rem;
-    padding-top: 2rem;
+height: 300px; 
+@media (max-width: 500px) {
+        flex-wrap: wrap-reverse;
+        height: 450px;
     }
 `;
 
-const App = () => (
 
-  <Router>
-    <StyledDiv>
-      <Navigation />
-      <hr />
-      <Route exact path={ROUTES.LANDING} component={LandingPage} />
-      <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
-      <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
-      <Route
-        exact
-        path={ROUTES.PASSWORD_FORGET}
-        component={PasswordForgetPage}
-      />
-      <Route exact path={ROUTES.HOME} component={HomePage} />
-      <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route exact path={ROUTES.ADMIN} component={AdminPage} />
-      <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
-      <Route exact path={ROUTES.SETTINGS} component={Settings} />
-      <BottomNav />
-      <StyledDiv2>
-        <Footer />
-      </StyledDiv2>
-    </StyledDiv>
-  </Router>
+const App = () => (
+  <>
+    <GlobalStyle></GlobalStyle>
+    <Router>
+      <StyledDiv>
+        <Navigation />
+        <hr />
+        <Route exact path={ROUTES.LANDING} component={LandingPage} />
+        <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
+        <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+        <Route
+          exact
+          path={ROUTES.PASSWORD_FORGET}
+          component={PasswordForgetPage}
+        />
+        <Route exact path={ROUTES.HOME} component={HomePage} />
+        <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+        <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+        <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+        <Route exact path={ROUTES.SETTINGS} component={Settings} />
+        <BottomNav />
+        <StyledDiv2>
+          <Footer />
+        </StyledDiv2>
+      </StyledDiv>
+    </Router>
+  </>
 );
+
 
 export default withAuthentication(App);

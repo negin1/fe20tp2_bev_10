@@ -8,8 +8,7 @@ import ExploreIcon from '@material-ui/icons/Explore';
 const StyledDiv = styled.div`
 font-family: 'Montserrat', sans-serif;
 width: 170px;
-height: 200px; 
-margin-top: -100px;
+height: 170px; 
 position: fixed;
 z-index: 1;
 top: 50%;

@@ -303,7 +303,7 @@ const GroupGraph = (props) => {
     <StyledLineGraph>
       <Line
         data={{
-          labels: datesSweden,
+          labels: datesSweden.map(l => l.substring(0, 10)),
           datasets: [
             {
               label: 'Infected Sweden',
