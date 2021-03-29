@@ -5,6 +5,7 @@ import LineGraphDeaths from './LineGraphDeaths'
 import LineGraphRecovered from './LineGraphRecovered'
 import CovidSummary from './CovidSummary'
 import axios from './axios'
+import { withStateHandlers } from 'recompose'
 
 import { withFirebase } from '../Firebase';
 import { AuthUserContext } from '../Session';
