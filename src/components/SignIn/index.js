@@ -6,69 +6,17 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import styled from 'styled-components'
 
-const StyledContainer = styled.div`
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 130px;
-`
-const StyledH1 = styled.h1`
- padding-bottom: 20px;
-  font-family: Montserrat;
-    text-align: center;
- `;
+import StyledForm from '../Styles/StyledForm';
 
-const StyledH2 = styled.h2`
-  font-size: 18px;
-  font-family: Montserrat;
-  padding-bottom: 10px
- ` ;
-
-const FormGroup = styled.div`
-	width: 300px;
-  justify-content: center;
-  padding: 50px 50px;
-  border-radius: 30px;
-  background: white; 
-
-  form {
-    display: flex; 
-    flex-direction: column; 
-    align-content: center;
-    align-items: center;
-  }
-`;
-
-const Input = styled.input`
-  padding: 1em;
-  margin: 1em;
-  border: .5px solid gray;
-  border-radius: 10px;
-  width: 200px; 
-`;
-
-const StyledBbutton = styled.button`
-display: block;
-  padding: 0.5em;
-  margin:  10px; 
-  color: white;
-  background: black;
-  border: none;
-  border-radius: 20px;
-  width: 120px;
-  height: 40px;
-`;
 
 const SignInPage = () => (
 
-  <StyledContainer>
+  <StyledForm>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
-  </StyledContainer>
+  </StyledForm>
 );
 
 const INITIAL_STATE = {
@@ -111,18 +59,19 @@ class SignInFormBase extends Component {
 
     return (
       <>
-        <FormGroup>
-          <StyledH1>Sign in</StyledH1>
-          <StyledH2>Enter your full name and email </StyledH2>
+        <div>
+          <h1>Sign in</h1>
+          <h2>Enter your full name and email </h2>
+
           <form onSubmit={this.onSubmit}>
-            <Input
+            <input
               name="email"
               value={email}
               onChange={this.onChange}
               type="text"
               placeholder="Email Address"
             />
-            <Input
+            <input
               name="password"
               value={password}
               onChange={this.onChange}
@@ -130,13 +79,15 @@ class SignInFormBase extends Component {
               placeholder="Password"
             />
 
-            <StyledBbutton disabled={isInvalid} type="submit">
+
+
+            <button disabled={isInvalid} type="submit">
               Sign In
-            </StyledBbutton>
+        </button>
 
             {error && <p>{error.message}</p>}
           </form>
-        </FormGroup>
+        </div>
       </>
     );
   }

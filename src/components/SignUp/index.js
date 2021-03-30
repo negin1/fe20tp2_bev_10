@@ -5,41 +5,14 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import styled from 'styled-components'
-//import { Happy } from '../Styles/globalStyle';
+import StyledForm from '../Styles/StyledForm';
 
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 130px;
+
+const StyledLink = styled(Link)`
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
 `;
-
-const FormGroup = styled.div`
-	width: 300px;
-  padding: 50px 50px;
-  border-radius: 30px;
-  background: white;
-
-  form {
-    display: flex; 
-    flex-direction: column; 
-    align-content: center; 
-    align-items: center;
-  }
-`;
-
-const StyledH1 = styled.h1`
- padding-bottom:15px;
-  font-family: Montserrat;
-  text-align: center;
- `;
-const StyledH2 = styled.h2`
-  font-size:18px;
-  font-family: Montserrat;
-    text-align: center;
-  padding-bottom:18px
- ` ;
 
 const Input = styled.input`
   padding: 0.5em;
@@ -55,17 +28,9 @@ const Label = styled.label`
   margin-left: 15px;
 `;
 
-const StyledBbutton = styled.button`
-display: block;
-  padding: 0.5em;
-  margin: 15px;
-  color: white;
-  background: black;
-  border: none;
-  border-radius: 20px;
-  width: 120px;
-  height: 40px;
-`;
+
+
+
 
 const StyledP = styled.p`
 
@@ -77,9 +42,9 @@ a{
 `;
 
 const SignUpPage = () => (
-  <StyledContainer>
+  <StyledForm>
     <SignUpForm />
-  </StyledContainer>
+  </StyledForm>
 );
 
 const INITIAL_STATE = {
@@ -157,33 +122,33 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <FormGroup>
-        <StyledH1>SignUp</StyledH1>
-        <StyledH2>Please enter your details bellow.</StyledH2>
+      <div>
+        <h1>SignUp</h1>
+        <h2>Please enter your details bellow.</h2>
 
         <form onSubmit={this.onSubmit}>
-          <Input
+          <input
             name="username"
             value={username}
             onChange={this.onChange}
             type="text"
             placeholder="Full Name"
           />
-          <Input
+          <input
             name="email"
             value={email}
             onChange={this.onChange}
             type="text"
             placeholder="Email Address"
           />
-          <Input
+          <input
             name="passwordOne"
             value={passwordOne}
             onChange={this.onChange}
             type="password"
             placeholder="Password"
           />
-          <Input
+          <input
             name="passwordTwo"
             value={passwordTwo}
             onChange={this.onChange}
@@ -199,13 +164,13 @@ class SignUpFormBase extends Component {
               onChange={this.onChangeCheckbox}
             />
           </Label>
-          <StyledBbutton disabled={isInvalid} type="submit">
+          <button disabled={isInvalid} type="submit">
             Sign Up
-        </StyledBbutton>
+        </button>
 
           {error && <p>{error.message}</p>}
         </form>
-      </FormGroup>
+      </div>
     );
   }
 }

@@ -14,6 +14,7 @@ z-index: 1;
 bottom: 40%;
 right: 1em;
 
+
 @media (max-width: 500px) {
 background-color: #eeeeee;
 width: 100%;
