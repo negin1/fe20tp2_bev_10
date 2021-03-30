@@ -250,26 +250,7 @@ function CovidTracker({ firebase, infected = true }) {
           ))}
         </StyledSelectCountry>
       </div>*/}
-      <div>
-        <StyledSelectCountry value={country} onChange={countryHandler}>
-          <option>Select Country</option>
 
-          {covidSummary.Countries &&
-            covidSummary.Countries.map((country) => (
-              <option key={country.Slug} value={country.Slug}>
-                {country.Country}
-              </option>
-            ))}
-        </StyledSelectCountry>
-      </div>
-      <div>
-        <StyledSelectDays value={days} onChange={daysHandler}>
-          <option value='7'>Last 7 days</option>
-          <option value='30'>Last 30 days</option>
-          <option value='90'>Last 90 days</option>
-          <option value='365'>Last 365 days</option>
-        </StyledSelectDays>
-      </div>
 
       <CovidSummary
         totalConfirmed={totalConfirmed}
@@ -290,6 +271,26 @@ function CovidTracker({ firebase, infected = true }) {
         yAxisRecovered={recoveredCountAr}
         label={label}
       />
+      <div>
+        <StyledSelectCountry value={country} onChange={countryHandler}>
+          <option>Select Country</option>
+
+          {covidSummary.Countries &&
+            covidSummary.Countries.map((country) => (
+              <option key={country.Slug} value={country.Slug}>
+                {country.Country}
+              </option>
+            ))}
+        </StyledSelectCountry>
+      </div>
+      <div>
+        <StyledSelectDays value={days} onChange={daysHandler}>
+          <option value='7'>Last 7 days</option>
+          <option value='30'>Last 30 days</option>
+          <option value='90'>Last 90 days</option>
+          <option value='365'>Last 365 days</option>
+        </StyledSelectDays>
+      </div>
     </StyledDiv>
   )
 }
