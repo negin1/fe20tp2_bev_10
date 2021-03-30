@@ -22,12 +22,9 @@ const Landing = () => {
             {hover ? <ForwardIcon className="arr-icon" /> : null}
             </LandingBtn>
           </BtnRoute>
-          <LandingCovidSummary>
-            <h1>Global Summary Covid19.</h1>
-          </LandingCovidSummary>
         </LandingContent>
       </LandingContainer>
-      <h1></h1>
+      <LandingCovidSummary />
     </>
   );
 

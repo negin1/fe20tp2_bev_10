@@ -9,9 +9,9 @@ export const LandingContainer = styled.div`
 /* grid-template-rows: 8rem 20 rem 5 rem auto;
 gap: 0 2rem; */
 
-position: absolute;
+position: relative;
 width: 100%;
-height: 700px; 
+height: 50vh;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -21,6 +21,22 @@ background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
 
+@media screen and (max-width: 875px) {
+    width: 100%;
+    height: 50vh;
+  } 
+@media screen and (max-width: 769px) {
+    width: 100%;
+    height: 30vh;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    height: 30vh
+  }
+  @media screen and (max-width: 300px) {
+    width: 100%;
+    height: 15vh
+  }
 /* 
 height: 100vh;
 display: grid;
@@ -31,17 +47,15 @@ align-items: center;
 `;
 
 export const LandingContent = styled.div`
-grid-column: 1 / span 12;
+/* grid-column: 1 / span 12;
 grid-row: 2 / 6;
 overflow: hidden;
-position: relative;
+position: relative; */
 
 display: flex;
 flex-direction: column;
 width: 100vmax;
-height: 50vh;
-
-
+height: 30vh;
 
 align-items: center;
 padding: 0 20px;
@@ -121,4 +135,3 @@ export const LandingBtn = styled(Link)`
   }
   animation: ${animeLandingh1} 0.6s forwards ease-in;
 `;
-
