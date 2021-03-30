@@ -63,7 +63,10 @@ a {
     &:hover {
       cursor: pointer;
       color: darkgray;
-      }
+    }
+    &:active {
+        color: darkgray;
+    }
 }
 `;
 
