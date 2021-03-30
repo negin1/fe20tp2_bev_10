@@ -2,9 +2,7 @@ import React from 'react'
 import Cards from './Cards'
 import { Card, Grid, Typography, CardContent } from '@material-ui/core'
 import CountUp from 'react-countup'
-
 import styled from 'styled-components'
-import NumberFormat from 'react-number-format'
 
 const StyledDiv = styled.div`
 padding-top: 2em; 

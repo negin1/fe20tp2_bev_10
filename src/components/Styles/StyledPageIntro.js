@@ -32,3 +32,16 @@ height: 30px;
       }
 `;
 
+export const StyledDivSelectBtn = styled.div`
+width: 75%;
+display: flex;
+justify-content: flex-end;
+
+@media (max-width: 1000px) {
+        width: 88%;
+    }
+
+@media (max-width: 500px) {
+        width: 93%;
+    }
+`;

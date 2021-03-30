@@ -1,6 +1,7 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import { StyledSelectBtn, StyledDivSelectBtn } from '../Styles/StyledPageIntro';
 
 /*
 (https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext)
@@ -350,6 +351,9 @@ const GroupGraph = (props) => {
           }}
         />
       </StyledLineGraph>
+      <StyledDivSelectBtn>
+        <StyledSelectBtn>Select</StyledSelectBtn>
+      </StyledDivSelectBtn>
     </div>
   )
 }

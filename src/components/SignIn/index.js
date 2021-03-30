@@ -13,28 +13,33 @@ const StyledContainer = styled.div`
   flex-direction:column;
   align-items: center;
   justify-content: center;
-  padding-top:130px;
+  padding-top: 130px;
 `
 const StyledH1 = styled.h1`
- padding-bottom:40px;
+ padding-bottom: 20px;
   font-family: Montserrat;
     text-align: center;
  `;
 
 const StyledH2 = styled.h2`
-  font-size:18px;
+  font-size: 18px;
   font-family: Montserrat;
-  padding-bottom:18px
+  padding-bottom: 10px
  ` ;
 
 const FormGroup = styled.div`
-  display: block;
 	width: 300px;
   justify-content: center;
   padding: 50px 50px;
   border-radius: 30px;
   background: white; 
 
+  form {
+    display: flex; 
+    flex-direction: column; 
+    align-content: center;
+    align-items: center;
+  }
 `;
 
 const Input = styled.input`
@@ -42,12 +47,13 @@ const Input = styled.input`
   margin: 1em;
   border: .5px solid gray;
   border-radius: 10px;
+  width: 200px; 
 `;
 
 const StyledBbutton = styled.button`
 display: block;
   padding: 0.5em;
-  margin:  0 auto;
+  margin:  10px; 
   color: white;
   background: black;
   border: none;
@@ -59,7 +65,6 @@ display: block;
 const SignInPage = () => (
 
   <StyledContainer>
-
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
@@ -127,13 +132,10 @@ class SignInFormBase extends Component {
 
             <StyledBbutton disabled={isInvalid} type="submit">
               Sign In
-        </StyledBbutton>
+            </StyledBbutton>
 
             {error && <p>{error.message}</p>}
           </form>
-
-
-
         </FormGroup>
       </>
     );

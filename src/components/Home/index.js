@@ -15,20 +15,6 @@ const StyledH4 = styled.h4`
 text-align: center; 
 `;
 
-const StyledDiv = styled.div`
-width: 75%;
-display: flex; 
-justify-content: flex-end; 
-
-@media (max-width: 1000px) {
-        width: 88%;
-    }
-
-@media (max-width: 500px) {
-        width: 93%;
-    }
-`;
-
 /* import fetchCovidData from '../../api';
 import { AuthUserContext } from '../Session'; */
 
@@ -81,14 +67,8 @@ class HomePage extends React.Component {
       <PresetCovid order='3' country='mongolia' /> 
       <MultiCovid order='4' countries={['norway', 'sweden'] */}
         <CovidTracker />
-        <StyledDiv>
-          <StyledSelectBtn>Select</StyledSelectBtn>
-        </StyledDiv>
         <StyledH4>Compare countries</StyledH4>
         <GroupGraph />
-        <StyledDiv>
-          <StyledSelectBtn>Select</StyledSelectBtn>
-        </StyledDiv>
         {/*infected={false}}
         <Cards data={data} />
         <Chart />
