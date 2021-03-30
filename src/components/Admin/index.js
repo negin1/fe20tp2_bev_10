@@ -13,15 +13,22 @@ const StyledContainer= styled.div`
   align-items: center;
   justify-content: center;
   padding-top:80px;
+  
 
    h1{
       padding-bottom:40px;
       font-family: Montserrat;
       text-align: center; 
+       text-shadow: 1px 1px #ffffff; 
+   ;
     }
 
   span{
   display: block;
+  font-family: Montserrat;
+  font-size: 17px;
+  letter-spacing: 2px;
+  line-height:25px
 
   }
 
@@ -91,6 +98,9 @@ const UserList = ({ users }) => (
         </span>
         <span>
           <strong>Username:</strong> {user.username}
+        </span>
+         <span>
+          <strong>Remove user</strong> 
         </span>
       </li>
     ))}
