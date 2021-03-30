@@ -10,7 +10,11 @@ import * as ROLES from '../../constants/roles';
 
 const StyledDiv = styled.div`
   display: flex;
-  display: fixed;
+  padding: 20px;
+  position: sticky;
+  top:105px; 
+
+  
    @media (max-width: 850px) {
        overflow:auto
     }
@@ -77,7 +81,7 @@ const NavigationAuth = ({ authUser }) => (
         <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
       </li>
     )}
-    <li>
+    <li className="signout">
       <SignOutButton />
     </li>
   </ul>

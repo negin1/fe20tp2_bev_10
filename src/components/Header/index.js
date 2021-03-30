@@ -24,14 +24,14 @@ const StyledDiv = styled.div`
 
   img{
     padding: 20px 40px;
-    width: 50px;
+    width: 70px;
   }
 `;
 
 const Index = () => {
   return (
   <StyledDiv>
-      <img src="/images/logo.png" alt=""/>
+      <img src="/images/logo2.png" alt=""/>
       <h1>Coronavirus Tracker</h1>
   </StyledDiv>
   )

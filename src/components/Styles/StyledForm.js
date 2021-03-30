@@ -35,22 +35,30 @@ const StyledForm = styled.div`
       }
 
       input{
-        
       padding: 1em;
-      margin: 1em ;
+      margin: 1em 4em ;
       border: .5px solid gray;
       border-radius: 10px;
+          outline: none;
+
+           @media (max-width: 1070px) {
+         margin: 1em
+        }
       }
 
       button{
       display: block;
-      margin:  0 auto;
+      margin: 20px auto;
       color: white;
       background: black;
       border-radius: 20px;
       width: 120px;
       height: 40px;
       }
+      
+      form{
+        margin: 0 auto;
+      } 
 
       .error{
         text-align: center;
