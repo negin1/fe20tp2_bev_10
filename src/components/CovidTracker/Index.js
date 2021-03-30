@@ -5,6 +5,7 @@ import LineGraphDeaths from './LineGraphDeaths'
 import LineGraphRecovered from './LineGraphRecovered'
 import CovidSummary from './CovidSummary'
 import axios from './axios'
+import { withStateHandlers } from 'recompose'
 
 import { withFirebase } from '../Firebase';
 import { AuthUserContext } from '../Session';
@@ -62,14 +63,14 @@ function CovidTracker({ firebase, infected = true }) {
   const countries = useContext(AuthUserContext).countries
   //console.log(countries)
   //console.log(userID)
-  
+
   useEffect(() => {
     let dataObj = { coronaCountAr, deathCountAr, recoveredCountAr, label }
     let tempArr = [...groupData];
     tempArr.push(dataObj)
     setGroupData(tempArr)
   }, [label])
-  
+
   //ComponentDidMount
   useEffect(() => {
     //setLoading(true);
