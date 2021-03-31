@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import StyledForm from '../Styles/StyledForm';
 
 
-const StyledLink= styled(Link)`
+const StyledLink = styled(Link)`
   color: black;
   font-weight: bold;
   font-size: 18px;
@@ -19,20 +19,30 @@ const Input = styled.input`
   margin: 1em;
   border: .5px solid gray;
   border-radius: 10px;
+  width: 200px; 
 `;
 
 const Label = styled.label`
   display:block;
   margin-top:5px;
   margin-left: 15px;
-`; 
+`;
 
 
 
 
+
+const StyledP = styled.p`
+
+a{
+  font-weight: bold;
+  font-size: 18px;
+  color: black; 
+}
+`;
 
 const SignUpPage = () => (
-   <StyledForm>
+  <StyledForm>
     <SignUpForm />
   </StyledForm>
 );
@@ -112,63 +122,63 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-       <div>
-         <h1>SignUp</h1>
-       <h2>Please enter your details bellow.</h2>
-      
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <Label>
-          Admin:
-          <input
-            name="isAdmin"
-            type="checkbox"
-            checked={isAdmin}
-            onChange={this.onChangeCheckbox}
-          />
-        </Label>
-    <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button> 
+      <div>
+        <h1>SignUp</h1>
+        <h2>Please enter your details bellow.</h2>
 
-        {error && <p>{error.message}</p>}
-      </form>
+        <form onSubmit={this.onSubmit}>
+          <input
+            name="username"
+            value={username}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Full Name"
+          />
+          <input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Email Address"
+          />
+          <input
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Password"
+          />
+          <input
+            name="passwordTwo"
+            value={passwordTwo}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Confirm Password"
+          />
+          <Label>
+            Admin:
+          <input
+              name="isAdmin"
+              type="checkbox"
+              checked={isAdmin}
+              onChange={this.onChangeCheckbox}
+            />
+          </Label>
+          <button disabled={isInvalid} type="submit">
+            Sign Up
+        </button>
+
+          {error && <p>{error.message}</p>}
+        </form>
       </div>
     );
   }
 }
 
 const SignUpLink = () => (
-  
-    <StyledLink to={ROUTES.SIGN_UP}>Create a new account? </StyledLink>
-
+  <StyledP>
+    <Link to={ROUTES.SIGN_UP}>Create a new account? </Link>
+  </StyledP>
 );
 
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));

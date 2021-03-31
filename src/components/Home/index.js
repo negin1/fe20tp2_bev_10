@@ -1,21 +1,43 @@
 import React from 'react';
-import Covid from '../Covid/Covid'
 import CovidTracker from '../CovidTracker/Index'
-import BottomNav from '../BottomNav';
-
 import GroupGraph from '../CovidTracker/GroupGraph'
+import { withAuthorization } from '../Session';
+import styled from 'styled-components'
+import { StyledPageIntro, StyledSelectBtn } from '../Styles/StyledPageIntro';
 
 import PresetCovid from '../PresetCovid/Index'
-
-import { withAuthorization } from '../Session';
 import Cards from '../Covid/Cards';
 import Chart from '../Covid/Chart';
 import Country from '../Covid/Country';
-import Footer from '../Footer';
+import Covid from '../Covid/Covid'
 
+import GraphList from '../NewGraph';
+
+const StyledH4 = styled.h4`
+text-align: center; 
+`;
 
 /* import fetchCovidData from '../../api';
 import { AuthUserContext } from '../Session'; */
+
+const graphList = [{
+  countrySlug: 'sweden',
+  country: 'Sweden',
+  type: 'confirmed',
+  days: 7
+}, {
+  countrySlug: 'norway',
+  country: 'Norway',
+  type: 'confirmed',
+  days: 7
+}, {
+  countrySlug: 'denmark',
+  country: 'Denmark',
+  type: 'confirmed',
+  days: 7
+},];
+
+
 
 class HomePage extends React.Component {
 
@@ -56,13 +78,20 @@ class HomePage extends React.Component {
 
     return (
       <div>
-        <h1>Explore data</h1>
+        <StyledPageIntro>
+          <h2>Discover</h2>
+          <p>Select your graphs and data.</p>
+        </StyledPageIntro>
+        <GraphList graphList={graphList} />
         {/*this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
         {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />
       <PresetCovid order='3' country='mongolia' /> 
       <MultiCovid order='4' countries={['norway', 'sweden'] */}
         <CovidTracker />
+        <br></br>
+        <hr></hr>
+        <StyledH4>Compare countries</StyledH4>
         <GroupGraph />
         {/*infected={false}}
         <Cards data={data} />

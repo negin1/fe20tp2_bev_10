@@ -232,12 +232,6 @@ function CovidTracker({ firebase, infected = true }) {
 
   return (
     <StyledDiv>
-      <CovidSummary
-        totalConfirmed={totalConfirmed}
-        totalRecovered={totalRecovered}
-        totalDeaths={totalDeaths}
-        country={country}
-      />
       {/*<div>
         <StyledSelectData>
           <option>Select Data</option>
@@ -245,7 +239,7 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='Deaths'>Total Deaths</option>
           <option value='Recovered'>total Recovered</option>
         </StyledSelectData>
-      </div>*/}
+      </div>
       <div>
         <StyledSelectCountry value={region} onChange={regionHandler}>
           <option>Select Region</option>
@@ -255,10 +249,31 @@ function CovidTracker({ firebase, infected = true }) {
             </option>
           ))}
         </StyledSelectCountry>
-      </div>
+      </div>*/}
+
+
+      <CovidSummary
+        totalConfirmed={totalConfirmed}
+        totalRecovered={totalRecovered}
+        totalDeaths={totalDeaths}
+        country={country}
+      />
+
+      {infected && <LineGraph
+        yAxis={coronaCountAr}
+        label={label}
+      />}
+      <LineGraphDeaths
+        yAxisDeath={deathCountAr}
+        label={label}
+      />
+      <LineGraphRecovered
+        yAxisRecovered={recoveredCountAr}
+        label={label}
+      />
       <div>
         <StyledSelectCountry value={country} onChange={countryHandler}>
-          <option>Select Country</option>
+          {/*<option>Select Country</option>*/}
 
           {covidSummary.Countries &&
             covidSummary.Countries.map((country) => (
@@ -276,19 +291,6 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='365'>Last 365 days</option>
         </StyledSelectDays>
       </div>
-
-      {infected && <LineGraph
-        yAxis={coronaCountAr}
-        label={label}
-      />}
-      <LineGraphDeaths
-        yAxisDeath={deathCountAr}
-        label={label}
-      />
-      <LineGraphRecovered
-        yAxisRecovered={recoveredCountAr}
-        label={label}
-      />
     </StyledDiv>
   )
 }

@@ -5,4 +5,4 @@ const url = 'https://covid19.mathdro.id/api';
 
 
 
-export default fetchCovidData;c
+export default fetchCovidData;

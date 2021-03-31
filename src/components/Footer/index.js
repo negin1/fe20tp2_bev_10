@@ -44,6 +44,10 @@ const StyledDiv = styled.div`
     a {
         color: white; 
         text-decoration: none; 
+        &:hover {
+        cursor: pointer;
+        color: lightgray;
+        }
     }
   } 
   `;

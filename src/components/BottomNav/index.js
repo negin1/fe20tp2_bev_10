@@ -35,9 +35,9 @@ ul {
     @media (max-width: 500px) {
         width: 80%;
         padding-top: 10px;
-         margin-left: auto; 
-         margin-right: auto; 
-         display: flex;
+        margin-left: auto; 
+        margin-right: auto; 
+        display: flex;
         flex-direction: row;
         justify-content: space-between; 
     }
@@ -48,7 +48,6 @@ li span {
     @media (max-width: 500px) {
          display: flex; 
     }
-
 }
 
 li {  
@@ -65,11 +64,12 @@ a {
     &:hover {
       cursor: pointer;
       color: darkgray;
-      }
+    }
+    &:active {
+        color: darkgray;
+    }
 }
 `;
-
-
 
 const BottomNav = () => (
     <StyledDiv>

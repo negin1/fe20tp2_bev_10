@@ -8,28 +8,28 @@ import StyledForm from '../Styles/StyledForm';
 
 
 
-const StyledHeading= styled.h1`
+const StyledHeading = styled.h1`
       padding-bottom: 25px;
       font-family: Montserrat;
       text-align: center; 
         font-size: 27px;
 `;
 
-const StyledText= styled.p`
+const StyledText = styled.p`
   font-family: Montserrat;
   text-align: center; 
   font-size: 18px;
 `;
-const StyledLink= styled(Link)`
+const StyledLink = styled(Link)`
   color: black;
   font-weight: bold;
   font-size: 18px;
 `;
 
 const PasswordForgetPage = () => (
-   /*  <StyledForm>  */  
-    <PasswordForgetForm />
-/*   </StyledForm> */
+  /*  <StyledForm>  */
+  <PasswordForgetForm />
+  /*   </StyledForm> */
 );
 
 const INITIAL_STATE = {
@@ -69,34 +69,32 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === '';
 
     return (
-         <> 
-       <div>
-           <StyledHeading>Reset your password </StyledHeading>
-       <StyledText> Please enter your email adress bellow and we will send you a new password. </StyledText>
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset Password
+      <>
+        <div>
+          <StyledHeading>Reset your password </StyledHeading>
+          <StyledText> Please enter your email adress bellow and we will send you a new password. </StyledText>
+          <form onSubmit={this.onSubmit}>
+            <input
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email Address"
+            />
+            <button disabled={isInvalid} type="submit">
+              Reset Password
         </button>
 
-        {error && <p>{error.message}</p>}
-      </form>
-            </div>
-</>
+            {error && <p>{error.message}</p>}
+          </form>
+        </div>
+      </>
     );
   }
 }
 
 const PasswordForgetLink = () => (
-  <p>
-    <StyledLink to={ROUTES.PASSWORD_FORGET}>Forgot Password?</StyledLink>
-  </p>
+  <StyledLink to={ROUTES.PASSWORD_FORGET}>Forgot Password?</StyledLink>
 );
 
 export default PasswordForgetPage;

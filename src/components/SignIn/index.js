@@ -62,7 +62,7 @@ class SignInFormBase extends Component {
         <div>
           <h1>Sign in</h1>
           <h2>Enter your full name and email </h2>
-        
+
           <form onSubmit={this.onSubmit}>
             <input
               name="email"
@@ -79,7 +79,7 @@ class SignInFormBase extends Component {
               placeholder="Password"
             />
 
-        
+
 
             <button disabled={isInvalid} type="submit">
               Sign In
