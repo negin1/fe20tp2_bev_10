@@ -273,7 +273,7 @@ function CovidTracker({ firebase, infected = true }) {
       />
       <div>
         <StyledSelectCountry value={country} onChange={countryHandler}>
-          <option>Select Country</option>
+          {/*<option>Select Country</option>*/}
 
           {covidSummary.Countries &&
             covidSummary.Countries.map((country) => (
