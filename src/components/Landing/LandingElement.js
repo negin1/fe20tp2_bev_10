@@ -4,7 +4,12 @@ import { FaArrowRight } from "react-icons/fa";
 import globe from './globe.jpg';
 
 export const LandingContainer = styled.div`
+<<<<<<< HEAD
 
+=======
+/*height: 50vh;*/
+display: grid;
+>>>>>>> negin
 /* grid-template-columns: 1fr repeat()(12, minmax()(auto, 4.2rem)) 1fr; */
 /* grid-template-rows: 8rem 20 rem 5 rem auto;
 gap: 0 2rem; */
@@ -67,6 +72,7 @@ export const Landingh1 = styled.h1`
 font-size: 50px;
 color: #fff;
 font-weight: bold;
+padding: 200px; 
 
   @media screen and (max-width: 769px) {
     font-size: 32px;

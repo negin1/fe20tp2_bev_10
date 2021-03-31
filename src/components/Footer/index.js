@@ -12,6 +12,9 @@ const StyledDiv = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
+  @media (max-width: 500px) {
+         bottom: 75px;
+    }
 
   > div {
       padding: 14em 4em 2em 4em;  
@@ -34,7 +37,6 @@ const StyledDiv = styled.div`
         padding: 6em 3em 2em 3em;
     }
 
-
     p {
         line-height: 0.9;
     }
@@ -42,6 +44,10 @@ const StyledDiv = styled.div`
     a {
         color: white; 
         text-decoration: none; 
+        &:hover {
+        cursor: pointer;
+        color: lightgray;
+        }
     }
   } 
   `;

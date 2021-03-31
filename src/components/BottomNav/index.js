@@ -7,71 +7,81 @@ import ExploreIcon from '@material-ui/icons/Explore';
 
 const StyledDiv = styled.div`
 font-family: 'Montserrat', sans-serif;
-width: 170px;
+width: 50px;
 height: 170px; 
 position: fixed;
 z-index: 1;
-top: 50%;
-right: 0em;
+bottom: 40%;
+right: 1em;
+
+
+@media (max-width: 500px) {
+background-color: #eeeeee;
+width: 100%;
+height: 75px;
+position: fixed;
+z-index: 1;
+bottom: 0;
+right: 0;
+border-top: 5px solid darkgray;
+    }
 
 ul {
     list-style-type: none;
     margin: 0px; 
     padding: 0px; 
+    display: flex; 
+    flex-direction: column; 
+    @media (max-width: 500px) {
+        width: 80%;
+        padding-top: 10px;
+        margin-left: auto; 
+        margin-right: auto; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
 }
 
-li {
-    display: flex; 
-    align-items: center; 
-    justify-content: flex-start; 
+li span {
+    display: none; 
+    @media (max-width: 500px) {
+         display: flex; 
+    }
+}
 
-    @media (max-width: 900px) {
-        justify-content: flex-end;
-        padding-right: 20px; 
+li {  
+    @media (max-width: 500px) {
+         max-width: 100px; 
+         text-align: center;
     }
 }
 
 a {
     text-decoration: none; 
     color: black; 
-    font-size: 18px;
 
     &:hover {
       cursor: pointer;
       color: darkgray;
-      }
-}
-
-a:nth-of-type(2n) {
-    padding-bottom: 5px; 
-    @media (max-width: 900px) {
-        display: none;
+    }
+    &:active {
+        color: darkgray;
     }
 }
-
-a:nth-of-type(2n+1) {
-    padding: 0px 10px;
-}
-  `;
-
-
-
-
+`;
 
 const BottomNav = () => (
     <StyledDiv>
         <ul>
             <li>
-                <NavLink to={ROUTES.HOME}><ExploreIcon fontSize="large" /></NavLink>
-                <NavLink to={ROUTES.HOME}>Discover</NavLink>
+                <NavLink to={ROUTES.HOME}><ExploreIcon fontSize="large" /><span>Discover</span></NavLink>
             </li>
             <li>
-                <NavLink to={ROUTES.DASHBOARD}><AssessmentIcon fontSize="large" /></NavLink>
-                <NavLink to={ROUTES.DASHBOARD}>My charts</NavLink>
+                <NavLink to={ROUTES.DASHBOARD}><AssessmentIcon fontSize="large" /><span>Dashboard</span></NavLink>
             </li>
             <li>
-                <NavLink to={ROUTES.SETTINGS}><SettingsIcon fontSize="large" /></NavLink>
-                <NavLink to={ROUTES.SETTINGS}>Settings</NavLink>
+                <NavLink to={ROUTES.SETTINGS}><SettingsIcon fontSize="large" /><span>Settings</span></NavLink>
             </li>
         </ul>
     </StyledDiv>

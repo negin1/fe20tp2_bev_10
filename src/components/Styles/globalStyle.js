@@ -6,8 +6,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: #eee;
   }
-
-
 `;
  
 export default GlobalStyle

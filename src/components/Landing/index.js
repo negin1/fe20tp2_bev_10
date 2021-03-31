@@ -13,7 +13,7 @@ const Landing = () => {
   return (
     <>
       <LandingContainer>
-        <LandingContent class="grid-container">
+        <LandingContent className="grid-container">
           <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1>
           <BtnRoute>
             <LandingBtn to="/signin"
@@ -30,3 +30,4 @@ const Landing = () => {
 
 };
 export default Landing;
+
