@@ -1,13 +1,13 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid} from '@material-ui/core';
+import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 
-const Cards = ({ data: {confirmed,recovered, deaths, lastUpdate}}) => {
-  console.log(confirmed)
-if(!confirmed){
-  return 'Loading...'
-  
-}
+const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+  //console.log(confirmed)
+  if (!confirmed) {
+    return 'Loading...'
+
+  }
 
 
 
@@ -30,7 +30,7 @@ if(!confirmed){
             </CardContent>
           </Grid>
 
-           <Grid item component={Card}>
+          <Grid item component={Card}>
             <CardContent>
               <Typography color="secondary" gutterBottom>Recovered</Typography>
               <Typography varant="h5">
@@ -40,12 +40,12 @@ if(!confirmed){
                   duration={2.5}
                   separator="," />
               </Typography>
-             <Typography color="secondary">{new Date(lastUpdate).toDateString()} </Typography>
+              <Typography color="secondary">{new Date(lastUpdate).toDateString()} </Typography>
               <Typography varant="body2">Number of recoveries from COVID-19</Typography>
             </CardContent>
           </Grid>
-          
-            <Grid item component={Card}>
+
+          <Grid item component={Card}>
             <CardContent>
               <Typography color="secondary" gutterBottom>Deaths</Typography>
               <Typography varant="h5">

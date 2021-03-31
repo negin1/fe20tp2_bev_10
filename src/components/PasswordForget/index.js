@@ -3,12 +3,33 @@ import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import styled from 'styled-components'
+import StyledForm from '../Styles/StyledForm';
+
+
+
+const StyledHeading = styled.h1`
+      padding-bottom: 25px;
+      font-family: Montserrat;
+      text-align: center; 
+        font-size: 27px;
+`;
+
+const StyledText = styled.p`
+  font-family: Montserrat;
+  text-align: center; 
+  font-size: 18px;
+`;
+const StyledLink = styled(Link)`
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+`;
 
 const PasswordForgetPage = () => (
-  <div>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
-  </div>
+  /*  <StyledForm>  */
+  <PasswordForgetForm />
+  /*   </StyledForm> */
 );
 
 const INITIAL_STATE = {
@@ -48,28 +69,32 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
+      <>
+        <div>
+          <StyledHeading>Reset your password </StyledHeading>
+          <StyledText> Please enter your email adress bellow and we will send you a new password. </StyledText>
+          <form onSubmit={this.onSubmit}>
+            <input
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email Address"
+            />
+            <button disabled={isInvalid} type="submit">
+              Reset Password
         </button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+            {error && <p>{error.message}</p>}
+          </form>
+        </div>
+      </>
     );
   }
 }
 
 const PasswordForgetLink = () => (
-  <p>
-    <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
-  </p>
+  <StyledLink to={ROUTES.PASSWORD_FORGET}>Forgot Password?</StyledLink>
 );
 
 export default PasswordForgetPage;

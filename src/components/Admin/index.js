@@ -4,6 +4,39 @@ import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import { withAuthorization } from '../Session';
 import * as ROLES from '../../constants/roles';
+import styled from 'styled-components';
+
+
+const StyledContainer= styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  padding-top:80px;
+  
+
+   h1{
+      padding-bottom:40px;
+      font-family: Montserrat;
+      text-align: center; 
+       text-shadow: 1px 1px #ffffff; 
+   ;
+    }
+
+  span{
+  display: block;
+  font-family: Montserrat;
+  font-size: 17px;
+  letter-spacing: 2px;
+  line-height:25px
+
+  }
+
+  li{
+    margin:25px 0;
+  
+  }
+  `
 
 class AdminPage extends Component {
   constructor(props) {
@@ -41,16 +74,14 @@ class AdminPage extends Component {
     const { users, loading } = this.state;
 
     return (
-      <div>
-        <h1>Admin</h1>
-        <p>
-          The Admin Page is accessible by every signed in admin user.
-        </p>
+      <StyledContainer>
 
+        <h1>Admin</h1>
+        
         {loading && <div>Loading ...</div>}
 
         <UserList users={users} />
-      </div>
+     </StyledContainer>
     );
   }
 }
@@ -67,6 +98,9 @@ const UserList = ({ users }) => (
         </span>
         <span>
           <strong>Username:</strong> {user.username}
+        </span>
+         <span>
+          <strong>Remove user</strong> 
         </span>
       </li>
     ))}

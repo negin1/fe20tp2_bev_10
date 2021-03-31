@@ -5,6 +5,7 @@ import LineGraphDeaths from './LineGraphDeaths'
 import LineGraphRecovered from './LineGraphRecovered'
 import CovidSummary from './CovidSummary'
 import axios from './axios'
+import { withStateHandlers } from 'recompose'
 
 import { withFirebase } from '../Firebase';
 import { AuthUserContext } from '../Session';
@@ -39,7 +40,7 @@ const countryPresets = {
 }
 
 const ArrCountryPresets = Object.keys(countryPresets);
-console.log(ArrCountryPresets);
+//console.log(ArrCountryPresets);
 
 // event.target.value (='Asia')
 // countryPresets[event.target.value] --> ['China', 'Taiwan']
@@ -57,11 +58,18 @@ function CovidTracker({ firebase, infected = true }) {
   const [deathCountAr, setDeathCountAr] = useState([])
   const [recoveredCountAr, setRecoveredCountAr] = useState([])
   const [label, setLabel] = useState([])
-
+  const [groupData, setGroupData] = useState([])
   const userID = useContext(AuthUserContext).uid;
   const countries = useContext(AuthUserContext).countries
-  console.log(countries)
+  //console.log(countries)
   //console.log(userID)
+
+  useEffect(() => {
+    let dataObj = { coronaCountAr, deathCountAr, recoveredCountAr, label }
+    let tempArr = [...groupData];
+    tempArr.push(dataObj)
+    setGroupData(tempArr)
+  }, [label])
 
   //ComponentDidMount
   useEffect(() => {
@@ -78,10 +86,10 @@ function CovidTracker({ firebase, infected = true }) {
           setCovidSummary(res.data)
         }
 
-        console.log(res)
+        //console.log(res)
       })
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }, [])
 
@@ -113,7 +121,7 @@ function CovidTracker({ firebase, infected = true }) {
     let arrRegionCountries = countryPresets[e.target.value]
     setRegion(arrRegionCountries)
     saveCountries(arrRegionCountries)
-    console.log(arrRegionCountries)
+    //console.log(arrRegionCountries)
 
   }
 
@@ -146,7 +154,7 @@ function CovidTracker({ firebase, infected = true }) {
       `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.filter(item => item.Province === '');
         data = data.slice(0, data.length - 1);
 
@@ -154,7 +162,7 @@ function CovidTracker({ firebase, infected = true }) {
         //const xAxisLabel = res.data.map(d => d.Date)
         const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
         // begin krilles specialkod
-        console.log(data)
+        //console.log(data)
         const yAxisCoronaCount = data.map((d) => d.Cases)
         const xAxisLabel = data.map(d => d.Date)
 
@@ -168,7 +176,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
 
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }
 
@@ -177,7 +185,7 @@ function CovidTracker({ firebase, infected = true }) {
       `/country/${countrySlug}/status/deaths?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.filter(item => item.Province === '');
         data = data.slice(0, data.length - 1);
         const yAxisDeathCount = data.map((d) => d.Cases)
@@ -191,7 +199,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
 
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }
 
@@ -200,7 +208,7 @@ function CovidTracker({ firebase, infected = true }) {
       `/country/${countrySlug}/status/recovered?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
     )
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         let data = res.data.filter(item => item.Province === '');
         data = data.slice(0, data.length - 1);
         const yAxisRecoveredCount = data.map((d) => d.Cases)
@@ -214,7 +222,7 @@ function CovidTracker({ firebase, infected = true }) {
       })
 
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
       })
   }
 
@@ -224,12 +232,6 @@ function CovidTracker({ firebase, infected = true }) {
 
   return (
     <StyledDiv>
-      <CovidSummary
-        totalConfirmed={totalConfirmed}
-        totalRecovered={totalRecovered}
-        totalDeaths={totalDeaths}
-        country={country}
-      />
       {/*<div>
         <StyledSelectData>
           <option>Select Data</option>
@@ -237,7 +239,7 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='Deaths'>Total Deaths</option>
           <option value='Recovered'>total Recovered</option>
         </StyledSelectData>
-      </div>*/}
+      </div>
       <div>
         <StyledSelectCountry value={region} onChange={regionHandler}>
           <option>Select Region</option>
@@ -247,10 +249,31 @@ function CovidTracker({ firebase, infected = true }) {
             </option>
           ))}
         </StyledSelectCountry>
-      </div>
+      </div>*/}
+
+
+      <CovidSummary
+        totalConfirmed={totalConfirmed}
+        totalRecovered={totalRecovered}
+        totalDeaths={totalDeaths}
+        country={country}
+      />
+
+      {infected && <LineGraph
+        yAxis={coronaCountAr}
+        label={label}
+      />}
+      <LineGraphDeaths
+        yAxisDeath={deathCountAr}
+        label={label}
+      />
+      <LineGraphRecovered
+        yAxisRecovered={recoveredCountAr}
+        label={label}
+      />
       <div>
         <StyledSelectCountry value={country} onChange={countryHandler}>
-          <option>Select Country</option>
+          {/*<option>Select Country</option>*/}
 
           {covidSummary.Countries &&
             covidSummary.Countries.map((country) => (
@@ -268,19 +291,6 @@ function CovidTracker({ firebase, infected = true }) {
           <option value='365'>Last 365 days</option>
         </StyledSelectDays>
       </div>
-
-      {infected && <LineGraph
-        yAxis={coronaCountAr}
-        label={label}
-      />}
-      <LineGraphDeaths
-        yAxisDeath={deathCountAr}
-        label={label}
-      />
-      <LineGraphRecovered
-        yAxisRecovered={recoveredCountAr}
-        label={label}
-      />
     </StyledDiv>
   )
 }

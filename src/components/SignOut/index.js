@@ -1,11 +1,28 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+
+
+
 import { withFirebase } from '../Firebase';
 
+const Button = styled.div`
+
+      color: white;
+      background: black;
+      border-radius: 20px;
+      padding: 7px 7px;
+      margin-top: -6px;
+      font-size: 15px;
+    
+ `
+
 const SignOutButton = ({ firebase }) => (
-  <button type="button" onClick={firebase.doSignOut}>
+  
+  <Button type="button" onClick={firebase.doSignOut}>
     Sign Out
-  </button>
+  </Button>
 );
 
 export default withFirebase(SignOutButton);

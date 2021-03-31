@@ -1,5 +1,7 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
+import StyledLineGraph from '../Styles/StyledLineGraph';
+import { StyledSelectBtn, StyledDivSelectBtn } from '../Styles/StyledPageIntro';
 
 /*
 (https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext)
@@ -272,66 +274,86 @@ const norwayCases = norwayData.map((d) => d.Cases)
 
 const datesSweden = swedenData.map((d) => d.Date)
 const datesNorway = swedenData.map((d) => d.Date)
-/* 
+
 // write some functions, look at my code in route-trainer
 const countryArr = [...swedenData, ...norwayData]
-
+/*
 // the variables you need are 
 let anewResult = [];
 for (let i = 0; i < countryArr.length; i++) {
-    // "öva på nested destructuring"
-   let Country = countryArr[i].data.country;
-    let cases = countryArr[i].data.cases;
-    let date = countryArr[i].data.date;
-    
+  // "öva på nested destructuring"
+  let Country = countryArr[i].data.country;
+  let cases = countryArr[i].data.cases;
+  let date = countryArr[i].data.date;
 
-    anewResult.push({ country: Country, cases: cases, date: date});
+
+  anewResult.push({ country: Country, cases: cases, date: date });
 }
 
 let newResult = countryArr.map(({ data: { country, cases, date } }, index) => ({ country, cases, date, index }))
-console.log(newResult) */
+console.log(newResult) * /
 // first transformation functions end
+*/
 
 // write some functions, look at my code in route-trainer
 // the variables you need are
 
 const GroupGraph = (props) => {
   return (
-    <div
-      style={{
-        width: '600px',
-        height: 'auto',
-        margin: '40px auto',
-      }}
-    >
-      <Line
-        data={{
-          labels: datesSweden,
-          datasets: [
-            {
-              label: 'Infected Sweden',
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: 'rgba(75,192,192,0.4)',
-              borderColor: 'rgba(75,192,192,1)',
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: 'rgba(75,192,192,1)',
-              pointBackgroundColor: '#fff',
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-              pointHoverBorderColor: 'rgba(220,220,220,1)',
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: swedenCases,
-            },
-          ],
-        }}
-      />
+    <div>
+      <StyledLineGraph>
+        <Line
+          data={{
+            labels: datesSweden.map(l => l.substring(0, 10)),
+            datasets: [
+              {
+                label: 'Infected Sweden',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: 'rgba(75,192,192,0.4)',
+                borderColor: 'rgba(75,192,192,1)',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: 'rgba(75,192,192,1)',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: swedenCases,
+              }, {
+                label: 'Infected Norway',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: '#ff5e13',
+                borderColor: '#ff5e13',
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: '#ff5e13',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: norwayCases,
+              },
+            ],
+          }}
+        />
+      </StyledLineGraph>
+      <StyledDivSelectBtn>
+        <StyledSelectBtn>Select</StyledSelectBtn>
+      </StyledDivSelectBtn>
     </div>
   )
 }
