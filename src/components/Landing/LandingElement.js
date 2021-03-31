@@ -4,12 +4,9 @@ import { FaArrowRight } from "react-icons/fa";
 import globe from './globe.jpg';
 
 export const LandingContainer = styled.div`
-<<<<<<< HEAD
 
-=======
 /*height: 50vh;*/
 display: grid;
->>>>>>> negin
 /* grid-template-columns: 1fr repeat()(12, minmax()(auto, 4.2rem)) 1fr; */
 /* grid-template-rows: 8rem 20 rem 5 rem auto;
 gap: 0 2rem; */
@@ -19,7 +16,7 @@ width: 100%;
 height: 50vh;
 display: flex;
 justify-content: center;
-align-items: center;
+align-items: center center;
 
 background-image: url(${globe});
 background-position: center;
@@ -72,15 +69,17 @@ export const Landingh1 = styled.h1`
 font-size: 50px;
 color: #fff;
 font-weight: bold;
-padding: 200px; 
+padding: 50px; 
 
   @media screen and (max-width: 769px) {
     font-size: 32px;
+    padding: 20px; 
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 539px) {
     font-size: 22px;
+    padding: 15px; 
   }
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 351px) {
     font-size: 20px;
   }
 `;
@@ -100,7 +99,6 @@ export const BtnRoute = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   position: relative;
   text-align: center;
 `;
@@ -115,7 +113,7 @@ export const ForwardIcon = styled(FaArrowRight)`
   font-size: 13px; 
 `;
 export const LandingBtn = styled(Link)`
-  color: #000;
+  color: #fff;
   font-size: 16px;
   padding: 15px 35px;
   color: #fff;
