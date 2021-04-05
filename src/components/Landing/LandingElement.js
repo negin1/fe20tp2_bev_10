@@ -4,37 +4,60 @@ import { FaArrowRight } from "react-icons/fa";
 import globe from './globe.jpg';
 
 export const LandingContainer = styled.div`
+
 /*height: 50vh;*/
 display: grid;
 /* grid-template-columns: 1fr repeat()(12, minmax()(auto, 4.2rem)) 1fr; */
 /* grid-template-rows: 8rem 20 rem 5 rem auto;
 gap: 0 2rem; */
 
+position: relative;
+width: 100%;
+height: 50vh;
+display: flex;
+justify-content: center;
+align-items: center center;
+
 background-image: url(${globe});
 background-position: center;
-background-size: cover; 
+background-size: cover;
 background-repeat: no-repeat;
-overflow: hidden;
-position: relative;
 
+@media screen and (max-width: 875px) {
+    width: 100%;
+    height: 50vh;
+  } 
+@media screen and (max-width: 769px) {
+    width: 100%;
+    height: 30vh;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    height: 30vh
+  }
+  @media screen and (max-width: 300px) {
+    width: 100%;
+    height: 15vh
+  }
+/* 
+height: 100vh;
+display: grid;
 width: 100%;
 justify-content: center;
 align-items: center;
-
+ */
 `;
 
 export const LandingContent = styled.div`
-grid-column: 1 / span 12;
+/* grid-column: 1 / span 12;
 grid-row: 2 / 6;
 overflow: hidden;
-position: relative;
+position: relative; */
 
 display: flex;
 flex-direction: column;
 width: 100vmax;
-height: 50vh;
-
-
+height: 30vh;
 
 align-items: center;
 padding: 0 20px;
@@ -43,23 +66,25 @@ justify-content: center;
 `
 
 export const Landingh1 = styled.h1`
-font-size: 44px;
-color: #000;
+font-size: 50px;
+color: #fff;
 font-weight: bold;
-padding: 200px; 
+padding: 50px; 
 
   @media screen and (max-width: 769px) {
     font-size: 32px;
+    padding: 20px; 
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 539px) {
     font-size: 22px;
+    padding: 15px; 
   }
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 351px) {
     font-size: 20px;
   }
 `;
 
-const animeLandingh1 = keyframes`
+export const animeLandingh1 = keyframes`
     from{
         transform: scale(1.1) translateY(120px);
         opacity:0;
@@ -70,11 +95,10 @@ const animeLandingh1 = keyframes`
     }
 `;
 
-export const BtnRoute = styled.h1`
+export const BtnRoute = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   position: relative;
   text-align: center;
 `;
@@ -86,10 +110,10 @@ export const ForwardIcon = styled(FaArrowRight)`
   left: 75%;
   margin-left: 5px;
   opacity: 0;
-  font-size: 13px;
+  font-size: 13px; 
 `;
 export const LandingBtn = styled(Link)`
-  color: #000;
+  color: #fff;
   font-size: 16px;
   padding: 15px 35px;
   color: #fff;
