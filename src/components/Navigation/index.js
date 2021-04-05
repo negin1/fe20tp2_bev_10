@@ -11,7 +11,6 @@ import * as ROLES from '../../constants/roles';
 const StyledDiv = styled.div`
   display: flex;
   padding: 20px;
-  position: sticky;
   top:105px; 
 
   
@@ -20,10 +19,12 @@ const StyledDiv = styled.div`
     }
  > ul{
     display: flex;
-    margin: 0 auto;
+    justify-content: center;
     overflow: auto;
     white-space: nowrap;
+       position:fixed;
  }
+    
 
  li{
     text-decoration: none; 
@@ -33,6 +34,7 @@ const StyledDiv = styled.div`
    font-size: 20px;
    padding: 26px 30px;
    color: black;
+
   }
 
  a {

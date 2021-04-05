@@ -56,6 +56,7 @@ export const getReportByDateRange = (type, countrySlug, from, to) => {
             setLabel(xAxisLabel); */
             // should return cases, 
             return ({ data: ['??', '??'], labels: ['??', '??'] });
+            return ({ data: ['yAxisCoronaCount', 'yAxisCoronaCount'], labels: ['xAxisLabel', 'xAxisLabel'] });
         })
 
         .catch((error) => {
