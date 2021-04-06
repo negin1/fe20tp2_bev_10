@@ -13,13 +13,14 @@ const Index = () => {
       })
       .then(data =>{
         console.log(data)
-        setCovidData(data);
+        setCovidData()
+        
       });
   }, []);
 
   return (
     <div>
-      { covidData && <CovidList covidData={covidData}/>}
+       {/* <CovidList covidData={covidData}/> */}
     </div>
   );
 }
