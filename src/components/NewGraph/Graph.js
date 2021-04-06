@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import { daysHandler } from './api';
 
 
 /* 
@@ -17,15 +18,15 @@ const userConfig = {
 const Graph = (props) => {
     /* console.log('Hej från Graph') */
     //getReportByDateRange();
-    //const pastWeek = daysHandler(7); // {from: "2021-03-24", to: "2021-03-31"}
+    const pastWeek = daysHandler(props.data.days); // {from: "2021-03-24", to: "2021-03-31"}
     //console.log(props.data)
     return (
         <StyledLineGraph>
             <Line data={{
-                labels: ['hej', 'hej'],
+                labels: [pastWeek.from, pastWeek.to],
                 datasets: [
                     {
-                        label: 'Graph jej',
+                        label: props.data.countrySlug,
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',
