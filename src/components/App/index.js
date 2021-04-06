@@ -12,6 +12,7 @@ import AdminPage from '../Admin';
 import Dashboard from '../Dashboard';
 import Settings from '../Settings';
 import BottomNav from '../BottomNav';
+import Covid2 from '../Covid2/Index';
 
 
 import Header from '../Header/'
@@ -55,6 +56,8 @@ height: 300px;
 const App = () => (
   <>
     <GlobalStyle />
+
+    <Covid2 />
     <Router>
       <StyledDiv>
         <Header />
@@ -73,6 +76,8 @@ const App = () => (
           <Footer />
         </StyledDiv2>
       </StyledDiv>
+
+      
       <BottomNav />
     </Router>
   </>

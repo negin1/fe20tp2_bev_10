@@ -19,7 +19,9 @@ const GraphList = (props) => {
     const to = pastObject.to
 
     getReportByDateRange(type, countrySlug, from, to).then(data => {
-        console.log(data) // [765984, 773690, 780018, 780018, 780018, 780018]
+        console.log(data)
+        
+        // [765984, 773690, 780018, 780018, 780018, 780018]
         // { labels: ..., data: ...}
     })
 
