@@ -12,6 +12,9 @@ const StyledLink = styled(Link)`
   color: black;
   font-weight: bold;
   font-size: 18px;
+  z-index:888;
+  padding-top:5px;
+  
 `;
 
 const Input = styled.input`
@@ -29,22 +32,10 @@ const Label = styled.label`
 `;
 
 
-
-
-
-const StyledP = styled.p`
-
-a{
-  font-weight: bold;
-  font-size: 18px;
-  color: black; 
-}
-`;
-
 const SignUpPage = () => (
-  <StyledForm>
-    <SignUpForm />
-  </StyledForm>
+  //<StyledForm>
+  <SignUpForm />
+  //</StyledForm>
 );
 
 const INITIAL_STATE = {
@@ -176,9 +167,7 @@ class SignUpFormBase extends Component {
 }
 
 const SignUpLink = () => (
-  <StyledP>
-    <Link to={ROUTES.SIGN_UP}>Create a new account? </Link>
-  </StyledP>
+  <StyledLink to={ROUTES.SIGN_UP}>Create a new account?</StyledLink>
 );
 
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));
