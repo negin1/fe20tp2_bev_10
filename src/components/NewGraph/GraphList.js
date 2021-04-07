@@ -23,6 +23,9 @@ const GraphList = (props) => {
         
         // [765984, 773690, 780018, 780018, 780018, 780018]
         // { labels: ..., data: ...}
+        //const Obj = { data }
+        //const Obj2 = { data, labels: pastObject, label: countrySlug }
+        //console.log(Obj2);
     })
 
     // create an object, see if you can it to to show in th graph

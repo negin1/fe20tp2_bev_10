@@ -46,9 +46,10 @@ position: relative;
 
 const StyledDiv2 = styled.div`
 height: 300px; 
+margin-top: 30px;
 @media (max-width: 500px) {
         flex-wrap: wrap-reverse;
-        height: 450px;
+        height: 300px;
     }
 `;
 
