@@ -12,15 +12,17 @@ const StyledDiv = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
+
   @media (max-width: 500px) {
          bottom: 75px;
     }
 
   > div {
-      padding: 14em 4em 2em 4em;  
+      padding: 10em 4em 2em 4em;  
       display: flex; 
       flex-wrap: nowrap;
       justify-content: left; 
+      margin-top: 5px;
 
         @media (max-width: 1400px) {
         flex-wrap: wrap-reverse;
