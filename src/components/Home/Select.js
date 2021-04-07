@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import FetchData from './Graph2';
+import { getReportByDateRange } from '../NewGraph/api';
 
 const url = 'https://api.covid19api.com/'
 const summaryUrl = 'https://api.covid19api.com/summary'
@@ -40,7 +42,7 @@ const StyledDiv = styled.div`
 const Select = () => {
     const [covidSummary, setCovidSummary] = useState({})
     const [country, setCountry] = useState('');
-    const [status, setStatus] = useState('');
+    const [type, setType] = useState('');
     const [days, setDays] = useState('');
     const [graph, setGraph] = useState('');
 
@@ -62,7 +64,7 @@ const Select = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const selection = { country, status, days, graph }
+        const selection = { country, type, days, graph }
         console.log(selection)
     }
 
@@ -73,14 +75,14 @@ const Select = () => {
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
                     <div>
-                        <select value={status}
-                            onChange={(e) => setStatus(e.target.value)}>
-
-                            <option value='infected'>Infected</option>
+                        <select value={type}
+                            onChange={(e) => setType(e.target.value)}>
+                            <option value='' disabled>Choose type</option>
+                            <option value='confirmed'>Infected</option>
                             <option value='deaths'>Deaths</option>
                             <option value='recovered'>Recovered</option>
                         </select>
-                        <p>{status}</p>
+                        <p>{type}</p>
                     </div>
                     <div>
                         <label>Country:</label>
@@ -115,6 +117,7 @@ const Select = () => {
                     <p>{graph}</p>
                     <button>Render my graph</button>
                 </form>
+                {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
             </div>
         </StyledDiv >
     );
