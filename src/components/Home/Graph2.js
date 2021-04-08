@@ -21,7 +21,7 @@ const Graph2 = (props) => {
 
             <StyledLineGraph>
                 <Line data={{
-                    labels: props.data.labels,
+                    labels: props.data.labels.map(l => l.substring(0, 10)),
                     datasets: [
                         {
                             label: props.data.type + ' in ' + props.data.country,
