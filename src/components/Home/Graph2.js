@@ -1,11 +1,14 @@
 import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { Line } from 'react-chartjs-2';
+import StyledLineGraph from '../Styles/StyledLineGraph';
+
+
 
 
 const Graph2 = (props) => {
-
-    console.log(props.country, props.days, props.type, props.graph);
+    console.log(props.data);
     //console.log(props.days)
     //const timePeriod = daysHandler(props.days)
     //console.log(timePeriod)
@@ -15,16 +18,37 @@ const Graph2 = (props) => {
         <div>
             <br></br>
             <p>Hello from Graph</p>
-            <br></br>
-            <br></br>
-            <p>type of data from props: {props.type}</p>
-            <br></br>
-            <p>country from props: {props.country}</p>
-            <br></br>
-            <p>number of days from props: {props.days}</p>
-            <br></br>
-            <p>graph from props: {props.graph}</p>
-            <br></br>
+
+
+            <StyledLineGraph>
+                <Line data={{
+                    labels: [props.data.labels],
+                    datasets: [
+                        {
+                            label: props.type,
+                            fill: false,
+                            lineTension: 0.1,
+                            backgroundColor: 'rgba(75,192,192,0.4)',
+                            borderColor: 'rgba(75,192,192,1)',
+                            borderCapStyle: 'butt',
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            borderJoinStyle: 'miter',
+                            pointBorderColor: 'rgba(75,192,192,1)',
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 5,
+                            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                            pointHoverBorderColor: 'rgba(220,220,220,1)',
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 1,
+                            pointHitRadius: 10,
+                            data: [props.data.dataCount],
+                        },
+                    ]
+                }} />
+            </StyledLineGraph>
+
         </div>
 
     );
