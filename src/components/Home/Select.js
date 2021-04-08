@@ -11,7 +11,7 @@ const summaryUrl = 'https://api.covid19api.com/summary'
 const StyledDiv = styled.div`
     margin: 50px; 
     display: flex;
-    width: 300px; 
+    width: 400px; 
 
     label {
     display: block; 
@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
 
     select {
     padding: 5px;
-    width: 150px;
+    width: 250px;
     margin-top: 10px; 
     margin-bottom: 20px; 
     font-size: 18px; 
@@ -78,7 +78,7 @@ const Select = () => {
                         <div>
                             <select value={type}
                                 onChange={(e) => setType(e.target.value)}>
-                                <option value='' disabled>Choose type</option>
+                                <option value='' disabled>Select type of data</option>
                                 <option value='confirmed'>Infected</option>
                                 <option value='deaths'>Deaths</option>
                                 <option value='recovered'>Recovered</option>
@@ -102,7 +102,7 @@ const Select = () => {
                         <label>Days:</label>
                         <select value={days}
                             onChange={(e) => setDays(e.target.value)}>
-
+                            <option value='' disabled>Select time period</option>
                             <option value='7'>Last 7 days</option>
                             <option value='90'>Last 90 days</option>
                             <option value='365'>Last 365 days</option>
@@ -111,7 +111,7 @@ const Select = () => {
                         <label>Type of graph:</label>
                         <select value={graph}
                             onChange={(e) => setGraph(e.target.value)}>
-
+                            <option value='' disabled>Select type of graph</option>
                             <option value="linegraph">Line graph</option>
                             <option value="bubble">Bubble graph</option>
                         </select>

@@ -17,8 +17,6 @@ const Graph2 = (props) => {
     return (
         <div>
             <br></br>
-            <p>Hello from Graph</p>
-
 
             <StyledLineGraph>
                 <Line data={{
