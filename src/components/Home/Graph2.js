@@ -5,9 +5,9 @@ import { Line } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
 
-const Graph2 = (props) => {
 
-    console.log(props.country, props.days, props.type, props.graph);
+const Graph2 = (props) => {
+    console.log(props.data);
     //console.log(props.days)
     //const timePeriod = daysHandler(props.days)
     //console.log(timePeriod)
@@ -15,6 +15,8 @@ const Graph2 = (props) => {
 
     return (
         <div>
+            <br></br>
+
             <StyledLineGraph>
                 <Line data={{
                     labels: [props.data.labels],
@@ -42,7 +44,8 @@ const Graph2 = (props) => {
                         },
                     ]
                 }} />
-            </StyledLineGraph>);
+            </StyledLineGraph>
+
         </div>
     );
 }
