@@ -23,7 +23,7 @@ const Graph2 = (props) => {
                     labels: [props.data.labels],
                     datasets: [
                         {
-                            label: props.type,
+                            label: props.data.type + ' in ' + props.data.country,
                             fill: false,
                             lineTension: 0.1,
                             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -71,7 +71,9 @@ const FetchData = (props) => {
 
                 const dataCount = data.map((d) => d.Cases)
                 const labels = data.map(d => d.Date)
-                setData({ dataCount, labels })
+                const country = props.country
+                const type = props.type
+                setData({ dataCount, labels, country, type })
             })
 
             .catch((error) => {

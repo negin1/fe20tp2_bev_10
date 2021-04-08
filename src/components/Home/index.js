@@ -95,10 +95,10 @@ class HomePage extends React.Component {
                 <hr></hr>
                 <StyledH4>Compare countries</StyledH4>
                 <GroupGraph />
-        infected={false}}
+        infected={false}
                 <Cards data={data} />
                 <Chart />
-                <Country />*/}
+                <Country />
             </div>
         )
     }
