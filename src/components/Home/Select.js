@@ -89,6 +89,7 @@ const Select = () => {
                             <label>Country:</label>
                             <select value={country}
                                 onChange={(e) => setCountry(e.target.value)}>
+                                <option value='' disabled>Select type of data</option>
 
                                 {covidSummary.Countries &&
                                     covidSummary.Countries.map((country) => (
@@ -102,7 +103,7 @@ const Select = () => {
                         <label>Days:</label>
                         <select value={days}
                             onChange={(e) => setDays(e.target.value)}>
-                            <option value='' disabled>Select time period</option>
+                            {/*<option value='' disabled>Select time period</option>*/}
                             <option value='7'>Last 7 days</option>
                             <option value='90'>Last 90 days</option>
                             <option value='365'>Last 365 days</option>
@@ -116,7 +117,7 @@ const Select = () => {
                             <option value="bubble">Bubble graph</option>
                         </select>
                         <p>{graph}</p>
-                        <button>Render my graph</button>
+                        {/*<button>Render my graph</button>*/}
                     </form>
                 </StyledDiv>
                 {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
