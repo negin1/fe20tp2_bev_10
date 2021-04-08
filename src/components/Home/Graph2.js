@@ -1,7 +1,7 @@
 import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { Line } from 'react-chartjs-2';
+import { Line, Bubble, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
 
@@ -45,6 +45,18 @@ const Graph2 = (props) => {
                             data: props.data.dataCount,
                         },
                     ]
+                }} />
+            </StyledLineGraph>
+            <StyledLineGraph>
+                <Bar data={{
+                    labels: props.data.labels.map(l => l.substring(0, 10)),
+                    datasets: [{
+                        label: props.data.type + ' in ' + props.data.country,
+                        data: props.data.dataCount,
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        borderWidth: 1
+                    }]
                 }} />
             </StyledLineGraph>
 
