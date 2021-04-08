@@ -12,6 +12,7 @@ const Graph2 = (props) => {
     //console.log(props.days)
     //const timePeriod = daysHandler(props.days)
     //console.log(timePeriod)
+    console.log(props.data.labels);
 
 
     return (
@@ -20,7 +21,7 @@ const Graph2 = (props) => {
 
             <StyledLineGraph>
                 <Line data={{
-                    labels: [props.data.labels],
+                    labels: props.data.labels,
                     datasets: [
                         {
                             label: props.data.type + ' in ' + props.data.country,
@@ -41,7 +42,7 @@ const Graph2 = (props) => {
                             pointHoverBorderWidth: 2,
                             pointRadius: 1,
                             pointHitRadius: 10,
-                            data: [props.data.dataCount],
+                            data: props.data.dataCount,
                         },
                     ]
                 }} />
