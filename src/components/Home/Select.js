@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import FetchData from './Graph2';
+import FetchData from './FetchData';
 import { getReportByDateRange } from '../NewGraph/api';
 
 const url = 'https://api.covid19api.com/'
@@ -89,7 +89,7 @@ const Select = () => {
                             <label>Country:</label>
                             <select value={country}
                                 onChange={(e) => setCountry(e.target.value)}>
-                                <option value='' disabled>Select type of data</option>
+                                <option value='' disabled>Select country</option>
 
                                 {covidSummary.Countries &&
                                     covidSummary.Countries.map((country) => (
@@ -103,7 +103,7 @@ const Select = () => {
                         <label>Days:</label>
                         <select value={days}
                             onChange={(e) => setDays(e.target.value)}>
-                            {/*<option value='' disabled>Select time period</option>*/}
+                            <option value='' disabled>Select time period</option>
                             <option value='7'>Last 7 days</option>
                             <option value='90'>Last 90 days</option>
                             <option value='365'>Last 365 days</option>
