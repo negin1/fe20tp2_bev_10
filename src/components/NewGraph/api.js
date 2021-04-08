@@ -46,7 +46,8 @@ export const getReportByDateRange = (type, countrySlug, from, to) => {
             //console.log(data)
             const yAxisCoronaCount = data.map((d) => d.Cases)
             const xAxisLabel = data.map(d => d.Date)
-            return tester(yAxisCoronaCount, xAxisLabel)
+            console.log(yAxisCoronaCount)
+            console.log(xAxisLabel)
 
             // end
             /* setCoronaCountAr(yAxisCoronaCount)
@@ -55,7 +56,7 @@ export const getReportByDateRange = (type, countrySlug, from, to) => {
             setTotalDeaths(covidDetails.TotalDeaths);
             setLabel(xAxisLabel); */
             // should return cases, 
-            return ({ data: ['??', '??'], labels: ['??', '??'] });
+            return ({ data: [yAxisCoronaCount], labels: [xAxisLabel] });
         })
 
         .catch((error) => {
