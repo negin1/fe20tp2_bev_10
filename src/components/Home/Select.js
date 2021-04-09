@@ -12,11 +12,9 @@ const StyledDiv = styled.div`
     margin: 50px; 
     display: flex;
     width: 400px; 
-
     label {
     display: block; 
     }
-
     select {
     padding: 5px;
     width: 250px;
@@ -24,12 +22,10 @@ const StyledDiv = styled.div`
     margin-bottom: 20px; 
     font-size: 18px; 
     }
-
     p {
         display: inline; 
         margin-left: 20px; 
     }
-
     button {
         display: block;
          margin-top: 10px;
@@ -105,6 +101,7 @@ const Select = () => {
                             onChange={(e) => setDays(e.target.value)}>
                             <option value='' disabled>Select time period</option>
                             <option value='7'>Last 7 days</option>
+                             <option value='30'>Last 30 days</option>
                             <option value='90'>Last 90 days</option>
                             <option value='365'>Last 365 days</option>
                         </select>

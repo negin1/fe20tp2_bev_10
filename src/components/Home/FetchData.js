@@ -51,7 +51,6 @@ const FetchData = (props) => {
             //console.log(res)
             let data = res.data.filter(item => item.Province === '');
             data = data.slice(0, data.length - 1);
-
             //const yAxisCoronaCount = res.data.map((d) => d.Cases)
             //const xAxisLabel = res.data.map(d => d.Date)
             const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
@@ -59,8 +58,6 @@ const FetchData = (props) => {
             //console.log(data)
             const yAxisCoronaCount = data.map((d) => d.Cases)
             const xAxisLabel = data.map(d => d.Date)
-
-
             // end
             setCoronaCountAr(yAxisCoronaCount)
             setTotalConfirmed(covidDetails.TotalConfirmed);
@@ -68,7 +65,6 @@ const FetchData = (props) => {
             setTotalDeaths(covidDetails.TotalDeaths);
             setLabel(xAxisLabel);
         })
-
         .catch((error) => {
             //console.log(error)
         })
