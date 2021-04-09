@@ -1,34 +1,14 @@
 import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { Line, Bubble, Bar } from 'react-chartjs-2';
+import StyledLineGraph from '../Styles/StyledLineGraph';
+import Graph from './Graph';
 
 
-const Graph2 = (props) => {
-
-    console.log(props.country, props.days, props.type, props.graph);
-    //console.log(props.days)
-    //const timePeriod = daysHandler(props.days)
-    //console.log(timePeriod)
 
 
-    return (
-        <div>
-            <br></br>
-            <p>Hello from Graph</p>
-            <br></br>
-            <br></br>
-            <p>type of data from props: {props.type}</p>
-            <br></br>
-            <p>country from props: {props.country}</p>
-            <br></br>
-            <p>number of days from props: {props.days}</p>
-            <br></br>
-            <p>graph from props: {props.graph}</p>
-            <br></br>
-        </div>
 
-    );
-}
 
 const FetchData = (props) => {
     const [data, setData] = useState(null)
@@ -57,9 +37,9 @@ const FetchData = (props) => {
             })
 
             ;
-    }, [props.country]);
+    }, [props.country, props.type, props.days, props.graph]);
     return (
-        data ? <Graph2 data={data} /> : null
+        data ? <Graph data={data} country={props.country} type={props.type} graph={props.graph} /> : null
     )
 }
 

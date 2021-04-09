@@ -83,23 +83,22 @@ class HomePage extends React.Component {
                     <h2>Discover</h2>
                     <p>Select your graphs and data.</p>
                 </StyledPageIntro>
+                {/*<CovidTracker />*/}
+                <br></br>
                 <Select />
-                <GraphList graphList={graphList} />
-                {/*this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
+                {/*<GraphList graphList={graphList} />
+                this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
                 {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />
       <PresetCovid order='3' country='mongolia' /> 
       <MultiCovid order='4' countries={['norway', 'sweden'] */}
-                <CovidTracker />
-                {/*<CovidTracker />
-        <br></br>
-        <hr></hr>
-        <StyledH4>Compare countries</StyledH4>
-        <GroupGraph />
-        infected={false}}
-        <Cards data={data} />
-        <Chart />
-        <Country />*/}
+                <hr></hr>
+                <StyledH4>Compare countries</StyledH4>
+                <GroupGraph />
+        infected={false}
+                <Cards data={data} />
+                <Chart />
+                <Country />
             </div>
         )
     }
