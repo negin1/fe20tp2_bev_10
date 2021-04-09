@@ -116,7 +116,7 @@ const Select = () => {
                             <option value="bubble">Bubble graph</option>
                         </select>
                         <p>{graph}</p>
-                        {/*<button>Render my graph</button>*/}
+                        <button value="Submit">Render my graph</button>
                     </form>
                 </StyledDiv>
                 {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
