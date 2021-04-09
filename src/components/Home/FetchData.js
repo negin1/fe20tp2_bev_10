@@ -1,54 +1,14 @@
 import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { Line } from 'react-chartjs-2';
+import { Line, Bubble, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import Graph from './Graph';
 
 
 
-const Graph2 = (props) => {
-    console.log(props.data);
-    //console.log(props.days)
-    //const timePeriod = daysHandler(props.days)
-    //console.log(timePeriod)
 
 
-    return (
-        <div>
-            <br></br>
-
-            <StyledLineGraph>
-                <Line data={{
-                    labels: [props.data.labels],
-                    datasets: [
-                        {
-                            label: props.type,
-                            fill: false,
-                            lineTension: 0.1,
-                            backgroundColor: 'rgba(75,192,192,0.4)',
-                            borderColor: 'rgba(75,192,192,1)',
-                            borderCapStyle: 'butt',
-                            borderDash: [],
-                            borderDashOffset: 0.0,
-                            borderJoinStyle: 'miter',
-                            pointBorderColor: 'rgba(75,192,192,1)',
-                            pointBackgroundColor: '#fff',
-                            pointBorderWidth: 1,
-                            pointHoverRadius: 5,
-                            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-                            pointHoverBorderColor: 'rgba(220,220,220,1)',
-                            pointHoverBorderWidth: 2,
-                            pointRadius: 1,
-                            pointHitRadius: 10,
-                            data: [props.data.dataCount],
-                        },
-                    ]
-                }} />
-            </StyledLineGraph>
-
-        </div>
-    );
-}
 
 const FetchData = (props) => {
     const [data, setData] = useState(null)
@@ -77,9 +37,9 @@ const FetchData = (props) => {
             })
 
             ;
-    }, [props.country]);
+    }, [props.country, props.type, props.days, props.graph]);
     return (
-        data ? <Graph2 data={data} /> : null
+        data ? <Graph data={data} country={props.country} type={props.type} graph={props.graph} /> : null
     )
 }
 
