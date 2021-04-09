@@ -5,10 +5,29 @@ import { Line, Bubble, Bar } from 'react-chartjs-2';
 
 
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import { StyledSelectBtn, StyledDivSelectBtn } from '../Styles/StyledPageIntro';
+
+import { Link } from "react-router-dom";
+import { useStateValue } from '../../StateProvider';
+import { ListItemText } from '@material-ui/core';
 
 
 
 const Graph = (props) => {
+    const [state,  dispatch ] = useStateValue;
+
+    const addToDashboard = () => {
+    //dispatch the item into the data layer 
+        dispatch({
+            type: 'ADD_TO_DASHBOARD',
+            item: {
+              
+            },
+        });
+  };
+
+
+
     //console.log(props.data);
     //console.log(props.days)
     //const timePeriod = daysHandler(props.days)
@@ -16,12 +35,15 @@ const Graph = (props) => {
     //console.log(props.data.labels);
 
 
+    
     return (
         <div>
             <br></br>
-
+-
+            <div className="graph">
+      
             <StyledLineGraph>
-                <Line data={{
+                <Line id="graph" data={{
                     labels: props.data.labels.map(l => l.substring(0, 10)),
                     datasets: [
                         {
@@ -47,9 +69,19 @@ const Graph = (props) => {
                         },
                     ]
                 }} />
+            
+
+              
             </StyledLineGraph>
+
+              <StyledDivSelectBtn>
+        <StyledSelectBtn onClick={addToDashboard}>Select</StyledSelectBtn>
+      </StyledDivSelectBtn>
+</div>
+            
+            <div>
             <StyledLineGraph>
-                <Bar data={{
+                <Bar id="graph" data={{
                     labels: props.data.labels.map(l => l.substring(0, 10)),
                     datasets: [{
                         label: props.type + ' in ' + props.country,
@@ -60,6 +92,11 @@ const Graph = (props) => {
                     }]
                 }} />
             </StyledLineGraph>
+
+                  <StyledDivSelectBtn>
+        <StyledSelectBtn>Select</StyledSelectBtn>
+      </StyledDivSelectBtn>
+      </div>
 
              <StyledLineGraph>
                 <Bubble data={{
@@ -88,6 +125,10 @@ const Graph = (props) => {
                     }]
                 }} />
             </StyledLineGraph>
+
+             <StyledDivSelectBtn>
+        <StyledSelectBtn>Select</StyledSelectBtn>
+      </StyledDivSelectBtn>
 
          
 
