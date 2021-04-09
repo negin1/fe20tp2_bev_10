@@ -7,18 +7,13 @@ import COUNTRYLIST from './countryData.js';
 const url = 'https://api.covid19api.com/'
 const summaryUrl = 'https://api.covid19api.com/summary'
 
-const StyledDiv = styled.div`
-display: flex; 
-justify-content: center; 
-
-`
 
 
 const StyledDivForm = styled.div`
-    margin: 50px; 
+    margin: 50px auto; 
     display: flex;
-    justify-content: center; 
-    width: 400px; 
+    justify-content: center;
+    width: 350px; 
 
     label {
     display: block; 
@@ -84,7 +79,7 @@ const Select = () => {
     }
 
     return (
-        <StyledDiv>
+        <div>
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
@@ -96,7 +91,7 @@ const Select = () => {
                             <option value='deaths'>Deaths</option>
                             <option value='recovered'>Recovered</option>
                         </select>
-                        {type != "" && <p>✔️</p>}
+                        {/*{type != "" && <p>✔️</p>}*/}
                     </div>
                     <div>
                         <label>Country:</label>
@@ -110,7 +105,7 @@ const Select = () => {
                                 </option>
                             ))}
                         </select>
-                        {country != "" && <p>✔️</p>}
+                        {/*{country != "" && <p>✔️</p>}*/}
                     </div>
                     <label>Days:</label>
                     <select value={days}
@@ -120,7 +115,7 @@ const Select = () => {
                         <option value='90'>Last 90 days</option>
                         <option value='365'>Last 365 days</option>
                     </select>
-                    {days != "" && <p>✔️</p>}
+                    {/*{days != "" && <p>✔️</p>}*/}
                     <label>Type of graph:</label>
                     <select value={graph}
                         onChange={(e) => setGraph(e.target.value)}>
@@ -128,12 +123,14 @@ const Select = () => {
                         <option value="line">Line graph</option>
                         <option value="bar">Bar graph</option>
                     </select>
-                    {graph != "" && <p>✔️</p>}
+                    {/*{graph != "" && <p>✔️</p>}*/}
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
-            {(submit === true && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
-        </StyledDiv>
+            <div>
+                {(submit === true && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+            </div>
+        </div>
     );
 }
 
