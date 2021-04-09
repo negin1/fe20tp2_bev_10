@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import FetchData from './FetchData';
-import { getReportByDateRange } from '../NewGraph/api';
+import COUNTRYLIST from './countryData.js';
 
 const url = 'https://api.covid19api.com/'
 const summaryUrl = 'https://api.covid19api.com/summary'
@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
     label {
     display: block; 
     }
-
+ 
     select {
     padding: 5px;
     width: 250px;
@@ -47,7 +47,7 @@ const Select = () => {
     const [graph, setGraph] = useState('');
 
 
-    useEffect(() => {
+    /*useEffect(() => {
         //setLoading(true);
         axios
             .get(summaryUrl)
@@ -60,7 +60,7 @@ const Select = () => {
             })
             .catch((error) => {
             })
-    }, [])
+    }, [])*/
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -91,12 +91,11 @@ const Select = () => {
                                 onChange={(e) => setCountry(e.target.value)}>
                                 <option value='' disabled>Select country</option>
 
-                                {covidSummary.Countries &&
-                                    covidSummary.Countries.map((country) => (
-                                        <option key={country.Slug} value={country.Slug}>
-                                            {country.Country}
-                                        </option>
-                                    ))}
+                                {COUNTRYLIST.Countries.map((country) => (
+                                    <option key={country.Slug} value={country.Slug}>
+                                        {country.Country}
+                                    </option>
+                                ))}
                             </select>
                             <p>{country}</p>
                         </div>
@@ -121,6 +120,9 @@ const Select = () => {
                     </form>
                 </StyledDiv>
                 {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+                <div>
+                    <h2></h2>
+                </div>
             </div>
         </div >
     );

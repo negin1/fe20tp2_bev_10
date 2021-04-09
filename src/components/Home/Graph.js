@@ -4,15 +4,11 @@ import axios from 'axios'
 import { Line, Bubble, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
+/**/
 
 
 const Graph = (props) => {
-    //console.log(props.data);
-    //console.log(props.days)
-    //const timePeriod = daysHandler(props.days)
-    //console.log(timePeriod)
-    //console.log(props.data.labels);
-
+    console.log(props.data.labels, props.data.dataCount, props.country, props.type)
 
     return (
         <div>
@@ -58,6 +54,26 @@ const Graph = (props) => {
                     }]
                 }} />
             </StyledLineGraph>
+            <StyledLineGraph>
+                <Bubble data={{
+                    datasets: [{
+                        label: 'First Dataset',
+                        data: [{
+                            x: 20,
+                            y: 30,
+                            r: 15
+                        }, {
+                            x: 40,
+                            y: 10,
+                            r: 10
+                        }],
+                        backgroundColor: 'rgb(255, 99, 132)'
+                    }]
+                }} />
+
+            </StyledLineGraph>
+            <div>
+            </div>
 
         </div>
 
