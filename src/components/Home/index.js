@@ -91,14 +91,14 @@ class HomePage extends React.Component {
                 {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />
       <PresetCovid order='3' country='mongolia' /> 
-      <MultiCovid order='4' countries={['norway', 'sweden'] */}
+      <MultiCovid order='4' countries={['norway', 'sweden'] 
                 <hr></hr>
                 <StyledH4>Compare countries</StyledH4>
                 <GroupGraph />
         infected={false}
                 <Cards data={data} />
                 <Chart />
-                <Country />
+                <Country />*/}
             </div>
         )
     }

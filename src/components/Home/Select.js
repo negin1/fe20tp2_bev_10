@@ -1,16 +1,23 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import FetchData from './FetchData';
 import COUNTRYLIST from './countryData.js';
 
 const url = 'https://api.covid19api.com/'
 const summaryUrl = 'https://api.covid19api.com/summary'
 
-
 const StyledDiv = styled.div`
+display: flex; 
+justify-content: center; 
+
+`
+
+
+const StyledDivForm = styled.div`
     margin: 50px; 
     display: flex;
+    justify-content: center; 
     width: 400px; 
 
     label {
@@ -31,16 +38,24 @@ const StyledDiv = styled.div`
     }
 
     button {
-        display: block;
-         margin-top: 10px;
-         width: 120px;
-         height: 30px; 
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+      }
     }
     `;
 
 
 const Select = () => {
-    const [covidSummary, setCovidSummary] = useState({})
+    const [submit, setSubmit] = useState(false);
     const [country, setCountry] = useState('');
     const [type, setType] = useState('');
     const [days, setDays] = useState('');
@@ -64,67 +79,61 @@ const Select = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const selection = { country, type, days, graph }
-        console.log(selection)
+        setSubmit(true);
+
     }
 
     return (
-        <div>
-            <div>
-                <h3>Select your data:</h3>
-                <StyledDiv>
-                    <form onSubmit={handleSubmit}>
-                        <label>Covid-19 data:</label>
-                        <div>
-                            <select value={type}
-                                onChange={(e) => setType(e.target.value)}>
-                                <option value='' disabled>Select type of data</option>
-                                <option value='confirmed'>Infected</option>
-                                <option value='deaths'>Deaths</option>
-                                <option value='recovered'>Recovered</option>
-                            </select>
-                            <p>{type}</p>
-                        </div>
-                        <div>
-                            <label>Country:</label>
-                            <select value={country}
-                                onChange={(e) => setCountry(e.target.value)}>
-                                <option value='' disabled>Select country</option>
+        <StyledDiv>
+            <StyledDivForm>
+                <form onSubmit={handleSubmit}>
+                    <label>Covid-19 data:</label>
+                    <div>
+                        <select value={type}
+                            onChange={(e) => setType(e.target.value)}>
+                            <option value='' disabled>Select type of data</option>
+                            <option value='confirmed'>Infected</option>
+                            <option value='deaths'>Deaths</option>
+                            <option value='recovered'>Recovered</option>
+                        </select>
+                        {type != "" && <p>✔️</p>}
+                    </div>
+                    <div>
+                        <label>Country:</label>
+                        <select value={country}
+                            onChange={(e) => setCountry(e.target.value)}>
+                            <option value='' disabled>Select country</option>
 
-                                {COUNTRYLIST.Countries.map((country) => (
-                                    <option key={country.Slug} value={country.Slug}>
-                                        {country.Country}
-                                    </option>
-                                ))}
-                            </select>
-                            <p>{country}</p>
-                        </div>
-                        <label>Days:</label>
-                        <select value={days}
-                            onChange={(e) => setDays(e.target.value)}>
-                            <option value='' disabled>Select time period</option>
-                            <option value='7'>Last 7 days</option>
-                            <option value='90'>Last 90 days</option>
-                            <option value='365'>Last 365 days</option>
+                            {COUNTRYLIST.Countries.map((country) => (
+                                <option key={country.Slug} value={country.Slug}>
+                                    {country.Country}
+                                </option>
+                            ))}
                         </select>
-                        <p>{days}</p>
-                        <label>Type of graph:</label>
-                        <select value={graph}
-                            onChange={(e) => setGraph(e.target.value)}>
-                            <option value='' disabled>Select type of graph</option>
-                            <option value="linegraph">Line graph</option>
-                            <option value="bubble">Bubble graph</option>
-                        </select>
-                        <p>{graph}</p>
-                        <button value="Submit">Render my graph</button>
-                    </form>
-                </StyledDiv>
-                {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
-                <div>
-                    <h2></h2>
-                </div>
-            </div>
-        </div >
+                        {country != "" && <p>✔️</p>}
+                    </div>
+                    <label>Days:</label>
+                    <select value={days}
+                        onChange={(e) => setDays(e.target.value)}>
+                        <option value='' disabled>Select time period</option>
+                        <option value='7'>Last 7 days</option>
+                        <option value='90'>Last 90 days</option>
+                        <option value='365'>Last 365 days</option>
+                    </select>
+                    {days != "" && <p>✔️</p>}
+                    <label>Type of graph:</label>
+                    <select value={graph}
+                        onChange={(e) => setGraph(e.target.value)}>
+                        <option value='' disabled>Select type of graph</option>
+                        <option value="line">Line graph</option>
+                        <option value="bar">Bar graph</option>
+                    </select>
+                    {graph != "" && <p>✔️</p>}
+                    <button value="Submit">Render my graph</button>
+                </form>
+            </StyledDivForm>
+            {(submit === true && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+        </StyledDiv>
     );
 }
 
