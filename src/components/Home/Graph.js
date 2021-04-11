@@ -14,7 +14,7 @@ import { ListItemText } from '@material-ui/core';
 
 
 const Graph = (props) => {
-    const [state,  dispatch ] = useStateValue;
+   const [state,  dispatch ] = useStateValue();
 
     const addToDashboard = () => {
     //dispatch the item into the data layer 
@@ -24,7 +24,7 @@ const Graph = (props) => {
               
             },
         });
-  };
+  }; 
 
 
 
@@ -75,7 +75,7 @@ const Graph = (props) => {
             </StyledLineGraph>
 
               <StyledDivSelectBtn>
-        <StyledSelectBtn onClick={addToDashboard}>Select</StyledSelectBtn>
+        <StyledSelectBtn >Select</StyledSelectBtn>
       </StyledDivSelectBtn>
 </div>
             

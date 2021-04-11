@@ -14,7 +14,6 @@ const StyledContainer= styled.div`
   justify-content: center;
   padding-top:80px;
   
-
    h1{
       padding-bottom:40px;
       font-family: Montserrat;
@@ -22,16 +21,13 @@ const StyledContainer= styled.div`
        text-shadow: 1px 1px #ffffff; 
    ;
     }
-
   span{
   display: block;
   font-family: Montserrat;
   font-size: 17px;
   letter-spacing: 2px;
   line-height:25px
-
   }
-
   li{
     margin:25px 0;
   
