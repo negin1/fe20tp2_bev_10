@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 //import axios from 'axios';
-import FetchData from './FetchData';
+import MortalityFetchData from './MortalityFetchData';
 import COUNTRYLIST from './countryData.js';
 
 const url = 'https://api.covid19api.com/'
@@ -49,28 +49,15 @@ const StyledDivForm = styled.div`
     `;
 
 
-const Select = () => {
+const MortalitySelect = () => {
     const [submit, setSubmit] = useState(false);
     const [country, setCountry] = useState('sweden');
-    const [type, setType] = useState('confirmed');
     const [days, setDays] = useState('7');
     const [graph, setGraph] = useState('line');
 
+    const typeDeaths = 'deaths';
+    const typeConfirmed = 'confirmed';
 
-    /*useEffect(() => {
-        //setLoading(true);
-        axios
-            .get(summaryUrl)
-            .then((res) => {
-                //setLoading(false);
-
-                if (res.status === 200) {
-                    setCovidSummary(res.data)
-                }
-            })
-            .catch((error) => {
-            })
-    }, [])*/
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -82,16 +69,6 @@ const Select = () => {
         <div>
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>
-                    <label>Covid-19 data:</label>
-                    <div>
-                        <select value={type}
-                            onChange={(e) => setType(e.target.value)}>
-                            <option value='' disabled>Select type of data</option>
-                            <option value='confirmed'>Infected</option>
-                            <option value='deaths'>Deaths</option>
-                            <option value='recovered'>Recovered</option>
-                        </select>
-                    </div>
                     <div>
                         <label>Country:</label>
                         <select value={country}
@@ -124,10 +101,10 @@ const Select = () => {
                 </form>
             </StyledDivForm>
             <div>
-                {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+                {(country && days && graph && <MortalityFetchData country={country} typeDeaths={typeDeaths} typeConfirmed={typeConfirmed} days={days} graph={graph} />)}
             </div>
         </div>
     );
 }
 
-export default Select
+export default MortalitySelect

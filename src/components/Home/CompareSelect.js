@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 //import axios from 'axios';
-import FetchData from './FetchData';
+import CompareFetchData from './CompareFetchData';
 import COUNTRYLIST from './countryData.js';
 
 const url = 'https://api.covid19api.com/'
@@ -52,9 +52,11 @@ const StyledDivForm = styled.div`
 const Select = () => {
     const [submit, setSubmit] = useState(false);
     const [country, setCountry] = useState('sweden');
+    const [country2, setCountry2] = useState('norway');
+    const [country3, setCountry3] = useState('denmark');
     const [type, setType] = useState('confirmed');
-    const [days, setDays] = useState('7');
     const [graph, setGraph] = useState('line');
+    const days = '365';
 
 
     /*useEffect(() => {
@@ -74,6 +76,7 @@ const Select = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(country, country2, days)
         setSubmit(true);
 
     }
@@ -93,7 +96,7 @@ const Select = () => {
                         </select>
                     </div>
                     <div>
-                        <label>Country:</label>
+                        <label>First country:</label>
                         <select value={country}
                             onChange={(e) => setCountry(e.target.value)}>
                             <option value='' disabled>Select country</option>
@@ -105,14 +108,32 @@ const Select = () => {
                             ))}
                         </select>
                     </div>
-                    <label>Days:</label>
-                    <select value={days}
-                        onChange={(e) => setDays(e.target.value)}>
-                        <option value='' disabled>Select time period</option>
-                        <option value='7'>Last 7 days</option>
-                        <option value='90'>Last 90 days</option>
-                        <option value='365'>Last 365 days</option>
-                    </select>
+                    <div>
+                        <label>Second country:</label>
+                        <select value={country2}
+                            onChange={(e) => setCountry2(e.target.value)}>
+                            <option value='' disabled>Select country</option>
+
+                            {COUNTRYLIST.Countries.map((country2) => (
+                                <option key={country2.Slug} value={country2.Slug}>
+                                    {country2.Country}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        <label>Third country:</label>
+                        <select value={country3}
+                            onChange={(e) => setCountry3(e.target.value)}>
+                            <option value='' disabled>Select country</option>
+
+                            {COUNTRYLIST.Countries.map((country3) => (
+                                <option key={country3.Slug} value={country3.Slug}>
+                                    {country3.Country}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                     <label>Type of graph:</label>
                     <select value={graph}
                         onChange={(e) => setGraph(e.target.value)}>
@@ -124,7 +145,7 @@ const Select = () => {
                 </form>
             </StyledDivForm>
             <div>
-                {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+                {(country && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
             </div>
         </div>
     );

@@ -1,13 +1,7 @@
 import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { Line, Bubble, Bar } from 'react-chartjs-2';
-import StyledLineGraph from '../Styles/StyledLineGraph';
 import Graph from './Graph';
-
-
-
-
 
 
 const FetchData = (props) => {

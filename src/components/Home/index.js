@@ -4,7 +4,9 @@ import GroupGraph from '../CovidTracker/GroupGraph'
 import { withAuthorization } from '../Session';
 import styled from 'styled-components'
 import { StyledPageIntro, StyledSelectBtn } from '../Styles/StyledPageIntro';
-import Select from './Select'
+import Select from './Select';
+import CompareSelect from './CompareSelect';
+import MortalitySelect from './MortalitySelect';
 
 import PresetCovid from '../PresetCovid/Index'
 import Cards from '../Covid/Cards';
@@ -85,6 +87,7 @@ class HomePage extends React.Component {
                 </StyledPageIntro>
                 {/*<CovidTracker />*/}
                 <br></br>
+                <StyledH4>Get data from selected country</StyledH4>
                 <Select />
                 {/*<GraphList graphList={graphList} />
                 this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
@@ -99,6 +102,10 @@ class HomePage extends React.Component {
                 <Cards data={data} />
                 <Chart />
                 <Country />*/}
+                <br></br>
+                <StyledH4>Compare data from three selected countries 365 days back</StyledH4>
+                <CompareSelect />
+                <MortalitySelect />
             </div>
         )
     }
