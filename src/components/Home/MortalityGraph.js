@@ -2,8 +2,11 @@
 import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import { capitalizeFirstLetter } from './DaysHandler';
 
 const MortalityGraph = (props) => {
+
+    const country = props.country
 
     let deathCountArr = props.dataDeaths.dataCount;
     console.log(deathCountArr);
@@ -26,7 +29,7 @@ const MortalityGraph = (props) => {
                         labels: props.dataDeaths.labels.map(l => l.substring(0, 10)),
                         datasets: [
                             {
-                                label: 'Mortality rate of infected in ' + props.country,
+                                label: 'Mortality rate of infected in ' + capitalizeFirstLetter(country),
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -75,7 +78,7 @@ const MortalityGraph = (props) => {
                 <Bar data={{
                     labels: props.dataDeaths.labels.map(l => l.substring(0, 10)),
                     datasets: [{
-                        label: 'Mortality rate of infected in ' + props.country,
+                        label: 'Mortality rate of infected in ' + capitalizeFirstLetter(country),
                         data: mortalityArr,
                         backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',

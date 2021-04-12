@@ -19,3 +19,6 @@ export const daysHandler = (days) => {
     return { from, to }
 }
 
+export const capitalizeFirstLetter = (country) => {
+    return country.charAt(0).toUpperCase() + country.slice(1);
+}
