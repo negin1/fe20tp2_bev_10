@@ -3,8 +3,19 @@ import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
-const Graph = (props) => {
-    console.log(props.data.labels, props.data.dataCount, props.country, props.type, props.graph)
+const MortalityGraph = (props) => {
+
+    let deathCountArr = props.dataDeaths.dataCount;
+    console.log(deathCountArr);
+
+    let confirmedCountArr = props.dataConfirmed.dataCount;
+    console.log(confirmedCountArr);
+
+    var i;
+    let mortalityArr = [];
+    for (i = 0; i < deathCountArr.length; i++) {
+        mortalityArr[i] = 100 * deathCountArr[i] / confirmedCountArr[i];
+    }
 
     if (props.graph === 'line') {
         return (
@@ -12,10 +23,10 @@ const Graph = (props) => {
                 <br></br>
                 <StyledLineGraph>
                     <Line data={{
-                        labels: props.data.labels.map(l => l.substring(0, 10)),
+                        labels: props.dataDeaths.labels.map(l => l.substring(0, 10)),
                         datasets: [
                             {
-                                label: props.country,
+                                label: 'Mortality rate of infected in ' + props.country,
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -33,7 +44,7 @@ const Graph = (props) => {
                                 pointHoverBorderWidth: 2,
                                 pointRadius: 1,
                                 pointHitRadius: 10,
-                                data: props.data.dataCount,
+                                data: mortalityArr,
                             },
                         ]
                     }} options={{
@@ -41,7 +52,7 @@ const Graph = (props) => {
                             yAxes: [{
                                 scaleLabel: {
                                     display: true,
-                                    labelString: 'Total ' + props.type
+                                    labelString: 'Percent'
                                 }
                             }],
                             xAxes: [{
@@ -52,8 +63,8 @@ const Graph = (props) => {
                             }],
                         }
 
-                    }} />
-                    {/* <button onClick= {}></button> */}
+                    }}
+                    />
                 </StyledLineGraph>
             </div>
         );
@@ -62,10 +73,10 @@ const Graph = (props) => {
         return (
             <StyledLineGraph>
                 <Bar data={{
-                    labels: props.data.labels.map(l => l.substring(0, 10)),
+                    labels: props.dataDeaths.labels.map(l => l.substring(0, 10)),
                     datasets: [{
-                        label: props.country,
-                        data: props.data.dataCount,
+                        label: 'Mortality rate of infected in ' + props.country,
+                        data: mortalityArr,
                         backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
                         borderWidth: 1
@@ -75,7 +86,7 @@ const Graph = (props) => {
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Total ' + props.type
+                                labelString: 'Percent'
                             }
                         }],
                         xAxes: [{
@@ -92,4 +103,4 @@ const Graph = (props) => {
     }
 }
 
-export default Graph;
+export default MortalityGraph;
