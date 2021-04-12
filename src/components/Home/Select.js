@@ -1,12 +1,7 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
-//import axios from 'axios';
+import React, { useRef, useState } from 'react';
 import FetchData from './FetchData';
 import COUNTRYLIST from './countryData.js';
-
-//const url = 'https://api.covid19api.com/'
-//const summaryUrl = 'https://api.covid19api.com/summary'
-
 
 const StyledDivForm = styled.div`
     margin: 50px auto; 
@@ -47,40 +42,24 @@ const StyledDivForm = styled.div`
     }
     `;
 
-
 const Select = () => {
     const [submit, setSubmit] = useState(false);
     const [country, setCountry] = useState('');
     const [type, setType] = useState('');
     const [days, setDays] = useState('');
     const [graph, setGraph] = useState('');
+    const graphRef = useRef();
 
-    // read array of prop object from LS
-    // render
-    /*useEffect(() => {
-        //setLoading(true);
-        axios
-            .get(summaryUrl)
-            .then((res) => {
-                //setLoading(false);
-
-                if (res.status === 200) {
-                    setCovidSummary(res.data)
-                }
-            })
-            .catch((error) => {
-            })
-    }, [])*/
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmit(true);
-
+        graphRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
         <div>
-            <div>
+            <div ref={graphRef}>
                 {(submit && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
             </div>
             <StyledDivForm>
