@@ -51,6 +51,8 @@ const MortalityGraph = (props) => {
                             },
                         ]
                     }} options={{
+                        responsive: true,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
                                 scaleLabel: {

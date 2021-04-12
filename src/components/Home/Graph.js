@@ -39,23 +39,26 @@ const Graph = (props) => {
                                 data: props.data.dataCount,
                             },
                         ]
-                    }} options={{
-                        scales: {
-                            yAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Total ' + props.type
-                                }
-                            }],
-                            xAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Days'
-                                }
-                            }],
-                        }
+                    }}
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Total ' + props.type
+                                    }
+                                }],
+                                xAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Days'
+                                    }
+                                }],
+                            }
 
-                    }} />
+                        }} />
                     {/* <button onClick= {}></button> */}
                 </StyledLineGraph>
             </div>
@@ -74,6 +77,8 @@ const Graph = (props) => {
                         borderWidth: 1
                     }]
                 }} options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             scaleLabel: {

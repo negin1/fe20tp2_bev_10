@@ -8,8 +8,6 @@ const CompareGraph = (props) => {
     const countryArr = [props.country, props.country2, props.country3]
     const countryArrCapitalized = countryArr.map(country => country.charAt(0).toUpperCase() + country.slice(1));
 
-
-
     if (props.graph === 'line') {
         return (
             <div>
@@ -82,6 +80,8 @@ const CompareGraph = (props) => {
                             },
                         ]
                     }} options={{
+                        responsive: true,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
                                 scaleLabel: {
@@ -133,6 +133,8 @@ const CompareGraph = (props) => {
                     ],
 
                 }} options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             scaleLabel: {
