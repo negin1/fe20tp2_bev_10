@@ -4,9 +4,8 @@ import React, { useEffect, useState } from 'react';
 import FetchData from './FetchData';
 import COUNTRYLIST from './countryData.js';
 
-const url = 'https://api.covid19api.com/'
-const summaryUrl = 'https://api.covid19api.com/summary'
-
+//const url = 'https://api.covid19api.com/'
+//const summaryUrl = 'https://api.covid19api.com/summary'
 
 
 const StyledDivForm = styled.div`
@@ -56,7 +55,8 @@ const Select = () => {
     const [days, setDays] = useState('');
     const [graph, setGraph] = useState('');
 
-
+    // read array of prop object from LS
+    // render
     /*useEffect(() => {
         //setLoading(true);
         axios

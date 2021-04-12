@@ -8,6 +8,10 @@ const FetchData = (props) => {
     const [data, setData] = useState(null)
     const timePeriod = daysHandler(props.days)
     console.log(timePeriod)
+    console.log(props)
+    // read saved graphs from localstorage
+    // push props as an object into the array
+    // save the array to LS
     //const [country, setCountry] = useState('');
     //gör ett api anrop
     useEffect(() => {
