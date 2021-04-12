@@ -1,13 +1,7 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
-//import axios from 'axios';
+import React, { useState } from 'react';
 import CompareFetchData from './CompareFetchData';
 import COUNTRYLIST from './countryData.js';
-
-const url = 'https://api.covid19api.com/'
-const summaryUrl = 'https://api.covid19api.com/summary'
-
-
 
 const StyledDivForm = styled.div`
     margin: 50px auto; 
@@ -48,41 +42,25 @@ const StyledDivForm = styled.div`
     }
     `;
 
-
-const Select = () => {
+const CompareSelect = () => {
     const [submit, setSubmit] = useState(false);
-    const [country, setCountry] = useState('sweden');
-    const [country2, setCountry2] = useState('norway');
-    const [country3, setCountry3] = useState('denmark');
-    const [type, setType] = useState('confirmed');
-    const [graph, setGraph] = useState('line');
+    const [country, setCountry] = useState('');
+    const [country2, setCountry2] = useState('');
+    const [country3, setCountry3] = useState('');
+    const [type, setType] = useState('');
+    const [graph, setGraph] = useState('');
     const days = '365';
-
-
-    /*useEffect(() => {
-        //setLoading(true);
-        axios
-            .get(summaryUrl)
-            .then((res) => {
-                //setLoading(false);
-
-                if (res.status === 200) {
-                    setCovidSummary(res.data)
-                }
-            })
-            .catch((error) => {
-            })
-    }, [])*/
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(country, country2, days)
         setSubmit(true);
-
     }
 
     return (
         <div>
+            <div>
+                {(submit && country && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
+            </div>
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
@@ -99,7 +77,7 @@ const Select = () => {
                         <label>First country:</label>
                         <select value={country}
                             onChange={(e) => setCountry(e.target.value)}>
-                            <option value='' disabled>Select country</option>
+                            <option value='' disabled>Select country 1</option>
 
                             {COUNTRYLIST.Countries.map((country) => (
                                 <option key={country.Slug} value={country.Slug}>
@@ -112,7 +90,7 @@ const Select = () => {
                         <label>Second country:</label>
                         <select value={country2}
                             onChange={(e) => setCountry2(e.target.value)}>
-                            <option value='' disabled>Select country</option>
+                            <option value='' disabled>Select country 2</option>
 
                             {COUNTRYLIST.Countries.map((country2) => (
                                 <option key={country2.Slug} value={country2.Slug}>
@@ -125,7 +103,7 @@ const Select = () => {
                         <label>Third country:</label>
                         <select value={country3}
                             onChange={(e) => setCountry3(e.target.value)}>
-                            <option value='' disabled>Select country</option>
+                            <option value='' disabled>Select country 3</option>
 
                             {COUNTRYLIST.Countries.map((country3) => (
                                 <option key={country3.Slug} value={country3.Slug}>
@@ -144,11 +122,8 @@ const Select = () => {
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
-            <div>
-                {(country && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
-            </div>
         </div>
     );
 }
 
-export default Select
+export default CompareSelect

@@ -51,10 +51,10 @@ const StyledDivForm = styled.div`
 
 const Select = () => {
     const [submit, setSubmit] = useState(false);
-    const [country, setCountry] = useState('sweden');
-    const [type, setType] = useState('confirmed');
-    const [days, setDays] = useState('7');
-    const [graph, setGraph] = useState('line');
+    const [country, setCountry] = useState('');
+    const [type, setType] = useState('');
+    const [days, setDays] = useState('');
+    const [graph, setGraph] = useState('');
 
 
     /*useEffect(() => {
@@ -80,7 +80,11 @@ const Select = () => {
 
     return (
         <div>
+            <div>
+                {(submit && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+            </div>
             <StyledDivForm>
+
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
                     <div>
@@ -123,9 +127,6 @@ const Select = () => {
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
-            <div>
-                {(country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
-            </div>
         </div>
     );
 }

@@ -51,22 +51,23 @@ const StyledDivForm = styled.div`
 
 const MortalitySelect = () => {
     const [submit, setSubmit] = useState(false);
-    const [country, setCountry] = useState('sweden');
-    const [days, setDays] = useState('7');
-    const [graph, setGraph] = useState('line');
+    const [country, setCountry] = useState('');
+    const [days, setDays] = useState('');
+    const [graph, setGraph] = useState('');
 
     const typeDeaths = 'deaths';
     const typeConfirmed = 'confirmed';
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmit(true);
-
     }
 
     return (
         <div>
+            <div>
+                {(submit && country && days && graph && <MortalityFetchData country={country} typeDeaths={typeDeaths} typeConfirmed={typeConfirmed} days={days} graph={graph} />)}
+            </div>
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -100,9 +101,6 @@ const MortalitySelect = () => {
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
-            <div>
-                {(country && days && graph && <MortalityFetchData country={country} typeDeaths={typeDeaths} typeConfirmed={typeConfirmed} days={days} graph={graph} />)}
-            </div>
         </div>
     );
 }

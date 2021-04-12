@@ -83,11 +83,10 @@ class HomePage extends React.Component {
             <div>
                 <StyledPageIntro>
                     <h2>Discover</h2>
-                    <p>Select your graphs and data.</p>
                 </StyledPageIntro>
                 {/*<CovidTracker />*/}
                 <br></br>
-                <StyledH4>Get data from selected country</StyledH4>
+                <StyledH4>Select and view covid-19 data per country</StyledH4>
                 <Select />
                 {/*<GraphList graphList={graphList} />
                 this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
@@ -103,8 +102,10 @@ class HomePage extends React.Component {
                 <Chart />
                 <Country />*/}
                 <br></br>
-                <StyledH4>Compare data from three selected countries 365 days back</StyledH4>
+                <StyledH4>Compare data from three countries (last 365 days)</StyledH4>
                 <CompareSelect />
+                <br></br>
+                <StyledH4>View mortality rate per country (percent of total infected)</StyledH4>
                 <MortalitySelect />
             </div>
         )

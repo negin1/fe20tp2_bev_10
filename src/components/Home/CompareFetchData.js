@@ -26,7 +26,6 @@ const CompareFetchData = (props) => {
             })
 
             .catch((error) => {
-                //console.log(error)
             })
             ;
         setTimeout(() => {
@@ -44,7 +43,6 @@ const CompareFetchData = (props) => {
                 })
 
                 .catch((error) => {
-                    //console.log(error)
                 })
                 ;
         }, 1000);
