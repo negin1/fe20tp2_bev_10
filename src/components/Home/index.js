@@ -7,6 +7,8 @@ import { StyledPageIntro, StyledSelectBtn } from '../Styles/StyledPageIntro';
 import Select from './Select';
 import CompareSelect from './CompareSelect';
 import MortalitySelect from './MortalitySelect';
+import BottomNav from '../BottomNav';
+import Footer from '../Footer';
 
 import PresetCovid from '../PresetCovid/Index'
 import Cards from '../Covid/Cards';
@@ -107,6 +109,7 @@ class HomePage extends React.Component {
                 <br></br>
                 <StyledH4>View mortality rate per country (percent of total infected)</StyledH4>
                 <MortalitySelect />
+                <BottomNav />
             </div>
         )
     }
