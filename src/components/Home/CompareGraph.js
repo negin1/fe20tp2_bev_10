@@ -4,7 +4,14 @@ import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
 const CompareGraph = (props) => {
-    console.log(props.data.labels, props.data.dataCount, props.data2.dataCount, props.country, props.country2, props.type, props.graph)
+
+    const countryStringArr = [props.country, props.country2, props.country3]
+
+    function capitalizeFirstLetter(countryStringArr) {
+        const countryStringArrCapitalize = countryStringArr.map(element => element.charAt(0).toUpperCase() + element.slice(1));
+        console.log(countryStringArrCapitalize)
+
+    }
 
     if (props.graph === 'line') {
         return (

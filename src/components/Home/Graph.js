@@ -4,7 +4,11 @@ import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
 const Graph = (props) => {
-    console.log(props.data.labels, props.data.dataCount, props.country, props.type, props.graph)
+
+    const countryString = props.country
+    function capitalizeFirstLetter(countryString) {
+        return countryString.charAt(0).toUpperCase() + countryString.slice(1);
+    }
 
     if (props.graph === 'line') {
         return (
@@ -15,7 +19,7 @@ const Graph = (props) => {
                         labels: props.data.labels.map(l => l.substring(0, 10)),
                         datasets: [
                             {
-                                label: props.country,
+                                label: capitalizeFirstLetter(countryString),
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgba(75,192,192,0.4)',
