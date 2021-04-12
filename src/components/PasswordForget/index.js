@@ -24,6 +24,7 @@ const StyledLink = styled(Link)`
   color: black;
   font-weight: bold;
   font-size: 18px;
+  padding:10px;
 `;
 
 const PasswordForgetPage = () => (

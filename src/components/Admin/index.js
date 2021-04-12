@@ -7,7 +7,7 @@ import * as ROLES from '../../constants/roles';
 import styled from 'styled-components';
 
 
-const StyledContainer= styled.div`
+const StyledContainer = styled.div`
   display:flex;
   flex-direction:column;
   align-items: center;
@@ -73,11 +73,11 @@ class AdminPage extends Component {
       <StyledContainer>
 
         <h1>Admin</h1>
-        
+
         {loading && <div>Loading ...</div>}
 
         <UserList users={users} />
-     </StyledContainer>
+      </StyledContainer>
     );
   }
 }
@@ -95,8 +95,8 @@ const UserList = ({ users }) => (
         <span>
           <strong>Username:</strong> {user.username}
         </span>
-         <span>
-          <strong>Remove user</strong> 
+        <span>
+          <strong>Remove user</strong>
         </span>
       </li>
     ))}

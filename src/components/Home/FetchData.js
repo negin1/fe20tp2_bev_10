@@ -1,19 +1,17 @@
 import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { Line, Bubble, Bar } from 'react-chartjs-2';
-import StyledLineGraph from '../Styles/StyledLineGraph';
 import Graph from './Graph';
-
-
-
-
 
 
 const FetchData = (props) => {
     const [data, setData] = useState(null)
     const timePeriod = daysHandler(props.days)
     console.log(timePeriod)
+    console.log(props)
+    // read saved graphs from localstorage
+    // push props as an object into the array
+    // save the array to LS
     //const [country, setCountry] = useState('');
     //gör ett api anrop
     useEffect(() => {
@@ -43,6 +41,7 @@ const FetchData = (props) => {
     )
 }
 
+<<<<<<< HEAD
 /*const getCoronaReportByDateRange = (countrySlug, from, to) => {
     axios.get(
         `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
@@ -70,4 +69,6 @@ const FetchData = (props) => {
         })
 }*/
 
+=======
+>>>>>>> main
 export default FetchData;
