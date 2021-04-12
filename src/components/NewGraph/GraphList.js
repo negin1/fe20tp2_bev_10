@@ -21,9 +21,9 @@ const GraphList = (props) => {
     getReportByDateRange(type, countrySlug, from, to).then(data => {
         console.log(data) // [765984, 773690, 780018, 780018, 780018, 780018]
         // { labels: ..., data: ...}
-        const Obj = { data }
-        const Obj2 = { data, labels: pastObject, label: countrySlug }
-        console.log(Obj2);
+        //const Obj = { data }
+        //const Obj2 = { data, labels: pastObject, label: countrySlug }
+        //console.log(Obj2);
     })
 
 
