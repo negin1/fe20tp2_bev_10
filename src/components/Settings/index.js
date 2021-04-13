@@ -1,5 +1,6 @@
 import { StyledPageIntro } from '../Styles/StyledPageIntro';
 
+
 const Settings = () => {
     return (
         <StyledPageIntro>

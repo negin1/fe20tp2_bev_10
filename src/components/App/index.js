@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Navigation from '../Navigation';
@@ -15,6 +15,8 @@ import BottomNav from '../BottomNav';
 import Covid2 from '../Covid2/Index';
 
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { Switch, Paper } from '@material-ui/core';
 import Header from '../Header/'
 import Footer from '../Footer';
 
@@ -23,6 +25,7 @@ import { withAuthentication } from '../Session';
 
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components';
+import { light } from '@material-ui/core/styles/createPalette';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -54,8 +57,24 @@ margin-top: 30px;
 `;
 
 
-const App = () => (
+
+
+function App() {
+  const  [darkMode, setDarkMode] = useState(false)
+  
+  const theme = createMuiTheme({
+    palette:{
+      type: darkMode ? "dark" : "light",
+
+    },
+  })
+ 
+
+  return(
   <>
+
+<ThemeProvider theme={theme}>
+  <Paper style={{height: "100vh"}}>
     <GlobalStyle />
 
     <Covid2 />
@@ -63,6 +82,7 @@ const App = () => (
       <StyledDiv>
         <Header />
         <Navigation />
+        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode) }/>
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -81,8 +101,11 @@ const App = () => (
       
       <BottomNav />
     </Router>
+   </Paper>
+    </ThemeProvider>
   </>
-);
+  )
+}
 
 
 export default withAuthentication(App);

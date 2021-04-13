@@ -41,34 +41,4 @@ const FetchData = (props) => {
     )
 }
 
-<<<<<<< HEAD
-/*const getCoronaReportByDateRange = (countrySlug, from, to) => {
-    axios.get(
-        `/country/${countrySlug}/status/confirmed?from=${from}T00:00:00Z&to=${to}T00:00:00Z`
-    )
-        .then((res) => {
-            //console.log(res)
-            let data = res.data.filter(item => item.Province === '');
-            data = data.slice(0, data.length - 1);
-            //const yAxisCoronaCount = res.data.map((d) => d.Cases)
-            //const xAxisLabel = res.data.map(d => d.Date)
-            const covidDetails = covidSummary.Countries.find(country => country.Slug === countrySlug)
-            // begin krilles specialkod
-            //console.log(data)
-            const yAxisCoronaCount = data.map((d) => d.Cases)
-            const xAxisLabel = data.map(d => d.Date)
-            // end
-            setCoronaCountAr(yAxisCoronaCount)
-            setTotalConfirmed(covidDetails.TotalConfirmed);
-            setTotalRecovered(covidDetails.TotalRecovered);
-            setTotalDeaths(covidDetails.TotalDeaths);
-            setLabel(xAxisLabel);
-        })
-        .catch((error) => {
-            //console.log(error)
-        })
-}*/
-
-=======
->>>>>>> main
 export default FetchData;
