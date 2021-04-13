@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
-
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -15,14 +14,13 @@ const StyledDiv = styled.div`
   text-shadow: white 0px 0px 5px;
   z-index: 999;
   background-color: #E6E6FA;
-
-
   
    @media (max-width: 850px) {
        overflow:auto
     }
  > ul{
     display: flex;
+    margin: 0 auto;
     justify-content: center;
     overflow: auto;
     white-space: nowrap;
@@ -55,7 +53,6 @@ const StyledDiv = styled.div`
 }
 
 `;
-
 
 
 const Navigation = () => (
