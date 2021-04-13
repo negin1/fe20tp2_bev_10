@@ -2,9 +2,12 @@
 import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import { capitalizeFirstLetter } from './DaysHandler';
+
 
 const Graph = (props) => {
-    console.log(props.data.labels, props.data.dataCount, props.country, props.type, props.graph)
+
+    const country = props.country
 
     if (props.graph === 'line') {
         return (
@@ -15,7 +18,7 @@ const Graph = (props) => {
                         labels: props.data.labels.map(l => l.substring(0, 10)),
                         datasets: [
                             {
-                                label: props.country,
+                                label: capitalizeFirstLetter(country),
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -36,23 +39,26 @@ const Graph = (props) => {
                                 data: props.data.dataCount,
                             },
                         ]
-                    }} options={{
-                        scales: {
-                            yAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Total ' + props.type
-                                }
-                            }],
-                            xAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Days'
-                                }
-                            }],
-                        }
+                    }}
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Total ' + props.type
+                                    }
+                                }],
+                                xAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Days'
+                                    }
+                                }],
+                            }
 
-                    }} />
+                        }} />
                     {/* <button onClick= {}></button> */}
                 </StyledLineGraph>
             </div>
@@ -64,13 +70,15 @@ const Graph = (props) => {
                 <Bar data={{
                     labels: props.data.labels.map(l => l.substring(0, 10)),
                     datasets: [{
-                        label: props.country,
+                        label: capitalizeFirstLetter(country),
                         data: props.data.dataCount,
                         backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
                         borderWidth: 1
                     }]
                 }} options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             scaleLabel: {

@@ -4,7 +4,9 @@ import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
 
 const CompareGraph = (props) => {
-    console.log(props.data.labels, props.data.dataCount, props.data2.dataCount, props.country, props.country2, props.type, props.graph)
+
+    const countryArr = [props.country, props.country2, props.country3]
+    const countryArrCapitalized = countryArr.map(country => country.charAt(0).toUpperCase() + country.slice(1));
 
     if (props.graph === 'line') {
         return (
@@ -15,7 +17,7 @@ const CompareGraph = (props) => {
                         labels: props.data.labels.map(l => l.substring(0, 10)),
                         datasets: [
                             {
-                                label: props.country,
+                                label: countryArrCapitalized[0],
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -35,7 +37,7 @@ const CompareGraph = (props) => {
                                 pointHitRadius: 10,
                                 data: props.data.dataCount,
                             }, {
-                                label: props.country2,
+                                label: countryArrCapitalized[1],
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgb(255, 99, 132)',
@@ -56,7 +58,7 @@ const CompareGraph = (props) => {
                                 data: props.data2.dataCount,
                             },
                             {
-                                label: props.country3,
+                                label: countryArrCapitalized[2],
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgb(118, 15, 209)',
@@ -78,6 +80,8 @@ const CompareGraph = (props) => {
                             },
                         ]
                     }} options={{
+                        responsive: true,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
                                 scaleLabel: {
@@ -95,6 +99,7 @@ const CompareGraph = (props) => {
 
                     }} />
                 </StyledLineGraph>
+
             </div>
         );
 
@@ -105,21 +110,21 @@ const CompareGraph = (props) => {
                     labels: props.data.labels.map(l => l.substring(0, 10)),
                     datasets: [
                         {
-                            label: props.country,
+                            label: countryArrCapitalized[0],
                             data: props.data.dataCount,
                             backgroundColor: 'rgba(75,192,192,1)',
                             borderColor: 'rgba(75,192,192,1)',
                             borderWidth: 1
                         },
                         {
-                            label: props.country2,
+                            label: countryArrCapitalized[1],
                             data: props.data2.dataCount,
                             backgroundColor: 'rgb(255, 99, 132)',
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 1
                         },
                         {
-                            label: props.country3,
+                            label: countryArrCapitalized[2],
                             data: props.data3.dataCount,
                             backgroundColor: 'rgb(118, 15, 209)',
                             borderColor: 'rgb(118, 15, 209)',
@@ -128,6 +133,8 @@ const CompareGraph = (props) => {
                     ],
 
                 }} options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             scaleLabel: {
