@@ -61,11 +61,12 @@ margin-top: 30px;
 
 function App() {
   const  [darkMode, setDarkMode] = useState(false)
-  
+
   const theme = createMuiTheme({
     palette:{
-      type: darkMode ? "dark" : "light",
+     type: darkMode ? "dark" : "light", 
 
+     
     },
   })
  
@@ -74,8 +75,9 @@ function App() {
   <>
 
 <ThemeProvider theme={theme}>
-  <Paper style={{height: "100vh"}}>
-    <GlobalStyle />
+  <Paper>
+   
+  <GlobalStyle />
 
     <Covid2 />
     <Router>
