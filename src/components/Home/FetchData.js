@@ -1,4 +1,4 @@
-import { daysHandler } from '../NewGraph/api';
+import { daysHandler } from './DaysHandler.js';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Graph from './Graph';
