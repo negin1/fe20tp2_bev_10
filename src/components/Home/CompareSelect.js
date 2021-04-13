@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import CompareFetchData from './CompareFetchData';
 import COUNTRYLIST from './countryData.js';
 
@@ -49,16 +49,19 @@ const CompareSelect = () => {
     const [country3, setCountry3] = useState('');
     const [type, setType] = useState('');
     const [graph, setGraph] = useState('');
+    const graphRef = useRef();
     const days = '365';
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmit(true);
+        graphRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
         <div>
-            <div>
+            <div ref={graphRef}>
                 {(submit && country && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
             </div>
             <StyledDivForm>

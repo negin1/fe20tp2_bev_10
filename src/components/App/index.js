@@ -44,15 +44,6 @@ min-height: 100vh;
 position: relative; 
 `;
 
-const StyledDiv2 = styled.div`
-height: 300px; 
-margin-top: 30px;
-@media (max-width: 500px) {
-        flex-wrap: wrap-reverse;
-        height: 300px;
-    }
-`;
-
 
 const App = () => (
   <>
@@ -73,13 +64,14 @@ const App = () => (
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
         <Route exact path={ROUTES.SETTINGS} component={Settings} />
-        <StyledDiv2>
-          <Footer />
-        </StyledDiv2>
       </StyledDiv>
+<<<<<<< HEAD
 
       
       <BottomNav />
+=======
+      <Footer />
+>>>>>>> 3465eae67b12e846593f9b0864fe2e4463b3b3d4
     </Router>
   </>
 );

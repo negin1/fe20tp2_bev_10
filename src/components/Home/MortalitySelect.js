@@ -1,13 +1,7 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
-//import axios from 'axios';
+import React, { useRef, useState } from 'react';
 import MortalityFetchData from './MortalityFetchData';
 import COUNTRYLIST from './countryData.js';
-
-const url = 'https://api.covid19api.com/'
-const summaryUrl = 'https://api.covid19api.com/summary'
-
-
 
 const StyledDivForm = styled.div`
     margin: 50px auto; 
@@ -54,6 +48,7 @@ const MortalitySelect = () => {
     const [country, setCountry] = useState('');
     const [days, setDays] = useState('');
     const [graph, setGraph] = useState('');
+    const graphRef = useRef();
 
     const typeDeaths = 'deaths';
     const typeConfirmed = 'confirmed';
@@ -61,11 +56,12 @@ const MortalitySelect = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmit(true);
+        graphRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
         <div>
-            <div>
+            <div ref={graphRef}>
                 {(submit && country && days && graph && <MortalityFetchData country={country} typeDeaths={typeDeaths} typeConfirmed={typeConfirmed} days={days} graph={graph} />)}
             </div>
             <StyledDivForm>
