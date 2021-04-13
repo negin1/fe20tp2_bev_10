@@ -1,7 +1,7 @@
-import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import CompareGraph from './CompareGraph';
+import { daysHandler } from './DaysHandler.js';
 
 
 const CompareFetchData = (props) => {
