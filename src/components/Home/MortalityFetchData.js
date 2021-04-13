@@ -1,7 +1,7 @@
-import { daysHandler } from '../NewGraph/api';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import MortalityGraph from './MortalityGraph';
+import { daysHandler } from './DaysHandler.js';
 
 
 const MortalityFetchData = (props) => {

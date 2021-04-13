@@ -1,4 +1,4 @@
-import { daysHandler } from '../NewGraph/api';
+import { daysHandler } from './DaysHandler.js';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Graph from './Graph';
@@ -15,7 +15,6 @@ const FetchData = (props) => {
     //const [country, setCountry] = useState('');
     //gör ett api anrop
     useEffect(() => {
-        console.log('https://api.covid19api.com/country/albania/status/confirmed?from=2021-03-31T00:00:00Z&to=2021-04-7T00:00:00Z')
         console.log(`https://api.covid19api.com/country/${props.country}/status/${props.type}?from=${timePeriod.from}T00:00:00Z&to=${timePeriod.to}T00:00:00Z`)
         axios.get(
             `https://api.covid19api.com/country/${props.country}/status/${props.type}?from=${timePeriod.from}T00:00:00Z&to=${timePeriod.to}T00:00:00Z`

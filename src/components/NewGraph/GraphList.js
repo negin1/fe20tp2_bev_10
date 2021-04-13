@@ -26,6 +26,7 @@ const GraphList = (props) => {
         //console.log(Obj2);
     })
 
+
     // create an object, see if you can it to to show in th graph
     return (
         <>{
