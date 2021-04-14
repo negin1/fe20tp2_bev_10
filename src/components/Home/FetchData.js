@@ -10,7 +10,6 @@ const FetchData = (props) => {
     const [country, setCountry] = useState('');
     const [graph, setGraph] = useState('');
     const [type, setType] = useState('');
-    const [days, setDays] = useState('');
 
 
     // read saved graphs from localstorage
@@ -18,21 +17,6 @@ const FetchData = (props) => {
     // save the array to LS
     //const [country, setCountry] = useState('');
     //gör ett api anrop
-
-
-    let graphList = [],
-
-        graphObj = {
-            "country": country,
-            "graph": graph,
-            "type": type,
-            "data": data,
-            id: Date.now(),
-        }
-
-    graphList.push(graphObj);
-
-    localStorage.setItem('allGraphs', JSON.stringify(graphList))
 
 
     useEffect(() => {
