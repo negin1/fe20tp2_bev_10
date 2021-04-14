@@ -76,7 +76,7 @@ function App() {
       const currentThemeColor = localStorage.getItem('theme-color');
       //if found set selected theme value in state
       if (currentThemeColor) {
-         setDarkMode(currentThemeColor);
+        localStorage.setItem("darkMode", true);
      }
   }, [])
 
