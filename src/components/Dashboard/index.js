@@ -6,23 +6,33 @@ import Graph from '../Home/Graph';
 
 
 const Dashboard = () => {
-    const [graphList, setGraphList] = useState('');
-    console.log(graphList)
+    //const [graphList, setGraphList] = useState('');
+    //console.log(graphList)
 
-    useEffect(() => {
+    //useEffect(() => {
 
-        let graphList = []
-        let graphStr = localStorage.getItem('allGraphs');
-        graphList = JSON.parse(graphStr);
+    let graphList = []
+    let graphStr = localStorage.getItem('allGraphs');
+    graphList = JSON.parse(graphStr);
 
-        setGraphList(graphList); // update the state if taskList has data
+    //setGraphList(graphList); // update the state if taskList has data
 
-    }, []);
+    //}, []);
 
     return (
         <StyledPageIntro>
-            <h2>My dashboard</h2>
-            <p>You haven't made any selections yet. Click on "Discover" to explore data and select graphs.</p>
+            <div>
+                {graphList.map((item) => (
+                    <div key={item.id}>
+                        <h2>My dashboard</h2>
+                        <p>You haven't made any selections yet. Click on "Discover" to explore data and select graphs.</p>
+                        <p>{item.country}</p>
+                        <p>{item.type}</p>
+                        <p>{item.data.dataCount}</p>
+                        <p>{item.data.labels}</p>
+                    </div>
+                ))}
+            </div>
             <BottomNav />
         </StyledPageIntro>
     )
