@@ -33,9 +33,9 @@ const Label = styled.label`
 
 
 const SignUpPage = () => (
-  //<StyledForm>
+  <StyledForm>
   <SignUpForm />
-  //</StyledForm>
+  </StyledForm>
 );
 
 const INITIAL_STATE = {

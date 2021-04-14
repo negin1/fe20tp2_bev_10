@@ -43,7 +43,8 @@ class AdminPage extends Component {
       users: [],
     };
   }
-
+  
+  
   componentDidMount() {
     this.setState({ loading: true });
 
@@ -62,9 +63,13 @@ class AdminPage extends Component {
     });
   }
 
+ 
+
   componentWillUnmount() {
     this.props.firebase.users().off();
   }
+
+ 
 
   render() {
     const { users, loading } = this.state;
@@ -82,7 +87,32 @@ class AdminPage extends Component {
   }
 }
 
+
+ function deleteUser(e) {
+
+ /*  users.auth().deleteUser(uid)
+    .then(function() {
+    console.log("Successfully deleted user");
+    })
+    .catch(function(error) {
+    console.log("Error deleting user:", error);
+    });  */
+
+   console.log("hej") 
+    /* const users =  Object.assign([], this.state.users);
+
+    //Vi behöver sätta state någonst
+     users.splice(1); 
+       */
+  } 
+  
+      
+  
+  
+
 const UserList = ({ users }) => (
+
+   
   <ul>
     {users.map(user => (
       <li key={user.uid}>
@@ -96,7 +126,7 @@ const UserList = ({ users }) => (
           <strong>Username:</strong> {user.username}
         </span>
         <span>
-          <strong>Remove user</strong>
+         <button  onClick={deleteUser}>Delete user</button>
         </span>
       </li>
     ))}
