@@ -24,12 +24,12 @@ const Input = styled.input`
   border-radius: 10px;
   width: 200px; 
 `;
-
+/* 
 const Label = styled.label`
   display:block;
   margin-top:5px;
   margin-left: 15px;
-`;
+`; */
 
 
 const SignUpPage = () => (
@@ -146,7 +146,7 @@ class SignUpFormBase extends Component {
             type="password"
             placeholder="Confirm Password"
           />
-          <Label>
+         
             Admin:
           <input
               name="isAdmin"
@@ -154,7 +154,7 @@ class SignUpFormBase extends Component {
               checked={isAdmin}
               onChange={this.onChangeCheckbox}
             />
-          </Label>
+         
           <button disabled={isInvalid} type="submit">
             Sign Up
         </button>

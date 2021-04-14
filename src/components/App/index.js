@@ -63,14 +63,12 @@ const StyledBtn = styled.div`
 `;
 
 function App() {
-  const  [darkMode, setDarkMode] = useState(false)
+   const  [darkMode, setDarkMode] = useState(false)
 
   const theme = createMuiTheme({
     palette:{
      type: darkMode ? "dark" : "light", 
-
     },
- 
   })
  
      useEffect(() => {
@@ -83,9 +81,9 @@ function App() {
   }, [])
 
       //set theme
-      const onChange =(theme) => {
-        setDarkMode(theme);
-        localStorage.setItem("theme")
+      const onChange =() => {
+        setDarkMode(darkMode);
+        localStorage.setItem('theme',JSON.stringify(darkMode))
       } 
 
   return(
@@ -102,7 +100,8 @@ function App() {
         <Header />
         <Navigation />
         <StyledBtn>
-        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode) }/>
+         <Switch checked={darkMode} onChange={onChange }/>
+     {/*    <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode) }/> */}
         </StyledBtn>
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />

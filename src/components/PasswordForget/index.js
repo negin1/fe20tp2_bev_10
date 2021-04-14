@@ -28,9 +28,9 @@ const StyledLink = styled(Link)`
 `;
 
 const PasswordForgetPage = () => (
-   <StyledForm>  
+    <StyledForm>  
   <PasswordForgetForm />
-   </StyledForm> 
+   </StyledForm>    
 );
 
 const INITIAL_STATE = {
@@ -73,7 +73,7 @@ class PasswordForgetFormBase extends Component {
       <>
         <div>
           <StyledHeading>Reset your password </StyledHeading>
-          <StyledText> Please enter your email adress bellow and we will send you a new password. </StyledText>
+          <StyledText> Please enter your email adress bellow </StyledText>
           <form onSubmit={this.onSubmit}>
             <input
               name="email"

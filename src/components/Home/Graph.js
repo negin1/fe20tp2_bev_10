@@ -6,8 +6,29 @@ import { capitalizeFirstLetter } from './DaysHandler';
 
 
 const Graph = (props) => {
-
     const country = props.country
+    const graph = props.graph
+    const type = props.type
+    const data = props.data
+
+
+    const handleClick = () => {
+
+        let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
+
+        const graphObj = {
+            "country": country,
+            "graph": graph,
+            "type": type,
+            "data": data,
+            id: Date.now(),
+        }
+
+        graphList.push(graphObj);
+
+        localStorage.setItem('allGraphs', JSON.stringify(graphList))
+    }
+
 
     if (props.graph === 'line') {
         return (
@@ -59,43 +80,46 @@ const Graph = (props) => {
                             }
 
                         }} />
-                    {/* <button onClick= {}></button> */}
                 </StyledLineGraph>
+                <button onClick={handleClick}>Save graph to dashboard</button>
             </div>
         );
 
     } else {
         return (
-            <StyledLineGraph>
-                <Bar id="graph" data={{
-                    labels: props.data.labels.map(l => l.substring(0, 10)),
-                    datasets: [{
-                        label: capitalizeFirstLetter(country),
-                        data: props.data.dataCount,
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        borderWidth: 1
-                    }]
-                }} options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Total ' + props.type
-                            }
-                        }],
-                        xAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Days'
-                            }
-                        }],
-                    }
+            <div>
+                <StyledLineGraph>
+                    <Bar data={{
+                        labels: props.data.labels.map(l => l.substring(0, 10)),
+                        datasets: [{
+                            label: capitalizeFirstLetter(country),
+                            data: props.data.dataCount,
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 1
+                        }]
+                    }} options={{
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Total ' + props.type
+                                }
+                            }],
+                            xAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Days'
+                                }
+                            }],
+                        }
 
-                }} />
-            </StyledLineGraph>
+                    }} />
+                </StyledLineGraph>
+                <button onClick={handleClick}>Save graph to dashboard</button>
+            </div>
         );
     }
 }
