@@ -14,15 +14,15 @@ const Graph = (props) => {
 
     const handleClick = () => {
 
-        let graphList = [],
+        let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
 
-            graphObj = {
-                "country": country,
-                "graph": graph,
-                "type": type,
-                "data": data,
-                id: Date.now(),
-            }
+        const graphObj = {
+            "country": country,
+            "graph": graph,
+            "type": type,
+            "data": data,
+            id: Date.now(),
+        }
 
         graphList.push(graphObj);
 
