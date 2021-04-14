@@ -6,12 +6,18 @@ import Graph from '../Home/Graph';
 
 
 const Dashboard = () => {
+    const [graphList, setGraphList] = useState('');
+    console.log(graphList)
 
-    let renderGraphList = []
-    let GraphStr = localStorage.getItem('allGraphs');
-    renderGraphList = JSON.parse(GraphStr);
-    console.log(renderGraphList);
+    useEffect(() => {
 
+        let graphList = []
+        let graphStr = localStorage.getItem('allGraphs');
+        graphList = JSON.parse(graphStr);
+
+        setGraphList(graphList); // update the state if taskList has data
+
+    }, []);
 
     return (
         <StyledPageIntro>
