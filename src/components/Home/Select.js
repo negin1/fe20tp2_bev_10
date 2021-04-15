@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React, { useRef, useState } from 'react';
 import FetchData from './FetchData';
 import COUNTRYLIST from './countryData.js';
+import BottomNav from '../BottomNav'
 
 const StyledDivForm = styled.div`
     margin: 50px auto; 
@@ -20,12 +21,10 @@ const StyledDivForm = styled.div`
     margin-bottom: 20px; 
     font-size: 18px; 
     }
-
     p {
         display: inline; 
         margin-left: 20px; 
     }
-
     button {
     display: block;
     margin: 10px auto;
@@ -41,6 +40,10 @@ const StyledDivForm = styled.div`
       }
     }
     `;
+
+    const StyledIntro = styled.div`
+  text-align: center;
+    `
 
 const Select = () => {
     const [submit, setSubmit] = useState(false);
@@ -62,8 +65,15 @@ const Select = () => {
             <div ref={graphRef}>
                 {(submit && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
             </div>
-            <StyledDivForm>
+            
+            <StyledIntro>
+                 <h2>Select and view covid-19 data per country</h2>
+                 <p>Please fill in the details bellow to render your graph</p>
 
+            </StyledIntro>
+           
+            <StyledDivForm>
+            
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
                     <div>
@@ -74,7 +84,8 @@ const Select = () => {
                             <option value='deaths'>Deaths</option>
                             <option value='recovered'>Recovered</option>
                         </select>
-                    </div>
+                    </div
+                    >
                     <div>
                         <label>Country:</label>
                         <select value={country}
@@ -106,6 +117,7 @@ const Select = () => {
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
+              <BottomNav />
         </div>
     );
 }

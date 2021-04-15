@@ -27,7 +27,6 @@ const StyledDiv = styled.div`
     overflow: auto;
     white-space: nowrap;
  }
-
  li{
     text-decoration: none; 
    list-style: none; 
@@ -37,11 +36,9 @@ const StyledDiv = styled.div`
    padding: 26px 30px;
    color: black;
   }
-
  a {
     text-decoration: none; 
     color: black; 
-
     &:hover {
       cursor: pointer;
       color: darkgray;
@@ -50,7 +47,6 @@ const StyledDiv = styled.div`
     font-weight:bold; 
   }
 }
-
 `;
 
 
