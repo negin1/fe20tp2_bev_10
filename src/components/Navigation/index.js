@@ -23,13 +23,10 @@ const StyledDiv = styled.div`
     }
  > ul{
     display: flex;
-    justify-content: center;
+    margin: 0 auto;
     overflow: auto;
     white-space: nowrap;
-       position:fixed;
  }
-    
-
  li{
     text-decoration: none; 
    list-style: none; 
@@ -38,13 +35,10 @@ const StyledDiv = styled.div`
    font-size: 20px;
    padding: 26px 30px;
    color: black;
-
   }
-
  a {
     text-decoration: none; 
     color: black; 
-
     &:hover {
       cursor: pointer;
       color: darkgray;
@@ -53,7 +47,6 @@ const StyledDiv = styled.div`
     font-weight:bold; 
   }
 }
-
 `;
 
 
@@ -82,7 +75,7 @@ const NavigationAuth = ({ authUser }) => (
       <li>
         <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
       </li>
-      {authUser.roles.includes(ROLES.ADMIN) && (
+      {authUser.roles[ROLES.ADMIN] && (
         <li>
           <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
         </li>
