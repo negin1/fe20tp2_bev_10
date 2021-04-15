@@ -21,7 +21,9 @@ const Dashboard = () => {
 // ändra formatet som sparas i localstorage. Kolla hur FetchData får props.#eeeeee
 // mappa igenom precis som ni gör nu fast skicka till FetchData istället
 
+if (!localStorage.getItem('allGraphs')) { return <StyledPageIntro />, []; }
     return (
+        
         <StyledPageIntro>
             <div>
                 {graphList.map((item, index) => (
