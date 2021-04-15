@@ -134,7 +134,7 @@ const UserList = ({ users }) => (
 );
 
 const condition = authUser =>
-  authUser && authUser.roles.includes(ROLES.ADMIN);
+  authUser && !!authUser.roles[ROLES.ADMIN];
 
 export default compose(
   withAuthorization(condition),

@@ -24,6 +24,8 @@ const Graph = (props) => {
             id: Date.now(),
         }
 
+        
+
         graphList.push(graphObj);
 
         localStorage.setItem('allGraphs', JSON.stringify(graphList))
@@ -81,7 +83,7 @@ const Graph = (props) => {
 
                         }} />
                 </StyledLineGraph>
-                <button onClick={handleClick}>Save graph to dashboard</button>
+                {/* <button onClick={handleClick}>Save graph to dashboard</button> */}
             </div>
         );
 

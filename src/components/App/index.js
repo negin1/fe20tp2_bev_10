@@ -17,6 +17,7 @@ import Select from '../Home/Select'
 import CompareSelect from '../Home/CompareSelect';
 import MortalitySelect from '../Home/MortalitySelect';
 
+// https://stackoverflow.com/questions/63097218/darkmode-store-in-local-storage-react-with-material-ui
 
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -34,7 +35,7 @@ import { light } from '@material-ui/core/styles/createPalette';
 const GlobalStyle = createGlobalStyle`
 
   body {
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
     margin: 0;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
