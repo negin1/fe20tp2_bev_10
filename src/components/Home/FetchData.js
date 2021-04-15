@@ -35,8 +35,29 @@ const FetchData = (props) => {
 
             ;
     }, [props.country, props.type, props.days, props.graph]);
+    const handleClick = () => {
+
+        let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
+
+        const graphObj = {
+            country: props.country,
+            graph: props.graph,
+            type: props.type,
+            days: props.days,
+        }
+
+        
+
+        graphList.push(graphObj);
+
+        localStorage.setItem('allGraphs', JSON.stringify(graphList))
+    }
+    // lägg till knappen
     return (
-        data ? <Graph data={data} country={props.country} type={props.type} graph={props.graph} /> : null
+        data ? (
+        <><Graph data={data} country={props.country} type={props.type} graph={props.graph} /> 
+        {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
+        </>) : null
     )
 }
 

@@ -75,7 +75,7 @@ const NavigationAuth = ({ authUser }) => (
       <li>
         <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
       </li>
-      {authUser.roles.includes(ROLES.ADMIN) && (
+      {authUser.roles[ROLES.ADMIN] && (
         <li>
           <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
         </li>
