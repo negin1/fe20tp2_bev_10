@@ -65,13 +65,7 @@ const App = () => (
         <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
         <Route exact path={ROUTES.SETTINGS} component={Settings} />
       </StyledDiv>
-<<<<<<< HEAD
-
-      
-      <BottomNav />
-=======
       <Footer />
->>>>>>> 3465eae67b12e846593f9b0864fe2e4463b3b3d4
     </Router>
   </>
 );
