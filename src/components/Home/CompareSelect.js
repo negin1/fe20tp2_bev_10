@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React, { useRef, useState } from 'react';
-import FetchData from './FetchData';
+import CompareFetchData from './CompareFetchData';
 import COUNTRYLIST from './countryData.js';
 
 const StyledDivForm = styled.div`
@@ -42,13 +42,15 @@ const StyledDivForm = styled.div`
     }
     `;
 
-const Select = () => {
+const CompareSelect = () => {
     const [submit, setSubmit] = useState(false);
     const [country, setCountry] = useState('');
+    const [country2, setCountry2] = useState('');
+    const [country3, setCountry3] = useState('');
     const [type, setType] = useState('');
-    const [days, setDays] = useState('');
     const [graph, setGraph] = useState('');
     const graphRef = useRef();
+    const days = '365';
 
 
     const handleSubmit = (e) => {
@@ -60,10 +62,9 @@ const Select = () => {
     return (
         <div>
             <div ref={graphRef}>
-                {(submit && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
+                {(submit && country && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
             </div>
             <StyledDivForm>
-
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
                     <div>
@@ -76,10 +77,10 @@ const Select = () => {
                         </select>
                     </div>
                     <div>
-                        <label>Country:</label>
+                        <label>First country:</label>
                         <select value={country}
                             onChange={(e) => setCountry(e.target.value)}>
-                            <option value='' disabled>Select country</option>
+                            <option value='' disabled>Select country 1</option>
 
                             {COUNTRYLIST.Countries.map((country) => (
                                 <option key={country.Slug} value={country.Slug}>
@@ -88,14 +89,32 @@ const Select = () => {
                             ))}
                         </select>
                     </div>
-                    <label>Days:</label>
-                    <select value={days}
-                        onChange={(e) => setDays(e.target.value)}>
-                        <option value='' disabled>Select time period</option>
-                        <option value='7'>Last 7 days</option>
-                        <option value='90'>Last 90 days</option>
-                        <option value='365'>Last 365 days</option>
-                    </select>
+                    <div>
+                        <label>Second country:</label>
+                        <select value={country2}
+                            onChange={(e) => setCountry2(e.target.value)}>
+                            <option value='' disabled>Select country 2</option>
+
+                            {COUNTRYLIST.Countries.map((country2) => (
+                                <option key={country2.Slug} value={country2.Slug}>
+                                    {country2.Country}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        <label>Third country:</label>
+                        <select value={country3}
+                            onChange={(e) => setCountry3(e.target.value)}>
+                            <option value='' disabled>Select country 3</option>
+
+                            {COUNTRYLIST.Countries.map((country3) => (
+                                <option key={country3.Slug} value={country3.Slug}>
+                                    {country3.Country}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                     <label>Type of graph:</label>
                     <select value={graph}
                         onChange={(e) => setGraph(e.target.value)}>
@@ -110,4 +129,4 @@ const Select = () => {
     );
 }
 
-export default Select;
+export default CompareSelect

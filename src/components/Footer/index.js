@@ -4,8 +4,8 @@ import bg_img from '../../img/bg_img.png';
 
 const StyledDiv = styled.div`
   color: white; 
-  position: absolute;
   bottom: 0;
+  left: 0; 
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   background-image: url(${bg_img});
@@ -13,12 +13,8 @@ const StyledDiv = styled.div`
   background-repeat: no-repeat;
 
 
-  @media (max-width: 500px) {
-         bottom: 75px;
-    }
-
   > div {
-      padding: 10em 4em 2em 4em;  
+      padding: 14em 4em 2em 4em;  
       display: flex; 
       flex-wrap: nowrap;
       justify-content: left; 
@@ -37,6 +33,11 @@ const StyledDiv = styled.div`
         @media (max-width: 700px) {
         flex-wrap: wrap-reverse;
         padding: 6em 3em 2em 3em;
+    }
+
+       @media (max-width: 500px) {
+        flex-wrap: wrap-reverse;
+        padding: 7em 3em 5em 3em;
     }
 
     p {
@@ -68,10 +69,11 @@ const Footer = (props) => {
                     <p><a href="http://annap.surge.sh/">Anna Pettersson</a></p>
                     <p>Ivan Olowo</p>
                     <p>Negin Jalalian</p>
+                    <p>Julius Alamarvdashti</p>
                 </StyledDiv2>
                 <div>
-                    <p><a href="https://github.com/negin1/fe20tp2_bev_10">→ View code @GitHub</a></p>
-                    <p><a href="https://trello.com/b/NEYYR2eC/group-ten">→ Agile workflow @Trello</a></p>
+                    <p><a href="https://github.com/negin1/fe20tp2_bev_10" target="_blank" rel="noopener noreferrer" >→ View code @GitHub</a></p>
+                    <p><a href="https://trello.com/b/NEYYR2eC/group-ten" target="_blank" rel="noopener noreferrer">→ Agile workflow @Trello</a></p>
                 </div>
             </div>
         </StyledDiv >

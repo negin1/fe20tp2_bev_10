@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledLineGraph = styled.div`
 max-width: 50%;
 min-width: 300px; 
-height: auto;
+height: 45vh;
 margin: 2em auto;  
 background: white; 
 padding-top: 1em;

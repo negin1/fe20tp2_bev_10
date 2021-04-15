@@ -4,7 +4,11 @@ import GroupGraph from '../CovidTracker/GroupGraph'
 import { withAuthorization } from '../Session';
 import styled from 'styled-components'
 import { StyledPageIntro, StyledSelectBtn } from '../Styles/StyledPageIntro';
-import Select from './Select'
+import Select from './Select';
+import CompareSelect from './CompareSelect';
+import MortalitySelect from './MortalitySelect';
+import BottomNav from '../BottomNav';
+import Footer from '../Footer';
 
 import PresetCovid from '../PresetCovid/Index'
 import Cards from '../Covid/Cards';
@@ -14,8 +18,10 @@ import Covid from '../Covid/Covid'
 
 import GraphList from '../NewGraph';
 
-const StyledH4 = styled.h4`
+const StyledDiv = styled.div`
+max-width: 90%;
 text-align: center; 
+margin: 0px auto; 
 `;
 
 /* import fetchCovidData from '../../api';
@@ -81,24 +87,34 @@ class HomePage extends React.Component {
             <div>
                 <StyledPageIntro>
                     <h2>Discover</h2>
-                    <p>Select your graphs and data.</p>
+                    <p>Start exploring data and charts.</p>
                 </StyledPageIntro>
                 {/*<CovidTracker />*/}
-                <br></br>
-                <Select />
-                {/*<GraphList graphList={graphList} />
+                <StyledDiv>
+                    <br></br>
+                    <h4>Select and view covid-19 data per country</h4>
+                    <Select />
+                    {/*<GraphList graphList={graphList} />
                 this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
-                {/* <PresetCovid order='1' country='sweden' />
+                    {/* <PresetCovid order='1' country='sweden' />
       <PresetCovid order='2' country='norway' />
       <PresetCovid order='3' country='mongolia' /> 
-      <MultiCovid order='4' countries={['norway', 'sweden'] */}
+      <MultiCovid order='4' countries={['norway', 'sweden'] 
                 <hr></hr>
                 <StyledH4>Compare countries</StyledH4>
                 <GroupGraph />
         infected={false}
                 <Cards data={data} />
                 <Chart />
-                <Country />
+                <Country />*/}
+                    <br></br>
+                    <h4>Compare data from three countries (last 365 days)</h4>
+                    <CompareSelect />
+                    <br></br>
+                    <h4>View mortality rate per country (percent of total infected)</h4>
+                    <MortalitySelect />
+                </StyledDiv>
+                <BottomNav />
             </div>
         )
     }
