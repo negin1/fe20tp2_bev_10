@@ -17,6 +17,7 @@ import Country from '../Covid/Country';
 import Covid from '../Covid/Covid'
 
 import GraphList from '../NewGraph';
+import {  Link } from "react-router-dom";
 
 const StyledDiv = styled.div`
 max-width: 90%;
@@ -24,8 +25,48 @@ text-align: center;
 margin: 0px auto; 
 `;
 
-/* import fetchCovidData from '../../api';
-import { AuthUserContext } from '../Session'; */
+
+
+
+const StyledSection = styled.div`
+    margin-top: 100px
+
+`;
+
+const Button = styled.button`
+ 
+        color: white;
+      background: black;
+      border-radius: 20px;
+      padding: 7px 7px;
+    margin: 0 auto;
+      font-size: 15px;
+      `
+   
+
+
+const StyledImg = styled.img`
+   
+     @media screen and (max-width: 875px) {
+    width: 80%;
+    height: 50vh;
+  }  
+    @media screen and (max-width: 769px) {
+    width: 80%;
+    height: 30vh;
+  } 
+  @media screen and (max-width: 400px) {
+    width: 80%;
+    height: 30vh
+  }
+  @media screen and (max-width: 300px) {
+    width: 80%;
+    height: 15vh
+  }
+`;
+
+  
+
 
 const graphList = [{
     countrySlug: 'sweden',
@@ -86,14 +127,33 @@ class HomePage extends React.Component {
         return (
             <div>
                 <StyledPageIntro>
-                    <h2>Discover</h2>
-                    <p>Start exploring data and charts.</p>
+                    <h1>Discover</h1>
+                    <p>We provide three different charts you can choose from.</p>
+                     <p>Please navigate to the chart you would like to discover.</p>
+                
                 </StyledPageIntro>
-                {/*<CovidTracker />*/}
+
+             
                 <StyledDiv>
-                    <br></br>
-                    <h4>Select and view covid-19 data per country</h4>
-                    <Select />
+
+
+                <StyledSection>
+                
+                       
+             <br></br>
+                    <h2>Select and view covid-19 data per country</h2>
+            <Link to="/Select">
+            <StyledImg src="/images/oneChart.jpg" alt=""/>
+            </Link>
+               <Button  type="button"
+                 onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/Select';
+                }}>Costumise your data</Button> 
+
+        </StyledSection>
+                   
+                  
                     {/*<GraphList graphList={graphList} />
                 this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
                     {/* <PresetCovid order='1' country='sweden' />
@@ -108,11 +168,35 @@ class HomePage extends React.Component {
                 <Chart />
                 <Country />*/}
                     <br></br>
-                    <h4>Compare data from three countries (last 365 days)</h4>
-                    <CompareSelect />
+                 <StyledSection>
+                    <h2>Compare data from three countries (last 365 days)</h2>
+
+                    <Link to="/CompareSelect">
+            <StyledImg src="/images/compare.jpg" alt=""/>
+            </Link>
+           <Button  type="button"
+                 onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/CompareSelect';
+                }}>Costumise your data</Button> 
+</StyledSection>
+
                     <br></br>
-                    <h4>View mortality rate per country (percent of total infected)</h4>
-                    <MortalitySelect />
+
+                    <StyledSection>
+                    <h2>View mortality rate per country (percent of total infected)</h2>
+
+                       <Link to="/mortalitySelect">
+                     <StyledImg src="/images/mortalitySelect.jpg" alt=""/>
+                     </Link>
+                       <Button  type="button"
+                 onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/mortalitySelect';
+                }}>Costumise your data</Button> 
+                     </StyledSection>
+
+                  
                 </StyledDiv>
                 <BottomNav />
             </div>
