@@ -7,15 +7,20 @@ import Graph from './Graph';
 const FetchData = (props) => {
     const [data, setData] = useState(null)
     const timePeriod = daysHandler(props.days)
-    console.log(timePeriod)
-    console.log(props)
+    const [country, setCountry] = useState('');
+    const [graph, setGraph] = useState('');
+    const [type, setType] = useState('');
+
+
     // read saved graphs from localstorage
     // push props as an object into the array
     // save the array to LS
     //const [country, setCountry] = useState('');
     //gör ett api anrop
+
+
     useEffect(() => {
-        console.log(`https://api.covid19api.com/country/${props.country}/status/${props.type}?from=${timePeriod.from}T00:00:00Z&to=${timePeriod.to}T00:00:00Z`)
+
         axios.get(
             `https://api.covid19api.com/country/${props.country}/status/${props.type}?from=${timePeriod.from}T00:00:00Z&to=${timePeriod.to}T00:00:00Z`
         )
@@ -26,14 +31,20 @@ const FetchData = (props) => {
 
                 const dataCount = data.map((d) => d.Cases)
                 const labels = data.map(d => d.Date)
+                const country = props.country
+                const graph = props.graph
+                const type = props.type
+
                 setData({ dataCount, labels })
+                setGraph(graph)
+                setCountry(country)
+                setType(type)
             })
 
             .catch((error) => {
                 //console.log(error)
-            })
+            });
 
-            ;
     }, [props.country, props.type, props.days, props.graph]);
     const handleClick = () => {
 
@@ -46,7 +57,7 @@ const FetchData = (props) => {
             days: props.days,
         }
 
-        
+
 
         graphList.push(graphObj);
 
@@ -55,9 +66,9 @@ const FetchData = (props) => {
     // lägg till knappen
     return (
         data ? (
-        <><Graph data={data} country={props.country} type={props.type} graph={props.graph} /> 
-        {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
-        </>) : null
+            <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
+                {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
+            </>) : null
     )
 }
 

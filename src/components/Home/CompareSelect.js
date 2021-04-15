@@ -43,7 +43,7 @@ const StyledDivForm = styled.div`
       }
     }
     `;
- const StyledIntro = styled.div`
+const StyledIntro = styled.div`
   text-align: center;
     `
 const CompareSelect = () => {
@@ -66,16 +66,16 @@ const CompareSelect = () => {
     return (
         <div>
             <div ref={graphRef}>
-                {(submit && country && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
+                {(submit && country && country2 && country3 && type && days && graph && <CompareFetchData country={country} country2={country2} country3={country3} type={type} days={days} graph={graph} />)}
             </div>
 
-             <StyledIntro>
-               <h2>Compare data from three countries (last 365 days)</h2>
-                 <p>Please fill in the details bellow to render your graph</p>
+            <StyledIntro>
+                <h2>Compare data from three countries (last 365 days)</h2>
+                <p>Please fill in the details bellow to render your graph</p>
 
             </StyledIntro>
 
-         
+
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
