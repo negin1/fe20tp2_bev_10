@@ -48,8 +48,7 @@ const Dashboard = () => {
 
                 {mortalityStr && MortalityList.map((item, index) => (
                     <div key={index}>
-                        <h2>My dashboard</h2>
-                        <p>You haven't made any selections yet. Click on "Discover" to explore data and select graphs.</p>
+                         <p>{item.type} in {item.country}</p>
                         <p>{item.country}</p>
                         <p>{item.type}</p>
                         <MortalityFetchData saved={true} {...item} />
