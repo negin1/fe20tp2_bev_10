@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React, { useRef, useState } from 'react';
 import MortalityFetchData from './MortalityFetchData';
 import COUNTRYLIST from './countryData.js';
+import BottomNav from '../BottomNav'
 
 const StyledDivForm = styled.div`
     margin: 50px auto; 
@@ -41,6 +42,12 @@ const StyledDivForm = styled.div`
       }
     }
     `;
+ const StyledIntro = styled.div`
+    text-align: center;
+    `;
+
+   
+
 
 
 const MortalitySelect = () => {
@@ -64,6 +71,12 @@ const MortalitySelect = () => {
             <div ref={graphRef}>
                 {(submit && country && days && graph && <MortalityFetchData country={country} typeDeaths={typeDeaths} typeConfirmed={typeConfirmed} days={days} graph={graph} />)}
             </div>
+
+            <StyledIntro>
+                 <h2>Select and view covid-19 data per country</h2>
+                 <p>Please fill in the details bellow to render your graph</p>
+
+            </StyledIntro>
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -97,6 +110,7 @@ const MortalitySelect = () => {
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
+             <BottomNav />
         </div>
     );
 }

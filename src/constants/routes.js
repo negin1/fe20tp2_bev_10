@@ -7,3 +7,8 @@ export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const DASHBOARD = '/dashboard';
 export const SETTINGS = '/settings';
+export const SELECT = '/select';
+export const COMPARESELECT = '/compareSelect';
+export const MORTALITYSELECT = '/mortalitySelect';
+
+
