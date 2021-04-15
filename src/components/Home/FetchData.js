@@ -57,7 +57,7 @@ const FetchData = (props) => {
             days: props.days,
         }
 
-        
+
 
         graphList.push(graphObj);
 
@@ -66,9 +66,9 @@ const FetchData = (props) => {
     // lägg till knappen
     return (
         data ? (
-        <><Graph data={data} country={props.country} type={props.type} graph={props.graph} /> 
-        {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
-        </>) : null
+            <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
+                {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
+            </>) : null
     )
 }
 
