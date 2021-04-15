@@ -15,7 +15,7 @@ const StyledForm = styled.div`
     padding: 50px 50px;
     margin-bottom:40px;
     border-radius: 30px;
-    background: white; 
+   
         @media (max-width: 900px) {
             width: 200px;
         }
