@@ -2,11 +2,16 @@
 import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
+import { capitalizeFirstLetter } from './DaysHandler';
 
 const CompareGraph = (props) => {
+    const country = props.country
+    const country2 = props.country2
+    const country3 = props.country3
 
-    const countryArr = [props.country, props.country2, props.country3]
-    const countryArrCapitalized = countryArr.map(country => country.charAt(0).toUpperCase() + country.slice(1));
+
+    //const countryArr = [props.country, props.country2, props.country3]
+    //const countryArrCapitalized = countryArr.map(country => country.charAt(0).toUpperCase() + country.slice(1));
 
     if (props.graph === 'line') {
         return (
@@ -17,7 +22,7 @@ const CompareGraph = (props) => {
                         labels: props.data.labels.map(l => l.substring(0, 10)),
                         datasets: [
                             {
-                                label: countryArrCapitalized[0],
+                                label: capitalizeFirstLetter(country),
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -37,7 +42,7 @@ const CompareGraph = (props) => {
                                 pointHitRadius: 10,
                                 data: props.data.dataCount,
                             }, {
-                                label: countryArrCapitalized[1],
+                                label: capitalizeFirstLetter(country2),
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgb(255, 99, 132)',
@@ -58,7 +63,7 @@ const CompareGraph = (props) => {
                                 data: props.data2.dataCount,
                             },
                             {
-                                label: countryArrCapitalized[2],
+                                label: capitalizeFirstLetter(country3),
                                 fill: false,
                                 lineTension: 0.1,
                                 backgroundColor: 'rgb(118, 15, 209)',
@@ -110,21 +115,21 @@ const CompareGraph = (props) => {
                     labels: props.data.labels.map(l => l.substring(0, 10)),
                     datasets: [
                         {
-                            label: countryArrCapitalized[0],
+                            label: capitalizeFirstLetter(country),
                             data: props.data.dataCount,
                             backgroundColor: 'rgba(75,192,192,1)',
                             borderColor: 'rgba(75,192,192,1)',
                             borderWidth: 1
                         },
                         {
-                            label: countryArrCapitalized[1],
+                            label: capitalizeFirstLetter(country2),
                             data: props.data2.dataCount,
                             backgroundColor: 'rgb(255, 99, 132)',
                             borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 1
                         },
                         {
-                            label: countryArrCapitalized[2],
+                            label: capitalizeFirstLetter(country3),
                             data: props.data3.dataCount,
                             backgroundColor: 'rgb(118, 15, 209)',
                             borderColor: 'rgb(118, 15, 209)',

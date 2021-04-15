@@ -12,7 +12,7 @@ const Graph = (props) => {
     const data = props.data
 
 
-    const handleClick = () => {
+    {/* const handleClick = () => {
 
         let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
 
@@ -29,7 +29,7 @@ const Graph = (props) => {
         graphList.push(graphObj);
 
         localStorage.setItem('allGraphs', JSON.stringify(graphList))
-    }
+    }*/}
 
 
     if (props.graph === 'line') {
@@ -120,7 +120,6 @@ const Graph = (props) => {
 
                     }} />
                 </StyledLineGraph>
-                <button onClick={handleClick}>Save graph to dashboard</button>
             </div>
         );
     }
