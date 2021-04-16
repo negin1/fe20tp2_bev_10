@@ -83,7 +83,7 @@ function App() {
 
       //set theme
       const onChange =() => {
-        setDarkMode(darkMode);
+        setDarkMode(!darkMode);
         localStorage.setItem('theme',JSON.stringify(darkMode))
       } 
 
@@ -101,8 +101,8 @@ function App() {
         <Header />
         <Navigation />
         <StyledBtn>
-         <Switch checked={darkMode} onChange={onChange }/>
-     {/*    <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode) }/> */}
+          <Switch checked={darkMode} onChange={onChange }/> 
+      {/* <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode) }/>  */}
         </StyledBtn>
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />

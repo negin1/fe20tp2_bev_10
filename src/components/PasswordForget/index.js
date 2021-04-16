@@ -28,9 +28,9 @@ const StyledLink = styled(Link)`
 `;
 
 const PasswordForgetPage = () => (
-    <StyledForm>  
-  <PasswordForgetForm />
-   </StyledForm>    
+  <StyledForm>
+    <PasswordForgetForm />
+  </StyledForm>
 );
 
 const INITIAL_STATE = {
