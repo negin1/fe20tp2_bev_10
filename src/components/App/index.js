@@ -77,7 +77,11 @@ function App() {
       const currentThemeColor = localStorage.getItem('theme-color');
       //if found set selected theme value in state
       if (currentThemeColor) {
+        
         localStorage.setItem("darkMode", true);
+
+     } else if  (!currentThemeColor ) {
+       localStorage.setItem("darkMode", true);
      }
   }, [])
 
@@ -86,7 +90,7 @@ function App() {
         setDarkMode(!darkMode);
         localStorage.setItem('theme',JSON.stringify(darkMode))
       } 
-
+ 
   return(
   <>
 
