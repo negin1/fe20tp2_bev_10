@@ -15,7 +15,7 @@ const StyledForm = styled.div`
     padding: 50px 50px;
     margin-bottom:40px;
     border-radius: 30px;
-    background: white; 
+   
         @media (max-width: 900px) {
             width: 200px;
         }
@@ -72,4 +72,7 @@ const StyledForm = styled.div`
       margin-left: 15px;
           }
     `;
+
+
+
   export default StyledForm;

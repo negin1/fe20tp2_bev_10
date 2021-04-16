@@ -45,8 +45,29 @@ const MortalityFetchData = (props) => {
                 ;
         }, 1000);
     }, [props.country, props.typeDeaths, props.typeConfirmed, props.days, props.graph]);
+
+     const handleClick = () => {
+
+        let graphList = JSON.parse(localStorage.getItem('MortalityGraph')) || [];
+
+        const graphObj = {
+            country: props.country,
+            typeDeaths: props.typeDeaths,
+            graph: props.graph,
+            typeConfirmed: props.typeConfirmed,
+            days: props.days,
+        }
+
+        
+
+        graphList.push(graphObj);
+
+        localStorage.setItem('MortalityGraph', JSON.stringify(graphList))
+    }
     return (
-        dataDeaths && dataConfirmed ? <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} /> : null
+        dataDeaths && dataConfirmed ? (
+            <> <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} /> 
+             {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}</>): null
     )
 }
 

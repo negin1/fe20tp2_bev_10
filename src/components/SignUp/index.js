@@ -24,18 +24,18 @@ const Input = styled.input`
   border-radius: 10px;
   width: 200px; 
 `;
-
+/* 
 const Label = styled.label`
   display:block;
   margin-top:5px;
   margin-left: 15px;
-`;
+`; */
 
 
 const SignUpPage = () => (
-  //<StyledForm>
+  <StyledForm>
   <SignUpForm />
-  //</StyledForm>
+  </StyledForm>
 );
 
 const INITIAL_STATE = {
@@ -56,11 +56,12 @@ class SignUpFormBase extends Component {
 
   onSubmit = event => {
     const { username, email, passwordOne, isAdmin } = this.state;
-    const roles = [];
-
+    const roles = {};
+    
     if (isAdmin) {
-      roles.push(ROLES.ADMIN);
+      roles[ROLES.ADMIN] = ROLES.ADMIN;
     }
+
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
@@ -146,7 +147,7 @@ class SignUpFormBase extends Component {
             type="password"
             placeholder="Confirm Password"
           />
-          <Label>
+         
             Admin:
           <input
               name="isAdmin"
@@ -154,7 +155,7 @@ class SignUpFormBase extends Component {
               checked={isAdmin}
               onChange={this.onChangeCheckbox}
             />
-          </Label>
+         
           <button disabled={isInvalid} type="submit">
             Sign Up
         </button>
