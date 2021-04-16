@@ -19,8 +19,8 @@ const Button = styled.div`
  `
 
 const SignOutButton = ({ firebase }) => (
-  
-  <Button type="button" onClick={firebase.doSignOut}>
+
+  <Button type="button" style={{ cursor: 'pointer' }} onClick={firebase.doSignOut}>
     Sign Out
   </Button>
 );

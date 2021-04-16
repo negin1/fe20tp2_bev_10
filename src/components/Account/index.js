@@ -10,7 +10,7 @@ import StyledForm from '../Styles/StyledForm';
 
 
 const AccountPage = () => (
-  
+
   <AuthUserContext.Consumer>
     {authUser => (
       <StyledForm>

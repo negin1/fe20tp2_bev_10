@@ -83,7 +83,6 @@ const Graph = (props) => {
 
                         }} />
                 </StyledLineGraph>
-                {/* <button onClick={handleClick}>Save graph to dashboard</button> */}
             </div>
         );
 

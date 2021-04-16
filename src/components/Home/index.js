@@ -145,7 +145,7 @@ class HomePage extends React.Component {
                         <Link to="/Select">
                             <StyledImg src="/images/oneChart.jpg" alt="" />
                         </Link>
-                        <Button type="button"
+                        <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href = '/Select';
@@ -174,7 +174,7 @@ class HomePage extends React.Component {
                         <Link to="/CompareSelect">
                             <StyledImg src="/images/compare.jpg" alt="" />
                         </Link>
-                        <Button type="button"
+                        <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href = '/CompareSelect';
@@ -189,7 +189,7 @@ class HomePage extends React.Component {
                         <Link to="/mortalitySelect">
                             <StyledImg src="/images/mortalitySelect.jpg" alt="" />
                         </Link>
-                        <Button type="button"
+                        <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href = '/mortalitySelect';
