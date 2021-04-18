@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Graph from './Graph';
 
-
 const FetchData = (props) => {
     const [data, setData] = useState(null)
     const timePeriod = daysHandler(props.days)
@@ -47,17 +46,16 @@ const FetchData = (props) => {
 
     }, [props.country, props.type, props.days, props.graph]);
     const handleClick = () => {
-
         let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
+        alert(`Your graph has been saved. click dashboard buttun to see your save graphs`);
 
         const graphObj = {
             country: props.country,
             graph: props.graph,
             type: props.type,
             days: props.days,
+            id: Date.now()
         }
-
-
 
         graphList.push(graphObj);
 

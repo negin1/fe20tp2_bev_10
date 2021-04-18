@@ -12,12 +12,44 @@ const Dashboard = () => {
     //console.log(graphList)
 
     //useEffect(() => {
+    let findIndexOfKey = function (searchKey) {
+        for (var i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            if (key === searchKey)
+                return i;
+        }
+        return -1;
+    }
+    findIndexOfKey();
 
     let graphList = []
+    let allGraphs = localStorage.getItem('key')
     let graphStr = localStorage.getItem('allGraphs');
     graphList = JSON.parse(graphStr);
 
-    if (!localStorage.getItem('allGraphs')) { return []; }
+
+    const remove = () => {
+        let id = localStorage.getItem('allGraphs.i(id)');
+        if (allGraphs == null) {
+            return null;
+        } else {
+            return localStorage.removeItem(id.filter(graphList))
+        }
+    }
+    /*  const remove = () => {
+         // return localStorage.removeItem(localStorage.key(findIndexOfKey("allGraphs")));
+         return (localStorage.removeItem(localStorage.key(allGraphs.filter(findIndexOfKey)))
+     } */
+
+    let MortalityList = []
+    let mortalityStr = localStorage.getItem('MortalityGraph');
+    MortalityList = JSON.parse(mortalityStr);
+    let graphCompareList = []
+    let graphCompareStr = localStorage.getItem('allCompareGraphs');
+    graphCompareList = JSON.parse(graphCompareStr);
+
+
+    //if (!localStorage.getItem('allGraphs')) { return []; }
     //setGraphList(graphList); // update the state if taskList has data
 
     //}, []);
@@ -25,6 +57,7 @@ const Dashboard = () => {
     // mappa igenom precis som ni gör nu fast skicka till FetchData istället
     /*if
     ((!localStorage.getItem('allGraphs')) && (!localStorage.getItem('allCompareGraphs'))) { return (<StyledPageIntro><h2>My Dashboard</h2><p>You haven't saved any graphs yet.</p></StyledPageIntro>) }*/
+
     return (
 
         <StyledPageIntro>
@@ -35,6 +68,9 @@ const Dashboard = () => {
                     <div key={index}>
                         <p>{item.type} in {item.country}</p>
                         <FetchData saved={true} {...item} />
+                        <button onClick={remove}>Remove Graph</button>
+
+                        {/* <button onClick={removeItem}>Remove Graph</button> */}
                         {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
 
                     </div>
