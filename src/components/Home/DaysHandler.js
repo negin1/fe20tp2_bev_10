@@ -1,7 +1,3 @@
-import axios from 'axios'
-
-const BASE_URL = 'https://api.covid19api.com'
-
 const formatDate = (date) => {
     const d = new Date(date)
     const year = d.getFullYear()

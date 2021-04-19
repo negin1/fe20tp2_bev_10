@@ -82,7 +82,7 @@ class PasswordForgetFormBase extends Component {
               type="text"
               placeholder="Email Address"
             />
-            <button disabled={isInvalid} type="submit">
+            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
               Reset Password
         </button>
 

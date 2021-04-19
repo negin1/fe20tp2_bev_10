@@ -4,12 +4,13 @@ import axios from 'axios'
 import Graph from './Graph';
 
 
+
 const FetchData = (props) => {
     const [data, setData] = useState(null)
     const timePeriod = daysHandler(props.days)
-    const [country, setCountry] = useState('');
-    const [graph, setGraph] = useState('');
-    const [type, setType] = useState('');
+    const [setCountry] = useState('');
+    const [setGraph] = useState('');
+    const [setType] = useState('');
 
 
     // read saved graphs from localstorage
@@ -67,7 +68,7 @@ const FetchData = (props) => {
     return (
         data ? (
             <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
-                {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
+                {!props.saved && <button onClick={handleClick} style={{ cursor: 'pointer' }} >Save graph to dashboard</button>}
             </>) : null
     )
 }

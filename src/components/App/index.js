@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -11,7 +10,6 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import Dashboard from '../Dashboard';
 import Settings from '../Settings';
-import BottomNav from '../BottomNav';
 import Covid2 from '../Covid2/Index';
 import Select from '../Home/Select'
 import CompareSelect from '../Home/CompareSelect';
@@ -24,13 +22,11 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Switch, Paper } from '@material-ui/core';
 import Header from '../Header/'
 import Footer from '../Footer';
-
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
-
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components';
-import { light } from '@material-ui/core/styles/createPalette';
+
 
 const GlobalStyle = createGlobalStyle`
 
@@ -64,15 +60,13 @@ const StyledBtn = styled.div`
 `;
 
 function App() {
-   const  [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
 
   const theme = createMuiTheme({
-    palette:{
-     type: darkMode ? "dark" : "light", 
+    palette: {
+      type: darkMode ? "dark" : "light",
     },
   })
-
-
 /* 
   useEffect(() => {
       //Cheek for delected theme /// local storage

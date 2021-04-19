@@ -1,17 +1,12 @@
 import { StyledPageIntro } from '../Styles/StyledPageIntro';
-import { daysHandler } from '../Home/DaysHandler.js';
 import BottomNav from '../BottomNav';
-import React, { useEffect, useState } from 'react';
-import Graph from '../Home/Graph';
+import React from 'react';
 import FetchData from '../Home/FetchData';
 import MortalityFetchData from '../Home/MortalityFetchData';
 import CompareFetchData from '../Home/CompareFetchData';
 
 const Dashboard = () => {
-    //const [graphList, setGraphList] = useState('');
-    //console.log(graphList)
 
-    //useEffect(() => {
 
     let graphList = []
     let graphStr = localStorage.getItem('allGraphs');
@@ -27,12 +22,12 @@ const Dashboard = () => {
     //setGraphList(graphList); // update the state if taskList has data
 
     //}, []);
-// ändra formatet som sparas i localstorage. Kolla hur FetchData får props.#eeeeee
-// mappa igenom precis som ni gör nu fast skicka till FetchData istället
+    // ändra formatet som sparas i localstorage. Kolla hur FetchData får props.#eeeeee
+    // mappa igenom precis som ni gör nu fast skicka till FetchData istället
 
-//if (!localStorage.getItem('allGraphs') && !localStorage.getItem('MortalityGraph') ) { return <StyledPageIntro />, []; }
+    //if (!localStorage.getItem('allGraphs') && !localStorage.getItem('MortalityGraph') ) { return <StyledPageIntro />, []; }
     return (
-        
+
         <StyledPageIntro>
             <h2>My Dashboard</h2>
             <p>View your graphs.</p>
@@ -48,7 +43,7 @@ const Dashboard = () => {
 
                 {mortalityStr && MortalityList.map((item, index) => (
                     <div key={index}>
-                         <p>{item.type} in {item.country}</p>
+                        <p>{item.type} in {item.country}</p>
                         <p>{item.country}</p>
                         <p>{item.type}</p>
                         <MortalityFetchData saved={true} {...item} />
