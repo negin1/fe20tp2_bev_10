@@ -14,7 +14,7 @@ const StyledDiv = styled.div`
   top:0;
   text-shadow: white 0px 0px 5px;
   z-index: 999;
-  background-color: #E6E6FA;
+  background-color: #708090;
 
 
   

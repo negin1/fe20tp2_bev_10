@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
 import LandingCovidSummary from '../CovidTracker/CovidSummary'
 /* import { FirebaseContext } from '../Firebase'; */
+import FetchCards from './FetchCards'
 
 const Landing = () => {
 
@@ -10,9 +11,15 @@ const Landing = () => {
   const toggleIcon = () => {
     setHover(!hover);
   }
+
+
+
+
   return (
     <>
       <LandingContainer>
+        <FetchCards />
+
         <LandingContent className="grid-container">
           <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1>
           <BtnRoute>

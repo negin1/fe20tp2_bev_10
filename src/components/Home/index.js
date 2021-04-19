@@ -17,7 +17,7 @@ import Country from '../Covid/Country';
 import Covid from '../Covid/Covid'
 
 import GraphList from '../NewGraph';
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const StyledDiv = styled.div`
 max-width: 90%;
@@ -42,7 +42,7 @@ const Button = styled.button`
     margin: 0 auto;
       font-size: 15px;
       `
-   
+
 
 
 const StyledImg = styled.img`
@@ -65,7 +65,7 @@ const StyledImg = styled.img`
   }
 `;
 
-  
+
 
 
 const graphList = [{
@@ -129,31 +129,22 @@ class HomePage extends React.Component {
                 <StyledPageIntro>
                     <h1>Discover</h1>
                     <p>We provide three different charts you can choose from.</p>
-                     <p>Please navigate to the chart you would like to discover.</p>
-                
+                    <p>Please navigate to the chart you would like to discover.</p>
                 </StyledPageIntro>
 
-             
                 <StyledDiv>
-
-
-                <StyledSection>
-                
-                       
-             <br></br>
-                    <h2>Select and view covid-19 data per country</h2>
-            <Link to="/Select">
-            <StyledImg src="/images/oneChart.jpg" alt=""/>
-            </Link>
-               <Button  type="button"
-                 onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/Select';
-                }}>Costumise your data</Button> 
-
-        </StyledSection>
-                   
-                  
+                    <StyledSection>
+                        <br></br>
+                        <h2>Select and view covid-19 data per country</h2>
+                        <Link to="/Select">
+                            <StyledImg src="/images/oneChart.jpg" alt="" />
+                        </Link>
+                        <Button type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = '/Select';
+                            }}>Customise your data</Button>
+                    </StyledSection>
                     {/*<GraphList graphList={graphList} />
                 this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
                     {/* <PresetCovid order='1' country='sweden' />
@@ -168,35 +159,36 @@ class HomePage extends React.Component {
                 <Chart />
                 <Country />*/}
                     <br></br>
-                 <StyledSection>
-                    <h2>Compare data from three countries (last 365 days)</h2>
+                    <StyledSection>
+                        <Cards data={data} />
+                        <h2>Compare data from three countries (last 365 days)</h2>
 
-                    <Link to="/CompareSelect">
-            <StyledImg src="/images/compare.jpg" alt=""/>
-            </Link>
-           <Button  type="button"
-                 onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/CompareSelect';
-                }}>Costumise your data</Button> 
-</StyledSection>
+                        <Link to="/CompareSelect">
+                            <StyledImg src="/images/compare.jpg" alt="" />
+                        </Link>
+                        <Button type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = '/CompareSelect';
+                            }}>Customise your data</Button>
+                    </StyledSection>
 
                     <br></br>
 
                     <StyledSection>
-                    <h2>View mortality rate per country (percent of total infected)</h2>
+                        <h2>View mortality rate per country (percent of total infected)</h2>
 
-                       <Link to="/mortalitySelect">
-                     <StyledImg src="/images/mortalitySelect.jpg" alt=""/>
-                     </Link>
-                       <Button  type="button"
-                 onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/mortalitySelect';
-                }}>Costumise your data</Button> 
-                     </StyledSection>
+                        <Link to="/mortalitySelect">
+                            <StyledImg src="/images/mortalitySelect.jpg" alt="" />
+                        </Link>
+                        <Button type="button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = '/mortalitySelect';
+                            }}>Customise your data</Button>
+                    </StyledSection>
 
-                  
+
                 </StyledDiv>
                 <BottomNav />
             </div>

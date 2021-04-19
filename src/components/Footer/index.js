@@ -68,7 +68,7 @@ const Footer = (props) => {
                     <p>Alexander Alazar</p>
                     <p><a href="http://annap.surge.sh/">Anna Pettersson</a></p>
                     <p>Ivan Olowo</p>
-                    <p>Negin Jalalian</p>
+                    <p><a href="https://neginj.netlify.app/">Negin Jalalian</a></p>
                     <p>Julius Alamarvdashti</p>
                 </StyledDiv2>
                 <div>
