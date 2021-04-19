@@ -4,7 +4,7 @@ import Styled from 'styled-components';
 import axios from 'axios'
 import Graph from './Graph';
 
-const StyledButtonSave = styled.button`
+const StyledButtonSave = Styled.button`
     display: block;
     margin: 10px auto;
     width: 135px;

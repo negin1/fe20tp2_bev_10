@@ -6,29 +6,28 @@ import Graph from '../Home/Graph';
 import FetchData from '../Home/FetchData';
 import CompareFetchData from '../Home/CompareFetchData';
 import MortalityFetchData from '../Home/MortalityFetchData';
+import Styled from 'styled-components';
+
+const StyledButtonDelete = Styled.button`
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+    }
+      `;
 
 const Dashboard = () => {
     const [graphList, setGraphList] = useState(JSON.parse(localStorage.getItem('allGraphs')));
+    const [MortalityList, setMortalityList] = useState(JSON.parse(localStorage.getItem('MotalityGraph')));
+    const [graphCompareList, setGraphCompareList] = useState(JSON.parse(localStorage.getItem('allCompareGraphs')))
     // do this for multi and mortality as well
-
-    //console.log(graphList)
-    /*
-        //useEffect(() => {
-        let findIndexOfKey = function (searchKey) {
-            for (var i = 0; i < localStorage.length; i++) {
-                let key = localStorage.key(i);
-                if (key === searchKey)
-                    return i;
-            }
-            return -1;
-        }
-        findIndexOfKey();
-    */
-    //let graphList = []
-    //let allGraphs = localStorage.getItem('key')
-    //let graphStr = localStorage.getItem('allGraphs');
-    //graphList = JSON.parse(graphStr);
-
 
     const removeFromGraphList = (id) => {
         // filter out the object from the array whose id matches the id sent to this function
@@ -38,36 +37,42 @@ const Dashboard = () => {
 
         const filteredGraphs = graphList.filter(graph => graph.id !== id)
         console.log(filteredGraphs);
-        setGraphList(filteredGraphs)
-        localStorage.setItem('allGraphs', JSON.stringify(filteredGraphs))
-
         // update state
+        setGraphList(filteredGraphs)
         // write to localstorage
-
-        // let id = localStorage(graphStr(id))
-        /* let key = localStorage.key(i);
-        let myKey = localStorage.getItem(localStorage.key(i));
-        localStorage.getItem(localStorage.key(findIndexOfKey('myKey')));
-        // localStorage(key, value) */
-        // value = graphStr.substring(index, id)
-        /* for (var i = 0; i < localStorage.length; i++) {
-            console.log(localStorage.getItem(localStorage.key(i)));
-        } */
-        //return localStorage.removeItem(findIndexOfKey.filter(graphList));
-
+        localStorage.setItem('allGraphs', JSON.stringify(filteredGraphs))
     }
-    /*  const remove = () => {
-         // return localStorage.removeItem(localStorage.key(findIndexOfKey("allGraphs")));
-         return (localStorage.removeItem(localStorage.key(allGraphs.filter(findIndexOfKey)))
-     } */
 
-    let MortalityList = []
-    let mortalityStr = localStorage.getItem('MortalityGraph');
-    MortalityList = JSON.parse(mortalityStr);
-    let graphCompareList = []
+    let MortalityStr = localStorage.getItem('MortalityGraph');
+    // let MortalityList = []
+    //let MortalityList = JSON.parse(mortalityStr);
+
+    const removeFromMortalityList = (id) => {
+        // filter out the object from the array whose id matches the id sent to this function
+        console.log("Hello from remove, ")
+        console.log(id)
+        console.log(MortalityList)
+
+        const filteredGraphs = MortalityList.filter(graph => graph.id !== id)
+        console.log(filteredGraphs);
+        // update state
+        setMortalityList(filteredGraphs)
+        // write to localstorage
+        localStorage.setItem('MortalityGraph', JSON.stringify(filteredGraphs))
+    }
+    //let graphCompareList = []
     let graphCompareStr = localStorage.getItem('allCompareGraphs');
-    graphCompareList = JSON.parse(graphCompareStr);
+    // graphCompareList = JSON.parse(graphCompareStr);
 
+    const removeFromGraphCompareList = (id) => {
+        console.log(id);
+
+        const filteredGraphs = graphCompareList.filter(graph => graph.id !== id)
+        console.log(filteredGraphs);
+        //Update state
+        setGraphCompareList(filteredGraphs)
+        localStorage.setItem('allCompareGraphs', JSON.stringify(filteredGraphs))
+    }
 
     //if (!localStorage.getItem('allGraphs')) { return []; }
     //setGraphList(graphList); // update the state if taskList has data
@@ -88,7 +93,7 @@ const Dashboard = () => {
                     <div key={index}>
                         <p>{item.type} in {item.country} {item.id}</p>
                         <FetchData saved={true} {...item} />
-                        <button onClick={() => removeFromGraphList(item.id)}>Remove Graph</button>
+                        <StyledButtonDelete onClick={() => removeFromGraphList(item.id)}>Remove Graph</StyledButtonDelete>
 
                         {/* <button onClick={removeItem}>Remove Graph</button> */}
                         {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
@@ -96,13 +101,14 @@ const Dashboard = () => {
                     </div>
                 ))}
 
-                {mortalityStr && MortalityList.map((item, index) => (
+                {MortalityList && MortalityList.map((item, index) => (
                     <div key={index}>
                         <h2>My dashboard</h2>
                         <p>You haven't made any selections yet. Click on "Discover" to explore data and select graphs.</p>
                         <p>{item.country}</p>
                         <p>{item.type}</p>
                         <MortalityFetchData saved={true} {...item} />
+                        <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)}>Remove Graph</StyledButtonDelete>
                         {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
 
                     </div>
@@ -113,6 +119,7 @@ const Dashboard = () => {
                     <div key={index}>
                         <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
                         <CompareFetchData saved={true} {...item} />
+                        <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)}>Remove Graph</StyledButtonDelete>
                         {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
 
                     </div>
