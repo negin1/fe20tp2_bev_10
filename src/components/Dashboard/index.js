@@ -8,33 +8,53 @@ import CompareFetchData from '../Home/CompareFetchData';
 import MortalityFetchData from '../Home/MortalityFetchData';
 
 const Dashboard = () => {
-    //const [graphList, setGraphList] = useState('');
+    const [graphList, setGraphList] = useState(JSON.parse(localStorage.getItem('allGraphs')));
+    // do this for multi and mortality as well
+
     //console.log(graphList)
-
-    //useEffect(() => {
-    let findIndexOfKey = function (searchKey) {
-        for (var i = 0; i < localStorage.length; i++) {
-            let key = localStorage.key(i);
-            if (key === searchKey)
-                return i;
+    /*
+        //useEffect(() => {
+        let findIndexOfKey = function (searchKey) {
+            for (var i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                if (key === searchKey)
+                    return i;
+            }
+            return -1;
         }
-        return -1;
-    }
-    findIndexOfKey();
-
-    let graphList = []
-    let allGraphs = localStorage.getItem('key')
-    let graphStr = localStorage.getItem('allGraphs');
-    graphList = JSON.parse(graphStr);
+        findIndexOfKey();
+    */
+    //let graphList = []
+    //let allGraphs = localStorage.getItem('key')
+    //let graphStr = localStorage.getItem('allGraphs');
+    //graphList = JSON.parse(graphStr);
 
 
-    const remove = () => {
-        let id = localStorage.getItem('allGraphs.i(id)');
-        if (allGraphs == null) {
-            return null;
-        } else {
-            return localStorage.removeItem(id.filter(graphList))
-        }
+    const removeFromGraphList = (id) => {
+        // filter out the object from the array whose id matches the id sent to this function
+        console.log("Hello from remove, ")
+        console.log(id)
+        console.log(graphList)
+
+        const filteredGraphs = graphList.filter(graph => graph.id !== id)
+        console.log(filteredGraphs);
+        setGraphList(filteredGraphs)
+        localStorage.setItem('allGraphs', JSON.stringify(filteredGraphs))
+
+        // update state
+        // write to localstorage
+
+        // let id = localStorage(graphStr(id))
+        /* let key = localStorage.key(i);
+        let myKey = localStorage.getItem(localStorage.key(i));
+        localStorage.getItem(localStorage.key(findIndexOfKey('myKey')));
+        // localStorage(key, value) */
+        // value = graphStr.substring(index, id)
+        /* for (var i = 0; i < localStorage.length; i++) {
+            console.log(localStorage.getItem(localStorage.key(i)));
+        } */
+        //return localStorage.removeItem(findIndexOfKey.filter(graphList));
+
     }
     /*  const remove = () => {
          // return localStorage.removeItem(localStorage.key(findIndexOfKey("allGraphs")));
@@ -64,11 +84,11 @@ const Dashboard = () => {
             <h2>My Dashboard</h2 >
             <p>View your graphs.</p>
             <div>
-                {graphStr && graphList.map((item, index) => (
+                {graphList && graphList.map((item, index) => (
                     <div key={index}>
-                        <p>{item.type} in {item.country}</p>
+                        <p>{item.type} in {item.country} {item.id}</p>
                         <FetchData saved={true} {...item} />
-                        <button onClick={remove}>Remove Graph</button>
+                        <button onClick={() => removeFromGraphList(item.id)}>Remove Graph</button>
 
                         {/* <button onClick={removeItem}>Remove Graph</button> */}
                         {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
