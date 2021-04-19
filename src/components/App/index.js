@@ -67,8 +67,6 @@ function App() {
       type: darkMode ? "dark" : "light",
     },
   })
-
-
   /* 
     useEffect(() => {
         //Cheek for delected theme /// local storage
