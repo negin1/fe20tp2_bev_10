@@ -16,7 +16,7 @@ import CompareSelect from '../Home/CompareSelect';
 import MortalitySelect from '../Home/MortalitySelect';
 
 // https://stackoverflow.com/questions/63097218/darkmode-store-in-local-storage-react-with-material-ui
-
+import DarkMode from "../DarkMode/DarkMode"
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Switch, Paper } from '@material-ui/core';
@@ -68,52 +68,52 @@ function App() {
     },
   })
 
-  useEffect(() => {
-    //Cheek for delected theme /// local storage
-    const currentThemeColor = localStorage.getItem('theme-color');
-    //if found set selected theme value in state
-    if (currentThemeColor) {
-      localStorage.setItem("darkMode", true);
-    }
-  }, [])
 
-  //set theme
-  const onChange = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem('theme', JSON.stringify(darkMode))
-  }
+  /* 
+    useEffect(() => {
+        //Cheek for delected theme /// local storage
+        const currentThemeColor = localStorage.getItem('theme-color');
+        //if found set selected theme value in state
+        if (currentThemeColor) {
+          
+          localStorage.setItem("darkMode", true);
+  
+       } else if  (!currentThemeColor ) {
+         localStorage.setItem("darkMode", true);
+       }
+    }, [])
+  
+        //set theme
+        const onChange =() => {
+          setDarkMode(!darkMode);
+          localStorage.setItem('theme',JSON.stringify(darkMode))
+        }  */
 
   return (
     <>
+      <GlobalStyle />
+      <Covid2 />
+      <Router>
+        <StyledDiv>
+          <Header />
+          <Navigation />
+          <DarkMode />
 
-      <ThemeProvider theme={theme}>
-        <Paper>
-          <GlobalStyle />
-          <Covid2 />
-          <Router>
-            <StyledDiv>
-              <Header />
-              <Navigation />
-              <StyledBtn>
-                <Switch checked={darkMode} onChange={onChange} />
-              </StyledBtn>
-              <Route exact path={ROUTES.LANDING} component={LandingPage} />
-              <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
-              <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
-              <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-              <Route exact path={ROUTES.HOME} component={HomePage} />
-              <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
-              <Route exact path={ROUTES.ADMIN} component={AdminPage} />
-              <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
-              <Route exact path={ROUTES.SETTINGS} component={Settings} />
-              <Route exact path={ROUTES.SELECT} component={Select} />
-              <Route exact path={ROUTES.COMPARESELECT} component={CompareSelect} />
-              <Route exact path={ROUTES.MORTALITYSELECT} component={MortalitySelect} />
-            </StyledDiv>
-            <Footer />
-          </Router>
-        </Paper>
-      </ThemeProvider>
+          <Route exact path={ROUTES.LANDING} component={LandingPage} />
+          <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
+          <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+          <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+          <Route exact path={ROUTES.HOME} component={HomePage} />
+          <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+          <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+          <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+          <Route exact path={ROUTES.SETTINGS} component={Settings} />
+          <Route exact path={ROUTES.SELECT} component={Select} />
+          <Route exact path={ROUTES.COMPARESELECT} component={CompareSelect} />
+          <Route exact path={ROUTES.MORTALITYSELECT} component={MortalitySelect} />
+        </StyledDiv>
+        <Footer />
+      </Router>
     </>
   )
 }
