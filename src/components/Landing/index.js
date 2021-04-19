@@ -3,6 +3,7 @@ import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, Forw
 import LandingCovidSummary from '../CovidTracker/CovidSummary'
 /* import { FirebaseContext } from '../Firebase'; */
 import FetchCards from './FetchCards'
+import Cards from './Cards'
 
 const Landing = () => {
 
@@ -12,14 +13,9 @@ const Landing = () => {
     setHover(!hover);
   }
 
-
-
-
   return (
     <>
       <LandingContainer>
-        <FetchCards />
-
         <LandingContent className="grid-container">
           <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1>
           <BtnRoute>
@@ -31,7 +27,9 @@ const Landing = () => {
           </BtnRoute>
         </LandingContent>
       </LandingContainer>
-      <LandingCovidSummary />
+      <br></br>
+      <FetchCards />
+      {/*<LandingCovidSummary />*/}
     </>
   );
 
