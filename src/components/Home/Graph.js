@@ -7,29 +7,10 @@ import { capitalizeFirstLetter } from './DaysHandler';
 
 const Graph = (props) => {
     const country = props.country
-    const graph = props.graph
-    const type = props.type
-    const data = props.data
 
 
-    {/* const handleClick = () => {
 
-        let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
 
-        const graphObj = {
-            "country": country,
-            "graph": graph,
-            "type": type,
-            "data": data,
-            id: Date.now(),
-        }
-
-        
-
-        graphList.push(graphObj);
-
-        localStorage.setItem('allGraphs', JSON.stringify(graphList))
-    }*/}
 
 
     if (props.graph === 'line') {

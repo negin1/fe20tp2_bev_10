@@ -5,12 +5,7 @@ import globe from './globe.jpg';
 
 export const LandingContainer = styled.div`
 
-/*height: 50vh;*/
 display: grid;
-/* grid-template-columns: 1fr repeat()(12, minmax()(auto, 4.2rem)) 1fr; */
-/* grid-template-rows: 8rem 20 rem 5 rem auto;
-gap: 0 2rem; */
-
 position: relative;
 width: 100%;
 height: 50vh;
@@ -39,20 +34,10 @@ background-repeat: no-repeat;
     width: 100%;
     height: 15vh
   }
-/* 
-height: 100vh;
-display: grid;
-width: 100%;
-justify-content: center;
-align-items: center;
- */
+
 `;
 
 export const LandingContent = styled.div`
-/* grid-column: 1 / span 12;
-grid-row: 2 / 6;
-overflow: hidden;
-position: relative; */
 
 display: flex;
 flex-direction: column;
