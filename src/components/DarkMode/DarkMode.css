@@ -25,7 +25,10 @@ body {
 
 #darkMode {
   background: transparent url('moon.png') no-repeat center;
-  margin-left: 70px;
+  right: 2em;
+  margin-top: 2em;
+  z-index: 1;
+  position: fixed;
   background-size: 30px 30px;
   width: 45px;
   height: 45px;
