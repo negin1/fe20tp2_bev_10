@@ -1,10 +1,10 @@
 import { daysHandler } from './DaysHandler.js';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import Styled from 'styled-components';
 import axios from 'axios'
 import Graph from './Graph';
 
-const styledButtonSave = styled.button`
+const StyledButtonSave = styled.button`
     display: block;
     margin: 10px auto;
     width: 135px;
@@ -81,7 +81,7 @@ const FetchData = (props) => {
     return (
         data ? (
             <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
-                {!props.saved && <styledButtonSave onClick={handleClick}>Save graph to Dashboard</styledButtonSave>}
+                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to Dashboard</StyledButtonSave>}
             </>) : null
     )
 }
