@@ -12,7 +12,7 @@ height: 170px;
 position: fixed;
 z-index: 1;
 bottom: 40%;
-right: 1em;
+ right: 1em; 
 
 
 @media (max-width: 500px) {
