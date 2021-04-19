@@ -86,12 +86,12 @@ class AdminPage extends Component {
   }
 }
 
- function deleteUser(user) {
-    const { users, setUsers } = [];
-    const updatedUsers = users.filter(user=> user.uid !== user.uid)
-        setUsers(updatedUsers);
-  } 
-      
+function deleteUser(user) {
+  const { users, setUsers } = [];
+  const updatedUsers = users.filter(user => user.uid !== user.uid)
+  setUsers(updatedUsers);
+}
+
 const UserList = ({ users }) => (
   <ul>
     {users.map(user => (
