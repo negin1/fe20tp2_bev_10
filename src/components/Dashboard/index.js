@@ -1,74 +1,120 @@
 import { StyledPageIntro } from '../Styles/StyledPageIntro';
-import { daysHandler } from '../Home/DaysHandler.js';
 import BottomNav from '../BottomNav';
 import React, { useEffect, useState } from 'react';
-import Graph from '../Home/Graph';
 import FetchData from '../Home/FetchData';
-import MortalityFetchData from '../Home/MortalityFetchData';
 import CompareFetchData from '../Home/CompareFetchData';
+import MortalityFetchData from '../Home/MortalityFetchData';
+import Styled from 'styled-components';
+import styled from 'styled-components';
+
+
+const StyledButtonDelete = Styled.button`
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+    }
+      `;
+
+const StyledDiv = styled.div`
+max-width: 90%;
+text-align: center; 
+margin: 0px auto; 
+`;
 
 const Dashboard = () => {
-    //const [graphList, setGraphList] = useState('');
-    //console.log(graphList)
+    const [graphList, setGraphList] = useState(JSON.parse(localStorage.getItem('allGraphs')));
+    const [MortalityList, setMortalityList] = useState(JSON.parse(localStorage.getItem('MortalityGraph')));
+    const [graphCompareList, setGraphCompareList] = useState(JSON.parse(localStorage.getItem('allCompareGraphs')))
 
-    //useEffect(() => {
 
-    let graphList = []
     let graphStr = localStorage.getItem('allGraphs');
-    graphList = JSON.parse(graphStr);
+    const removeFromGraphList = (id) => {
+        const filteredGraphs = graphList.filter(graph => graph.id !== id)
+        setGraphList(filteredGraphs)
+        localStorage.setItem('allGraphs', JSON.stringify(filteredGraphs))
+    }
 
-    let MortalityList = []
     let mortalityStr = localStorage.getItem('MortalityGraph');
-    MortalityList = JSON.parse(mortalityStr);
-    let graphCompareList = []
+    const removeFromMortalityList = (id) => {
+        const filteredGraphs = MortalityList.filter(graph => graph.id !== id)
+        setMortalityList(filteredGraphs)
+        localStorage.setItem('MortalityGraph', JSON.stringify(filteredGraphs))
+    }
+
     let graphCompareStr = localStorage.getItem('allCompareGraphs');
-    graphCompareList = JSON.parse(graphCompareStr);
+    const removeFromGraphCompareList = (id) => {
+        console.log(id);
 
-    //setGraphList(graphList); // update the state if taskList has data
+        const filteredGraphs = graphCompareList.filter(graph => graph.id !== id)
+        console.log(filteredGraphs);
+        setGraphCompareList(filteredGraphs)
+        localStorage.setItem('allCompareGraphs', JSON.stringify(filteredGraphs))
+    }
 
-    //}, []);
-// ändra formatet som sparas i localstorage. Kolla hur FetchData får props.#eeeeee
-// mappa igenom precis som ni gör nu fast skicka till FetchData istället
-
-//if (!localStorage.getItem('allGraphs') && !localStorage.getItem('MortalityGraph') ) { return <StyledPageIntro />, []; }
+    //if (!localStorage.getItem('allGraphs') && !localStorage.getItem('MortalityGraph') ) { return <StyledPageIntro />, []; }
     return (
-        
-        <StyledPageIntro>
-            <h2>My Dashboard</h2>
-            <p>View your graphs.</p>
-            <div>
-                {graphStr && graphList.map((item, index) => (
-                    <div key={index}>
-                        <p>{item.type} in {item.country}</p>
-                        <FetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+        <div>
+            <StyledDiv>
+                <StyledPageIntro>
+                    <h2>My Dashboard</h2 >
+                    <p>View your graphs.</p>
+                </StyledPageIntro >
+                <div>
+                    {graphStr && graphList.map((item, index) => (
+                        <div key={index}>
+                            <p>{item.type} in {item.country}</p>
+                            <FetchData saved={true} {...item} />
 
-                    </div>
-                ))}
 
-                {mortalityStr && MortalityList.map((item, index) => (
-                    <div key={index}>
-                         <p>{item.type} in {item.country}</p>
-                        <p>{item.country}</p>
-                        <p>{item.type}</p>
-                        <MortalityFetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
 
-                    </div>
-                ))}
-            </div>
-            <div>
-                {graphCompareStr && graphCompareList.map((item, index) => (
-                    <div key={index}>
-                        <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
-                        <CompareFetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+                            <StyledButtonDelete onClick={() => removeFromGraphList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
 
-                    </div>
-                ))}
-            </div>
+
+
+
+                        </div>
+                    ))}
+
+                    {mortalityStr && MortalityList.map((item, index) => (
+                        <div key={index}>
+                            <p>Mortality rate in {item.country}</p>
+                            <MortalityFetchData saved={true} {...item} />
+
+
+
+                            <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
+
+
+
+                        </div>
+                    ))}
+                </div>
+                <div>
+                    {graphCompareStr && graphCompareList.map((item, index) => (
+                        <div key={index}>
+                            <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
+                            <CompareFetchData saved={true} {...item} />
+
+
+
+                            <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
+
+
+
+                        </div>
+                    ))}
+                </div>
+            </StyledDiv>
             <BottomNav />
-        </StyledPageIntro>
+        </div>
     )
 }
 

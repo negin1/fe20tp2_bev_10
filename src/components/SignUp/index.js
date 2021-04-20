@@ -7,6 +7,10 @@ import * as ROLES from '../../constants/roles';
 import styled from 'styled-components'
 import StyledForm from '../Styles/StyledForm';
 
+const StyledH1 = styled.h1`
+  margin-top: -170px
+
+ `
 
 const StyledLink = styled(Link)`
   color: black;
@@ -34,7 +38,7 @@ const Label = styled.label`
 
 const SignUpPage = () => (
   <StyledForm>
-  <SignUpForm />
+    <SignUpForm />
   </StyledForm>
 );
 
@@ -57,7 +61,7 @@ class SignUpFormBase extends Component {
   onSubmit = event => {
     const { username, email, passwordOne, isAdmin } = this.state;
     const roles = {};
-    
+
     if (isAdmin) {
       roles[ROLES.ADMIN] = ROLES.ADMIN;
     }
@@ -115,7 +119,7 @@ class SignUpFormBase extends Component {
 
     return (
       <div>
-        <h1>SignUp</h1>
+        <StyledH1>SignUp</StyledH1>
         <h2>Please enter your details bellow.</h2>
 
         <form onSubmit={this.onSubmit}>
@@ -147,16 +151,17 @@ class SignUpFormBase extends Component {
             type="password"
             placeholder="Confirm Password"
           />
-         
+
             Admin:
           <input
-              name="isAdmin"
-              type="checkbox"
-              checked={isAdmin}
-              onChange={this.onChangeCheckbox}
-            />
-         
-          <button disabled={isInvalid} type="submit">
+            name="isAdmin"
+            type="checkbox"
+            style={{ cursor: 'pointer' }}
+            checked={isAdmin}
+            onChange={this.onChangeCheckbox}
+          />
+
+          <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer', outline: '0' }} >
             Sign Up
         </button>
 

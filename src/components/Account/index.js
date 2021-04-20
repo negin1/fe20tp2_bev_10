@@ -1,25 +1,25 @@
 import React from 'react';
-
 import { AuthUserContext } from '../Session';
-import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { withAuthorization } from '../Session';
-import styled from 'styled-components';
 import StyledForm from '../Styles/StyledForm';
-
+import BottomNav from '../BottomNav';
+import { PasswordForgetForm } from '../PasswordForget';
 
 
 const AccountPage = () => (
-  
-  <AuthUserContext.Consumer>
-    {authUser => (
-      <StyledForm>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-      </StyledForm>
-    )}
-  </AuthUserContext.Consumer>
+  <div>
+    <AuthUserContext.Consumer>
+      {authUser => (
+        <StyledForm>
+          <h1>Account: {authUser.email}</h1>
+          {/*    <PasswordForgetForm /> */}
+          <PasswordChangeForm />
+        </StyledForm>
+      )}
+    </AuthUserContext.Consumer>
+    <BottomNav />
+  </div>
 );
 
 const authCondition = authUser => !!authUser;

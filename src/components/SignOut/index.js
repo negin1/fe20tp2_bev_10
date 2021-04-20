@@ -7,20 +7,28 @@ import styled from 'styled-components';
 
 import { withFirebase } from '../Firebase';
 
-const Button = styled.div`
+ const Button = styled.div`
 
-      color: white;
-      background: black;
-      border-radius: 20px;
-      padding: 7px 7px;
-      margin-top: -6px;
-      font-size: 15px;
-    
- `
+  text-decoration: none; 
+   list-style: none; 
+   font-family: Montserrat;
+   font-weight: bold;
+   font-size: 20px;
+   color: black; 
+
+        &:hover {
+          cursor: pointer;
+          color: darkgray;
+          }
+        &:active{
+        font-weight:bold; 
+      }
+
+ `; 
 
 const SignOutButton = ({ firebase }) => (
-  
-  <Button type="button" onClick={firebase.doSignOut}>
+
+  <Button type="button" style={{ cursor: 'pointer' }} onClick={firebase.doSignOut}>
     Sign Out
   </Button>
 );

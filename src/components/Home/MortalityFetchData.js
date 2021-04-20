@@ -2,7 +2,24 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import MortalityGraph from './MortalityGraph';
 import { daysHandler } from './DaysHandler.js';
+import Styled from 'styled-components';
 
+
+const StyledButtonSave = Styled.button`
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    outline:0;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+    }
+      `;
 
 const MortalityFetchData = (props) => {
     const [dataDeaths, setDataDeaths] = useState(null)
@@ -46,11 +63,22 @@ const MortalityFetchData = (props) => {
         }, 1000);
     }, [props.country, props.typeDeaths, props.typeConfirmed, props.days, props.graph]);
 
+<<<<<<< HEAD
      const handleClick = () => {
 
         let graphList = JSON.parse(localStorage.getItem('MortalityGraph')) || [];
 
         const graphObj = {
+=======
+    const handleClick = () => {
+
+        let graphList = JSON.parse(localStorage.getItem('MortalityGraph')) || [];
+        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
+
+
+        const graphObj = {
+            id: Date.now(),
+>>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
             country: props.country,
             typeDeaths: props.typeDeaths,
             graph: props.graph,
@@ -58,7 +86,11 @@ const MortalityFetchData = (props) => {
             days: props.days,
         }
 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
 
         graphList.push(graphObj);
 
@@ -66,8 +98,13 @@ const MortalityFetchData = (props) => {
     }
     return (
         dataDeaths && dataConfirmed ? (
+<<<<<<< HEAD
             <> <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} /> 
              {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}</>): null
+=======
+            <> <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} />
+                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to dashboard</StyledButtonSave>}</>) : null
+>>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
     )
 }
 
