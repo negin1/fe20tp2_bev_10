@@ -36,7 +36,7 @@ const Dashboard = () => {
                     <div key={index}>
                         <p>{item.type} in {item.country}</p>
                         <FetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+                      
 
                     </div>
                 ))}
@@ -44,10 +44,9 @@ const Dashboard = () => {
                 {mortalityStr && MortalityList.map((item, index) => (
                     <div key={index}>
                         <p>{item.type} in {item.country}</p>
-                        <p>{item.country}</p>
-                        <p>{item.type}</p>
+                       
                         <MortalityFetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+                        
 
                     </div>
                 ))}
@@ -57,7 +56,7 @@ const Dashboard = () => {
                     <div key={index}>
                         <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
                         <CompareFetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+                  
 
                     </div>
                 ))}
