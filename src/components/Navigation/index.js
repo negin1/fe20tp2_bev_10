@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
-
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -10,20 +9,27 @@ import * as ROLES from '../../constants/roles';
 
 const StyledDiv = styled.div`
   display: flex;
+  padding: 20px;
+  top:105px; 
   position: sticky;
   top:0;
   text-shadow: white 0px 0px 5px;
   z-index: 999;
   background-color: #708090;
+  background-color: #E6E6FA;
 
 
   
    @media (max-width: 850px) {
        overflow:auto
     }
- > ul{
+  ul{
     display: flex;
     margin: 0 auto;
+
+    justify-content: center;
+
+
     overflow: auto;
     white-space: nowrap;
  }
@@ -50,15 +56,14 @@ const StyledDiv = styled.div`
 `;
 
 
-
 const Navigation = () => (
   <AuthUserContext.Consumer>
     {authUser =>
       authUser ? (
         <NavigationAuth authUser={authUser} />
       ) : (
-        <NavigationNonAuth />
-      )
+          <NavigationNonAuth />
+        )
     }
   </AuthUserContext.Consumer>
 );

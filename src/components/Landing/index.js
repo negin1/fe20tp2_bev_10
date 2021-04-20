@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import CountUp from 'react-countup'
 import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
-import LandingCovidSummary from '../CovidTracker/CovidSummary'
+import CovidSummary from '../CovidTracker/CovidSummary'
+import Cards from '../Covid/Cards'
 /* import { FirebaseContext } from '../Firebase'; */
 
 const Landing = () => {
@@ -24,7 +26,8 @@ const Landing = () => {
           </BtnRoute>
         </LandingContent>
       </LandingContainer>
-      <LandingCovidSummary />
+
+      <CovidSummary />
     </>
   );
 

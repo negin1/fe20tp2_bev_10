@@ -1,8 +1,23 @@
 import { daysHandler } from './DaysHandler.js';
 import React, { useEffect, useState } from 'react';
+import Styled from 'styled-components';
 import axios from 'axios'
 import Graph from './Graph';
 
+const StyledButtonSave = Styled.button`
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+    }
+      `;
 
 const FetchData = (props) => {
     const [data, setData] = useState(null)
@@ -47,17 +62,16 @@ const FetchData = (props) => {
 
     }, [props.country, props.type, props.days, props.graph]);
     const handleClick = () => {
-
         let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
+        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
 
         const graphObj = {
+            id: Date.now(),
             country: props.country,
             graph: props.graph,
             type: props.type,
             days: props.days,
         }
-
-
 
         graphList.push(graphObj);
 
@@ -67,7 +81,7 @@ const FetchData = (props) => {
     return (
         data ? (
             <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
-                {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
+                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to Dashboard</StyledButtonSave>}
             </>) : null
     )
 }

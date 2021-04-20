@@ -10,9 +10,17 @@ padding-top: 1em;
 padding-bottom: 1em;  
  @media (max-width: 1000px) {
         max-width: 75%;
+<<<<<<< HEAD
     }
 @media (max-width: 500px) {
         max-width: 85%;
+=======
+        height: 50vh;
+    }
+@media (max-width: 500px) {
+        max-width: 85%;
+        height: 60vh;
+>>>>>>> negin
     }
 `;
 
