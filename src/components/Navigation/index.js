@@ -17,24 +17,29 @@ const StyledDiv = styled.div`
   z-index: 999;
   background-color: #708090;
   background-color: #708090;
-
-
   
    @media (max-width: 850px) {
            overflow:auto
     }
-    
+
+
   ul{
     display: flex;
     margin: 0 auto;
+<<<<<<< HEAD
     justify-content: center;
   }
 
 
+=======
+   justify-content: center;
+>>>>>>> main
     overflow: auto;
     white-space: nowrap;
-    @media (max-width: 850px) {
-      justify-content: flex-start;
+      @media (max-width: 850px) {
+       justify-content: flex-start;
+ }
+
  }
 
 
@@ -61,9 +66,15 @@ const StyledDiv = styled.div`
     font-weight:bold; 
   }
 
+<<<<<<< HEAD
  }
 `;
 
+=======
+   
+}
+`
+>>>>>>> main
 
 const Navigation = () => (
   <AuthUserContext.Consumer>
