@@ -29,6 +29,10 @@ const StyledDiv = styled.div`
 
     justify-content: center;
 
+     @media (max-width: 850px) {
+       justify-content: flex-start;
+ }
+
 
     overflow: auto;
     white-space: nowrap;
@@ -62,8 +66,8 @@ const Navigation = () => (
       authUser ? (
         <NavigationAuth authUser={authUser} />
       ) : (
-          <NavigationNonAuth />
-        )
+        <NavigationNonAuth />
+      )
     }
   </AuthUserContext.Consumer>
 );

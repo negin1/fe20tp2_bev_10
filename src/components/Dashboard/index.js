@@ -5,6 +5,8 @@ import FetchData from '../Home/FetchData';
 import CompareFetchData from '../Home/CompareFetchData';
 import MortalityFetchData from '../Home/MortalityFetchData';
 import Styled from 'styled-components';
+import styled from 'styled-components';
+
 
 const StyledButtonDelete = Styled.button`
     display: block;
@@ -20,6 +22,14 @@ const StyledButtonDelete = Styled.button`
       background: darkgray;
     }
       `;
+
+const StyledDiv = styled.div`
+max-width: 90%;
+text-align: center; 
+margin: 0px auto; 
+`;
+
+
 
 const Dashboard = () => {
     const [graphList, setGraphList] = useState(JSON.parse(localStorage.getItem('allGraphs')));
@@ -86,47 +96,47 @@ const Dashboard = () => {
     ((!localStorage.getItem('allGraphs')) && (!localStorage.getItem('allCompareGraphs'))) { return (<StyledPageIntro><h2>My Dashboard</h2><p>You haven't saved any graphs yet.</p></StyledPageIntro>) }*/
 
     return (
-        <div>
+        <StyledDiv>
             <StyledPageIntro>
                 <h2>My Dashboard</h2 >
                 <p>View your graphs.</p>
-                <div>
-                    {graphStr && graphList.map((item, index) => (
-                        <div key={index}>
-                            <p>{item.type} in {item.country}</p>
-                            <FetchData saved={true} {...item} />
-                            <StyledButtonDelete onClick={() => removeFromGraphList(item.id)}>Remove Graph</StyledButtonDelete>
-
-                            {/* <button onClick={removeItem}>Remove Graph</button> */}
-                            {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
-
-                        </div>
-                    ))}
-
-                    {mortalityStr && MortalityList.map((item, index) => (
-                        <div key={index}>
-                            <p>Mortality rate in {item.country}</p>
-                            <MortalityFetchData saved={true} {...item} />
-                            <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)}>Remove Graph</StyledButtonDelete>
-                            {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
-
-                        </div>
-                    ))}
-                </div>
-                <div>
-                    {graphCompareStr && graphCompareList.map((item, index) => (
-                        <div key={index}>
-                            <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
-                            <CompareFetchData saved={true} {...item} />
-                            <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)}>Remove Graph</StyledButtonDelete>
-                            {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
-
-                        </div>
-                    ))}
-                </div>
             </StyledPageIntro >
+            <div>
+                {graphStr && graphList.map((item, index) => (
+                    <div key={index}>
+                        <p>{item.type} in {item.country}</p>
+                        <FetchData saved={true} {...item} />
+                        <StyledButtonDelete onClick={() => removeFromGraphList(item.id)}>Remove Graph</StyledButtonDelete>
+
+                        {/* <button onClick={removeItem}>Remove Graph</button> */}
+                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+
+                    </div>
+                ))}
+
+                {mortalityStr && MortalityList.map((item, index) => (
+                    <div key={index}>
+                        <p>Mortality rate in {item.country}</p>
+                        <MortalityFetchData saved={true} {...item} />
+                        <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)}>Remove Graph</StyledButtonDelete>
+                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+
+                    </div>
+                ))}
+            </div>
+            <div>
+                {graphCompareStr && graphCompareList.map((item, index) => (
+                    <div key={index}>
+                        <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
+                        <CompareFetchData saved={true} {...item} />
+                        <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)}>Remove Graph</StyledButtonDelete>
+                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
+
+                    </div>
+                ))}
+            </div>
             <BottomNav />
-        </div>
+        </StyledDiv>
     )
 }
 
