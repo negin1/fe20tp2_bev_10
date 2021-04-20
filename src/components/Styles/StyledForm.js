@@ -5,7 +5,7 @@ const StyledForm = styled.div`
   display:flex;
   flex-direction:column;
   align-items: center;
- /*  padding-top:90px; */
+  padding-top:90px; 
 
   > div{
     display: block;
@@ -80,4 +80,4 @@ const StyledForm = styled.div`
 
 
 
-  export default StyledForm;
+export default StyledForm;
