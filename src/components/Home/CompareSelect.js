@@ -134,7 +134,7 @@ const CompareSelect = () => {
                         <option value="line">Line graph</option>
                         <option value="bar">Bar graph</option>
                     </select>
-                    <button value="Submit">Render my graph</button>
+                    <button value="Submit" style={{ outline: '0' }} >Render my graph</button>
                 </form>
             </StyledDivForm>
             <BottomNav />

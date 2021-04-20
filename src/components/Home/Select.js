@@ -33,7 +33,8 @@ export const StyledDivForm = styled.div`
     color: white;
     background: black;
     border: none;
-    border-radius: 20px;
+    border-radius: 50px;
+    outline-style:none;
     &:hover {
       cursor: pointer;
       background: darkgray;
@@ -113,7 +114,7 @@ const Select = () => {
                         <option value="line">Line graph</option>
                         <option value="bar">Bar graph</option>
                     </select>
-                    <button value="Submit">Render my graph</button>
+                    <button value="Submit" >Render my graph</button>
                 </form>
             </StyledDivForm>
             <BottomNav />
