@@ -28,9 +28,9 @@ const StyledLink = styled(Link)`
 `;
 
 const PasswordForgetPage = () => (
-    <StyledForm>  
-  <PasswordForgetForm />
-   </StyledForm>    
+  <StyledForm>
+    <PasswordForgetForm />
+  </StyledForm>
 );
 
 const INITIAL_STATE = {
@@ -82,7 +82,7 @@ class PasswordForgetFormBase extends Component {
               type="text"
               placeholder="Email Address"
             />
-            <button disabled={isInvalid} type="submit">
+            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
               Reset Password
         </button>
 
@@ -94,9 +94,9 @@ class PasswordForgetFormBase extends Component {
   }
 }
 
-const PasswordForgetLink = () => (
+ const PasswordForgetLink = () => (
   <StyledLink to={ROUTES.PASSWORD_FORGET}>Forgot Password?</StyledLink>
-);
+); 
 
 export default PasswordForgetPage;
 

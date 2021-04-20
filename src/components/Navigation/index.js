@@ -21,7 +21,7 @@ const StyledDiv = styled.div`
   top:0;
   text-shadow: white 0px 0px 5px;
   z-index: 999;
-  background-color: #E6E6FA;
+  background-color: #708090;
 
 <<<<<<< HEAD
 >>>>>>> 843b468ef4f5914be7a0c0457b137f265fdbba02
@@ -78,10 +78,13 @@ const NavigationAuth = ({ authUser }) => (
   <StyledDiv>
     <ul>
       <li>
-        <NavLink to={ROUTES.LANDING}>Landing</NavLink>
+        <NavLink to={ROUTES.LANDING}>Start</NavLink>
       </li>
       <li>
-        <NavLink to={ROUTES.HOME}>Home</NavLink>
+        <NavLink to={ROUTES.HOME}>Discover</NavLink>
+      </li>
+      <li>
+        <NavLink to={ROUTES.DASHBOARD}>Dashboard</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
@@ -103,7 +106,7 @@ const NavigationNonAuth = () => (
   <StyledDiv>
     <ul>
       <li>
-        <NavLink to={ROUTES.LANDING}>Landing</NavLink>
+        <NavLink to={ROUTES.LANDING}>Start</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-
 import { withFirebase } from '../Firebase';
 import { withAuthorization } from '../Session';
 import * as ROLES from '../../constants/roles';
@@ -43,8 +42,8 @@ class AdminPage extends Component {
       users: [],
     };
   }
-  
-  
+
+
   componentDidMount() {
     this.setState({ loading: true });
 
@@ -63,13 +62,13 @@ class AdminPage extends Component {
     });
   }
 
- 
+
 
   componentWillUnmount() {
     this.props.firebase.users().off();
   }
 
- 
+
 
   render() {
     const { users, loading } = this.state;
@@ -87,32 +86,12 @@ class AdminPage extends Component {
   }
 }
 
-
- function deleteUser(e) {
-
- /*  users.auth().deleteUser(uid)
-    .then(function() {
-    console.log("Successfully deleted user");
-    })
-    .catch(function(error) {
-    console.log("Error deleting user:", error);
-    });  */
-
-   console.log("hej") 
-    /* const users =  Object.assign([], this.state.users);
-
-    //Vi behöver sätta state någonst
-     users.splice(1); 
-       */
-  } 
-  
-      
-  
-  
-
+/*  function deleteUser(user) {
+    const { users, setUsers } = [];
+    const updatedUsers = users.filter(user=> user.uid !== user.uid)
+        setUsers(updatedUsers);
+  }  */
 const UserList = ({ users }) => (
-
-   
   <ul>
     {users.map(user => (
       <li key={user.uid}>
@@ -126,7 +105,8 @@ const UserList = ({ users }) => (
           <strong>Username:</strong> {user.username}
         </span>
         <span>
-         <button  onClick={deleteUser}>Delete user</button>
+          <button style={{ cursor: 'pointer' }}>Delete user</button>
+          <button style={{ cursor: 'pointer' }} >Make user Admin</button>
         </span>
       </li>
     ))}

@@ -41,7 +41,7 @@ const StyledDivForm = styled.div`
     }
     `;
 
-    const StyledIntro = styled.div`
+const StyledIntro = styled.div`
   text-align: center;
     `
 
@@ -65,15 +65,15 @@ const Select = () => {
             <div ref={graphRef}>
                 {(submit && country && type && days && graph && <FetchData country={country} type={type} days={days} graph={graph} />)}
             </div>
-            
+
             <StyledIntro>
-                 <h2>Select and view covid-19 data per country</h2>
-                 <p>Please fill in the details bellow to render your graph</p>
+                <h2>Select and view covid-19 data per country</h2>
+                <p>Please fill in the details bellow to render your graph</p>
 
             </StyledIntro>
-           
+
             <StyledDivForm>
-            
+
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
                     <div>
@@ -84,8 +84,7 @@ const Select = () => {
                             <option value='deaths'>Deaths</option>
                             <option value='recovered'>Recovered</option>
                         </select>
-                    </div
-                    >
+                    </div>
                     <div>
                         <label>Country:</label>
                         <select value={country}
@@ -117,7 +116,7 @@ const Select = () => {
                     <button value="Submit">Render my graph</button>
                 </form>
             </StyledDivForm>
-              <BottomNav />
+            <BottomNav />
         </div>
     );
 }
