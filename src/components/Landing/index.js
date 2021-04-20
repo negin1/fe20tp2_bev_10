@@ -26,15 +26,15 @@ const Landing = () => {
       {/* <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1> */}
       <LandingContainer>
         <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1>
-        <LandingContent className="grid-container">
-          <BtnRoute>
-            <LandingBtn to="/signin"
-              onMouseEnter={toggleIcon}
-              onMouseLeave={toggleIcon}>Get Started
+        {/*<LandingContent className="grid-container">*/}
+        <BtnRoute>
+          <LandingBtn to="/signin"
+            onMouseEnter={toggleIcon}
+            onMouseLeave={toggleIcon}>Get Started
             {hover ? <ForwardIcon className="arr-icon" /> : null}
-            </LandingBtn>
-          </BtnRoute>
-        </LandingContent>
+          </LandingBtn>
+        </BtnRoute>
+        {/*</LandingContent>*/}
       </LandingContainer>
       <br></br>
       <Popup trigger={timedPopup} setTrigger={setTimedPopup} >

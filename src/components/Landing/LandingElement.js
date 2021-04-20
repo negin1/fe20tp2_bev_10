@@ -59,12 +59,14 @@ color: #fff;
 font-weight: bold;
 padding: 50px;
 text-align: center; 
+margin: 0 auto; 
 
 
   @media screen and (max-width: 769px) {
     font-size: 32px;
     padding: 20px; 
   }
+
   @media screen and (max-width: 539px) {
     font-size: 22px;
     padding: 15px; 

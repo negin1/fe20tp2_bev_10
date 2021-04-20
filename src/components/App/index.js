@@ -14,11 +14,7 @@ import Covid2 from '../Covid2/Index';
 import Select from '../Home/Select'
 import CompareSelect from '../Home/CompareSelect';
 import MortalitySelect from '../Home/MortalitySelect';
-
-
 import DarkMode from "../DarkMode/DarkMode"
-
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Switch, Paper } from '@material-ui/core';
 import Header from '../Header/'
 import Footer from '../Footer';
@@ -60,32 +56,6 @@ const StyledBtn = styled.div`
 `;
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  const theme = createMuiTheme({
-    palette: {
-      type: darkMode ? "dark" : "light",
-    },
-  })
-  /* 
-    useEffect(() => {
-        //Cheek for delected theme /// local storage
-        const currentThemeColor = localStorage.getItem('theme-color');
-        //if found set selected theme value in state
-        if (currentThemeColor) {
-          
-          localStorage.setItem("darkMode", true);
-  
-       } else if  (!currentThemeColor ) {
-         localStorage.setItem("darkMode", true);
-       }
-    }, [])
-  
-        //set theme
-        const onChange =() => {
-          setDarkMode(!darkMode);
-          localStorage.setItem('theme',JSON.stringify(darkMode))
-        }  */
 
   return (
     <>
