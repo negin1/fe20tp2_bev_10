@@ -28,8 +28,6 @@ const StyledDiv = styled.div`
     display: flex;
     margin: 0 auto;
     justify-content: center;
-
-
     overflow: auto;
     white-space: nowrap;
     @media (max-width: 850px) {
@@ -62,8 +60,7 @@ const StyledDiv = styled.div`
 
    
 }
-`;
-
+`
 
 const Navigation = () => (
   <AuthUserContext.Consumer>
