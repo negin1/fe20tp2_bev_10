@@ -35,38 +35,30 @@ const Dashboard = () => {
             <StyledPageIntro>
                 <h2>My Dashboard</h2>
                 <p>View your graphs.</p>
+                <div>
+                    {graphStr && graphList.map((item, index) => (
+                        <div key={index}>
+                            <p>{item.type} in {item.country}</p>
+                            <FetchData saved={true} {...item} />
+                        </div>
+                    ))}
+
+                    {mortalityStr && MortalityList.map((item, index) => (
+                        <div key={index}>
+                            <p> Mortality rate in {item.country}</p>
+                            <MortalityFetchData saved={true} {...item} />
+                        </div>
+                    ))}
+                </div>
+                <div>
+                    {graphCompareStr && graphCompareList.map((item, index) => (
+                        <div key={index}>
+                            <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
+                            <CompareFetchData saved={true} {...item} />
+                        </div>
+                    ))}
+                </div>
             </StyledPageIntro>
-            <div>
-                {graphStr && graphList.map((item, index) => (
-                    <div key={index}>
-                        <p>{item.type} in {item.country}</p>
-                        <FetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
-
-                    </div>
-                ))}
-
-                {mortalityStr && MortalityList.map((item, index) => (
-                    <div key={index}>
-                        <p>{item.type} in {item.country}</p>
-                        <p>{item.country}</p>
-                        <p>{item.type}</p>
-                        <MortalityFetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
-
-                    </div>
-                ))}
-            </div>
-            <div>
-                {graphCompareStr && graphCompareList.map((item, index) => (
-                    <div key={index}>
-                        <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
-                        <CompareFetchData saved={true} {...item} />
-                        {/* <Graph data={item.data} country={item.country} type={item.type} days={item.days} graph={item.graph} /> */}
-
-                    </div>
-                ))}
-            </div>
             <BottomNav />
         </div>
     )
