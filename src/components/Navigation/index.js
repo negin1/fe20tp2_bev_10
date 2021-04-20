@@ -26,12 +26,11 @@ const StyledDiv = styled.div`
   ul{
     display: flex;
     margin: 0 auto;
-
     justify-content: center;
-
-
     overflow: auto;
     white-space: nowrap;
+    @media (max-width: 850px) {
+      justify-content: flex-start;
  }
  li{
     text-decoration: none; 
@@ -53,8 +52,7 @@ const StyledDiv = styled.div`
     font-weight:bold; 
   }
 }
-`;
-
+`
 
 const Navigation = () => (
   <AuthUserContext.Consumer>
