@@ -55,32 +55,36 @@ li {
          text-align: center;
     }
 }
+`;
 
-a {
-    text-decoration: none; 
-    color: black; 
+const activeClassName = 'nav-item-active'
+
+const StyledLink = styled(NavLink).attrs({ activeClassName })`
+     text-decoration: none;
+    color: black;
 
     &:hover {
       cursor: pointer;
       color: darkgray;
     }
-    &:active {
+
+    &.${activeClassName} {
         color: darkgray;
     }
-}
-`;
+    `
+
 
 const BottomNav = () => (
     <StyledDiv>
         <ul>
             <li>
-                <NavLink to={ROUTES.HOME}><ExploreIcon fontSize="large" /><span>Discover</span></NavLink>
+                <StyledLink to={ROUTES.HOME}><ExploreIcon fontSize="large" /><span>Discover</span></StyledLink>
             </li>
             <li>
-                <NavLink to={ROUTES.DASHBOARD}><AssessmentIcon fontSize="large" /><span>Dashboard</span></NavLink>
+                <StyledLink to={ROUTES.DASHBOARD}><AssessmentIcon fontSize="large" /><span>Dashboard</span></StyledLink>
             </li>
             <li>
-                <NavLink to={ROUTES.SETTINGS}><SettingsIcon fontSize="large" /><span>Settings</span></NavLink>
+                <StyledLink to={ROUTES.ACCOUNT}><SettingsIcon fontSize="large" /><span>Settings</span></StyledLink>
             </li>
         </ul>
     </StyledDiv>

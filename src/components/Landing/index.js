@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
 import LandingCovidSummary from '../CovidTracker/CovidSummary'
-
+/* import { FirebaseContext } from '../Firebase'; */
+import FetchCards from './FetchCards'
+import Cards from './Cards'
 
 const Landing = () => {
 
@@ -10,6 +12,7 @@ const Landing = () => {
   const toggleIcon = () => {
     setHover(!hover);
   }
+
   return (
     <>
       <LandingContainer>
@@ -24,7 +27,9 @@ const Landing = () => {
           </BtnRoute>
         </LandingContent>
       </LandingContainer>
-      <LandingCovidSummary />
+      <br></br>
+      <FetchCards />
+      {/*<LandingCovidSummary />*/}
     </>
   );
 
