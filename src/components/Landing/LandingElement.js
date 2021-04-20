@@ -13,10 +13,12 @@ display: flex;
 justify-content: center;
 align-items: center center;
 
+
 background-image: url(${globe});
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
+
 
 @media screen and (max-width: 875px) {
     width: 100%;
@@ -43,6 +45,7 @@ display: flex;
 flex-direction: column;
 width: 100vmax;
 height: 30vh;
+
 
 align-items: center;
 padding: 0 20px;
