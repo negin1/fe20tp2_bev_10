@@ -2,7 +2,22 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import CompareGraph from './CompareGraph';
 import { daysHandler } from './DaysHandler.js';
+import Styled from 'styled-components';
 
+const StyledButtonSave = Styled.button`
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+    }
+      `;
 
 const CompareFetchData = (props) => {
     const [data, setData] = useState(null)
@@ -77,8 +92,11 @@ const CompareFetchData = (props) => {
     const handleClick = () => {
 
         let graphCompareList = JSON.parse(localStorage.getItem('allCompareGraphs')) || [];
+        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
+
 
         const graphObj = {
+            id: Date.now(),
             country: props.country,
             country2: props.country2,
             country3: props.country3,
@@ -98,7 +116,7 @@ const CompareFetchData = (props) => {
 
         data && data2 && data3 ? (
             <><CompareGraph data={data} data2={data2} data3={data3} country={props.country} country2={props.country2} country3={props.country3} type={props.type} graph={props.graph} />
-                {!props.saved && <button onClick={handleClick}>Save graph test to dashboard</button>}
+                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to dashboard</StyledButtonSave>}
             </>) : null
     )
 }

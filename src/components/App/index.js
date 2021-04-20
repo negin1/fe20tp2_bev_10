@@ -15,7 +15,7 @@ import Select from '../Home/Select'
 import CompareSelect from '../Home/CompareSelect';
 import MortalitySelect from '../Home/MortalitySelect';
 
-// https://stackoverflow.com/questions/63097218/darkmode-store-in-local-storage-react-with-material-ui
+
 import DarkMode from "../DarkMode/DarkMode"
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -96,7 +96,6 @@ function App() {
           <Header />
           <Navigation />
           <DarkMode />
-
           <Route exact path={ROUTES.LANDING} component={LandingPage} />
           <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
           <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />

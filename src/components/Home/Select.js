@@ -4,7 +4,7 @@ import FetchData from './FetchData';
 import COUNTRYLIST from './countryData.js';
 import BottomNav from '../BottomNav'
 
-const StyledDivForm = styled.div`
+export const StyledDivForm = styled.div`
     margin: 50px auto; 
     display: flex;
     justify-content: center;

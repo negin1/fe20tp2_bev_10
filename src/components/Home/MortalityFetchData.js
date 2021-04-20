@@ -2,7 +2,23 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import MortalityGraph from './MortalityGraph';
 import { daysHandler } from './DaysHandler.js';
+import Styled from 'styled-components';
 
+
+const StyledButtonSave = Styled.button`
+    display: block;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px; 
+    color: white;
+    background: black;
+    border: none;
+    border-radius: 20px;
+    &:hover {
+      cursor: pointer;
+      background: darkgray;
+    }
+      `;
 
 const MortalityFetchData = (props) => {
     const [dataDeaths, setDataDeaths] = useState(null)
@@ -49,8 +65,11 @@ const MortalityFetchData = (props) => {
     const handleClick = () => {
 
         let graphList = JSON.parse(localStorage.getItem('MortalityGraph')) || [];
+        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
+
 
         const graphObj = {
+            id: Date.now(),
             country: props.country,
             typeDeaths: props.typeDeaths,
             graph: props.graph,
@@ -67,7 +86,7 @@ const MortalityFetchData = (props) => {
     return (
         dataDeaths && dataConfirmed ? (
             <> <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} />
-                {!props.saved && <button onClick={handleClick} >Save test graph to dashboard</button>}</>) : null
+                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to dashboard</StyledButtonSave>}</>) : null
     )
 }
 
