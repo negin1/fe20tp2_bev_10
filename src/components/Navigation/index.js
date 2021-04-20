@@ -32,6 +32,8 @@ const StyledDiv = styled.div`
 
     overflow: auto;
     white-space: nowrap;
+    @media (max-width: 850px) {
+      justify-content: flex-start;
  }
  li{
     text-decoration: none; 
