@@ -1,8 +1,6 @@
 import { StyledPageIntro } from '../Styles/StyledPageIntro';
-import { daysHandler } from '../Home/DaysHandler.js';
 import BottomNav from '../BottomNav';
 import React, { useEffect, useState } from 'react';
-import Graph from '../Home/Graph';
 import FetchData from '../Home/FetchData';
 import MortalityFetchData from '../Home/MortalityFetchData';
 import CompareFetchData from '../Home/CompareFetchData';
@@ -33,10 +31,11 @@ const Dashboard = () => {
 
     //if (!localStorage.getItem('allGraphs') && !localStorage.getItem('MortalityGraph') ) { return <StyledPageIntro />, []; }
     return (
-
-        <StyledPageIntro>
-            <h2>My Dashboard</h2>
-            <p>View your graphs.</p>
+        <div>
+            <StyledPageIntro>
+                <h2>My Dashboard</h2>
+                <p>View your graphs.</p>
+            </StyledPageIntro>
             <div>
                 {graphStr && graphList.map((item, index) => (
                     <div key={index}>
@@ -69,7 +68,7 @@ const Dashboard = () => {
                 ))}
             </div>
             <BottomNav />
-        </StyledPageIntro>
+        </div>
     )
 }
 
