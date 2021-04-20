@@ -14,7 +14,7 @@ const Landing = () => {
   useEffect(() => {
     setTimeout(() => {
       setTimedPopup(true);
-    }, 1000);
+    }, 900);
   }, []);
 
   const toggleIcon = () => {

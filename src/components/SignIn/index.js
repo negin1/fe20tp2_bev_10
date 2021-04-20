@@ -87,7 +87,7 @@ class SignInFormBase extends Component {
 
 
 
-            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
+            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer', outline: '0' }} >
               Sign In
         </button>
 

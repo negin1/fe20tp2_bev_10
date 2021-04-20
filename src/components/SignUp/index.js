@@ -156,11 +156,12 @@ class SignUpFormBase extends Component {
           <input
             name="isAdmin"
             type="checkbox"
+            style={{ cursor: 'pointer' }}
             checked={isAdmin}
             onChange={this.onChangeCheckbox}
           />
 
-          <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
+          <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer', outline: '0' }} >
             Sign Up
         </button>
 
