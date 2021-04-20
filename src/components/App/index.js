@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -11,26 +10,23 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import Dashboard from '../Dashboard';
 import Settings from '../Settings';
-import BottomNav from '../BottomNav';
 import Covid2 from '../Covid2/Index';
 import Select from '../Home/Select'
 import CompareSelect from '../Home/CompareSelect';
 import MortalitySelect from '../Home/MortalitySelect';
 
-// https://stackoverflow.com/questions/63097218/darkmode-store-in-local-storage-react-with-material-ui
+
 import DarkMode from "../DarkMode/DarkMode" 
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Switch, Paper } from '@material-ui/core';
 import Header from '../Header/'
 import Footer from '../Footer';
-
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
-
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components';
-import { light } from '@material-ui/core/styles/createPalette';
+
 
 const GlobalStyle = createGlobalStyle`
 
@@ -64,15 +60,13 @@ const StyledBtn = styled.div`
 `;
 
 function App() {
-   const  [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
 
   const theme = createMuiTheme({
-    palette:{
-     type: darkMode ? "dark" : "light", 
+    palette: {
+      type: darkMode ? "dark" : "light",
     },
   })
-
-
 /* 
   useEffect(() => {
       //Cheek for delected theme /// local storage
@@ -101,8 +95,7 @@ function App() {
       <StyledDiv>
         <Header />
         <Navigation />
-         <DarkMode />
-        
+        <DarkMode />
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />

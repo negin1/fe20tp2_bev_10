@@ -6,10 +6,7 @@ import MortalityFetchData from '../Home/MortalityFetchData';
 import CompareFetchData from '../Home/CompareFetchData';
 
 const Dashboard = () => {
-    //const [graphList, setGraphList] = useState('');
-    //console.log(graphList)
 
-    //useEffect(() => {
 
     let graphList = []
     let graphStr = localStorage.getItem('allGraphs');

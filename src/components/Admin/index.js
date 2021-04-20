@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-
 import { withFirebase } from '../Firebase';
 import { withAuthorization } from '../Session';
 import * as ROLES from '../../constants/roles';
@@ -43,8 +42,8 @@ class AdminPage extends Component {
       users: [],
     };
   }
-  
-  
+
+
   componentDidMount() {
     this.setState({ loading: true });
 
@@ -63,13 +62,13 @@ class AdminPage extends Component {
     });
   }
 
- 
+
 
   componentWillUnmount() {
     this.props.firebase.users().off();
   }
 
- 
+
 
   render() {
     const { users, loading } = this.state;
@@ -86,11 +85,12 @@ class AdminPage extends Component {
     );
   }
 }
- function deleteUser(user) {
+
+/*  function deleteUser(user) {
     const { users, setUsers } = [];
     const updatedUsers = users.filter(user=> user.uid !== user.uid)
         setUsers(updatedUsers);
-  } 
+  }  */
       
 const UserList = ({ users }) => (
   <ul>
@@ -106,7 +106,8 @@ const UserList = ({ users }) => (
           <strong>Username:</strong> {user.username}
         </span>
         <span>
-         <button onClick={deleteUser}>Delete user</button>
+          <button style={{ cursor: 'pointer' }}>Delete user</button>
+          <button style={{ cursor: 'pointer' }} >Make user Admin</button>
         </span>
       </li>
     ))}

@@ -46,7 +46,7 @@ const MortalityFetchData = (props) => {
         }, 1000);
     }, [props.country, props.typeDeaths, props.typeConfirmed, props.days, props.graph]);
 
-     const handleClick = () => {
+    const handleClick = () => {
 
         let graphList = JSON.parse(localStorage.getItem('MortalityGraph')) || [];
 
@@ -58,7 +58,7 @@ const MortalityFetchData = (props) => {
             days: props.days,
         }
 
-        
+
 
         graphList.push(graphObj);
 
@@ -66,8 +66,8 @@ const MortalityFetchData = (props) => {
     }
     return (
         dataDeaths && dataConfirmed ? (
-            <> <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} /> 
-             {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}</>): null
+            <> <MortalityGraph dataDeaths={dataDeaths} dataConfirmed={dataConfirmed} country={props.country} graph={props.graph} />
+                {!props.saved && <button onClick={handleClick} >Save test graph to dashboard</button>}</>) : null
     )
 }
 

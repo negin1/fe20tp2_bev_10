@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { AuthUserContext } from '../Session';
 import PasswordChangeForm from '../PasswordChange';
 import { withAuthorization } from '../Session';
 import StyledForm from '../Styles/StyledForm';
 import BottomNav from '../BottomNav';
+import { PasswordForgetForm } from '../PasswordForget';
 
 
 const AccountPage = () => (
@@ -13,6 +13,7 @@ const AccountPage = () => (
       {authUser => (
         <StyledForm>
           <h1>Account: {authUser.email}</h1>
+          {/*    <PasswordForgetForm /> */}
           <PasswordChangeForm />
         </StyledForm>
       )}
