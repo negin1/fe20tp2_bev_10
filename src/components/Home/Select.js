@@ -84,8 +84,7 @@ const Select = () => {
                             <option value='deaths'>Deaths</option>
                             <option value='recovered'>Recovered</option>
                         </select>
-                    </div
-                    >
+                    </div>
                     <div>
                         <label>Country:</label>
                         <select value={country}

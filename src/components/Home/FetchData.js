@@ -19,12 +19,13 @@ const StyledButtonSave = Styled.button`
     }
       `;
 
+
 const FetchData = (props) => {
     const [data, setData] = useState(null)
     const timePeriod = daysHandler(props.days)
-    const [country, setCountry] = useState('');
-    const [graph, setGraph] = useState('');
-    const [type, setType] = useState('');
+    const [setCountry] = useState('');
+    const [setGraph] = useState('');
+    const [setType] = useState('');
 
 
     // read saved graphs from localstorage

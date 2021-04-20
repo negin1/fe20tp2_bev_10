@@ -1,8 +1,6 @@
 import { StyledPageIntro } from '../Styles/StyledPageIntro';
-import { daysHandler } from '../Home/DaysHandler.js';
 import BottomNav from '../BottomNav';
 import React, { useEffect, useState } from 'react';
-import Graph from '../Home/Graph';
 import FetchData from '../Home/FetchData';
 import CompareFetchData from '../Home/CompareFetchData';
 import MortalityFetchData from '../Home/MortalityFetchData';
@@ -25,7 +23,7 @@ const StyledButtonDelete = Styled.button`
 
 const Dashboard = () => {
     const [graphList, setGraphList] = useState(JSON.parse(localStorage.getItem('allGraphs')));
-    const [MortalityList, setMortalityList] = useState(JSON.parse(localStorage.getItem('MotalityGraph')));
+    const [MortalityList, setMortalityList] = useState(JSON.parse(localStorage.getItem('MortalityGraph')));
     const [graphCompareList, setGraphCompareList] = useState(JSON.parse(localStorage.getItem('allCompareGraphs')))
     // do this for multi and mortality as well
 
@@ -105,7 +103,7 @@ const Dashboard = () => {
                         </div>
                     ))}
 
-                    {MortalityList && MortalityList.map((item, index) => (
+                    {mortalityStr && MortalityList.map((item, index) => (
                         <div key={index}>
                             <p>Mortality rate in {item.country}</p>
                             <MortalityFetchData saved={true} {...item} />

@@ -8,6 +8,7 @@ margin: 2em auto;
 background: white; 
 padding-top: 1em;
 padding-bottom: 1em;  
+box-shadow:5px 5px 5px 5px black;
  @media (max-width: 1000px) {
         max-width: 75%;
 <<<<<<< HEAD
@@ -23,5 +24,6 @@ padding-bottom: 1em;
 >>>>>>> negin
     }
 `;
+
 
 export default StyledLineGraph;

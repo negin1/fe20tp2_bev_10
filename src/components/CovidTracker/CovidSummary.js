@@ -4,6 +4,7 @@ import { Card, Grid, Typography, CardContent } from '@material-ui/core'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
 
+
 const StyledDiv = styled.div`
 padding-top: 2em; 
 padding-bottom: 2em; 
@@ -14,7 +15,7 @@ h4 {
 `
 
 const CovidSummary = (props) => {
-  const { totalConfirmed, totalRecovered, totalDeaths, country, date } = props
+  const { totalConfirmed, totalRecovered, totalDeaths, country, } = props
 
   return (
     <StyledDiv>
@@ -28,7 +29,7 @@ const CovidSummary = (props) => {
             <CardContent>
               <Cards>
                 <Typography color='secondary' gutterBottom>
-                  Total infected
+                  Total infected test
                 </Typography>
 
                 <Typography varant='h5'></Typography>

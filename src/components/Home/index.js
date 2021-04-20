@@ -130,30 +130,21 @@ class HomePage extends React.Component {
                     <h1>Discover</h1>
                     <p>We provide three different charts you can choose from.</p>
                     <p>Please navigate to the chart you would like to discover.</p>
-
                 </StyledPageIntro>
 
-
                 <StyledDiv>
-
-
                     <StyledSection>
-
-
                         <br></br>
                         <h2>Select and view covid-19 data per country</h2>
                         <Link to="/Select">
-                            <StyledImg src="/images/oneChart.jpg" alt="" />
-                        </Link>
-                        <Button type="button"
+                            <StyledImg src='/images/infectedtwo.jpg' alt="" />
+                        </Link> <br />
+                        <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href = '/Select';
                             }}>Customise your data</Button>
-
                     </StyledSection>
-
-
                     {/*<GraphList graphList={graphList} />
                 this.state.countries.map((item, index) => (<PresetCovid key={index} order={index + 1} country={item} />))*/}
                     {/* <PresetCovid order='1' country='sweden' />
@@ -169,12 +160,13 @@ class HomePage extends React.Component {
                 <Country />*/}
                     <br></br>
                     <StyledSection>
+                        <Cards data={data} />
                         <h2>Compare data from three countries (last 365 days)</h2>
 
                         <Link to="/CompareSelect">
-                            <StyledImg src="/images/compare.jpg" alt="" />
-                        </Link>
-                        <Button type="button"
+                            <StyledImg src="/images/deaththree.jpg" alt="" />
+                        </Link> <br />
+                        <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href = '/CompareSelect';
@@ -184,16 +176,18 @@ class HomePage extends React.Component {
                     <br></br>
 
                     <StyledSection>
-                        <h2>View mortality rate per country (percent of total infected)</h2>
+                        <div >
+                            <h2>View mortality rate per country (percent of total infected)</h2>
 
-                        <Link to="/mortalitySelect">
-                            <StyledImg src="/images/mortalitySelect.jpg" alt="" />
-                        </Link>
-                        <Button type="button"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                window.location.href = '/mortalitySelect';
-                            }}>Customise your data</Button>
+                            <Link to="/mortalitySelect">
+                                <StyledImg src="/images/mortalitytwo.jpg" alt="" />
+                            </Link> <br />
+                            <Button type="button" style={{ cursor: 'pointer' }}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href = '/mortalitySelect';
+                                }}>Customise your data</Button>
+                        </div>
                     </StyledSection>
 
 

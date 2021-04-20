@@ -34,7 +34,7 @@ const Label = styled.label`
 
 const SignUpPage = () => (
   <StyledForm>
-  <SignUpForm />
+    <SignUpForm />
   </StyledForm>
 );
 
@@ -57,7 +57,7 @@ class SignUpFormBase extends Component {
   onSubmit = event => {
     const { username, email, passwordOne, isAdmin } = this.state;
     const roles = {};
-    
+
     if (isAdmin) {
       roles[ROLES.ADMIN] = ROLES.ADMIN;
     }
@@ -147,16 +147,16 @@ class SignUpFormBase extends Component {
             type="password"
             placeholder="Confirm Password"
           />
-         
+
             Admin:
           <input
-              name="isAdmin"
-              type="checkbox"
-              checked={isAdmin}
-              onChange={this.onChangeCheckbox}
-            />
-         
-          <button disabled={isInvalid} type="submit">
+            name="isAdmin"
+            type="checkbox"
+            checked={isAdmin}
+            onChange={this.onChangeCheckbox}
+          />
+
+          <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
             Sign Up
         </button>
 
