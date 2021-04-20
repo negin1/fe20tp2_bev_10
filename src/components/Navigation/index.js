@@ -70,7 +70,10 @@ const NavigationAuth = ({ authUser }) => (
         <NavLink to={ROUTES.LANDING}>Landing</NavLink>
       </li>
       <li>
-        <NavLink to={ROUTES.HOME}>Home</NavLink>
+        <NavLink to={ROUTES.HOME}>Discover</NavLink>
+      </li>
+      <li>
+        <NavLink to={ROUTES.DASHBOARD}>Dashboard</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
