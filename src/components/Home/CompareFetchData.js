@@ -92,7 +92,7 @@ const CompareFetchData = (props) => {
     const handleClick = () => {
 
         let graphCompareList = JSON.parse(localStorage.getItem('allCompareGraphs')) || [];
-        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
+        alert(`Your graph has been saved. Click dashboard buttun to see your saved graphs`);
 
 
         const graphObj = {

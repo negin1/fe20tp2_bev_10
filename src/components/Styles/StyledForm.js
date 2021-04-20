@@ -5,8 +5,7 @@ const StyledForm = styled.div`
   display:flex;
   flex-direction:column;
   align-items: center;
-  
-  padding-top:130px;
+ /*  padding-top:90px; */
 
   > div{
     display: block;
@@ -16,9 +15,15 @@ const StyledForm = styled.div`
     margin-bottom:40px;
     border-radius: 30px;
    
-        @media (max-width: 900px) {
+        @media (max-width: 800px) {
             width: 200px;
-        }
+            padding-top:30px;
+           }
+
+          
+          h1{
+         font-size: 30px;
+          }
     }
       
       h1{

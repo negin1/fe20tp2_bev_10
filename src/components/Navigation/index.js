@@ -17,22 +17,25 @@ const StyledDiv = styled.div`
   z-index: 999;
   background-color: #708090;
   background-color: #E6E6FA;
-
-
-  
    @media (max-width: 850px) {
-       overflow:auto
+           overflow:auto
     }
+    
   ul{
     display: flex;
     margin: 0 auto;
-
     justify-content: center;
 
 
     overflow: auto;
     white-space: nowrap;
+
+      @media (max-width: 850px) {
+           justify-content:flex-start
+    }
  }
+
+
  li{
     text-decoration: none; 
    list-style: none; 
@@ -42,6 +45,9 @@ const StyledDiv = styled.div`
    padding: 26px 30px;
    color: black;
   }
+
+ 
+   
  a {
     text-decoration: none; 
     color: black; 
@@ -52,6 +58,8 @@ const StyledDiv = styled.div`
      &:active{
     font-weight:bold; 
   }
+
+   
 }
 `;
 

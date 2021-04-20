@@ -54,6 +54,8 @@ justify-content: center;
 `
 
 export const Landingh1 = styled.h1`
+
+
 font-size: 50px;
 color: #fff;
 font-weight: bold;
