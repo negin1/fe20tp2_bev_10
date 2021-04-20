@@ -116,7 +116,7 @@ const CompareFetchData = (props) => {
 
         data && data2 && data3 ? (
             <><CompareGraph data={data} data2={data2} data3={data3} country={props.country} country2={props.country2} country3={props.country3} type={props.type} graph={props.graph} />
-                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to dashboard</StyledButtonSave>}
+                {!props.saved && <StyledButtonSave onClick={handleClick} style={{ outline: '0' }} >Save graph to dashboard</StyledButtonSave>}
             </>) : null
     )
 }

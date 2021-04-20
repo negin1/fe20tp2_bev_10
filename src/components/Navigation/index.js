@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
   text-shadow: white 0px 0px 5px;
   z-index: 999;
   background-color: #708090;
-  background-color: #E6E6FA;
+  background-color: #708090;
 
 
   
@@ -62,8 +62,8 @@ const Navigation = () => (
       authUser ? (
         <NavigationAuth authUser={authUser} />
       ) : (
-          <NavigationNonAuth />
-        )
+        <NavigationNonAuth />
+      )
     }
   </AuthUserContext.Consumer>
 );

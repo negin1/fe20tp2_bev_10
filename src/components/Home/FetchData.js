@@ -82,7 +82,7 @@ const FetchData = (props) => {
     return (
         data ? (
             <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
-                {!props.saved && <StyledButtonSave onClick={handleClick}>Save graph to Dashboard</StyledButtonSave>}
+                {!props.saved && <StyledButtonSave onClick={handleClick} style={{ outline: '0' }} >Save graph to Dashboard</StyledButtonSave>}
             </>) : null
     )
 }
