@@ -7,6 +7,10 @@ import * as ROLES from '../../constants/roles';
 import styled from 'styled-components'
 import StyledForm from '../Styles/StyledForm';
 
+const StyledH1 = styled.h1`
+  margin-top: -170px
+
+ `
 
 const StyledLink = styled(Link)`
   color: black;
@@ -115,7 +119,7 @@ class SignUpFormBase extends Component {
 
     return (
       <div>
-        <h1>SignUp</h1>
+        <StyledH1>SignUp</StyledH1>
         <h2>Please enter your details bellow.</h2>
 
         <form onSubmit={this.onSubmit}>

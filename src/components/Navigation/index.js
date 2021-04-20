@@ -21,12 +21,12 @@ const StyledDiv = styled.div`
 
   
    @media (max-width: 850px) {
-       overflow:auto
+           overflow:auto
     }
+    
   ul{
     display: flex;
     margin: 0 auto;
-
     justify-content: center;
 
 
@@ -35,6 +35,8 @@ const StyledDiv = styled.div`
     @media (max-width: 850px) {
       justify-content: flex-start;
  }
+
+
  li{
     text-decoration: none; 
    list-style: none; 
@@ -44,6 +46,9 @@ const StyledDiv = styled.div`
    padding: 26px 30px;
    color: black;
   }
+
+ 
+   
  a {
     text-decoration: none; 
     color: black; 
@@ -54,6 +59,8 @@ const StyledDiv = styled.div`
      &:active{
     font-weight:bold; 
   }
+
+   
 }
 `;
 
