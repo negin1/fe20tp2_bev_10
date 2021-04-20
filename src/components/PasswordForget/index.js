@@ -8,18 +8,12 @@ import StyledForm from '../Styles/StyledForm';
 
 
 
-const StyledHeading = styled.h1`
-      padding-bottom: 25px;
-      font-family: Montserrat;
-      text-align: center; 
-        font-size: 27px;
-`;
 
-const StyledText = styled.p`
-  font-family: Montserrat;
-  text-align: center; 
-  font-size: 18px;
-`;
+
+const StyledH1 = styled.h1`
+
+
+ `
 const StyledLink = styled(Link)`
   color: black;
   font-weight: bold;
@@ -32,7 +26,6 @@ const PasswordForgetPage = () => (
     <PasswordForgetForm />
   </StyledForm>
 );
-
 const INITIAL_STATE = {
   email: '',
   error: null,
@@ -72,8 +65,8 @@ class PasswordForgetFormBase extends Component {
     return (
       <>
         <div>
-          <StyledHeading>Reset your password </StyledHeading>
-          <StyledText> Please enter your email adress bellow </StyledText>
+          <StyledH1>Reset your password </StyledH1>
+          <h2> Please enter your email adress bellow </h2>
           <form onSubmit={this.onSubmit}>
             <input
               name="email"

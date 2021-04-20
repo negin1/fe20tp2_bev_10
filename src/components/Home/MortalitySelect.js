@@ -42,11 +42,11 @@ const StyledDivForm = styled.div`
       }
     }
     `;
- const StyledIntro = styled.div`
+const StyledIntro = styled.div`
     text-align: center;
     `;
 
-   
+
 
 
 
@@ -73,8 +73,8 @@ const MortalitySelect = () => {
             </div>
 
             <StyledIntro>
-                 <h2>Select and view covid-19 data per country</h2>
-                 <p>Please fill in the details bellow to render your graph</p>
+                <h2>Select and view covid-19 data per country</h2>
+                <p>Please fill in the details bellow to render your graph</p>
 
             </StyledIntro>
             <StyledDivForm>
@@ -107,10 +107,10 @@ const MortalitySelect = () => {
                         <option value="line">Line graph</option>
                         <option value="bar">Bar graph</option>
                     </select>
-                    <button value="Submit">Render my graph</button>
+                    <button value="Submit" style={{ outline: '0' }} >Render my graph</button>
                 </form>
             </StyledDivForm>
-             <BottomNav />
+            <BottomNav />
         </div>
     );
 }

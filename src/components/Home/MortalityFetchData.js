@@ -14,6 +14,7 @@ const StyledButtonSave = Styled.button`
     background: black;
     border: none;
     border-radius: 20px;
+    outline:0;
     &:hover {
       cursor: pointer;
       background: darkgray;

@@ -37,6 +37,7 @@ const DarkMode = () => {
       className={theme === "dark" ? clickedClass : ""}
       id="darkMode"
       onClick={e => switchTheme(e)}
+      style={{ outline: '0' }}
     ></button>
   )
 }

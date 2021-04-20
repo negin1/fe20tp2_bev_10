@@ -8,7 +8,13 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 import StyledForm from '../Styles/StyledForm';
+import styled from 'styled-components';
 
+
+const StyledH1 = styled.h1`
+  margin-top: -170px
+
+ `
 
 const SignInPage = () => (
 
@@ -60,8 +66,8 @@ class SignInFormBase extends Component {
     return (
       <>
         <div>
-          <h1>Sign in</h1>
-          <h2>Enter your full name and email </h2>
+          <StyledH1>Sign in</StyledH1>
+          <h2>Enter your email and password </h2>
 
           <form onSubmit={this.onSubmit}>
             <input
@@ -81,7 +87,7 @@ class SignInFormBase extends Component {
 
 
 
-            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
+            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer', outline: '0' }} >
               Sign In
         </button>
 
