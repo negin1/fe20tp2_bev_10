@@ -28,6 +28,7 @@ const StyledDiv = styled.div`
     display: flex;
     margin: 0 auto;
     justify-content: center;
+  }
 
 
     overflow: auto;
@@ -60,8 +61,7 @@ const StyledDiv = styled.div`
     font-weight:bold; 
   }
 
-   
-}
+ }
 `;
 
 
