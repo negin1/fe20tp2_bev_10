@@ -67,10 +67,13 @@ const NavigationAuth = ({ authUser }) => (
   <StyledDiv>
     <ul>
       <li>
-        <NavLink to={ROUTES.LANDING}>Landing</NavLink>
+        <NavLink to={ROUTES.LANDING}>Start</NavLink>
       </li>
       <li>
-        <NavLink to={ROUTES.HOME}>Home</NavLink>
+        <NavLink to={ROUTES.HOME}>Discover</NavLink>
+      </li>
+      <li>
+        <NavLink to={ROUTES.DASHBOARD}>Dashboard</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
@@ -92,7 +95,7 @@ const NavigationNonAuth = () => (
   <StyledDiv>
     <ul>
       <li>
-        <NavLink to={ROUTES.LANDING}>Landing</NavLink>
+        <NavLink to={ROUTES.LANDING}>Start</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink>

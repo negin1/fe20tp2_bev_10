@@ -86,11 +86,11 @@ class AdminPage extends Component {
   }
 }
 
-function deleteUser(user) {
-  const { users, setUsers } = [];
-  const updatedUsers = users.filter(user => user.uid !== user.uid)
-  setUsers(updatedUsers);
-}
+/*  function deleteUser(user) {
+    const { users, setUsers } = [];
+    const updatedUsers = users.filter(user=> user.uid !== user.uid)
+        setUsers(updatedUsers);
+  }  */
 
 const UserList = ({ users }) => (
   <ul>
@@ -106,7 +106,7 @@ const UserList = ({ users }) => (
           <strong>Username:</strong> {user.username}
         </span>
         <span>
-          <button style={{ cursor: 'pointer' }} onClick={deleteUser}>Delete user</button>
+          <button style={{ cursor: 'pointer' }}>Delete user</button>
           <button style={{ cursor: 'pointer' }} >Make user Admin</button>
         </span>
       </li>
