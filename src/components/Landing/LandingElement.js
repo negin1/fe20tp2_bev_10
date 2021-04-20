@@ -8,22 +8,24 @@ export const LandingContainer = styled.div`
 display: grid;
 position: relative;
 width: 100%;
-height: 50vh;
-display: flex;
+height: 60vh;
+flex-direction: column;
 justify-content: center;
-align-items: center center;
+align-items: center;
+
 
 background-image: url(${globe});
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
 
+
 @media screen and (max-width: 875px) {
     width: 100%;
     height: 50vh;
   } 
 @media screen and (max-width: 769px) {
-    width: 100%;
+    widt: 100%;
     height: 30vh;
   }
   @media screen and (max-width: 400px) {
@@ -40,13 +42,14 @@ background-repeat: no-repeat;
 export const LandingContent = styled.div`
 
 display: flex;
-flex-direction: column;
+flex-direction: row;
 width: 100vmax;
 height: 30vh;
 
+
 align-items: center;
 padding: 0 20px;
-justify-content: center;
+justify-content: center; 
 
 `
 
@@ -54,7 +57,9 @@ export const Landingh1 = styled.h1`
 font-size: 50px;
 color: #fff;
 font-weight: bold;
-padding: 50px; 
+padding: 50px;
+text-align: center; 
+
 
   @media screen and (max-width: 769px) {
     font-size: 32px;

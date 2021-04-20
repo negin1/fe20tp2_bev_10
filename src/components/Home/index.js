@@ -137,7 +137,7 @@ class HomePage extends React.Component {
                         <br></br>
                         <h2>Select and view covid-19 data per country</h2>
                         <Link to="/Select">
-                            <StyledImg src='/images/infected.jpg' alt="" />
+                            <StyledImg src='/images/infectedtwo.jpg' alt="" />
                         </Link> <br />
                         <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
@@ -164,7 +164,7 @@ class HomePage extends React.Component {
                         <h2>Compare data from three countries (last 365 days)</h2>
 
                         <Link to="/CompareSelect">
-                            <StyledImg src="/images/death.jpg" alt="" />
+                            <StyledImg src="/images/deaththree.jpg" alt="" />
                         </Link> <br />
                         <Button type="button" style={{ cursor: 'pointer' }}
                             onClick={(e) => {
@@ -180,7 +180,7 @@ class HomePage extends React.Component {
                             <h2>View mortality rate per country (percent of total infected)</h2>
 
                             <Link to="/mortalitySelect">
-                                <StyledImg src="/images/mortality.jpg" alt="" />
+                                <StyledImg src="/images/mortalitytwo.jpg" alt="" />
                             </Link> <br />
                             <Button type="button" style={{ cursor: 'pointer' }}
                                 onClick={(e) => {

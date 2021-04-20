@@ -91,7 +91,6 @@ class AdminPage extends Component {
     const updatedUsers = users.filter(user=> user.uid !== user.uid)
         setUsers(updatedUsers);
   }  */
-      
 const UserList = ({ users }) => (
   <ul>
     {users.map(user => (
