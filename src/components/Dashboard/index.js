@@ -71,7 +71,14 @@ const Dashboard = () => {
                         <div key={index}>
                             <p>{item.type} in {item.country}</p>
                             <FetchData saved={true} {...item} />
-                            <StyledButtonDelete onClick={() => removeFromGraphList(item.id)}>Remove Graph</StyledButtonDelete>
+
+                            
+
+                            <StyledButtonDelete onClick={() => removeFromGraphList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
+
+                          
+
+
                         </div>
                     ))}
 
@@ -79,7 +86,13 @@ const Dashboard = () => {
                         <div key={index}>
                             <p>Mortality rate in {item.country}</p>
                             <MortalityFetchData saved={true} {...item} />
-                            <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)}>Remove Graph</StyledButtonDelete>
+
+                            
+
+                            <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
+                            
+
+
                         </div>
                     ))}
                 </div>
@@ -88,7 +101,12 @@ const Dashboard = () => {
                         <div key={index}>
                             <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
                             <CompareFetchData saved={true} {...item} />
-                            <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)}>Remove Graph</StyledButtonDelete>
+
+                           
+
+                            <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
+                            
+
 
                         </div>
                     ))}

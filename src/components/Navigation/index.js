@@ -16,11 +16,12 @@ const StyledDiv = styled.div`
   text-shadow: white 0px 0px 5px;
   z-index: 999;
   background-color: #708090;
-  background-color: #E6E6FA;
+  background-color: #708090;
   
    @media (max-width: 850px) {
-       overflow:auto
+           overflow:auto
     }
+
 
   ul{
     display: flex;
@@ -31,6 +32,7 @@ const StyledDiv = styled.div`
       @media (max-width: 850px) {
        justify-content: flex-start;
  }
+
  }
 
 
@@ -43,6 +45,9 @@ const StyledDiv = styled.div`
    padding: 26px 30px;
    color: black;
   }
+
+ 
+   
  a {
     text-decoration: none; 
     color: black; 
@@ -53,9 +58,10 @@ const StyledDiv = styled.div`
      &:active{
     font-weight:bold; 
   }
-}
-`;
 
+   
+}
+`
 
 const Navigation = () => (
   <AuthUserContext.Consumer>

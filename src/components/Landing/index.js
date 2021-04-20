@@ -14,7 +14,7 @@ const Landing = () => {
   useEffect(() => {
     setTimeout(() => {
       setTimedPopup(true);
-    }, 1000);
+    }, 900);
   }, []);
 
   const toggleIcon = () => {
@@ -23,19 +23,20 @@ const Landing = () => {
 
   return (
     <>
-      {/* <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1> */}
+     
       <LandingContainer>
         <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1>
-        {/*<LandingContent className="grid-container">*/}
-        <BtnRoute>
+
+         <BtnRoute>
+
           <LandingBtn to="/signin"
             onMouseEnter={toggleIcon}
             onMouseLeave={toggleIcon}>Get Started
             {hover ? <ForwardIcon className="arr-icon" /> : null}
           </LandingBtn>
         </BtnRoute>
-        {/*</LandingContent>*/}
       </LandingContainer>
+
       <br></br>
       <Popup trigger={timedPopup} setTrigger={setTimedPopup} >
         <h3>Welcome to the ultimate Covid-19 tracker!</h3>

@@ -54,6 +54,9 @@ justify-content: center;
 `
 
 export const Landingh1 = styled.h1`
+display: flex;
+flex-wrap: wrap;
+
 font-size: 50px;
 color: #fff;
 font-weight: bold;
@@ -61,18 +64,22 @@ padding: 50px;
 text-align: center; 
 margin: 0 auto; 
 
-
   @media screen and (max-width: 769px) {
-    font-size: 32px;
+    font-size: 25px;
     padding: 20px; 
   }
 
   @media screen and (max-width: 539px) {
-    font-size: 22px;
+    font-size: 18px;
     padding: 15px; 
   }
   @media screen and (max-width: 351px) {
-    font-size: 20px;
+    font-size: 15px;
+    padding: 10px; 
+  }
+  @media screen and (max-width: 325px) {
+    font-size: 15px;
+    padding: 10px; 
   }
 `;
 
