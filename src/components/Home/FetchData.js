@@ -67,11 +67,6 @@ const FetchData = (props) => {
             days: props.days,
         }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
         graphList.push(graphObj);
 
         localStorage.setItem('allGraphs', JSON.stringify(graphList))
@@ -79,11 +74,7 @@ const FetchData = (props) => {
     return (
         data ? (
             <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
-<<<<<<< HEAD
-                {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
-=======
                 {!props.saved && <StyledButtonSave onClick={handleClick} style={{ outline: '0' }} >Save graph to Dashboard</StyledButtonSave>}
->>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
             </>) : null
     )
 }

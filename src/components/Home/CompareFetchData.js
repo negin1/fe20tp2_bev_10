@@ -24,15 +24,9 @@ const CompareFetchData = (props) => {
     const [data2, setData2] = useState(null)
     const [data3, setData3] = useState(null)
     const timePeriod = daysHandler(props.days)
-<<<<<<< HEAD
-    const [country, setCountry] = useState('');
-    const [country2, setCountry2] = useState('');
-    const [country3, setCountry3] = useState('');
-=======
     const [setCountry] = useState('');
     const [setCountry2] = useState('');
     const [setCountry3] = useState('');
->>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
 
     useEffect(() => {
         axios.get(
@@ -98,16 +92,11 @@ const CompareFetchData = (props) => {
     const handleClick = () => {
 
         let graphCompareList = JSON.parse(localStorage.getItem('allCompareGraphs')) || [];
-<<<<<<< HEAD
-
-        const graphObj = {
-=======
         alert(`Your graph has been saved. Click dashboard buttun to see your saved graphs`);
 
 
         const graphObj = {
             id: Date.now(),
->>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
             country: props.country,
             country2: props.country2,
             country3: props.country3,
@@ -127,11 +116,7 @@ const CompareFetchData = (props) => {
 
         data && data2 && data3 ? (
             <><CompareGraph data={data} data2={data2} data3={data3} country={props.country} country2={props.country2} country3={props.country3} type={props.type} graph={props.graph} />
-<<<<<<< HEAD
-                {!props.saved && <button onClick={handleClick}>Save graph to dashboard</button>}
-=======
                 {!props.saved && <StyledButtonSave onClick={handleClick} style={{ outline: '0' }} >Save graph to dashboard</StyledButtonSave>}
->>>>>>> ad4f3a171c956b151da5abd34a99198e8901e65c
             </>) : null
     )
 }
