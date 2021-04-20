@@ -80,7 +80,7 @@ const BottomNav = () => (
                 <NavLink to={ROUTES.DASHBOARD}><AssessmentIcon fontSize="large" /><span>Dashboard</span></NavLink>
             </li>
             <li>
-                <NavLink to={ROUTES.SETTINGS}><SettingsIcon fontSize="large" /><span>Settings</span></NavLink>
+                <NavLink to={ROUTES.ACCOUNT}><SettingsIcon fontSize="large" /><span>Settings</span></NavLink>
             </li>
         </ul>
     </StyledDiv>
