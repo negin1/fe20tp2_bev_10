@@ -62,6 +62,7 @@ color: #fff;
 font-weight: bold;
 padding: 50px;
 text-align: center; 
+margin: 0 auto; 
 
   @media screen and (max-width: 769px) {
     font-size: 25px;

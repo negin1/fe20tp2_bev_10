@@ -17,21 +17,22 @@ const StyledDiv = styled.div`
   z-index: 999;
   background-color: #708090;
   background-color: #708090;
-
-
   
    @media (max-width: 850px) {
            overflow:auto
     }
-    
+
+
   ul{
     display: flex;
     margin: 0 auto;
-    justify-content: center;
+   justify-content: center;
     overflow: auto;
     white-space: nowrap;
-    @media (max-width: 850px) {
-      justify-content: flex-start;
+      @media (max-width: 850px) {
+       justify-content: flex-start;
+ }
+
  }
 
 

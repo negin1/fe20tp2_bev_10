@@ -28,13 +28,6 @@ const FetchData = (props) => {
     const [setType] = useState('');
 
 
-    // read saved graphs from localstorage
-    // push props as an object into the array
-    // save the array to LS
-    //const [country, setCountry] = useState('');
-    //gör ett api anrop
-
-
     useEffect(() => {
 
         axios.get(
@@ -78,7 +71,6 @@ const FetchData = (props) => {
 
         localStorage.setItem('allGraphs', JSON.stringify(graphList))
     }
-    // lägg till knappen
     return (
         data ? (
             <><Graph data={data} country={props.country} type={props.type} graph={props.graph} />
