@@ -66,7 +66,7 @@ const MortalityFetchData = (props) => {
     const handleClick = () => {
 
         let graphList = JSON.parse(localStorage.getItem('MortalityGraph')) || [];
-        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
+        alert(`Your graph has been saved. click dashboard button to see your saved graphs`);
 
 
         const graphObj = {
