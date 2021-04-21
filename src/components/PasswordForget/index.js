@@ -66,7 +66,7 @@ class PasswordForgetFormBase extends Component {
       <>
         <div>
           <StyledH1>Reset your password </StyledH1>
-          <h2> Please enter your email adress bellow </h2>
+          <h2> Please enter your email address bellow </h2>
           <form onSubmit={this.onSubmit}>
             <input
               name="email"
