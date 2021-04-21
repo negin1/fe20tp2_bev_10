@@ -75,7 +75,7 @@ class PasswordForgetFormBase extends Component {
               type="text"
               placeholder="Email Address"
             />
-            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer' }} >
+            <button disabled={isInvalid} type="submit" style={{ cursor: 'pointer', outline: '0' }} >
               Reset Password
         </button>
 
@@ -87,9 +87,9 @@ class PasswordForgetFormBase extends Component {
   }
 }
 
- const PasswordForgetLink = () => (
+const PasswordForgetLink = () => (
   <StyledLink to={ROUTES.PASSWORD_FORGET}>Forgot Password?</StyledLink>
-); 
+);
 
 export default PasswordForgetPage;
 

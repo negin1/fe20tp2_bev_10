@@ -7,7 +7,6 @@ const formatDate = (date) => {
 }
 
 export const daysHandler = (days) => {
-
     const d = new Date()
     const to = formatDate(d)
     const from = formatDate(d.setDate(d.getDate() - days))

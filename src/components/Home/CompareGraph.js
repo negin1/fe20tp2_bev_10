@@ -10,9 +10,6 @@ const CompareGraph = (props) => {
     const country3 = props.country3
 
 
-    //const countryArr = [props.country, props.country2, props.country3]
-    //const countryArrCapitalized = countryArr.map(country => country.charAt(0).toUpperCase() + country.slice(1));
-
     if (props.graph === 'line') {
         return (
             <div>
