@@ -30,10 +30,10 @@ const StyledDiv = styled.div`
 
 const Index = () => {
   return (
-  <StyledDiv>
-      <img src="/images/logo2.png" alt=""/>
-      <h1>Coronavirus Tracker</h1>
-  </StyledDiv>
+    <StyledDiv>
+      <img src="/images/logo2.png" alt="" />
+      <h1>Cvirus</h1>
+    </StyledDiv>
   )
 }
 
