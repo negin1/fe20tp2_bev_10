@@ -32,18 +32,16 @@ Firebase<br>
 Chart.JS<br>
 Styled-Components<br>
 Material-UI<br>
-API: [covid19api.com](https://documenter.getpostman.com/view/10808728/SzS8rjbc)<br>
+API: [covid19api.com](https://documenter.getpostman.com/view/10808728/SzS8rjbc target=_blank)<br>
 <br>
 
 
 ## The development team responsible for this application is as follows.
-<br>
-Anna Pettersson <br>
-<br>
-Negin Jalalian<br>
 
-Ivan Olowo<br>
-Julius Alamarvdashti<br>
-Alexander Alazar<br>
+Anna Pettersson
+Negin Jalalian
+Ivan Olowo
+Julius Alamarvdashti
+Alexander Alazar
 
 
