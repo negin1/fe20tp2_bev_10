@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
-import LandingCovidSummary from '../CovidTracker/CovidSummary'
+
 import Popup from './Popup';
 
 /* import { FirebaseContext } from '../Firebase'; */
