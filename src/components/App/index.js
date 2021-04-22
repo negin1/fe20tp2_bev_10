@@ -10,7 +10,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import Dashboard from '../Dashboard';
 import Settings from '../Settings';
-import Covid2 from '../Covid2/Index';
+
 import Select from '../Home/Select'
 import CompareSelect from '../Home/CompareSelect';
 import MortalitySelect from '../Home/MortalitySelect';
@@ -60,7 +60,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Covid2 />
+
       <Router>
         <StyledDiv>
           <Header />
