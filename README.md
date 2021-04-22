@@ -23,8 +23,10 @@ Possiblity to edit saved data in dashboard<br>
 Fully Responsive<br>
 <br>
 
+![Covid](https://github.com/negin1/fe20tp2_bev_10/blob/main/src/img/CVIRUS_dashboard.jpg?raw=true)
+
  <tr >
-   ![Covid](https://github.com/negin1/fe20tp2_bev_10/blob/main/src/img/CVIRUS_dashboard.jpg?raw=true)
+   
      <td><img src="../img/CIVIRUS_dashboard.jpg" width=300 height=auto></td>
   </tr>
 
