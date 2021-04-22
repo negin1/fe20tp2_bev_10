@@ -3,10 +3,10 @@
 Cvirus is the ultimate Covid-19 tracker! 
 <br>
 
-You can select and compare data about Covid-19 and how it has affected different parts of the world. 
+You can select and compare data about Covid-19 and see how the virus has affected different parts of the world. 
 <br>
 
-You will also be able to save your data in various graphs and then compare them in your dashboard. This application could also be used as a template to track something else, all you have to do is to implement another API.
+You will also be able to save your data in various graphs and then compare them in your dashboard. This application can also be used as a template to track something else, all you have to do is to implement another API.
 <br>
 
 You can see our Agile workflow on [Trello](https://trello.com/b/NEYYR2eC/group-ten)
