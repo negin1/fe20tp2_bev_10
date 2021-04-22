@@ -1,7 +1,7 @@
 # Cvirus
 
-Cvirus is the ultimate Covid-19 tracker! 
-<br>
+##Cvirus is the ultimate Covid-19 tracker! Cheek it out on cvirus.surge.sh/!
+
 
 You can select and compare data about Covid-19 and see how the virus has affected different parts of the world. 
 <br>
