@@ -1,83 +1,79 @@
-import styled from 'styled-components';
-
+import styled from 'styled-components'
 
 const StyledForm = styled.div`
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-top:90px; 
+  padding-top: 90px;
 
-  > div{
+  > div {
     display: block;
     width: 300px;
     justify-content: center;
     padding: 50px 50px;
-    margin-bottom:40px;
+    margin-bottom: 40px;
     border-radius: 30px;
-   
-        @media (max-width: 800px) {
-            width: 200px;
-            padding-top:30px;
-           }
 
-          
-          h1{
-         font-size: 30px;
-          }
-    }
-      
-      h1{
-      padding-bottom:40px;
-      font-family: Montserrat;
-      text-align: center; 
+    @media (max-width: 800px) {
+      width: 200px;
+      padding-top: 30px;
     }
 
-      h2{
-        font-size:18px;
-        font-family: Montserrat;
-        padding-bottom:18px;
-        text-align: center; 
-      }
+    h1 {
+      font-size: 30px;
+    }
+  }
 
-      input{
-      padding: 1em;
-      margin: 1em 4em ;
-      border: .5px solid gray;
-      border-radius: 10px;
-          outline: none;
+  h1 {
+    padding-bottom: 40px;
+    font-family: Montserrat;
+    text-align: center;
+  }
 
-           @media (max-width: 1070px) {
-         margin: 1em
-        }
-      }
+  h2 {
+    font-size: 18px;
+    font-family: Montserrat;
+    padding-bottom: 18px;
+    text-align: center;
+  }
 
-      button{
-      display: block;
-      margin: 20px auto;
-      color: white;
-      background: black;
-      border-radius: 20px;
-      width: 120px;
-      height: 40px;
-      }
-      
-      form{
-        margin: 0 auto;
-      } 
+  input {
+    padding: 1em;
+    margin: 1em 4em;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    outline: none;
 
-      .error{
-        text-align: center;
-        font-family: Montserrat;
-        padding-top: 10px;
-      }
+    @media (max-width: 1070px) {
+      margin: 1em;
+    }
+  }
 
-      .label {
-      display:block;
-      margin-top:5px;
-      margin-left: 15px;
-          }
-    `;
+  button {
+    display: block;
+    margin: 20px auto;
+    color: white;
+    background: black;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+  }
 
+  form {
+    margin: 0 auto;
+  }
 
+  .error {
+    text-align: center;
+    font-family: Montserrat;
+    padding-top: 10px;
+  }
 
-export default StyledForm;
+  .label {
+    display: block;
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+`
+
+export default StyledForm
