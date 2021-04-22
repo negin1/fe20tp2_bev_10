@@ -32,7 +32,7 @@ Firebase<br>
 Chart.JS<br>
 Styled-Components<br>
 Material-UI<br>
-API: [covid19api.com](https://documenter.getpostman.com/view/10808728/SzS8rjbc target=_blank)<br>
+API: [covid19api.com](https://documenter.getpostman.com/view/10808728/SzS8rjbc)<br>
 <br>
 
 
