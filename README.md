@@ -13,37 +13,37 @@ You can see our Agile workflow on [Trello] (https://trello.com/b/NEYYR2eC/group-
 <br>
 
 ## Features:
-User account connected to Firebase
-UserAuth with Firebase
-Enabled user password resetting
-Saving data as graphs to localstorage
-The data in graphs are interactive
-Enabled Darkmode
-Possiblity to edit saved data in dashboard
-Fully Responsive
+User account connected to Firebase<br>
+UserAuth with Firebase<br>
+Enabled user password resetting<br>
+Saving data as graphs to localstorage<br>
+The data in graphs are interactive<br>
+Enabled Darkmode<br>
+Possiblity to edit saved data in dashboard<br>
+Fully Responsive<br>
 <br>
 
  <tr >
-    <td><img src="img/CIVIRUS_landing.jpg" width=300 height=auto></td>
-     <td><img src="img/CIVIRUS_dashboard.jpg" width=300 height=auto></td>
+    <td><img src="../img/CIVIRUS_landing.jpg" width=300 height=auto></td>
+     <td><img src="../img/CIVIRUS_dashboard.jpg" width=300 height=auto></td>
   </tr>
 
 ## Technical Specifications:
-React.JS
-Firebase
-Chart.JS
-Styled-Components
-Material-UI
-API: [covid19api.com] (https://documenter.getpostman.com/view/10808728/SzS8rjbc)
+React.JS<br>
+Firebase<br>
+Chart.JS<br>
+Styled-Components<br>
+Material-UI<br>
+API: [covid19api.com] (https://documenter.getpostman.com/view/10808728/SzS8rjbc)<br>
 <br>
 
 
 ## The development team responsible for this application is as follows.
 <br>
-Anna Pettersson
-Negin Jalalian
-Ivan Olowo
-Julius Alamarvdashti
-Alexander Alazar
+Anna Pettersson <br>
+Negin Jalalian<br>
+Ivan Olowo<br>
+Julius Alamarvdashti<br>
+Alexander Alazar<br>
 
 
