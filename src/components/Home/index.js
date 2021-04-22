@@ -1,7 +1,7 @@
 import React from 'react';
 import { withAuthorization } from '../Session';
 import styled from 'styled-components'
-import { StyledPageIntro, StyledSelectBtn } from '../Styles/StyledPageIntro';
+import { StyledPageIntro } from '../Styles/StyledPageIntro';
 import BottomNav from '../BottomNav';
 import { Link } from "react-router-dom";
 
@@ -16,31 +16,30 @@ const StyledSection = styled.div`
 `;
 
 const Button = styled.button`
- 
-        color: white;
-      background: black;
-      border-radius: 20px;
-      padding: 7px 7px;
+    color: white;
+    background: black;
+    border-radius: 20px;
+    padding: 7px 7px;
     margin: 0 auto;
-      font-size: 15px;
-      `
+    font-size: 15px;
+    `
 const StyledImg = styled.img`
    
-     @media screen and (max-width: 875px) {
-    width: 80%;
-    height: 50vh;
+    @media screen and (max-width: 875px) {
+        width: 80%;
+        height: 50vh;
   }  
     @media screen and (max-width: 769px) {
-    width: 80%;
-    height: 30vh;
+        width: 80%;
+        height: 30vh;
   } 
   @media screen and (max-width: 400px) {
-    width: 80%;
-    height: 30vh
+        width: 80%;
+        height: 30vh
   }
   @media screen and (max-width: 300px) {
-    width: 80%;
-    height: 15vh
+        width: 80%;
+        height: 15vh
   }
 `;
 
@@ -86,9 +85,8 @@ class HomePage extends React.Component {
                     <StyledSection>
                         <div >
                             <h2>View mortality rate per country (percent of total infected)</h2>
-
                             <Link to="/mortalitySelect">
-                                <StyledImg src="/images/mortalitytwo.jpg" alt="" />
+                            <StyledImg src="/images/mortalitytwo.jpg" alt="" />
                             </Link> <br />
                             <Button type="button" style={{ cursor: 'pointer', outline: '0' }}
                                 onClick={(e) => {
@@ -97,8 +95,6 @@ class HomePage extends React.Component {
                                 }}>Customise your data</Button>
                         </div>
                     </StyledSection>
-
-
                 </StyledDiv>
                 <BottomNav />
             </div>

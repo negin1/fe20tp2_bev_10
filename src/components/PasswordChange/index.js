@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import { withFirebase } from '../Firebase';
-
 import styled from 'styled-components';
 
 const StyledForm = styled.div`

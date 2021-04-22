@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import styled from 'styled-components'
 import StyledForm from '../Styles/StyledForm';
 
 
-
-
-
-const StyledH1 = styled.h1`
-
-
- `
 const StyledLink = styled(Link)`
   color: black;
   font-weight: bold;
@@ -65,8 +57,8 @@ class PasswordForgetFormBase extends Component {
     return (
       <>
         <div>
-          <StyledH1>Reset your password </StyledH1>
-          <h2> Please enter your email address bellow </h2>
+          <h1>Reset your password </h1>
+          <h2> Please enter your email address below </h2>
           <form onSubmit={this.onSubmit}>
             <input
               name="email"

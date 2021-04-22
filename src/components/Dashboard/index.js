@@ -1,9 +1,9 @@
 import { StyledPageIntro } from '../Styles/StyledPageIntro';
 import BottomNav from '../BottomNav';
 import React, { useEffect, useState } from 'react';
-import FetchData from '../Home/FetchData';
-import CompareFetchData from '../Home/CompareFetchData';
-import MortalityFetchData from '../Home/MortalityFetchData';
+import FetchData from '../Home/FetchData'
+import CompareFetchData from '../Home/CompareFetchData'
+import MortalityFetchData from '../Home/MortalityFetchData'
 import Styled from 'styled-components';
 import styled from 'styled-components';
 
@@ -71,14 +71,7 @@ const Dashboard = () => {
                         <div key={index}>
                             <p>{item.type} in {item.country}</p>
                             <FetchData saved={true} {...item} />
-
-                            
-
                             <StyledButtonDelete onClick={() => removeFromGraphList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
-
-                          
-
-
                         </div>
                     ))}
 
@@ -86,13 +79,7 @@ const Dashboard = () => {
                         <div key={index}>
                             <p>Mortality rate in {item.country}</p>
                             <MortalityFetchData saved={true} {...item} />
-
-                            
-
                             <StyledButtonDelete onClick={() => removeFromMortalityList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
-                            
-
-
                         </div>
                     ))}
                 </div>
@@ -101,13 +88,7 @@ const Dashboard = () => {
                         <div key={index}>
                             <p>{item.type} in {item.country}, {item.country2} and {item.country3}</p>
                             <CompareFetchData saved={true} {...item} />
-
-                           
-
                             <StyledButtonDelete onClick={() => removeFromGraphCompareList(item.id)} style={{ outline: '0' }} >Remove Graph</StyledButtonDelete>
-                            
-
-
                         </div>
                     ))}
                 </div>

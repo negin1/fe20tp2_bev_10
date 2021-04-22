@@ -70,11 +70,9 @@ const Select = () => {
             <StyledIntro>
                 <h2>Select and view covid-19 data per country</h2>
                 <p>Please fill in the details bellow to render your graph</p>
-
             </StyledIntro>
 
             <StyledDivForm>
-
                 <form onSubmit={handleSubmit}>
                     <label>Covid-19 data:</label>
                     <div>

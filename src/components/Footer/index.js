@@ -59,24 +59,45 @@ const StyledDiv2 = styled.div`
 margin-right: 4em; 
 `;
 
-
 const Footer = (props) => {
     return (
-        <StyledDiv>
-            <div>
-                <StyledDiv2>
-                    <p>Alexander Alazar</p>
-                    <p><a href="http://annap.surge.sh/">Anna Pettersson</a></p>
-                    <p>Ivan Olowo</p>
-                    <p><a href="https://neginj.netlify.app/">Negin Jalalian</a></p>
-                    <p>Julius Alamarvdashti</p>
-                </StyledDiv2>
-                <div>
-                    <p><a href="https://github.com/negin1/fe20tp2_bev_10" target="_blank" rel="noopener noreferrer" >→ View code @GitHub</a></p>
-                    <p><a href="https://trello.com/b/NEYYR2eC/group-ten" target="_blank" rel="noopener noreferrer">→ Agile workflow @Trello</a></p>
-                </div>
-            </div>
-        </StyledDiv >
+      <StyledDiv>
+        <div>
+          <StyledDiv2>
+            <p>
+              <a href='http://annap.surge.sh/'>Anna Pettersson</a>
+            </p>
+            <p>Ivan Olowo</p>
+            <p>
+              <a href='https://neginj.netlify.app/'>Negin Jalalian</a>
+            </p>
+            <p>
+              <a href="https://github.com/Julius-88/my-portfolio">Julius Alamarvdashti</a>
+            </p>
+            <p>Alexander Alazar</p>
+          </StyledDiv2>
+          <div>
+            <p>
+              <a
+                href='https://github.com/negin1/fe20tp2_bev_10'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                → View code @GitHub
+              </a>
+            </p>
+            <p>
+              <a
+                href='https://trello.com/b/NEYYR2eC/group-ten'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                → Agile workflow @Trello
+              </a>
+            </p>
+          </div>
+        </div>
+      </StyledDiv>
     )
 }
 

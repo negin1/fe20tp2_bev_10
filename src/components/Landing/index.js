@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { LandingContainer, LandingContent, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
-
+import { LandingContainer, Landingh1, BtnRoute, LandingBtn, ForwardIcon } from './LandingElement';
 import Popup from './Popup';
-
-/* import { FirebaseContext } from '../Firebase'; */
 import FetchCards from './FetchCards'
-import Cards from './Cards'
+
 
 const Landing = () => {
   const [timedPopup, setTimedPopup] = useState(false);
@@ -26,9 +23,7 @@ const Landing = () => {
 
       <LandingContainer>
         <Landingh1>Keep track of Corona Virus Statistics close to you and around the world.</Landingh1>
-
         <BtnRoute>
-
           <LandingBtn to="/signin"
             onMouseEnter={toggleIcon}
             onMouseLeave={toggleIcon}>Get Started
@@ -36,7 +31,6 @@ const Landing = () => {
           </LandingBtn>
         </BtnRoute>
       </LandingContainer>
-
       <br></br>
       <Popup trigger={timedPopup} setTrigger={setTimedPopup} >
         <h3>Welcome to the ultimate Covid-19 tracker!</h3>

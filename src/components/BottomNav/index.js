@@ -6,24 +6,23 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ExploreIcon from '@material-ui/icons/Explore';
 
 const StyledDiv = styled.div`
-font-family: 'Montserrat', sans-serif;
-width: 50px;
-height: 170px; 
-position: fixed;
-z-index: 1;
-bottom: 40%;
- right: 1em; 
-
+    font-family: 'Montserrat', sans-serif;
+    width: 50px;
+    height: 170px; 
+    position: fixed;
+    z-index: 1;
+    bottom: 40%;
+    right: 1em; 
 
 @media (max-width: 500px) {
-background-color: #eeeeee;
-width: 100%;
-height: 75px;
-z-index: 0;
-bottom: 0;
-right: 0;
-border-top: 5px solid darkgray;
-    }
+    background-color: #eeeeee;
+    width: 100%;
+    height: 75px;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    border-top: 5px solid darkgray;
+}
 
 ul {
     list-style-type: none;

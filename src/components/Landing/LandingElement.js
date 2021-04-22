@@ -13,12 +13,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
-
 background-image: url(${globe});
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
-
 
 @media screen and (max-width: 875px) {
     width: 100%;
@@ -36,27 +34,22 @@ background-repeat: no-repeat;
     width: 100%;
     height: 15vh
   }
-
 `;
 
 export const LandingContent = styled.div`
-
 display: flex;
 flex-direction: row;
 width: 100vmax;
 height: 30vh;
 
-
 align-items: center;
 padding: 0 20px;
 justify-content: center; 
-
 `
 
 export const Landingh1 = styled.h1`
 display: flex;
 flex-wrap: wrap;
-
 font-size: 50px;
 color: #fff;
 font-weight: bold;
@@ -111,6 +104,7 @@ export const ForwardIcon = styled(FaArrowRight)`
   opacity: 0;
   font-size: 13px; 
 `;
+
 export const LandingBtn = styled(Link)`
   color: #fff;
   font-size: 16px;

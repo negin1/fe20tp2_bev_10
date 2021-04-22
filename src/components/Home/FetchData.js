@@ -51,7 +51,7 @@ const FetchData = (props) => {
             })
 
             .catch((error) => {
-                //console.log(error)
+                
             });
 
     }, [props.country, props.type, props.days, props.graph]);

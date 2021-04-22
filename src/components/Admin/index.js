@@ -18,20 +18,20 @@ const StyledContainer = styled.div`
       font-family: Montserrat;
       text-align: center; 
        text-shadow: 1px 1px #ffffff; 
-   ;
     }
-  span{
+
+  span {
   display: block;
   font-family: Montserrat;
   font-size: 17px;
   letter-spacing: 2px;
   line-height:25px
   }
+
   li{
     margin:25px 0;
-  
   }
-  `
+  `;
 
 class AdminPage extends Component {
   constructor(props) {
@@ -86,11 +86,7 @@ class AdminPage extends Component {
   }
 }
 
-/*  function deleteUser(user) {
-    const { users, setUsers } = [];
-    const updatedUsers = users.filter(user=> user.uid !== user.uid)
-        setUsers(updatedUsers);
-  }  */
+
 const UserList = ({ users }) => (
   <ul>
     {users.map(user => (

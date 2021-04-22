@@ -13,7 +13,6 @@ const AccountPage = () => (
       {authUser => (
         <StyledForm>
           <h1>Account: {authUser.email}</h1>
-          {/*    <PasswordForgetForm /> */}
           <PasswordChangeForm />
         </StyledForm>
       )}

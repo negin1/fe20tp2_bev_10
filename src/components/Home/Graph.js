@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import StyledLineGraph from '../Styles/StyledLineGraph';
@@ -7,11 +6,6 @@ import { capitalizeFirstLetter } from './DaysHandler';
 
 const Graph = (props) => {
     const country = props.country
-
-
-
-
-
 
     if (props.graph === 'line') {
         return (
