@@ -9,7 +9,7 @@ You can select and compare data about Covid-19 and how it has affected different
 You will also be able to save your data in various graphs and then compare them in your dashboard. This application could also be used as a template to track something else, all you have to do is to implement another API.
 <br>
 
-You can see our Agile workflow on [Trello] (https://trello.com/b/NEYYR2eC/group-ten)
+You can see our Agile workflow on https://trello.com/b/NEYYR2eC/group-ten - automatic! [Trello](https://trello.com/b/NEYYR2eC/group-ten)
 <br>
 
 ## Features:
