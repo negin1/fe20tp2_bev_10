@@ -41,7 +41,13 @@ API: [covid19api.com] (https://documenter.getpostman.com/view/10808728/SzS8rjbc)
 ## The development team responsible for this application is as follows.
 <br>
 Anna Pettersson <br>
+<br>
+[Github](https://github.com/bannanaz) & [LinkedIn](https://www.linkedin.com/in/anlepet/)
+<br>
 Negin Jalalian<br>
+
+[Github](https://github.com/negin1) & [LinkedIn](https://www.linkedin.com/in/negin-jalalian-68324824/)
+<br>
 Ivan Olowo<br>
 Julius Alamarvdashti<br>
 Alexander Alazar<br>
