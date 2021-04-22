@@ -57,7 +57,7 @@ const FetchData = (props) => {
     }, [props.country, props.type, props.days, props.graph]);
     const handleClick = () => {
         let graphList = JSON.parse(localStorage.getItem('allGraphs')) || [];
-        alert(`Your graph has been saved. click dashboard buttun to see your saved graphs`);
+        alert(`Your graph has been saved. click dashboard button to see your saved graphs`);
 
         const graphObj = {
             id: Date.now(),

@@ -1,18 +1,18 @@
-export const initialState ={
+export const initialState = {
   dashboard: [],
 };
 
-const reducer =( state, action) => {
+const reducer = (state, action) => {
   console.log(action)
-  switch(action.type){
+  switch (action.type) {
     case 'ADD_TO_DASHBOARD':
-        return {
-          ...state,
-          dashboard: [...state.dashboard, action.graph]
-        };
+      return {
+        ...state,
+        dashboard: [...state.dashboard, action.graph]
+      };
 
-        default:
-        return state;
+    default:
+      return state;
 
   }
 }
