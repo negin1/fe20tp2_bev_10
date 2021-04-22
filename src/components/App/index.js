@@ -27,11 +27,9 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
   body {
-    /* background-color: #eeeeee; */
     margin: 0;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
-
     &:focus {
       outline: none;
       border: none;
@@ -74,7 +72,6 @@ function App() {
           <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
           <Route exact path={ROUTES.ADMIN} component={AdminPage} />
           <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
-          <Route exact path={ROUTES.SETTINGS} component={Settings} />
           <Route exact path={ROUTES.SELECT} component={Select} />
           <Route exact path={ROUTES.COMPARESELECT} component={CompareSelect} />
           <Route exact path={ROUTES.MORTALITYSELECT} component={MortalitySelect} />

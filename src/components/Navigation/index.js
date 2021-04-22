@@ -17,37 +17,32 @@ const StyledDiv = styled.div`
   z-index: 999;
   background-color: #708090;
   background-color: #708090;
-  
    @media (max-width: 850px) {
            overflow:auto
     }
 
-
   ul{
-    display: flex;
-    margin: 0 auto;
-   justify-content: center;
-    overflow: auto;
-    white-space: nowrap;
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      overflow: auto;
+      white-space: nowrap;
       @media (max-width: 850px) {
        justify-content: flex-start;
- }
-
+    }
  }
 
 
  li{
     text-decoration: none; 
-   list-style: none; 
-   font-family: Montserrat;
-   font-weight: bold;
-   font-size: 20px;
-   padding: 26px 30px;
-   color: black;
-  }
+    list-style: none; 
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 26px 30px;
+    color: black;
+    }
 
- 
-   
  a {
     text-decoration: none; 
     color: black; 
@@ -56,10 +51,8 @@ const StyledDiv = styled.div`
       color: darkgray;
       }
      &:active{
-    font-weight:bold; 
-  }
-
-   
+     font-weight:bold; 
+  } 
 }
 `
 
@@ -100,7 +93,6 @@ const NavigationAuth = ({ authUser }) => (
       </li>
     </ul>
   </StyledDiv>
-
 );
 
 const NavigationNonAuth = () => (

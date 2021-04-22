@@ -8,9 +8,6 @@ const StyledDiv = styled.div`
 padding-top: 2em; 
 padding-bottom: 2em; 
 
-h4 {
-  padding-bottom: 1em; 
-}
 `
 
 const CardsLanding = (props) => {
@@ -19,19 +16,14 @@ const CardsLanding = (props) => {
     return (
         <StyledDiv>
             <div>
-                {/*<h4 style={{ textTransform: 'capitalize' }}>
-                    {country === '' ? 'Covid-19 world wide' : country}
-                </h4>{' '}*/}
                 <Grid container spacing={3} justify='center'>
                     <Grid item component={Card}>
                         <CardContent>
                             <Cards>
                                 <Typography color='secondary' gutterBottom>
                                     Total infected
-                </Typography>
-
+                                </Typography>
                                 <Typography varant='h5'></Typography>
-
                                 <CountUp
                                     start={0}
                                     end={totalConfirmed}
@@ -48,7 +40,7 @@ const CardsLanding = (props) => {
                             <Cards>
                                 <Typography color='secondary' gutterBottom>
                                     Total recovered
-                </Typography>
+                                </Typography>
                                 <Typography varant='h5'></Typography>
 
                                 <CountUp
@@ -67,7 +59,7 @@ const CardsLanding = (props) => {
                             <Cards>
                                 <Typography color='secondary' gutterBottom>
                                     Total deaths
-                </Typography>
+                                </Typography>
                                 <Typography varant='h5'></Typography>
 
                                 <CountUp

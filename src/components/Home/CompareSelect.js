@@ -72,9 +72,7 @@ const CompareSelect = () => {
             <StyledIntro>
                 <h2>Compare data from three countries (last 365 days)</h2>
                 <p>Please fill in the details bellow to render your graph</p>
-
             </StyledIntro>
-
 
             <StyledDivForm>
                 <form onSubmit={handleSubmit}>

@@ -17,7 +17,6 @@ const StyledDiv = styled.div`
     text-shadow: 1px 1px #ffffff; 
     font-family: 'Montserrat', sans-serif;
     color: white;
-    /* margin: 0 auto;  */
     letter-spacing: 0.1em;
     text-transform: capitalize; 
   }

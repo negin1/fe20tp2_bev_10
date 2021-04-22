@@ -19,18 +19,20 @@ p {
 }
 `;
 
-export const StyledSelectBtn = styled.button`
-color: white;
-background: black;
-border: none;
-border-radius: 20px;
-width: 90px;
-height: 30px;
-&:hover {
-      cursor: pointer;
-      background: darkgray;
-      }
-`;
+export const StyledBtn = styled.button`
+  display: block;
+  margin: 10px auto;
+  width: 135px;
+  height: 40px;
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+    background: darkgray;
+  }
+`
 
 export const StyledDivSelectBtn = styled.div`
 width: 75%;

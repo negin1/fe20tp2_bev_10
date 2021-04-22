@@ -7,7 +7,7 @@ body.light {
   --background-color: var(--white);
   --text-color: var(--blue);
   --font-weight: 400;
-  --image: url(sunny.svg);
+  --image: url('sunny.svg');
 }
 
 body.dark {

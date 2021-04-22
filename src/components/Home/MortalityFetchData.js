@@ -41,6 +41,7 @@ const MortalityFetchData = (props) => {
             })
 
             .catch((error) => {
+                console.log(error)
             })
             ;
         setTimeout(() => {
@@ -58,6 +59,7 @@ const MortalityFetchData = (props) => {
                 })
 
                 .catch((error) => {
+                    console.log(error)
                 })
                 ;
         }, 1000);
@@ -78,10 +80,7 @@ const MortalityFetchData = (props) => {
             days: props.days,
         }
 
-
-
         graphList.push(graphObj);
-
         localStorage.setItem('MortalityGraph', JSON.stringify(graphList))
     }
     return (
